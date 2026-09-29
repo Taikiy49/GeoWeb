@@ -136,3 +136,5 @@ Homepage statistics count up once over 1.4 seconds when visible, retaining suffi
 Scroll text reveals now operate at heading, paragraph, list-item, label, and action level across pages, rather than moving whole multi-paragraph sections at once. Text rises 8px over 420ms with at most 135ms sibling stagger; photographs settle over 600ms. Hero, film playback, statistics, and search controls retain their own motion ownership. Each block reveals once per route visit; text stays visible without scripting and reduced-motion skips reveals.
 
 The repeated yellow “Contact our team” banner has been removed from all pages at the user’s request. Pages flow directly into the existing footer; contact navigation remains in the header and footer. Do not reintroduce that banner during future polish passes.
+
+Homepage readability pass: stronger slate video scrim supports white/yellow text; supporting hero and film text uses 11–14px roles instead of tiny labels. Mobile hero actions have closer grouping, carousel arrows are 44px, and dark surfaces use yellow keyboard-focus outlines. The original footage remains decorative, with its accessible play/pause control preserved.

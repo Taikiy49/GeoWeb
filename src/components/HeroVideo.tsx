@@ -39,7 +39,8 @@ export function HeroVideo() {
         <img
           className="hero-video"
           src="/images/geolabs-cover-poster.webp"
-          alt="Geolabs drilling operations"
+          alt=""
+          aria-hidden="true"
         />
       ) : (
         <video
@@ -52,7 +53,7 @@ export function HeroVideo() {
           loop
           playsInline
           preload={reducedMotion ? "none" : "metadata"}
-          aria-label="Geolabs cover: drilling operations"
+          aria-hidden="true"
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
           onError={() => setFailed(true)}
@@ -61,7 +62,7 @@ export function HeroVideo() {
       <div className="hero-shade" />
       <div className="container hero-content">
         <div className="eyebrow">
-          ESTABLISHED 1975 · EMPLOYEE-OWNED SINCE 1991
+          <span>ESTABLISHED 1975</span>{" · "}<span>EMPLOYEE-OWNED SINCE 1991</span>
         </div>
         <h1>
           <span className="hero-title-line">

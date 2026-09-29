@@ -1214,7 +1214,7 @@ address {
     padding-block: 64px;
   }
   .stats {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     padding-block: 10px;
   }
   .stats > div {
@@ -2276,7 +2276,7 @@ address {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, #2429386b, #2429388f 56%, #242938d6);
+  background: linear-gradient(180deg, #242938b8, #242938c7 56%, #242938e0);
 }
 .hero-content {
   width: calc(100% - 64px);
@@ -3320,6 +3320,36 @@ address {
   .footer-links a, .footer-contact a { min-height: 40px; }
   .button, .service-card-copy .arrow-link, .service-card .arrow-link { font-size: 13px; }
 }
+/* Homepage readability and keyboard/touch polish. */
+html { scroll-padding-top: 108px; }
+.site-header :focus-visible, .site-footer :focus-visible,
+.hero :focus-visible, .film-viewer :focus-visible, .filmstrip :focus-visible {
+  outline-color: var(--yellow);
+}
+.site-header .brand:focus-visible { outline-color: var(--ink); outline-offset: -5px; }
+.hero .eyebrow > span { white-space: nowrap; }
+.hero .eyebrow { font-size: 12px; letter-spacing: 0.12em; }
+.hero-content > p { font-size: 12px; letter-spacing: 0.17em; }
+.hero-actions .button-outline { min-height: 44px; padding-block: 12px; font-size: 13px; }
+.video-control { font-size: 12px; background: #242938d9; }
+.film-arrows button { width: 44px; height: 44px; }
+.film-current { font-size: 14px; line-height: 1.5; }
+.film-credit { font-size: 12px; line-height: 1.5; }
+.film-play span { font-size: 11px; }
+@media (max-width: 760px) {
+  .hero-content { padding-block: 88px 108px; }
+  .hero .eyebrow { display: block; text-wrap: balance; font-size: 10px; line-height: 1.7; letter-spacing: 0.08em; max-width: 290px; margin-inline: auto; }
+  .hero .eyebrow::before, .hero .eyebrow::after { display: none; }
+  .hero-content > p { font-size: 11px; letter-spacing: 0.1em; }
+  .hero-actions { gap: 14px; margin-top: 28px; }
+  .hero-actions .button-yellow { width: min(100%, 290px); }
+  .hero-actions .button-outline { font-size: 13px; }
+  .video-control { font-size: 12px; }
+  .film-current { font-size: 13px; }
+  .film-credit { font-size: 11px; }
+  .film-title .eyebrow { font-size: 11px; }
+  .film-meta { padding: 14px; }
+}
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -3347,7 +3377,7 @@ address {
 }
 
 /* Reserve final numeral width throughout the count-up. */
-.count-up { display: inline-grid; font-variant-numeric: tabular-nums; }
+.stats .count-up { display: inline-grid; font-variant-numeric: tabular-nums; }
 .count-up-measure, .count-up-value { grid-area: 1 / 1; }
 .count-up-measure { visibility: hidden; }
 .count-up-accessible { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
