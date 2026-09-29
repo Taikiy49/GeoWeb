@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   BrowserRouter,
   Link,
@@ -123,11 +123,11 @@ function ContactBand() {
     <section className="contact-band">
       <div className="container">
         <div>
-          <span className="eyebrow">A strong start for your next project</span>
-          <h2>Let’s get to solid ground.</h2>
+          <span className="eyebrow">GEOLABS, INC.</span>
+          <h2>Contact our team.</h2>
         </div>
         <Link className="button button-yellow" to="/contact">
-          Talk with our team <ArrowUpRight size={19} />
+          Contact us <ArrowUpRight size={19} />
         </Link>
       </div>
     </section>
@@ -153,181 +153,235 @@ function ProjectCard({ project }: { project: Project }) {
     </Link>
   );
 }
+const heroProjects = [
+  {
+    image: "azure",
+    title: "Azure & Sky Ala Moana",
+    location: "Honolulu, Oʻahu",
+    slug: "azure-sky-ala-moana",
+  },
+  {
+    image: "walkway",
+    title: "Ala Moana Elevated Pedestrian Walkway",
+    location: "Honolulu, Oʻahu",
+    slug: "ala-moana-walkway",
+  },
+  {
+    image: "koa-ridge",
+    title: "Koa Ridge",
+    location: "Oʻahu",
+    slug: "koa-ridge",
+  },
+];
 function Home() {
+  const [active, setActive] = useState(0);
+  const featured = heroProjects[active];
   return (
     <>
-      <Meta title="Grounded in experience" />
-      <section className="hero">
+      <Meta title="Geotechnical engineering & drilling services" />
+      <section
+        className="hero"
+        aria-label="Geolabs introduction and featured projects"
+      >
         <Photo
+          key={featured.image}
           eager
-          name="coast"
-          alt="The coastline and lagoons of Ko Olina, Oʻahu"
+          name={featured.image}
+          alt={`${featured.title}, ${featured.location}`}
           className="hero-photo"
         />
         <div className="hero-shade" />
         <div className="container hero-content">
           <div className="eyebrow">
-            <span className="yellow-line" />
-            HAWAIʻI & THE PACIFIC · SINCE 1975
+            <span className="yellow-line" /> ESTABLISHED 1975 · EMPLOYEE-OWNED
+            SINCE 1991
           </div>
           <h1>
-            Grounded in experience.
+            Geotechnical
             <br />
-            <span>Built for Hawaiʻi.</span>
+            engineering<span>& drilling services</span>
           </h1>
-          <div className="hero-bottom">
-            <p>
-              Geotechnical insight. Practical solutions.
-              <br />A stronger foundation for our communities.
-            </p>
-            <Link className="button button-yellow" to="/projects">
-              Explore our work <ArrowUpRight size={20} />
+          <p>Hawaiʻi · Pacific Basin · California</p>
+          <div className="hero-actions">
+            <Link className="button button-yellow" to="/services">
+              Explore our services <ArrowUpRight size={19} />
+            </Link>
+            <Link className="button button-outline" to="/contact">
+              Contact us <ArrowUpRight size={19} />
             </Link>
           </div>
         </div>
-        <div className="hero-caption">
-          <span>KO OLINA COASTLINE · OʻAHU</span>
-          <a href="#introduction" aria-label="Discover Geolabs">
-            <ArrowDown size={19} />
-          </a>
+        <div className="container hero-bottom">
+          <div className="hero-project" aria-live="polite">
+            <span className="eyebrow">FEATURED PROJECT</span>
+            <Link to={`/projects/${featured.slug}`}>
+              {featured.title}
+              <ArrowUpRight size={18} />
+            </Link>
+            <span>{featured.location}</span>
+          </div>
+          <div
+            className="hero-selectors"
+            aria-label="Choose a featured project"
+          >
+            {heroProjects.map((project, i) => (
+              <button
+                key={project.image}
+                onClick={() => setActive(i)}
+                aria-pressed={i === active}
+                aria-label={`Show ${project.title}`}
+              >
+                <Photo name={project.image} alt="" />
+                <span>0{i + 1}</span>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
-      <section id="introduction" className="container intro-section">
-        <div className="eyebrow">THE GROUND KNOWS NO SHORTCUTS.</div>
-        <div>
-          <h2>
-            Local knowledge.
-            <br />
-            Far-reaching expertise.
-          </h2>
-          <p className="large-copy">
-            For over 50 years, we’ve helped shape Hawaiʻi from the ground up.
-            Our engineers, geologists, and field specialists turn complex
-            subsurface conditions into practical, construction-ready solutions.
-          </p>
-          <ArrowLink to="/about">Get to know Geolabs</ArrowLink>
-        </div>
-      </section>
-      <div className="container stats">
-        <div>
-          <strong>1975</strong>
-          <span>Established in Hawaiʻi</span>
-        </div>
-        <div>
-          <strong>80+</strong>
-          <span>Geotechnical professionals</span>
-        </div>
-        <div>
-          <strong>
-            100<span>%</span>
-          </strong>
-          <span>Employee-owned</span>
-        </div>
-        <div>
-          <strong>4</strong>
-          <span>Offices. One team.</span>
-        </div>
+      <div className="stats container">
+        {[
+          ["1975", "Year established"],
+          ["1991", "Employee-owned since"],
+          ["80+", "Geotechnical professionals"],
+          ["4", "Regional offices"],
+        ].map(([value, label]) => (
+          <div key={label}>
+            <strong>{value}</strong>
+            <span>{label}</span>
+          </div>
+        ))}
       </div>
-      <section className="section projects-feature">
+      <section id="introduction" className="section container company-intro">
+        <div>
+          <span className="eyebrow">ABOUT GEOLABS</span>
+          <h2>
+            We strive for quality
+            <br />& excellence.
+          </h2>
+          <ArrowLink to="/about">About our company</ArrowLink>
+        </div>
+        <div>
+          <p className="lead">
+            Geolabs, Inc. is Hawaiʻi’s largest geotechnical engineering firm and
+            a trusted advisor for over 50 years throughout the Hawaiian Islands
+            and Pacific Basin.
+          </p>
+          <p>
+            Our team of 80+ geotechnical professionals—including licensed
+            engineers and seasoned geotechnical specialists—delivers reliable,
+            construction-friendly solutions tailored to Hawaiʻi’s unique
+            subsurface conditions.
+          </p>
+        </div>
+      </section>
+      <section className="section soft-section">
         <div className="container">
           <div className="section-heading">
             <div>
-              <div className="eyebrow">OUR WORK, IN THE WORLD</div>
-              <h2>
-                Foundations for
-                <br />
-                what comes next.
-              </h2>
+              <span className="eyebrow">OUR EXPERTISE</span>
+              <h2>Our services</h2>
             </div>
-            <ArrowLink to="/projects">View all projects</ArrowLink>
+            <ArrowLink to="/services">Explore all services</ArrowLink>
           </div>
-          <div className="featured-grid">
-            <ProjectCard project={projects[0]} />
-            <ProjectCard project={projects[1]} />
-            <ProjectCard project={projects[9]} />
-          </div>
-          <div className="recent-strip">
-            <Photo
-              name="walkway"
-              alt="Ala Moana Elevated Pedestrian Walkway construction"
-            />
-            <div>
-              <span className="eyebrow">FROM THE FIELD</span>
-              <h3>Ala Moana Elevated Pedestrian Walkway</h3>
-              <p>
-                Connecting places. Supporting the communities that use them.
-              </p>
-            </div>
-            <ArrowLink to="/projects/ala-moana-walkway">
-              Explore the project
-            </ArrowLink>
-          </div>
-        </div>
-      </section>
-      <section className="services-section section">
-        <div className="container services-layout">
-          <div className="service-intro">
-            <div className="eyebrow">FROM INVESTIGATION TO CONSTRUCTION</div>
-            <h2>
-              With you,
-              <br />
-              from the
-              <br />
-              <em>ground up.</em>
-            </h2>
-            <p>One experienced team, through every phase of your project.</p>
-            <ArrowLink to="/services" light>
-              Explore our services
-            </ArrowLink>
-          </div>
-          <div className="service-list">
-            {services.map((s) => (
-              <Link key={s.slug} to={`/services/${s.slug}`}>
-                <div>
-                  <h3>{s.title}</h3>
-                  <p>{s.short}</p>
+          <div className="home-services">
+            {services.slice(0, 3).map((service, i) => (
+              <Link
+                className="home-service-card"
+                to={`/services/${service.slug}`}
+                key={service.slug}
+              >
+                <div className="service-card-photo">
+                  <Photo name={service.image} alt={service.imageAlt} />
+                  <span>0{i + 1}</span>
                 </div>
-                <ArrowUpRight size={25} />
+                <div className="service-card-copy">
+                  <h3>{service.title}</h3>
+                  <p>{service.intro}</p>
+                  <span className="arrow-link">
+                    Explore service <ArrowUpRight size={19} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="secondary-services">
+            {services.slice(3).map((service) => (
+              <Link to={`/services/${service.slug}`} key={service.slug}>
+                <Photo name={service.image} alt={service.imageAlt} />
+                <div>
+                  <span className="eyebrow">SPECIALIST SERVICES</span>
+                  <h3>{service.title}</h3>
+                </div>
+                <ArrowUpRight size={23} />
               </Link>
             ))}
           </div>
         </div>
       </section>
-      <section className="section container people-feature">
-        <div className="people-photo">
-          <Photo name="careers" alt="Geolabs field work in Hawaiʻi" />
-          <span className="photo-note">
-            EXPERIENCE IN THE FIELD. OWNERSHIP IN OUR WORK.
-          </span>
-        </div>
-        <div>
-          <div className="eyebrow">ENGINEERS. GEOLOGISTS. EMPLOYEE OWNERS.</div>
-          <h2>
-            Our strength
-            <br />
-            is our people.
-          </h2>
-          <p>
-            Since becoming employee-owned in 1991, we’ve built a culture of
-            accountability, collaboration, and long-term partnership. Every
-            project is personal. Every detail matters.
-          </p>
-          <div className="inline-links">
-            <ArrowLink to="/people">Meet our leadership</ArrowLink>
-            <ArrowLink to="/careers">Build your career</ArrowLink>
+      <section className="section container">
+        <div className="section-heading">
+          <div>
+            <span className="eyebrow">HAWAIʻI & THE PACIFIC</span>
+            <h2>Featured projects</h2>
           </div>
+          <ArrowLink to="/projects">View all projects</ArrowLink>
+        </div>
+        <div className="project-grid">
+          {[
+            "ala-moana-walkway",
+            "victoria-place",
+            "palau-wharf",
+            "pali-highway",
+            "international-marketplace",
+            "koa-ridge",
+          ].map((slug) => {
+            const project = projects.find((p) => p.slug === slug);
+            return project ? (
+              <ProjectCard key={slug} project={project} />
+            ) : null;
+          })}
         </div>
       </section>
-      <section className="recognition">
-        <div className="container">
-          <span className="eyebrow">A RECORD OF INNOVATION</span>
-          <h2>
-            Good work leaves
-            <br />a lasting impression.
-          </h2>
-          <ArrowLink to="/awards">Explore our awards</ArrowLink>
+      <section className="home-careers">
+        <div className="careers-image">
+          <Photo
+            name="field"
+            alt="Geolabs field crew beside drilling equipment"
+          />
+          <span className="photo-label">THE GEOLABS TEAM</span>
         </div>
-        <Photo name="awards" alt="Geolabs engineering awards and recognition" />
+        <div className="careers-copy">
+          <span className="eyebrow">EMPLOYMENT</span>
+          <h2>Join the team.</h2>
+          <p>
+            We are a team of more than 80 geotechnical professionals—including
+            licensed engineers, seasoned technical specialists, and dedicated
+            field personnel—working collaboratively to deliver technically
+            sound, constructible solutions.
+          </p>
+          <a className="button button-yellow" href={careersUrl}>
+            View career opportunities <ArrowUpRight size={19} />
+          </a>
+          <Link className="arrow-link light" to="/careers">
+            Benefits & employee ownership <ArrowUpRight size={19} />
+          </Link>
+        </div>
+      </section>
+      <section className="section container recognition">
+        <div>
+          <span className="eyebrow">RECOGNITION</span>
+          <h2>Engineering excellence</h2>
+          <p>
+            The high quality of our work is demonstrated by engineering awards
+            that we received for outstanding and innovative design
+            accomplishments.
+          </p>
+          <ArrowLink to="/awards">Awards & recognition</ArrowLink>
+        </div>
+        <Photo
+          name="awards"
+          alt="Geolabs colleagues at an engineering awards ceremony"
+        />
       </section>
       <ContactBand />
     </>
@@ -337,7 +391,7 @@ function About() {
   return (
     <>
       <Meta title="About us" />
-      <PageIntro eyebrow="OUR COMPANY" title="Deep roots. Lasting impact.">
+      <PageIntro eyebrow="OUR COMPANY" title="About us">
         <p>
           Hawaiʻi’s largest geotechnical engineering firm. More than 50 years of
           knowledge, built one project at a time.
@@ -350,11 +404,7 @@ function About() {
       <section className="section container editorial-grid">
         <aside>
           <span className="eyebrow">ESTABLISHED 1975</span>
-          <h2>
-            We know
-            <br />
-            this ground.
-          </h2>
+          <h2>Our legacy</h2>
         </aside>
         <div className="prose">
           <p className="lead">
@@ -368,13 +418,13 @@ function About() {
             foundations. Our archive of geologic and soil data spans over five
             decades, informing recommendations tailored to each site.
           </p>
-          <h3>A team built around your project</h3>
+          <h3>Our team</h3>
           <p>
             More than 80 professionals—including licensed engineers, experienced
             technical specialists, geologists, and field personnel—work together
             to deliver sound, constructible solutions.
           </p>
-          <h3>From design through construction</h3>
+          <h3>What we do</h3>
           <p>
             Our expertise covers foundation investigation, landslide
             stabilization, rockfall mitigation, trenchless utilities, ground
@@ -390,7 +440,7 @@ function About() {
           <div className="section-heading">
             <div>
               <div className="eyebrow">THE COMMUNITIES WE SERVE</div>
-              <h2>Built on partnership.</h2>
+              <h2>Who we serve</h2>
             </div>
             <p>
               Public and private. Local and regional.
@@ -424,15 +474,11 @@ function About() {
       <section className="section container people-feature">
         <Photo
           name="earthwork"
-          alt="Geolabs construction and earthwork experience"
+          alt="Hoopili development mass grading and slope construction, Oʻahu"
         />
         <div>
           <div className="eyebrow">EMPLOYEE-OWNED SINCE 1991</div>
-          <h2>
-            We own our work.
-            <br />
-            And stand behind it.
-          </h2>
+          <h2>Our culture</h2>
           <p>
             Employee ownership strengthens our accountability to clients and to
             one another. We invest in lasting partnerships, technical
@@ -449,10 +495,7 @@ function Services() {
   return (
     <>
       <Meta title="Our services" />
-      <PageIntro
-        eyebrow="OUR EXPERTISE"
-        title="A strong foundation. At every stage."
-      >
+      <PageIntro eyebrow="OUR EXPERTISE" title="Our services">
         <p>
           Geotechnical engineering, subsurface investigation, construction
           support, and materials testing—all working together.
@@ -465,9 +508,9 @@ function Services() {
             to={`/services/${s.slug}`}
             className="service-card"
           >
-            <Photo name={s.image} alt={s.title} />
+            <Photo name={s.image} alt={s.imageAlt} />
             <div>
-              <span className="eyebrow">{s.short}</span>
+              <span className="eyebrow">{s.caption}</span>
               <h2>{s.title}</h2>
               <p>{s.intro}</p>
               <span className="arrow-link">
@@ -491,9 +534,10 @@ function ServiceDetail() {
       <PageIntro eyebrow="OUR SERVICES" title={s.title}>
         <p>{s.intro}</p>
       </PageIntro>
-      <div className="container detail-hero">
-        <Photo eager name={s.image} alt={s.title} />
-      </div>
+      <figure className="container detail-hero">
+        <Photo eager name={s.image} alt={s.imageAlt} />
+        <figcaption>{s.caption}</figcaption>
+      </figure>
       <section className="section container editorial-grid">
         <aside className="sticky-index">
           <span className="eyebrow">CAPABILITIES</span>
@@ -551,7 +595,7 @@ function Projects() {
   return (
     <>
       <Meta title="Our projects" />
-      <PageIntro eyebrow="OUR EXPERIENCE" title="The places we help build.">
+      <PageIntro eyebrow="OUR EXPERIENCE" title="Our projects">
         <p>
           From the foundations of Honolulu’s skyline to the infrastructure
           connecting our islands. Explore the work behind our experience.
@@ -617,7 +661,7 @@ function Projects() {
         <div className="draft-callout">
           <div>
             <span className="draft-tag">IN DEVELOPMENT</span>
-            <h3>More stories are taking shape.</h3>
+            <h3>Draft project stories</h3>
             <p>
               Explore our resort concepts and project drafts, clearly marked for
               review.
@@ -670,11 +714,7 @@ function ProjectDetail() {
         </aside>
         <article className="prose">
           <span className="eyebrow">PROJECT STORY</span>
-          <h2>
-            Experience beneath
-            <br />
-            the surface.
-          </h2>
+          <h2>Project overview</h2>
           {p.body.map((t) => (
             <p key={t}>{t}</p>
           ))}
@@ -683,7 +723,7 @@ function ProjectDetail() {
       </section>
       <section className="container related">
         <div className="section-heading">
-          <h2>Explore more work.</h2>
+          <h2>Related projects</h2>
           <ArrowLink to="/projects">All projects</ArrowLink>
         </div>
         <div className="project-grid">
@@ -703,7 +743,7 @@ function People() {
   return (
     <>
       <Meta title="Our people" />
-      <PageIntro eyebrow="OUR PEOPLE" title="Experience you can build on.">
+      <PageIntro eyebrow="OUR PEOPLE" title="Our people">
         <p>
           Engineers, geologists, field specialists, and employee owners. A team
           dedicated to serving you.
@@ -712,7 +752,7 @@ function People() {
       <section className="container leadership">
         <div className="section-heading">
           <h2>Our leadership</h2>
-          <span className="eyebrow">LOCAL KNOWLEDGE. SHARED COMMITMENT.</span>
+          <span className="eyebrow">GEOLABS, INC.</span>
         </div>
         <div className="leaders">
           {leaders.map((l) => (
@@ -740,11 +780,7 @@ function People() {
       </section>
       <section className="section soft-section">
         <div className="container editorial-grid">
-          <h2>
-            80+ professionals.
-            <br />
-            One shared purpose.
-          </h2>
+          <h2>Our team</h2>
           <div className="prose">
             <p className="lead">
               Our professional staff includes geotechnical engineers with
@@ -769,14 +805,18 @@ function Awards() {
   return (
     <>
       <Meta title="Awards & recognition" />
-      <PageIntro eyebrow="RECOGNITION" title="Excellence, earned in the field.">
+      <PageIntro eyebrow="RECOGNITION" title="Awards & recognition">
         <p>
           Innovative solutions to difficult geotechnical challenges. A record of
           recognition spanning decades.
         </p>
       </PageIntro>
       <div className="container awards-photo">
-        <Photo eager name="awards" alt="Geolabs engineering awards" />
+        <Photo
+          eager
+          name="awards"
+          alt="Geolabs colleagues at an engineering awards ceremony"
+        />
       </div>
       <section className="container awards-list">
         {awards.map(([year, project, award, body]) => (
@@ -801,10 +841,7 @@ function Contact() {
   return (
     <>
       <Meta title="Contact us" />
-      <PageIntro
-        eyebrow="LET’S WORK TOGETHER"
-        title="Good projects start with a conversation."
-      >
+      <PageIntro eyebrow="LET’S WORK TOGETHER" title="Contact us">
         <p>
           Tell us what you’re planning. Our local teams can help you take the
           next step.
@@ -877,15 +914,15 @@ function Careers() {
     <>
       <Meta title="Careers" />
       <section className="career-hero">
-        <Photo eager name="careers" alt="Geotechnical field work in Hawaiʻi" />
+        <Photo
+          eager
+          name="field"
+          alt="Geolabs field crew beside drilling equipment"
+        />
         <div className="hero-shade" />
         <div className="container">
-          <span className="eyebrow">YOUR WORK. YOUR COMPANY. YOUR FUTURE.</span>
-          <h1>
-            Build a career
-            <br />
-            with solid ground.
-          </h1>
+          <span className="eyebrow">EMPLOYMENT</span>
+          <h1>Join the team.</h1>
           <p>
             Make a lasting contribution to Hawaiʻi.
             <br />
@@ -898,11 +935,8 @@ function Careers() {
       </section>
       <section className="section container editorial-grid">
         <aside>
-          <span className="eyebrow">GROW WITH GEOLABS</span>
-          <h2>
-            More than
-            <br />a place to work.
-          </h2>
+          <span className="eyebrow">EMPLOYEE OWNERSHIP</span>
+          <h2>Employee-owned since 1991</h2>
         </aside>
         <div className="prose">
           <p className="lead">
@@ -915,7 +949,7 @@ function Careers() {
             another’s future.
           </p>
           <div className="application-box">
-            <h3>Your next step starts here.</h3>
+            <h3>Apply online</h3>
             <p>
               Check current openings, complete your application, and upload your
               resume securely through the Geolabs careers portal.
@@ -929,7 +963,7 @@ function Careers() {
       <section className="section soft-section">
         <div className="container">
           <span className="eyebrow">INVESTING IN OUR PEOPLE</span>
-          <h2>Benefits that support your life.</h2>
+          <h2>Employee benefits</h2>
           <div className="benefits-grid">
             {benefits.map(([title, text]) => (
               <article key={title}>
@@ -942,7 +976,7 @@ function Careers() {
         </div>
       </section>
       <section className="section container career-policy">
-        <h2>Opportunity for everyone.</h2>
+        <h2>Equal employment opportunity</h2>
         <p>
           Geolabs, Inc. provides equal employment opportunities to all employees
           and applicants for employment without regard to race, color, religion,
@@ -954,7 +988,7 @@ function Careers() {
         <p>
           Reasonable accommodations are available during the application
           process. For accommodation assistance, contact Human Resources at{" "}
-          <a href="tel:+18089135146">808.913.5146</a>. Submit applications and
+          <a href="tel:+18088415064">808.841.5064</a>. Submit applications and
           resumes through the <a href={applyUrl}>online careers portal</a>.
         </p>
         <a className="arrow-link" href={careersUrl}>
@@ -969,7 +1003,7 @@ function Drafts() {
   return (
     <>
       <Meta title="Draft project stories" draft />
-      <PageIntro eyebrow="WORK IN PROGRESS" title="Stories still taking shape.">
+      <PageIntro eyebrow="WORK IN PROGRESS" title="Draft project stories">
         <p>
           These pages preserve developing project stories for review. They
           contain unverified placeholder text and are not completed case
@@ -1053,11 +1087,7 @@ function NotFound() {
       <Meta title="Page not found" draft />
       <section className="container not-found">
         <span className="eyebrow">404 · PAGE NOT FOUND</span>
-        <h1>
-          Let’s get you
-          <br />
-          back on solid ground.
-        </h1>
+        <h1>Page not found</h1>
         <p>This page may have moved. Explore our projects or return home.</p>
         <Link className="button button-navy" to="/">
           Back to Geolabs <ArrowRight size={18} />

@@ -40,6 +40,8 @@ export interface Service {
   slug: string;
   title: string;
   short: string;
+  imageAlt: string;
+  caption: string;
   image: string;
   intro: string;
   sections: { title: string; text: string; items?: string[] }[];
@@ -49,7 +51,9 @@ export const services: Service[] = [
     slug: "geotechnical-engineering",
     title: "Geotechnical engineering",
     short: "Understand the ground. Design with confidence.",
-    image: "slope",
+    image: "pali-highway",
+    imageAlt: "Slope stabilization and rockfall protection along Pali Highway",
+    caption: "Pali Highway landslide mitigation, Oʻahu",
     intro:
       "Practical, site-specific recommendations built on five decades of experience with Hawaiʻi’s soil, rock, and groundwater. We investigate, analyze, and design the systems that connect structures to the ground.",
     sections: [
@@ -103,6 +107,8 @@ export const services: Service[] = [
     title: "Services during construction",
     short: "Expertise that stays with your project.",
     image: "earthwork",
+    imageAlt: "Mass grading and earthwork at Hoopili development",
+    caption: "Hoopili development mass grading & slope, Oʻahu",
     intro:
       "Field conditions evolve. Our engineers and specialists stay involved to help contractors implement recommendations, address unexpected conditions, and maintain design intent.",
     sections: [
@@ -142,7 +148,9 @@ export const services: Service[] = [
     slug: "drilling-subsurface-investigation",
     title: "Drilling & subsurface investigation",
     short: "The right information, below the surface.",
-    image: "drilling",
+    image: "drill-rig",
+    imageAlt: "Geolabs truck-mounted CME-75 drill rig",
+    caption: "Geolabs drilling equipment",
     intro:
       "Direct exploration reveals the geological properties of a site. Our drilling and sampling capabilities give project teams the information they need to plan for the conditions below ground.",
     sections: [
@@ -164,7 +172,9 @@ export const services: Service[] = [
     slug: "materials-testing",
     title: "Materials engineering & testing",
     short: "Confidence in every material.",
-    image: "testing",
+    image: "concrete-core",
+    imageAlt: "Concrete core sample in a testing apparatus",
+    caption: "Concrete core testing",
     intro:
       "We evaluate the properties of construction materials and help project teams verify their quality and performance, from field placement to laboratory assessment.",
     sections: [
@@ -190,7 +200,9 @@ export const services: Service[] = [
     slug: "forensic-expert-witness",
     title: "Forensic & expert witness services",
     short: "Understand what happened. Inform what comes next.",
-    image: "forensic",
+    image: "forensic-damage",
+    imageAlt: "Excavation and foundation exposure beneath a bridge",
+    caption: "Bridge foundation investigation",
     intro:
       "When structural or ground-related problems occur, careful investigation helps establish their causes. Our specialized geotechnical knowledge supports informed resolution of complex disputes.",
     sections: [
@@ -343,8 +355,8 @@ export const projects: Project[] = [
     title: "Kahului Airport Terminal Complex",
     location: "Kahului, Maui",
     market: "Airports",
-    image: "airport",
-    credit: "Hawaiʻi Department of Transportation",
+    image: "kahului-terminal",
+    credit: "maui-airport.com",
     summary: "Engineering an airport expansion around active operations.",
     source: "Kahului Airport Terminal Complex (New)",
     body: [

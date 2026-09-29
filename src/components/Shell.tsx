@@ -6,14 +6,12 @@ import { applyUrl, offices } from "../data/site";
 export function Brand() {
   return (
     <Link className="brand" to="/" aria-label="Geolabs home">
-      <span className="brand-symbol" aria-hidden="true">
-        <i />
-        <i />
-        <i />
-      </span>
-      <span>
-        GEOLABS<span className="brand-sub">GEOTECHNICAL ENGINEERING</span>
-      </span>
+      <img
+        src="/brand/geolabs-50th-anniversary.png"
+        alt="Geolabs, Inc. — 50 years of geotechnical engineering and drilling services"
+        width="906"
+        height="300"
+      />
     </Link>
   );
 }
@@ -48,7 +46,7 @@ export function Shell() {
         Skip to content
       </a>
       <div className="utility">
-        <span>Rooted in Hawaiʻi. Trusted across the Pacific.</span>
+        <span>HAWAIʻI · PACIFIC BASIN · CALIFORNIA</span>
         <div>
           <span>Employee-owned since 1991</span>
           <a href={applyUrl}>
@@ -86,7 +84,7 @@ export function Shell() {
               </NavLink>
             ))}
             <NavLink className="nav-contact" to="/contact">
-              Let’s talk <ArrowUpRight size={17} />
+              Contact us <ArrowUpRight size={17} />
             </NavLink>
           </nav>
         </div>
@@ -97,11 +95,21 @@ export function Shell() {
       <footer className="site-footer">
         <div className="container footer-top">
           <div>
-            <Brand />
+            <Link className="footer-brand" to="/" aria-label="Geolabs home">
+              <img
+                src="/brand/geolabs-g.png"
+                alt="Geolabs G logo"
+                width="64"
+                height="72"
+              />
+              <span>
+                GEOLABS, INC.<small>ESTABLISHED 1975</small>
+              </span>
+            </Link>
             <p>
-              Local knowledge.
+              Geotechnical engineering
               <br />
-              Lasting foundations.
+              and drilling services.
             </p>
           </div>
           <div className="footer-links">
@@ -148,7 +156,7 @@ export function Shell() {
           <span>© {new Date().getFullYear()} Geolabs, Inc.</span>
           <span>Oʻahu · Maui · Kauaʻi · California</span>
           <Link to="/contact">
-            Build with us <ArrowRight size={14} />
+            Contact us <ArrowRight size={14} />
           </Link>
         </div>
       </footer>

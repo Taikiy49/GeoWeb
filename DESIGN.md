@@ -1,27 +1,27 @@
 ---
 version: alpha
 name: Geolabs
-description: An engineering field journal with a Pacific landscape and precise editorial typography.
+description: A professional engineering portfolio grounded in authentic Wix photography and original Geolabs branding.
 colors:
-  primary: "#142e3a"
-  muted: "#53666c"
-  yellow: "#f3cc30"
-  soft: "#f1f5f4"
+  primary: "#172b43"
+  muted: "#596a7a"
+  yellow: "#f1c544"
+  soft: "#f4f6f8"
   white: "#ffffff"
-  line: "#d7e0df"
+  line: "#dbe2e9"
 typography:
   display:
-    fontFamily: "Barlow Condensed, sans-serif"
+    fontFamily: "Montserrat, sans-serif"
   sans:
     fontFamily: "DM Sans, sans-serif"
 rounded:
-  DEFAULT: "0px"
+  DEFAULT: "10px"
 spacing:
-  section-gap: "100px"
+  section-gap: "96px"
   page-max: "1280px"
 components:
   button:
-    height: "54px"
+    height: "52px"
     backgroundColor: "{colors.primary}"
     textColor: "{colors.white}"
   card:
@@ -40,7 +40,7 @@ components:
 
 ### Creative North Star
 
-A coastal engineering field journal: expansive real project photography, condensed technical headings, generous white space, and a restrained survey-marker yellow accent. The visual signature is the oversized two-line hero paired with a quiet photo caption. The logo mark abstracts geological strata.
+An established engineering firm presented through its real work: broad Montserrat headings, restrained navy and gold, exact original anniversary artwork, and generous, consistent space. The signature is a photographic project hero with a manual thumbnail selector and a linked project caption. The Base44 reference informed the clearer hierarchy and photo-led service cards. The user explicitly requested this complete visual revision; the prior invented logo and editorial taglines are retired.
 
 ### Product context and register
 
@@ -56,19 +56,19 @@ Ink owns text, navigation, service sections, and footer. Yellow identifies prima
 
 ## Typography
 
-Self-hosted Barlow Condensed 600/700 for headings, DM Sans 400/500/600 for content and controls. Body copy is generally 16px with 1.8 line height. Long case-study prose has a constrained measure. Small uppercase tracking is reserved for short labels. Hawaiian diacritics use the font package's extended character support and sans-serif fallback.
+Self-hosted Montserrat 500/600/700 for headings, DM Sans 400/500/600 for content and controls. Body copy is generally 16px with 1.8 line height. Long case-study prose has a constrained measure. Small uppercase tracking is reserved for short labels. Hawaiian diacritics use the font package's extended character support and sans-serif fallback.
 
 ## Layout
 
-Maximum content width 1280px; desktop side gutters 56px. At 700px navigation becomes a nonmodal collapsible list. At 700px major grids become one column, gutters reduce to 20px, and section spacing reduces. Main document owns scrolling. Image aspect ratios reserve card geometry; detail images have fixed responsive heights. Search results are deliberately rendered in full (30 projects) with lazy images.
+Maximum content width 1280px; desktop side gutters 56px. At 760px navigation becomes a nonmodal collapsible list. At 760px major grids become one column, gutters reduce to 20px, and section spacing reduces. Main document owns scrolling. Image aspect ratios reserve card geometry; detail images have fixed responsive heights. Search results are deliberately rendered in full (30 projects) with lazy images.
 
 ## Elevation & Depth
 
-Borders and tonal sections establish hierarchy. No floating card shadows. Hero overlay exists solely for text contrast; sticky white navigation sits above content. Draft warnings occupy document flow.
+Borders, tonal sections, and restrained shadows establish hierarchy on service cards. Hero overlay exists solely for text contrast; sticky white navigation sits above content. Draft warnings occupy document flow.
 
 ## Shapes
 
-Square corners, thin dividers, and rectangular controls reflect engineering precision. Only scrollbar thumbs are rounded for operability.
+Images and cards use 10–12px corners, controls use 6–7px corners, and restrained dividers establish groups. Original brand assets retain their original proportions and colors.
 
 ## Components
 
@@ -78,7 +78,7 @@ All links/buttons are native controls with pointer, hover and visible focus. Pre
 
 ### Buttons and actions
 
-Primary yellow on hero and navy on white; text links have a fine underline and directional arrow. CTA labels describe destinations. Careers buttons link to the external careers portal. Contact buttons are actual mail/telephone links, not simulated submissions.
+Primary yellow on hero and navy on white; text links have a fine underline and directional arrow. The hero also offers an outlined contact link. CTA labels describe destinations. Careers buttons link to the external careers portal. Contact buttons are actual mail/telephone links, not simulated submissions.
 
 ### Navigation and data display
 
@@ -94,11 +94,15 @@ Lucide outline icons, usually 17–25px. Icons accompany text except explicitly 
 
 ### Motion
 
-Short 200ms navigation/action feedback, 600ms restrained image zoom, and one hero settle. Reduced-motion disables animation and transitions and uses immediate scrolling. No autoplay carousel.
+Short 200ms navigation/action feedback, 550ms restrained image zoom, and a 450ms photo fade on explicit hero selection. Reduced-motion disables animation and transitions and uses immediate scrolling. No autoplay carousel.
 
 ### Content and data visualization
 
-Concrete language centered on sites, engineering work, and communities. Distinguish general project descriptions from documented Geolabs scope. Conflicting or unfinished material stays in the archived source; draft pages visibly identify unverified content. No charts.
+Page headings use direct source-based names. Homepage company copy comes from Home (New) and About Us (New), with encoding and punctuation normalized. Technical service text may be condensed from Wix without adding capabilities or claims. Distinguish general project descriptions from documented Geolabs scope. Conflicting or unfinished material stays in the archived source; draft pages visibly identify unverified content. No charts.
+
+### Brand and photography
+
+`public/brand/geolabs-50th-anniversary.png` is the unmodified original Wix transparent anniversary artwork used in the top-left navigation. `geolabs-g.png` is the original G/auger/hammer mark used in the footer and favicon. Asset provenance is in `docs/refinement-asset-sources.json` in addition to the original migration manifests. Photo subjects were visually inspected: drilling uses the actual CME-75 rig, testing uses a concrete core, geotechnical services use Pali slope mitigation, construction uses Hoopili earthwork, and careers uses the field crew. Project images stay paired with their named projects. No generated images or invented logos.
 
 ## Do's and Don'ts
 

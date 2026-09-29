@@ -33,10 +33,20 @@ The saved New/Newer editor pages take precedence over the older public site and 
 - Oakland uses the latest displayed office address, 344 20th Street, Suite 340. The older live address and inconsistent embedded-map destination were not reused.
 - All application/resume actions use `https://careers.geolabs.net/apply`; opportunities link to the careers portal. The separate working application portal was inspected; no applications were submitted. HR accommodation contact is separate from application submission.
 - Contact is implemented using phone, email, and Google Maps links. There is no simulated contact-form submission or unconfigured backend.
-- Photography was taken from the inspected Wix assets and optimized to local WebP. Asset manifests retain source URLs and transformations. The displayed wordmark/strata symbol is a new treatment; the original Wix anniversary logo is retained as an asset.
+- Photography was taken from the inspected Wix assets and optimized to local WebP. Asset manifests retain source URLs and transformations. The header uses the original Wix 50th-anniversary artwork; the footer and favicon use the original transparent G logo. The earlier invented strata symbol has been removed.
 
 ## Operation and review
 
 The site runs without Wix accounts, API keys, or cloud content dependencies. Repository push is not a Wix publish or domain cutover. Verify hosting history fallback before serving deep links in production. The source snapshot intentionally stays in repository documentation and is not imported into the browser bundle.
 
 Draft review, verification of disputed source details, and any production domain cutover remain editorial/deployment follow-ups. This migration does not imply those drafts have been approved.
+
+## Branding and photography refinement
+
+The owner requested a second complete visual pass using the Base44 preview as a design reference. Base44 informed the broader typography, clearer navigation and photographic service cards; its older office data and chat content were not used. The saved Wix New/Newer pages remain the content authority.
+
+The Wix Site Files library was inspected directly for the actual anniversary and G PNG assets. All original portfolio photos and selected replacements were visually checked against their subjects. `refinement-asset-sources.json` records the additional selected files.
+
+Corrections: the old geotechnical image was generic architecture (now Pali slope mitigation); the drilling image was an island panorama (now the Geolabs CME-75 rig); the materials-testing image showed earthwork (now an actual concrete core in a testing apparatus); careers showed a landscape (now the Geolabs field crew); and the terminal page showed the Kahului rental-car facility (now the terminal photo referenced in Wix CMS). The forensic image is a bridge excavation from its own Wix service page. Award photos display the ceremony without cropping out the group.
+
+No AI-generated photos were used. The source project's unfinished AI-labeled resort copy remains only on clearly marked draft pages, per the owner's earlier instruction. Major invented editorial slogans were replaced with direct headings and Wix company wording. Normalized punctuation, concise technical summaries, navigation labels, and the owner's careers-portal instruction are intentional editorial changes. HR accommodation phone follows Apply (New): 808.841.5064.
