@@ -17,7 +17,7 @@ typography:
 rounded:
   DEFAULT: "2px"
 spacing:
-  section-gap: "112px"
+  section-gap: "64–96px responsive"
   page-max: "1280px"
 components:
   button:
@@ -114,3 +114,9 @@ Page headings use direct source-based names. Homepage company copy comes from Ho
 ## Reference-led refinement
 
 The September 28, 2026 user screenshot supersedes the earlier charcoal interpretation: deep slate `#2d3142`, signal yellow `#f4cd00`, and white photographic layouts. Anthropic frontend-design and Stark web-design were read and applied. Decisions, selected references, and verification scope are recorded in `docs/ui-refinement-brief.md`. All source-based wording and media stay unchanged; typography casing and layout are presentation choices.
+
+## Compact layout and motion refinement
+
+Contact strips use 30px desktop / 26px mobile vertical padding and 26–34px headings. Standard sections use responsive 64–96px spacing; page introductions use 72px/48px desktop padding. Shared buttons use readable 13px labels. The larger navigation scale remains unchanged.
+
+Gallery siblings enter with a capped 195ms stagger; photography uses a restrained scale entrance while text uses short translation. Mobile menus open with a 240ms transition and staggered links. Links, filters, disclosure content, and footer navigation give consistent interaction feedback. No continuous decorative effects or extra animation libraries. Reduced-motion preferences cancel active Web Animations and disable CSS animation; route changes clean up observers and animations.

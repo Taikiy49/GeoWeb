@@ -15,6 +15,7 @@
   --font-display: "Montserrat", sans-serif;
   --font-body: "DM Sans", sans-serif;
   --font-nav: 1rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --scroll-thumb: #918b8f;
   --scroll-track: #efede9;
   --scroll-hover: #686168;
@@ -170,11 +171,10 @@ article[id] {
   padding-block: 9px;
   border-bottom: 1px solid #aaa29c;
   transition:
-    gap 0.2s,
-    color 0.2s;
+    color 0.2s,
+    border-color 0.2s;
 }
 .arrow-link:hover {
-  gap: 25px;
   color: #755500;
   border-color: #a27a16;
 }
@@ -326,7 +326,7 @@ article[id] {
   margin-top: 5px;
 }
 .caption-location {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -2222,7 +2222,7 @@ address {
   padding: 16px 26px;
   border: 1px solid transparent;
   border-radius: 2px;
-  font: 700 11px/1.55 var(--font-display);
+  font: 700 13px/1.55 var(--font-display);
   letter-spacing: 0.065em;
   text-transform: uppercase;
   transition:
@@ -2482,7 +2482,7 @@ address {
 }
 .service-card-copy .arrow-link {
   margin-top: auto;
-  font-size: 12px;
+  font-size: 14px;
 }
 .secondary-services {
   display: grid;
@@ -2570,10 +2570,10 @@ address {
   font-weight: 600;
 }
 .section {
-  padding-block: 112px;
+  padding-block: clamp(64px, 6.5vw, 96px);
 }
 .section-heading {
-  margin-bottom: 48px;
+  margin-bottom: 36px;
 }
 .arrow-link {
   border-bottom-color: #adb0ba;
@@ -2691,11 +2691,11 @@ address {
 }
 .contact-band {
   background: var(--yellow);
-  padding-block: 64px;
+  padding-block: 30px;
   border: 0;
 }
 .contact-band h2 {
-  font-size: clamp(32px, 3.8vw, 54px);
+  font-size: clamp(26px, 2.4vw, 34px);
   font-weight: 700;
 }
 .contact-band .button-yellow {
@@ -2707,7 +2707,7 @@ address {
   background: #41485d;
 }
 .page-intro {
-  padding-block: 94px 62px;
+  padding-block: 72px 48px;
 }
 .page-intro > .eyebrow::before {
   content: "";
@@ -2762,7 +2762,7 @@ address {
   letter-spacing: -0.025em;
 }
 .caption-location {
-  font-size: 10px;
+  font-size: 12px;
 }
 .image-arrow {
   background: var(--yellow);
@@ -2831,7 +2831,7 @@ address {
   padding: 30px 24px;
 }
 .site-footer {
-  padding-top: 76px;
+  padding-top: 56px;
 }
 .footer-top {
   gap: 48px;
@@ -3102,7 +3102,7 @@ address {
     gap: 34px;
   }
   .contact-band {
-    padding-block: 48px;
+    padding-block: 26px;
   }
   .page-intro {
     padding-block: 60px 40px;
@@ -3210,6 +3210,56 @@ address {
   .film-title h3 {
     font-size: 22px;
   }
+}
+/* Shared interaction polish: short responses, no perpetual decoration. */
+.arrow-link svg,
+.footer-links a,
+.footer-contact a,
+.main-nav .nav-contact svg,
+.filter-tabs button,
+.menu-toggle,
+.leaders summary {
+  transition: transform 240ms var(--ease-out), color 180ms, background-color 180ms;
+}
+.arrow-link:is(:hover, :focus-visible) svg,
+.main-nav .nav-contact:is(:hover, :focus-visible) svg {
+  transform: translate(3px, -3px);
+}
+.footer-links a:is(:hover, :focus-visible) {
+  transform: translateX(4px);
+}
+.filter-tabs button:is(:hover, :focus-visible):not(.selected) {
+  background: #e4e6eb;
+}
+.project-card:focus-within .project-image img,
+.home-service-card:focus-within .service-card-photo img {
+  transform: scale(1.04);
+}
+.leaders summary:hover { color: #806600; }
+.leaders details[open] > :not(summary) {
+  animation: detail-arrive 280ms var(--ease-out);
+}
+@keyframes detail-arrive {
+  from { opacity: 0.4; transform: translateY(5px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes menu-arrive {
+  from { opacity: 0.5; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+@media (max-width: 1100px) {
+  .main-nav.is-open { animation: menu-arrive 240ms var(--ease-out); }
+  .main-nav.is-open > a { animation: detail-arrive 320ms var(--ease-out) backwards; }
+  .main-nav.is-open > a:nth-child(2) { animation-delay: 25ms; }
+  .main-nav.is-open > a:nth-child(3) { animation-delay: 50ms; }
+  .main-nav.is-open > a:nth-child(4) { animation-delay: 75ms; }
+  .main-nav.is-open > a:nth-child(5) { animation-delay: 100ms; }
+  .main-nav.is-open > a:nth-child(6) { animation-delay: 125ms; }
+}
+@media (max-width: 760px) {
+  .contact-band > .container { gap: 18px; }
+  .contact-band h2 { font-size: 26px; }
+  .contact-band .button { min-height: 46px; padding: 12px 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *,
