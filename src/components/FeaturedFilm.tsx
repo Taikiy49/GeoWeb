@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { image } from "../data/site";
@@ -46,23 +46,42 @@ export function FeaturedFilm() {
   const [playing, setPlaying] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
+  const video = useRef<HTMLVideoElement>(null);
+  const retry = useRef<HTMLButtonElement>(null);
+  const transferFocus = useRef(false);
   const frame = frames[selected];
+  useLayoutEffect(() => {
+    const button = buttons.current[selected];
+    const strip = button?.parentElement;
+    if (!button || !strip) return;
+    const center = () => {
+      const buttonBounds = button.getBoundingClientRect();
+      const stripBounds = strip.getBoundingClientRect();
+      strip.scrollTo({
+        left: strip.scrollLeft + buttonBounds.left - stripBounds.left
+          - (strip.clientWidth - buttonBounds.width) / 2,
+        behavior: "instant",
+      });
+    };
+    center();
+    const observer = "ResizeObserver" in window ? new ResizeObserver(center) : undefined;
+    observer?.observe(strip);
+    return () => observer?.disconnect();
+  }, [selected]);
+  useEffect(() => {
+    if (!transferFocus.current) return;
+    const target = playing ? video.current : videoError ? retry.current : null;
+    if (target) {
+      target.focus({ preventScroll: true });
+      transferFocus.current = false;
+    }
+  }, [playing, videoError]);
   const select = (index: number, focus = false) => {
     const next = (index + frames.length) % frames.length;
     setSelected(next);
     setPlaying(false);
     setVideoError(false);
-    const button = buttons.current[next];
-    const strip = button?.parentElement;
-    if (button && strip) {
-      strip.scrollTo({
-        left:
-          button.offsetLeft -
-          strip.offsetLeft -
-          (strip.clientWidth - button.clientWidth) / 2,
-        behavior: "instant",
-      });
-    }
+    transferFocus.current = false;
     if (focus) buttons.current[next]?.focus({ preventScroll: true });
   };
   return (
@@ -77,6 +96,7 @@ export function FeaturedFilm() {
         </div>
         <div
           className="film-viewer"
+          role="region"
           aria-roledescription="carousel"
           aria-label="Featured project photography and video"
         >
@@ -89,6 +109,8 @@ export function FeaturedFilm() {
           >
             {playing && frame.video ? (
               <video
+                ref={video}
+                tabIndex={0}
                 className="film-media"
                 src="/videos/ala-moana-walkway.mp4"
                 poster={image(frame.image)}
@@ -96,6 +118,7 @@ export function FeaturedFilm() {
                 autoPlay
                 playsInline
                 onError={() => {
+                  transferFocus.current = transferFocus.current || document.activeElement === video.current;
                   setPlaying(false);
                   setVideoError(true);
                 }}
@@ -117,7 +140,10 @@ export function FeaturedFilm() {
                 {frame.video && !videoError && (
                   <button
                     className="film-play"
-                    onClick={() => setPlaying(true)}
+                    onClick={() => {
+                      transferFocus.current = true;
+                      setPlaying(true);
+                    }}
                     aria-label="Play Ala Moana walkway video"
                   >
                     <Play size={30} fill="currentColor" />
@@ -128,7 +154,9 @@ export function FeaturedFilm() {
                   <p className="film-error" role="status">
                     Video could not load.{" "}
                     <button
+                      ref={retry}
                       onClick={() => {
+                        transferFocus.current = true;
                         setVideoError(false);
                         setPlaying(true);
                       }}
@@ -166,7 +194,7 @@ export function FeaturedFilm() {
             </div>
           </div>
         </div>
-        <div className="filmstrip" aria-label="Choose a featured project">
+        <div className="filmstrip" role="group" aria-label="Choose a featured project">
           {frames.map((item, index) => (
             <button
               ref={(el) => {

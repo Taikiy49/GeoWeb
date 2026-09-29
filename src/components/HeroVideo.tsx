@@ -4,37 +4,66 @@ import { ArrowUpRight, Pause, Play } from "lucide-react";
 
 export function HeroVideo() {
   const video = useRef<HTMLVideoElement>(null);
+  const hero = useRef<HTMLElement>(null);
   const [reducedMotion, setReducedMotion] = useState(
     () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   );
   const [playing, setPlaying] = useState(false);
   const [failed, setFailed] = useState(false);
+  const wantsPlayback = useRef(!reducedMotion);
+  const syncPlayback = useRef<() => void>(() => {});
 
   useEffect(() => {
+    const player = video.current;
+    const section = hero.current;
+    if (!player || !section) return;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let visible = !("IntersectionObserver" in window);
+    let disposed = false;
+    const sync = () => {
+      if (wantsPlayback.current && visible && !document.hidden) {
+        if (player.paused) {
+          void player.play().catch(() => {
+            if (!disposed) setPlaying(false);
+          });
+        }
+      } else player.pause();
+    };
+    syncPlayback.current = sync;
     const update = () => {
       setReducedMotion(preference.matches);
-      if (preference.matches) video.current?.pause();
+      if (preference.matches) wantsPlayback.current = false;
+      sync();
     };
+    const observer = "IntersectionObserver" in window
+      ? new IntersectionObserver(([entry]) => {
+          visible = entry.isIntersecting;
+          sync();
+        })
+      : undefined;
+    observer?.observe(section);
+    sync();
     preference.addEventListener("change", update);
-    return () => preference.removeEventListener("change", update);
-  }, []);
+    document.addEventListener("visibilitychange", sync);
+    return () => {
+      disposed = true;
+      observer?.disconnect();
+      preference.removeEventListener("change", update);
+      document.removeEventListener("visibilitychange", sync);
+      syncPlayback.current = () => {};
+      player.pause();
+    };
+  }, [failed]);
 
-  const togglePlayback = async () => {
+  const togglePlayback = () => {
     const player = video.current;
     if (!player) return;
-    if (!player.paused) player.pause();
-    else {
-      try {
-        await player.play();
-      } catch {
-        setPlaying(false);
-      }
-    }
+    wantsPlayback.current = player.paused;
+    syncPlayback.current();
   };
 
   return (
-    <section className="hero" aria-label="Geolabs geotechnical engineering">
+    <section ref={hero} className="hero" aria-label="Geolabs geotechnical engineering">
       {failed ? (
         <img
           className="hero-video"
@@ -48,7 +77,6 @@ export function HeroVideo() {
           className="hero-video"
           src="/videos/geolabs-cover.mp4"
           poster="/images/geolabs-cover-poster.webp"
-          autoPlay={!reducedMotion}
           muted
           loop
           playsInline

@@ -26,3 +26,6 @@ dist-ssr
 *.tsbuildinfo
 .vercel
 .env*
+
+# Local visual-review captures
+.impeccable/review/

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-29T10:55:00.836778+00:00",
+  "title": "Design System: Geolabs",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Geolabs slate",
+        "tonalRamp": [
+          "#1d2232",
+          "#242938",
+          "#2d3142",
+          "#41485c",
+          "#606676",
+          "#a1a6b5",
+          "#cbd0db",
+          "#e8eaf0"
+        ]
+      },
+      "yellow": {
+        "role": "secondary",
+        "displayName": "Anniversary yellow",
+        "tonalRamp": [
+          "#62572c",
+          "#695108",
+          "#806000",
+          "#d8c779",
+          "#f4cd00",
+          "#ffdf2d",
+          "#fbf8e9",
+          "#ffffff"
+        ]
+      }
+    },
+    "motion": [
+      {
+        "name": "Entrance easing",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Short interruptible scroll and interaction motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "menu",
+        "value": "1150px"
+      },
+      {
+        "name": "columns",
+        "value": "900px"
+      },
+      {
+        "name": "mobile",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "description": "A clear primary action with a comfortable target.",
+      "html": "<button class=\"ds-button\">Explore our services</button>",
+      "css": ".ds-button {min-height:52px;padding:14px 24px;border:1px solid transparent;border-radius:2px;background:#f4cd00;color:#2d3142;font:600 14px/1.4 \"DM Sans\",sans-serif;cursor:pointer;transition:filter 180ms} .ds-button:hover {filter:brightness(1.08)} .ds-button:focus-visible {outline:3px solid #806000;outline-offset:5px} .ds-button:active {transform:translateY(1px)}"
+    },
+    {
+      "name": "Slate action",
+      "kind": "button",
+      "description": "A clear primary action with a comfortable target.",
+      "html": "<button class=\"ds-button\">Explore our services</button>",
+      "css": ".ds-button {min-height:52px;padding:14px 24px;border:1px solid transparent;border-radius:2px;background:#2d3142;color:#ffffff;font:600 14px/1.4 \"DM Sans\",sans-serif;cursor:pointer;transition:filter 180ms} .ds-button:hover {filter:brightness(1.08)} .ds-button:focus-visible {outline:3px solid #806000;outline-offset:5px} .ds-button:active {transform:translateY(1px)}"
+    },
+    {
+      "name": "Project search",
+      "kind": "input",
+      "description": "An open search field above the photographic archive.",
+      "html": "<input class=\"ds-search\" type=\"search\" aria-label=\"Search projects\" placeholder=\"Find a project\">",
+      "css": ".ds-search {min-height:48px;padding:10px 12px;border:0;border-bottom:1px solid #d9dce2;background:transparent;color:#2d3142;font:16px \"DM Sans\",sans-serif;caret-color:#2d3142}.ds-search::placeholder{color:#606676}.ds-search:focus-visible{outline:3px solid #806000;outline-offset:5px}"
+    },
+    {
+      "name": "Category filter",
+      "kind": "button",
+      "description": "A pressed text filter with a yellow underline.",
+      "html": "<button class=\"ds-filter\" aria-pressed=\"true\">All projects</button>",
+      "css": ".ds-filter{min-height:44px;border:0;border-bottom:3px solid #f4cd00;background:none;color:#2d3142;font:500 14px \"DM Sans\",sans-serif;cursor:pointer}.ds-filter:hover{color:#806000}.ds-filter:focus-visible{outline:3px solid #806000;outline-offset:5px}"
+    },
+    {
+      "name": "Text action",
+      "kind": "custom",
+      "description": "Quiet supporting navigation.",
+      "html": "<a class=\"ds-link\" href=\"#\">Explore this project <span aria-hidden=\"true\">\u2197</span></a>",
+      "css": ".ds-link{display:inline-flex;gap:24px;align-items:center;min-height:44px;border-bottom:1px solid #d9dce2;text-decoration:none;color:#2d3142;font:600 15px \"DM Sans\",sans-serif}.ds-link:hover{border-color:#2d3142}.ds-link:focus-visible{outline:3px solid #806000;outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The work carries the identity.",
+    "overview": "Authentic project photography, original Geolabs branding, open layouts and short motion.",
+    "keyCharacteristics": [
+      "Original Geolabs colors, logos, Wix media, and project associations.",
+      "Photographs take precedence over decorative interface containers."
+    ],
+    "rules": [],
+    "dos": [
+      "Preserve factual content, draft warnings and authentic media."
+    ],
+    "donts": [
+      "Do not reintroduce the yellow contact banner."
+    ]
+  }
+}

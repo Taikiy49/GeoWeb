@@ -490,7 +490,7 @@ function Projects() {
       </PageIntro>
       <section className="container portfolio">
         <div className="portfolio-toolbar">
-          <div className="filter-tabs" aria-label="Filter projects by market">
+          <div className="filter-tabs" role="group" aria-label="Filter projects by market">
             {markets.map((m) => (
               <button
                 key={m}
@@ -505,6 +505,9 @@ function Projects() {
           <div className="search-field">
             <Search size={18} />
             <input
+              type="search"
+              name="project-search"
+              autoComplete="off"
               aria-label="Search projects"
               placeholder="Find a project"
               value={query}
@@ -695,28 +698,30 @@ function Awards() {
           recognition spanning decades.
         </p>
       </PageIntro>
-      <div className="container awards-photo">
-        <Photo
-          eager
-          name="awards"
-          alt="Geolabs colleagues at an engineering awards ceremony"
-        />
+      <div className="container awards-layout">
+        <div className="awards-photo">
+          <Photo
+            eager
+            name="awards"
+            alt="Geolabs colleagues at an engineering awards ceremony"
+          />
+        </div>
+        <section className="awards-list">
+          {awards.map(([year, project, award, body]) => (
+            <article key={project}>
+              <span className="award-year">{year}</span>
+              <div>
+                <h2>{project}</h2>
+                <p>{award}</p>
+                <span>{body}</span>
+              </div>
+              <span className="award-mark" aria-hidden="true">
+                ✳
+              </span>
+            </article>
+          ))}
+        </section>
       </div>
-      <section className="container awards-list">
-        {awards.map(([year, project, award, body]) => (
-          <article key={project}>
-            <span className="award-year">{year}</span>
-            <div>
-              <h2>{project}</h2>
-              <p>{award}</p>
-              <span>{body}</span>
-            </div>
-            <span className="award-mark" aria-hidden="true">
-              ✳
-            </span>
-          </article>
-        ))}
-      </section>
     </>
   );
 }

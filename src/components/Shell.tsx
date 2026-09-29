@@ -21,6 +21,7 @@ export function Shell() {
   const location = useLocation();
   usePageMotion(location.pathname + location.search);
   const menuButton = useRef<HTMLButtonElement>(null);
+  const header = useRef<HTMLElement>(null);
   useEffect(() => {
     setOpen(false);
     if (!location.hash) {
@@ -39,15 +40,35 @@ export function Shell() {
         menuButton.current?.focus();
       }
     };
+    const closeOutside = (event: Event) => {
+      if (event.target instanceof Node && !header.current?.contains(event.target)) {
+        setOpen(false);
+      }
+    };
     window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
+    document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("focusin", closeOutside);
+    return () => {
+      window.removeEventListener("keydown", close);
+      document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("focusin", closeOutside);
+    };
   }, [open]);
   return (
     <>
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <header className="site-header">
+      <header
+        ref={header}
+        className="site-header"
+        onClick={(event) => {
+          if (open && event.target instanceof Element && event.target.closest("a")) {
+            setOpen(false);
+            menuButton.current?.focus({ preventScroll: true });
+          }
+        }}
+      >
         <div className="header-inner">
           <Brand />
           <button

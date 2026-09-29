@@ -3,10 +3,12 @@ import { useEffect, useRef } from "react";
 /** Progressive enhancement: content stays visible if observation or motion is unavailable. */
 export function usePageMotion(route: string) {
   const previousRoute = useRef<string>();
+  const revealed = useRef(new WeakSet<Element>());
   useEffect(() => {
     const path = route.split("?")[0];
     const filtering = previousRoute.current !== route
       && previousRoute.current?.split("?")[0] === path;
+    if (previousRoute.current?.split("?")[0] !== path) revealed.current = new WeakSet();
     previousRoute.current = route;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const animations = new Set<Animation>();
@@ -23,6 +25,8 @@ export function usePageMotion(route: string) {
             if (!entry.isIntersecting) return;
             observer?.unobserve(entry.target);
             const element = entry.target;
+            if (revealed.current.has(element)) return;
+            revealed.current.add(element);
             const isGallery = element.matches(".project-card, .home-service-card, .leaders article, .benefits-grid article, .awards-list article, .office-list article, .three-columns article");
             const isPhoto = element.matches("img, .film-viewer, .panorama, .project-cover, .detail-hero");
             const isText = element.matches("h1, h2, h3, p, li, .eyebrow");
@@ -54,7 +58,7 @@ export function usePageMotion(route: string) {
         .querySelectorAll(
           filtering
             ? "main .project-card"
-            : "main h1, main h2, main h3, main p, main li, main .eyebrow, main img, main .button, main .arrow-link, main .film-viewer, main .filmstrip, .footer-top h2, .footer-top p, .footer-links a, .footer-contact a",
+            : "main .project-card, main .home-service-card, main .service-card, main .leaders article, main .benefits-grid article, main .awards-list article, main .office-list article, main .three-columns article, main h1, main h2, main h3, main p, main li, main .eyebrow, main img, main .button, main .arrow-link, main .film-viewer, main .filmstrip, .footer-top h2, .footer-top p, .footer-links a, .footer-contact a",
         ));
       // Hero and film media already have authored motion. Keep numbers under
       // CountUp's ownership, and do not replay UI labels during search updates.

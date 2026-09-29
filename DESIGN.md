@@ -1,14 +1,15 @@
 ---
 version: alpha
 name: Geolabs
-description: A professional engineering portfolio grounded in authentic Wix photography and original Geolabs branding.
+description: A photographic engineering portfolio with precise, open layouts and restrained motion.
 colors:
   primary: "#2d3142"
-  muted: "#626774"
   yellow: "#f4cd00"
-  soft: "#f5f6f7"
   white: "#ffffff"
-  line: "#dddfe4"
+  muted: "#606676"
+  soft: "#f3f4f5"
+  line: "#d9dce2"
+  focus: "#806000"
 typography:
   display:
     fontFamily: "Montserrat, sans-serif"
@@ -17,124 +18,87 @@ typography:
 rounded:
   DEFAULT: "2px"
 spacing:
-  section-gap: "64–96px responsive"
-  page-max: "1280px"
+  page-max: "1360px"
 components:
   button:
     height: "52px"
     backgroundColor: "{colors.primary}"
     textColor: "{colors.white}"
-  card:
-    backgroundColor: "{colors.soft}"
-    textColor: "{colors.muted}"
   accent-button:
     backgroundColor: "{colors.yellow}"
     textColor: "{colors.primary}"
-  divider:
-    backgroundColor: "{colors.line}"
 ---
 
 # Geolabs Design System
 
 ## Overview
 
-### Creative North Star
+**Creative North Star: “The work carries the identity.”**
 
-An established engineering firm presented through its real work: centered uppercase Montserrat 800 hero typography, deep slate and signal yellow from the latest user reference, exact original anniversary artwork, and generous, consistent space. The signature is a full-bleed, muted looping video hero using the same Geolabs drilling footage as the Wix homepage. The title is manually broken into two bold lines with a lighter drilling-services line. A visible play/pause control accompanies it. The Home (New) filmstrip follows the hero, with a large project viewer, perforated thumbnails, and original HDOT walkway footage. The latest supplied screenshot governs the masthead and centered composition. A single navigation row places the original anniversary logo at the left; the earlier utility text is preserved in the footer. Interior service pages use open alternating photo/text rows, and projects use a generous two-column gallery. The user explicitly requested this complete visual revision; the prior invented logo and editorial taglines are retired.
+Present an established engineering firm through authentic project and field photography. The slate masthead, original anniversary artwork, yellow active accents, and transparent G mark supply the identity. Open layouts, strong type hierarchy, and quiet separators supply the structure. Each page responds to its material: photographic archives, service spreads, portraits, chronological awards, or practical office information.
 
-### Product context and register
+**Key Characteristics:**
 
-Brand/marketing register. Clients, consultants, and job seekers in Hawaiʻi and the Pacific need to understand capabilities, find relevant experience, contact an office, or apply. English with Hawaiian place names; this is not a Japan-market product. Desktop research and mobile contact lookup are primary scenes. Wix's saved editor pages and CMS records are the content source; user requested a full visual replacement and careers portal integration.
+- Original Geolabs colors, logos, Wix media, and project associations.
+- Photographs take precedence over decorative interface containers.
+- Short, readable motion with distinct ownership for text, images, statistics, and video.
+- Shared controls and typography across every public and draft route.
 
-Avoid outdated boxed layouts, generic technology gradients, excessive pills, stock-image substitutions, and decorative dashboards. Quiet utility wins in contact information and search.
-
-Runtime token ownership: `src/index.css` is canonical. Its `:root` variables map directly to the colors above (`--ink` maps to `colors.primary`) and to `--font-display` / `--font-body`. This document mirrors that source. Shared owners are `Shell.tsx` for navigation, `Photo`, `ArrowLink`, `ProjectCard`, and `PageIntro` in `App.tsx`. Changes to global identity update this document and CSS together. No generated token adapter or competing Tailwind theme is used.
+`src/index.css` owns the runtime tokens and canonical styles. Shared behavior lives in `Shell`, `FeaturedFilm`, `HeroVideo`, `CountUp`, and `usePageMotion`; shared page primitives live in `App.tsx`. This document replaces the accumulated refinement notes. Product truth is recorded in PRODUCT.md; this pass's rationale and verification are in docs/redesign-audit.md.
 
 ## Colors
 
-Ink owns text, navigation, service sections, and footer. Yellow identifies primary actions and emphasis; it always carries dark text. White and soft alternate broad page sections; line separates editorial rows. Muted is secondary body text. Visible ochre focus outlines remain distinct from yellow accents. Light theme only; forced-colors uses system scrollbars.
+Slate anchors navigation, footer, and career/inquiry panels. Yellow identifies primary actions, selected navigation, and original artwork. White and cool gray alternate by content group, not on every section. Muted text remains readable against both light surfaces. Dark panels use lighter slate-tinted text and yellow keyboard outlines; light surfaces use the dark gold focus token.
+
+**The Brand Rule.** Keep the supplied palette and artwork. Gradients are limited to readability scrims over actual imagery and the physical film-thumbnail treatment; they are not decorative section backgrounds.
 
 ## Typography
 
-Self-hosted Montserrat 500/600/700/800 for headings, DM Sans 400/500/600 for content and controls. Body copy is generally 16px with 1.8 line height. Long case-study prose has a constrained measure. Main navigation uses a consistent 1rem (16px) desktop size and 1.125rem (18px) collapsed-menu size, with Montserrat 700 and 0.04em tracking. Small uppercase tracking is reserved for short labels. Hawaiian diacritics use the font package's extended character support and sans-serif fallback.
+Self-hosted Montserrat provides headings and navigation; DM Sans handles reading and utility text. Desktop body text is 17px, narrow mobile 16px, with 1.7–1.75 line height. Introductory summaries use 19–21px. Display headings scale with the viewport; desktop navigation is 17px, uppercase and bold. Mobile navigation uses larger sentence-case links. Reading columns stop at 70ch.
+
+Secondary text is typically 14–16px. Small photo credits, location labels, and utility metadata use 11–13px; they never replace core information. Preserve approved wording, punctuation and Hawaiian place names. Casing and line wrapping are presentation choices.
 
 ## Layout
 
-Maximum content width 1280px; desktop side gutters 56px. At 1100px navigation becomes a nonmodal collapsible list. At 760px major grids become one column, gutters reduce to 20px, and section spacing reduces. Main document owns scrolling. Image aspect ratios reserve card geometry; detail images have fixed responsive heights. Search results are deliberately rendered in full (30 projects) with lazy images.
+The content width is bounded by the page-max token, with fluid gutters and 60px mobile / 64–104px larger section spacing. Interior titles and summaries share a two-column introduction on large screens and stack below 900px.
+
+- Home retains the centered documentary video hero and physical filmstrip, followed by facts, the firm introduction, asymmetric services, a field-team spread, and recognition.
+- Services alternate real photographs with explanatory copy. Service details use a readable article and capability index.
+- Projects use three columns with a two-column opening photograph, two equal columns below 900px, and one column below 640px. Search and category filters remain directly above results.
+- People combine individual portraits and names, with credentials in native disclosures. Phones use one profile per row.
+- Awards pair a sticky ceremony photograph with a chronological list; phones stack the photograph above the list.
+- Contact groups the inquiry panel and regional office directory; careers pairs the field team with a slate introduction.
+
+The menu switches at 1150px. Main content adaptations occur at 900px and 640px, with a 360px refinement for narrow phones. The anniversary panel overhang is exactly 12px desktop/tablet and 10px mobile. Do not change it as part of general spacing adjustments.
 
 ## Elevation & Depth
 
-Tonal sections, open photographic rows, and deliberate whitespace establish hierarchy. Shadows are limited to the masthead and film viewer. Hero overlay exists solely for text contrast; sticky charcoal navigation with a yellow anniversary-logo panel sits above content. Draft warnings occupy document flow.
+Use thin separators for meaningful groups, not boxes around everything. Only the overhanging logo and expanded navigation need soft offset shadows. The filmstrip's selected thumbnail uses a yellow selection edge. No generic floating cards or repeated contact banner.
 
 ## Shapes
 
-Photography and controls use subtle 2px corners; open photographic layouts replace boxed service cards. Circular controls are reserved for media playback and carousel navigation. Original brand assets retain their original proportions and colors.
+Keep photographic frames rectangular and buttons nearly square. Circular controls are reserved for media play and previous/next actions. The menu toggle is borderless except in forced-colors mode. Preserve useful native input, disclosure, and video affordances.
 
 ## Components
 
-### Foundational visual states
+- Navigation: a yellow active underline on desktop, large links in a responsive dropdown, visible keyboard focus, Escape dismissal, current-link dismissal, and dismissal when focus or a pointer leaves the header.
+- Buttons: 52px minimum primary control height, clear focus rings, small arrow movement on hover/focus, and an immediate press response.
+- Project filters: wrapping text controls with a yellow active underline, `aria-pressed`, and URL-backed state. Search is a labeled native search input with a clear action and live result count.
+- Project links: whole photographic entries are clickable; restrained image zoom and persistent arrows make navigation obvious on touch and keyboard.
+- Filmstrip: original Wix-selected imagery and HDOT video, manual previous/next, keyboard arrow/Home/End selection, centered active thumbnail, playback focus transfer, and a retry state.
+- Video: hero plays muted when visible, pauses offscreen/in background tabs, and remembers manual pause intent. Reduced motion starts paused; the user can explicitly play it.
+- Disclosures: native `details`/`summary`, generous targets, short icon rotation, and a 220ms content entrance.
 
-All links/buttons are native controls with pointer, hover and visible focus. Pressed buttons shift one pixel; selected market filters invert to ink. Disabled controls reduce opacity and use a not-allowed cursor. Warning state is a labeled draft notice. No remote mutations, toasts, or loading spinners are needed: content is bundled locally. Empty search and unknown routes provide explicit recovery actions.
+**The Motion Ownership Rule.** A block or its descendants may reveal, never both. Card groups reveal as a unit; standalone headings, paragraphs, lists, and images reveal independently. Text moves 8px over 420ms, card groups 14px, photography settles over 600ms; sibling delays stop at 135ms. Retained results do not replay when typing. Film transitions use 460ms and menu entry 240ms. All animation starts from already-visible content, never changes document flow, and cancels on route cleanup or reduced-motion preference changes.
 
-### Buttons and actions
-
-A yellow outlined primary action on the hero, solid yellow on dark sections, and slate on white; text links have a fine underline and directional arrow. The hero also offers an outlined contact link. CTA labels describe destinations. Careers buttons link to the external careers portal. Contact buttons are actual mail/telephone links, not simulated submissions.
-
-### Navigation and data display
-
-One shared shell across all routes. NavLink indicates current route. Mobile navigation is nonmodal, closes on route change or Escape, and restores menu-button focus on Escape. Route changes focus the main landmark. Project filters are buttons with aria-pressed, not ARIA tabs; search and filters persist in query parameters. Breadcrumbs link back to collections.
-
-### Forms and overlays
-
-The only local field is instant project search with a named clear control and no-results state. No account, booking, payment, or resume forms. Applications and resume uploads are handled on careers.geolabs.net. Native details provides leadership credential disclosure.
-
-### Iconography
-
-Lucide outline icons, usually 17–25px. Icons accompany text except explicitly labeled mobile and search buttons.
-
-### Motion
-
-Short 200ms navigation/action feedback, restrained photographic zoom, and a muted looping background video. Reduced-motion disables animation and transitions and uses immediate scrolling. Reduced-motion preferences suppress video autoplay and show a frame from the actual clip; visitors can explicitly start playback. A visible native button pauses or resumes the video. Section headings, cards, and editorial blocks reveal on entry with short fade-and-rise animations; hero title lines reveal through a mask in sequence. Search updates animate only the result cards, keeping the heading stable. Content stays readable without animation support. The featured filmstrip is manually operated, supports arrow/Home/End keys, and resets video playback when the selected project changes. No autoplay carousel.
-
-### Content and data visualization
-
-Page headings use direct source-based names. Homepage company copy comes from Home (New) and About Us (New), with encoding and punctuation normalized. Technical service text may be condensed from Wix without adding capabilities or claims. Distinguish general project descriptions from documented Geolabs scope. Conflicting or unfinished material stays in the archived source; draft pages visibly identify unverified content. No charts.
-
-### Brand and photography
-
-`public/brand/geolabs-50th-anniversary.png` is the unmodified original Wix transparent anniversary artwork used in the top-left navigation. `geolabs-g.png` is the original G/auger/hammer mark used in the footer and favicon. Asset provenance is in `docs/refinement-asset-sources.json` in addition to the original migration manifests. Photo subjects were visually inspected: drilling uses the actual CME-75 rig, testing uses a concrete core, geotechnical services use Pali slope mitigation, construction uses Hoopili earthwork, and careers uses the field crew. Project images stay paired with their named projects. No generated images or invented logos.
+Statistics retain the final value for assistive technology and reserve the final number's width. Count-ups run once when visible. Reduced-motion disables entrances, transitions and counting without hiding content.
 
 ## Do's and Don'ts
 
-- Do use actual Wix project images and retain stated photo credits.
-- Do keep all job application paths on the careers portal.
-- Don't treat draft text as verified project experience.
-- Don't introduce a second navigation or design system for individual pages.
-
-## Reference-led refinement
-
-The September 28, 2026 user screenshot supersedes the earlier charcoal interpretation: deep slate `#2d3142`, signal yellow `#f4cd00`, and white photographic layouts. Anthropic frontend-design and Stark web-design were read and applied. Decisions, selected references, and verification scope are recorded in `docs/ui-refinement-brief.md`. All source-based wording and media stay unchanged; typography casing and layout are presentation choices.
-
-## Compact layout and motion refinement
-
-Contact strips use 30px desktop / 26px mobile vertical padding and 26–34px headings. Standard sections use responsive 64–96px spacing; page introductions use 72px/48px desktop padding. Shared buttons use readable 13px labels. The larger navigation scale remains unchanged.
-
-Gallery siblings enter with a capped 195ms stagger; photography uses a restrained scale entrance while text uses short translation. Mobile menus open with a 240ms transition and staggered links. Links, filters, disclosure content, and footer navigation give consistent interaction feedback. No continuous decorative effects or extra animation libraries. Reduced-motion preferences cancel active Web Animations and disable CSS animation; route changes clean up observers and animations.
-
-Mobile navigation uses a borderless 44px button with a 28px icon, transparent hover background, yellow hover/focus feedback, and a short press response. Keyboard focus remains visible; forced-colors mode retains its accessibility border.
-
-## Cross-page interaction finish
-
-Project filters use readable 14px desktop / 13px mobile labels with a yellow animated active indicator. Search input is 16px to avoid mobile focus zoom. Footer links are 14px with comfortable mobile hit areas. Leadership credentials use 14px typography and rotating disclosure icons. Image corners consistently use the 2px brand radius. Service-row photos have bounded zoom and linked headings underline on hover/focus. Touch devices retain visible project navigation arrows.
-
-Entrance motion also covers About-page panoramas, culture imagery, audience columns, detail covers, sidebars, and career introductions. Observer targets exclude nested descendants of an animated parent, preventing doubled movement. All transitions retain reduced-motion overrides.
-
-The yellow anniversary panel sits above the navigation surface and overhangs its bottom edge: 12px on desktop/tablet and 10px on mobile. The expanded menu reserves top clearance for that overhang.
-
-Homepage statistics count up once over 1.4 seconds when visible, retaining suffixes and reserving final numeral width. Screen readers receive only the final fact; reduced-motion users see final values without counting.
-
-Scroll text reveals now operate at heading, paragraph, list-item, label, and action level across pages, rather than moving whole multi-paragraph sections at once. Text rises 8px over 420ms with at most 135ms sibling stagger; photographs settle over 600ms. Hero, film playback, statistics, and search controls retain their own motion ownership. Each block reveals once per route visit; text stays visible without scripting and reduced-motion skips reveals.
-
-The repeated yellow “Contact our team” banner has been removed from all pages at the user’s request. Pages flow directly into the existing footer; contact navigation remains in the header and footer. Do not reintroduce that banner during future polish passes.
-
-Homepage readability pass: stronger slate video scrim supports white/yellow text; supporting hero and film text uses 11–14px roles instead of tiny labels. Mobile hero actions have closer grouping, carousel arrows are 44px, and dark surfaces use yellow keyboard-focus outlines. The original footage remains decorative, with its accessible play/pause control preserved.
+- Do preserve authentic photographs, project associations, video credits, and explicit draft warnings.
+- Do keep applications on careers.geolabs.net.
+- Do verify rendered desktop, intermediate and narrow mobile compositions after shared changes.
+- Do edit canonical selectors and update this document instead of appending override layers.
+- Don't reintroduce the removed yellow “Contact our team” banner.
+- Don't substitute generated imagery, new logos, invented copy, or unverified draft claims.
+- Don't add continuous decorative motion, parallax, letter-by-letter text, or animation dependencies.
