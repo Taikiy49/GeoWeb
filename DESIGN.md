@@ -48,7 +48,7 @@ Present an established engineering firm through authentic project and field phot
 
 ## Colors
 
-Slate anchors navigation, footer, and career/inquiry panels. Yellow identifies primary actions, selected navigation, and original artwork. White and cool gray alternate by content group, not on every section. Muted text remains readable against both light surfaces. Dark panels use lighter slate-tinted text and yellow keyboard outlines; light surfaces use the dark gold focus token.
+Slate anchors navigation, footer, interior page mastheads, the People leadership gallery, and career/inquiry panels. Yellow identifies primary actions, selected navigation, and original artwork. White and cool gray alternate by content group, not on every section. Muted text remains readable against both light surfaces. Dark panels use lighter slate-tinted text and yellow keyboard outlines; light surfaces use the dark gold focus token.
 
 **The Brand Rule.** Keep the supplied palette and artwork. Gradients are limited to readability scrims over actual imagery and the physical film-thumbnail treatment; they are not decorative section backgrounds.
 
@@ -60,7 +60,7 @@ Secondary text is typically 14–16px. Small photo credits, location labels, and
 
 ## Layout
 
-The content width is bounded by the page-max token, with fluid gutters and 60px mobile / 64–104px larger section spacing. Interior titles and summaries share a two-column introduction on large screens and stack below 900px.
+The content width is bounded by the page-max token, with fluid gutters and 60px mobile / 64–104px larger section spacing. Interior titles and summaries share a slate two-column introduction on large screens and stack below 900px. White headings, light secondary text and yellow eyebrows carry the homepage palette into interior routes. People continues this surface through the leadership portraits; its team section returns to a light surface.
 
 - Home retains the centered documentary video hero and physical filmstrip, followed by facts, the firm introduction, asymmetric services, a field-team spread, and recognition.
 - Services alternate real photographs with explanatory copy. Service details use a readable article and capability index.

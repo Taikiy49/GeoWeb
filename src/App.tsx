@@ -121,16 +121,20 @@ function PageIntro({
   eyebrow,
   title,
   children,
+  connected = false,
 }: {
   eyebrow: string;
   title: string;
   children?: React.ReactNode;
+  connected?: boolean;
 }) {
   return (
-    <div className="page-intro container">
-      <div className="eyebrow">{eyebrow}</div>
-      <h1>{title}</h1>
-      {children && <div className="intro-description">{children}</div>}
+    <div className={`page-masthead slate-surface${connected ? " page-masthead-connected" : ""}`}>
+      <div className="page-intro container">
+        <div className="eyebrow">{eyebrow}</div>
+        <h1>{title}</h1>
+        {children && <div className="intro-description">{children}</div>}
+      </div>
     </div>
   );
 }
@@ -644,39 +648,41 @@ function People() {
   return (
     <>
       <Meta title="Our people" />
-      <PageIntro eyebrow="OUR PEOPLE" title="Our people">
+      <PageIntro eyebrow="OUR PEOPLE" title="Our people" connected>
         <p>
           Engineers, geologists, field specialists, and employee owners. A team
           dedicated to serving you.
         </p>
       </PageIntro>
-      <section className="container leadership">
-        <div className="section-heading">
-          <h2>Our leadership</h2>
-          <span className="eyebrow">GEOLABS, INC.</span>
-        </div>
-        <div className="leaders">
-          {leaders.map((l) => (
-            <article key={l.name}>
-              <Photo eager name={l.image} alt={l.name} />
-              <h3>{l.name}</h3>
-              <p>{l.role}</p>
-              {l.education && (
-                <details>
-                  <summary>
-                    Education & credentials <Plus size={16} />
-                  </summary>
-                  <div>
-                    {l.education.map((e) => (
-                      <p key={e}>{e}</p>
-                    ))}
-                    <p>{l.registration}</p>
-                    <a href={`mailto:${l.email}`}>{l.email}</a>
-                  </div>
-                </details>
-              )}
-            </article>
-          ))}
+      <section className="slate-surface">
+        <div className="container leadership">
+          <div className="section-heading">
+            <h2>Our leadership</h2>
+            <span className="eyebrow">GEOLABS, INC.</span>
+          </div>
+          <div className="leaders">
+            {leaders.map((l) => (
+              <article key={l.name}>
+                <Photo eager name={l.image} alt={l.name} />
+                <h3>{l.name}</h3>
+                <p>{l.role}</p>
+                {l.education && (
+                  <details>
+                    <summary>
+                      Education & credentials <Plus size={16} />
+                    </summary>
+                    <div>
+                      {l.education.map((e) => (
+                        <p key={e}>{e}</p>
+                      ))}
+                      <p>{l.registration}</p>
+                      <a href={`mailto:${l.email}`}>{l.email}</a>
+                    </div>
+                  </details>
+                )}
+              </article>
+            ))}
+          </div>
         </div>
       </section>
       <section className="section soft-section">

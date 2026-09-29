@@ -45,3 +45,11 @@ Read the user-linked Anthropic frontend-design skill and Stark router/web-design
 `npm run check` passed (TypeScript, ESLint, Vite build). Strict UI audit: zero findings. Design document lint: zero errors/warnings. Browser reviewed desktop hero, film viewer, home services, services, projects, people, and contact. Verified all four leadership portraits loaded. Inspected 390px and 320px hero/navigation. At 320px, service, people, contact, careers, walkway detail, about, awards, and draft routes all had a 309px document width and no overflowing main-content elements.
 
 Verified no-results project search and clear recovery, retained input focus, mobile menu/Escape focus restoration, reduced-motion poster/paused video, film video playback (51.51 seconds) and selection reset. Reduced-motion and viewport emulation restored afterward. Highest-impact visual repairs: simplified the masthead, centered the headline, replaced boxed services with photographic layouts, and stopped search from replaying page-intro motion.
+
+## Slate interior pages — September 29, 2026
+
+Shared interior introductions now use the original #2d3142 slate, white headings, yellow eyebrows and light secondary text. People continues the slate through its leadership portraits and native credential disclosures. Content, photographs, motion and the anniversary logo overhang remain unchanged.
+
+`npm run check` passed. Browser checks covered eight main interior routes at 1440, 768, 390 and 320px (32 route/viewport combinations), plus service and draft detail pages at 1440 and 320px. No horizontal overflow or broken images were found in the main-route matrix. All 21 automated WCAG A/AA scans passed, including an expanded leadership disclosure. Keyboard activation and yellow focus on the disclosure passed; project search and focus styling remained functional. Desktop and mobile screenshots are saved in the local `slate-review` artifact directory. These checks do not constitute screen-reader or physical-device certification.
+
+The Impeccable detector reported only the existing, documented film readability scrim advisory; no new advisory was introduced.
