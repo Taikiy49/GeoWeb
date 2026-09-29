@@ -129,4 +129,4 @@ Project filters use readable 14px desktop / 13px mobile labels with a yellow ani
 
 Entrance motion also covers About-page panoramas, culture imagery, audience columns, detail covers, sidebars, and career introductions. Observer targets exclude nested descendants of an animated parent, preventing doubled movement. All transitions retain reduced-motion overrides.
 
-The yellow anniversary panel sits above the navigation surface and overhangs its bottom edge: 24px on desktop/tablet and 20px on mobile. The expanded menu reserves top clearance for that overhang.
+The yellow anniversary panel sits above the navigation surface and overhangs its bottom edge: 12px on desktop/tablet and 10px on mobile. The expanded menu reserves top clearance for that overhang.
