@@ -120,3 +120,5 @@ The September 28, 2026 user screenshot supersedes the earlier charcoal interpret
 Contact strips use 30px desktop / 26px mobile vertical padding and 26–34px headings. Standard sections use responsive 64–96px spacing; page introductions use 72px/48px desktop padding. Shared buttons use readable 13px labels. The larger navigation scale remains unchanged.
 
 Gallery siblings enter with a capped 195ms stagger; photography uses a restrained scale entrance while text uses short translation. Mobile menus open with a 240ms transition and staggered links. Links, filters, disclosure content, and footer navigation give consistent interaction feedback. No continuous decorative effects or extra animation libraries. Reduced-motion preferences cancel active Web Animations and disable CSS animation; route changes clean up observers and animations.
+
+Mobile navigation uses a borderless 44px button with a 28px icon, transparent hover background, yellow hover/focus feedback, and a short press response. Keyboard focus remains visible; forced-colors mode retains its accessibility border.

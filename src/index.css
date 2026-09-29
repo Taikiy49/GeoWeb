@@ -2180,13 +2180,22 @@ address {
   height: 44px;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ffffff40;
+  border: 0;
   background: transparent;
   color: white;
-  border-radius: 2px;
+  border-radius: 0;
 }
-.menu-toggle:hover {
-  background: #ffffff15;
+.menu-toggle:is(:hover, :focus-visible) {
+  background: transparent;
+  color: var(--yellow);
+}
+.menu-toggle svg {
+  width: 28px;
+  height: 28px;
+  transition: transform 180ms var(--ease-out);
+}
+.menu-toggle:active svg {
+  transform: scale(0.9);
 }
 .utility {
   display: flex;
