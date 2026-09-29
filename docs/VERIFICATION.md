@@ -25,3 +25,9 @@ This is functional and visual browser validation, not a formal WCAG certificatio
 - Narrow validation at 320px: home/about/services/people/awards/contact/careers/drafts/404, all 30 project detail routes and all 5 service detail routes. No document overflow or broken completed images. Eight draft detail pages retained visible warnings and noindex/nofollow metadata, with no overflow.
 - Reduced-motion emulation: photo animation is none, document scroll is auto; emulation and viewport override reset after testing. No console errors in the final preview. Careers links still target the external portal.
 - All 49 photo assets referenced by JSX and content data exist locally. Updated dependency licenses are included. No Wix/Base44 content was modified or published.
+
+## Video homepage and public test domain
+
+- Live Wix DOM exposed a 38.5385-second MP4. Visual comparison confirmed the same drilling footage in the owner-provided YouTube video `tbyqrhBD-hA` (Geolabs cover). The whole clip is retained; 1280px H.264 compression and audio removal reduced it from 29 MB to about 5.3 MB. Poster is an extracted frame, not generated artwork.
+- Browser confirmed muted inline autoplay, play/pause button behavior, readyState 4, and full 38.5385-second duration. Reduced-motion emulation disabled autoplay and kept video paused. At 390 CSS pixels, video playback worked with no horizontal overflow. Emulation and viewport overrides were reset.
+- Vercel production build completed successfully. Project is connected to GitHub main. Wix CNAME for `test.geolabs.net` now targets `d1f338d741962b13.vercel-dns-017.com`; Vercel verification returned configured-correctly, verified, no issues. Original CNAME and rollback instructions are in DEPLOYMENT.md.

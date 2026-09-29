@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
   BrowserRouter,
   Link,
@@ -19,6 +19,7 @@ import {
   X,
 } from "lucide-react";
 import { Shell } from "./components/Shell";
+import { HeroVideo } from "./components/HeroVideo";
 import {
   applyUrl,
   careersUrl,
@@ -153,91 +154,11 @@ function ProjectCard({ project }: { project: Project }) {
     </Link>
   );
 }
-const heroProjects = [
-  {
-    image: "azure",
-    title: "Azure & Sky Ala Moana",
-    location: "Honolulu, Oʻahu",
-    slug: "azure-sky-ala-moana",
-  },
-  {
-    image: "walkway",
-    title: "Ala Moana Elevated Pedestrian Walkway",
-    location: "Honolulu, Oʻahu",
-    slug: "ala-moana-walkway",
-  },
-  {
-    image: "koa-ridge",
-    title: "Koa Ridge",
-    location: "Oʻahu",
-    slug: "koa-ridge",
-  },
-];
 function Home() {
-  const [active, setActive] = useState(0);
-  const featured = heroProjects[active];
   return (
     <>
       <Meta title="Geotechnical engineering & drilling services" />
-      <section
-        className="hero"
-        aria-label="Geolabs introduction and featured projects"
-      >
-        <Photo
-          key={featured.image}
-          eager
-          name={featured.image}
-          alt={`${featured.title}, ${featured.location}`}
-          className="hero-photo"
-        />
-        <div className="hero-shade" />
-        <div className="container hero-content">
-          <div className="eyebrow">
-            <span className="yellow-line" /> ESTABLISHED 1975 · EMPLOYEE-OWNED
-            SINCE 1991
-          </div>
-          <h1>
-            Geotechnical
-            <br />
-            engineering<span>& drilling services</span>
-          </h1>
-          <p>Hawaiʻi · Pacific Basin · California</p>
-          <div className="hero-actions">
-            <Link className="button button-yellow" to="/services">
-              Explore our services <ArrowUpRight size={19} />
-            </Link>
-            <Link className="button button-outline" to="/contact">
-              Contact us <ArrowUpRight size={19} />
-            </Link>
-          </div>
-        </div>
-        <div className="container hero-bottom">
-          <div className="hero-project" aria-live="polite">
-            <span className="eyebrow">FEATURED PROJECT</span>
-            <Link to={`/projects/${featured.slug}`}>
-              {featured.title}
-              <ArrowUpRight size={18} />
-            </Link>
-            <span>{featured.location}</span>
-          </div>
-          <div
-            className="hero-selectors"
-            aria-label="Choose a featured project"
-          >
-            {heroProjects.map((project, i) => (
-              <button
-                key={project.image}
-                onClick={() => setActive(i)}
-                aria-pressed={i === active}
-                aria-label={`Show ${project.title}`}
-              >
-                <Photo name={project.image} alt="" />
-                <span>0{i + 1}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HeroVideo />
       <div className="stats container">
         {[
           ["1975", "Year established"],
@@ -256,7 +177,7 @@ function Home() {
           <span className="eyebrow">ABOUT GEOLABS</span>
           <h2>
             We strive for quality
-            <br />& excellence.
+            <br /> & excellence.
           </h2>
           <ArrowLink to="/about">About our company</ArrowLink>
         </div>

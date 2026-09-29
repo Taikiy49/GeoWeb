@@ -2387,3 +2387,44 @@ address {
     outline: 2px solid Highlight;
   }
 }
+
+/* Original Geolabs cover footage, shared with the Wix homepage. */
+.hero {
+  overflow: hidden;
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+}
+.video-control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 11px 16px;
+  border: 1px solid #ffffff70;
+  border-radius: 6px;
+  background: #172b4355;
+  color: white;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+.video-control:hover {
+  background: #172b43cc;
+}
+.video-control:active {
+  transform: translateY(1px);
+}
+@media (max-width: 440px) {
+  .video-control {
+    font-size: 11px;
+    padding-inline: 12px;
+    gap: 8px;
+  }
+}

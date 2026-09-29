@@ -4,7 +4,7 @@ This public marketing website serves prospective clients and applicants. Source 
 
 - All routes share the shell, original Geolabs branding, design tokens, and responsive behavior. Route changes reset scroll and focus the main landmark; anchor destinations account for the sticky header.
 - Navigation collapses at 760px. Its button exposes expanded state. Escape closes it and restores focus; following a route closes it. The list is nonmodal and remains keyboard accessible.
-- Homepage project selection is manual, never autoplay. Named native buttons expose pressed state, switch the photo and linked caption together, and announce the caption politely. Reduced motion disables the fade.
+- Homepage background video uses the original Geolabs cover footage. It autoplays muted and loops inline when motion is permitted. Reduced-motion preference suppresses autoplay; changing that preference pauses playback. A named native button pauses/resumes playback. The poster is a real frame from the clip, and a YouTube link opens the requested full video.
 - The portfolio renders the complete small local collection. Search and market filters combine and persist in URL parameters; browser Back restores the query. No results offers a clear-filters button; the search clear action restores input focus.
 - Project/service cards lead to individual pages. Breadcrumbs link to owning collections. Unknown routes show the site 404 and a working home link.
 - Leadership credentials use native details/summary. Draft collections and pages display persistent warnings and noindex metadata. Drafts are publicly accessible review content, not authenticated previews.

@@ -40,7 +40,7 @@ components:
 
 ### Creative North Star
 
-An established engineering firm presented through its real work: broad Montserrat headings, restrained navy and gold, exact original anniversary artwork, and generous, consistent space. The signature is a photographic project hero with a manual thumbnail selector and a linked project caption. The Base44 reference informed the clearer hierarchy and photo-led service cards. The user explicitly requested this complete visual revision; the prior invented logo and editorial taglines are retired.
+An established engineering firm presented through its real work: broad Montserrat headings, restrained navy and gold, exact original anniversary artwork, and generous, consistent space. The signature is a full-bleed, muted looping video hero using the same Geolabs drilling footage as the Wix homepage. A visible play/pause control and full-video link accompany it. The Base44 reference informed the clearer hierarchy and photo-led service cards. The user explicitly requested this complete visual revision; the prior invented logo and editorial taglines are retired.
 
 ### Product context and register
 
@@ -94,7 +94,7 @@ Lucide outline icons, usually 17–25px. Icons accompany text except explicitly 
 
 ### Motion
 
-Short 200ms navigation/action feedback, 550ms restrained image zoom, and a 450ms photo fade on explicit hero selection. Reduced-motion disables animation and transitions and uses immediate scrolling. No autoplay carousel.
+Short 200ms navigation/action feedback, 550ms restrained image zoom, and a muted looping background video. Reduced-motion disables animation and transitions and uses immediate scrolling. Reduced-motion preferences suppress video autoplay and show a frame from the actual clip; visitors can explicitly start playback. A visible native button pauses or resumes the video. No autoplay carousel.
 
 ### Content and data visualization
 

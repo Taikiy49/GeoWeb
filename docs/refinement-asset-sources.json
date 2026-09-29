@@ -34,5 +34,18 @@
     "source": "https://www.maui-airport.com/wp-content/uploads/2019/09/maui-airport-ogg.jpg",
     "sourcePage": "Kahului Airport Terminal Complex \u2014 Wix CMS image URL",
     "subject": "Kahului Airport terminal and runways; replaces the incorrectly paired ConRAC photo"
+  },
+  {
+    "file": "public/videos/geolabs-cover.mp4",
+    "source": "https://video.wixstatic.com/video/e7e437_29267eae492d4b29996af47988ee6252/1080p/mp4/file.mp4",
+    "sourcePage": "Live geolabs.net homepage video element",
+    "youtubeReference": "https://www.youtube.com/watch?v=tbyqrhBD-hA",
+    "verification": "38.5385-second drilling montage visually matched to the requested geolabs cover YouTube video",
+    "transformation": "H.264, 1280px width, CRF 26, no audio, faststart; same complete footage"
+  },
+  {
+    "file": "public/images/geolabs-cover-poster.webp",
+    "source": "Same Wix video",
+    "transformation": "Frame at 1 second, 1280px width, WebP quality 85"
   }
 ]
