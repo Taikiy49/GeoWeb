@@ -2117,6 +2117,8 @@ address {
 }
 .brand {
   position: relative;
+  z-index: 1;
+  box-shadow: 0 6px 12px #11152218;
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -2915,8 +2917,8 @@ address {
   }
   .brand {
     width: 235px;
-    height: 78px;
-    min-height: 78px;
+    height: 102px;
+    min-height: 102px;
   }
   .menu-toggle {
     display: flex;
@@ -2928,7 +2930,7 @@ address {
     left: 0;
     right: 0;
     background: var(--ink);
-    padding: 12px 24px 24px;
+    padding: 32px 24px 24px;
     border-top: 1px solid #ffffff26;
     box-shadow: 0 16px 24px #11152220;
     max-height: calc(100svh - 78px);
@@ -2982,8 +2984,8 @@ address {
   }
   .brand {
     width: 216px;
-    height: 72px;
-    min-height: 72px;
+    height: 92px;
+    min-height: 92px;
     padding: 10px 14px;
   }
   .hero {
