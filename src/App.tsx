@@ -18,6 +18,7 @@ import {
   Search,
   X,
 } from "lucide-react";
+import { CountUp } from "./components/CountUp";
 import { Shell } from "./components/Shell";
 import { HeroVideo } from "./components/HeroVideo";
 import { FeaturedFilm } from "./components/FeaturedFilm";
@@ -173,7 +174,7 @@ function Home() {
           ["4", "Regional offices"],
         ].map(([value, label]) => (
           <div key={label}>
-            <strong>{value}</strong>
+            <CountUp value={value} />
             <span>{label}</span>
           </div>
         ))}
