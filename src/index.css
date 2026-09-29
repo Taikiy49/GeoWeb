@@ -1476,9 +1476,7 @@ address {
   width: 54px;
   height: 61px;
   object-fit: contain;
-  background: white;
-  border-radius: 5px;
-  padding: 6px;
+  background: transparent;
 }
 .footer-brand small {
   display: block;
