@@ -60,7 +60,11 @@ function Meta({
     }
     robots.setAttribute(
       "content",
-      draft ? "noindex, nofollow" : "index, follow",
+      draft ||
+        window.location.hostname === "test.geolabs.net" ||
+        window.location.hostname.endsWith(".vercel.app")
+        ? "noindex, nofollow"
+        : "index, follow",
     );
   }, [title, description, draft, pathname]);
   return null;
