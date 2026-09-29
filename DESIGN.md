@@ -134,3 +134,5 @@ The yellow anniversary panel sits above the navigation surface and overhangs its
 Homepage statistics count up once over 1.4 seconds when visible, retaining suffixes and reserving final numeral width. Screen readers receive only the final fact; reduced-motion users see final values without counting.
 
 Scroll text reveals now operate at heading, paragraph, list-item, label, and action level across pages, rather than moving whole multi-paragraph sections at once. Text rises 8px over 420ms with at most 135ms sibling stagger; photographs settle over 600ms. Hero, film playback, statistics, and search controls retain their own motion ownership. Each block reveals once per route visit; text stays visible without scripting and reduced-motion skips reveals.
+
+The repeated yellow “Contact our team” banner has been removed from all pages at the user’s request. Pages flow directly into the existing footer; contact navigation remains in the header and footer. Do not reintroduce that banner during future polish passes.

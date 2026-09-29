@@ -398,23 +398,6 @@ article[id] {
   width: 100%;
   height: auto;
 }
-.contact-band {
-  background: var(--soft);
-  border-top: 1px solid var(--line);
-  padding: 48px 0;
-}
-.contact-band > .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 28px;
-}
-.contact-band .eyebrow {
-  margin-bottom: 7px;
-}
-.contact-band h2 {
-  font-size: 32px;
-}
 /* Shared interior layouts and image treatments. */
 .page-intro {
   padding-block: 70px 48px;
@@ -1318,17 +1301,6 @@ address {
   .recognition > img {
     max-height: none;
     object-fit: contain;
-  }
-  .contact-band {
-    padding-block: 36px;
-  }
-  .contact-band > .container {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 24px;
-  }
-  .contact-band h2 {
-    font-size: 29px;
   }
   .page-intro {
     padding-block: 48px 34px;
@@ -2705,23 +2677,6 @@ address {
 .recognition > img {
   border-radius: 2px;
 }
-.contact-band {
-  background: var(--yellow);
-  padding-block: 30px;
-  border: 0;
-}
-.contact-band h2 {
-  font-size: clamp(26px, 2.4vw, 34px);
-  font-weight: 700;
-}
-.contact-band .button-yellow {
-  background: var(--ink);
-  color: white;
-  border-color: var(--ink);
-}
-.contact-band .button-yellow:hover {
-  background: #41485d;
-}
 .page-intro {
   padding-block: 72px 48px;
 }
@@ -3117,9 +3072,6 @@ address {
     grid-template-columns: 1fr;
     gap: 34px;
   }
-  .contact-band {
-    padding-block: 26px;
-  }
   .page-intro {
     padding-block: 60px 40px;
   }
@@ -3273,9 +3225,6 @@ address {
   .main-nav.is-open > a:nth-child(6) { animation-delay: 125ms; }
 }
 @media (max-width: 760px) {
-  .contact-band > .container { gap: 18px; }
-  .contact-band h2 { font-size: 26px; }
-  .contact-band .button { min-height: 46px; padding: 12px 20px; }
 }
 /* Cross-page finishing: consistent image geometry, readable utility type,
    and feedback shared by pointer and keyboard interactions. */

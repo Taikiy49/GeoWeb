@@ -125,21 +125,6 @@ function PageIntro({
     </div>
   );
 }
-function ContactBand() {
-  return (
-    <section className="contact-band">
-      <div className="container">
-        <div>
-          <span className="eyebrow">GEOLABS, INC.</span>
-          <h2>Contact our team.</h2>
-        </div>
-        <Link className="button button-yellow" to="/contact">
-          Contact us <ArrowUpRight size={19} />
-        </Link>
-      </div>
-    </section>
-  );
-}
 function ProjectCard({ project }: { project: Project }) {
   return (
     <Link className="project-card" to={`/projects/${project.slug}`}>
@@ -287,7 +272,6 @@ function Home() {
           alt="Geolabs colleagues at an engineering awards ceremony"
         />
       </section>
-      <ContactBand />
     </>
   );
 }
@@ -391,7 +375,6 @@ function About() {
           <ArrowLink to="/people">Meet our people</ArrowLink>
         </div>
       </section>
-      <ContactBand />
     </>
   );
 }
@@ -426,7 +409,6 @@ function Services() {
           </Link>
         ))}
       </div>
-      <ContactBand />
     </>
   );
 }
@@ -476,7 +458,6 @@ function ServiceDetail() {
           ))}
         </div>
       </section>
-      <ContactBand />
     </>
   );
 }
@@ -576,7 +557,6 @@ function Projects() {
           <ArrowLink to="/drafts">View draft stories</ArrowLink>
         </div>
       </section>
-      <ContactBand />
     </>
   );
 }
@@ -641,7 +621,6 @@ function ProjectDetail() {
             ))}
         </div>
       </section>
-      <ContactBand />
     </>
   );
 }
@@ -703,7 +682,6 @@ function People() {
           </div>
         </div>
       </section>
-      <ContactBand />
     </>
   );
 }
@@ -739,7 +717,6 @@ function Awards() {
           </article>
         ))}
       </section>
-      <ContactBand />
     </>
   );
 }
