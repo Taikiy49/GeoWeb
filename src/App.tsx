@@ -117,19 +117,31 @@ function Photo({
     />
   );
 }
+function Breadcrumb({ to, label, context }: { to: string; label: string; context: string }) {
+  return (
+    <nav className="container breadcrumb" aria-label="Breadcrumb">
+      <Link to={to}>{label}</Link>
+      <span aria-hidden="true">/</span>
+      <span>{context}</span>
+    </nav>
+  );
+}
 function PageIntro({
   eyebrow,
   title,
   children,
   connected = false,
+  breadcrumb,
 }: {
   eyebrow: string;
   title: string;
   children?: React.ReactNode;
   connected?: boolean;
+  breadcrumb?: React.ReactNode;
 }) {
   return (
-    <div className={`page-masthead slate-surface${connected ? " page-masthead-connected" : ""}`}>
+    <div className={`page-masthead slate-surface${connected ? " page-masthead-connected" : ""}${breadcrumb ? " page-masthead-with-breadcrumb" : ""}`}>
+      {breadcrumb}
       <div className="page-intro container">
         <div className="eyebrow">{eyebrow}</div>
         <h1>{title}</h1>
@@ -583,15 +595,13 @@ function ProjectDetail() {
   return (
     <>
       <Meta title={p.title} description={p.summary} />
-      <div className="container breadcrumb">
-        <Link to="/projects">Projects</Link>
-        <span>/</span>
-        <span>{p.market}</span>
-      </div>
-      <div className="container project-title">
-        <span className="eyebrow">{p.location}</span>
-        <h1>{p.title}</h1>
-        <p>{p.summary}</p>
+      <div className="page-masthead slate-surface">
+        <Breadcrumb to="/projects" label="Projects" context={p.market} />
+        <div className="container project-title">
+          <span className="eyebrow">{p.location}</span>
+          <h1>{p.title}</h1>
+          <p>{p.summary}</p>
+        </div>
       </div>
       <figure className="container project-cover">
         <Photo eager name={p.image} alt={p.title} />
@@ -955,12 +965,11 @@ function DraftDetail() {
   return (
     <>
       <Meta title={`${d.title} — Draft`} draft />
-      <div className="container breadcrumb">
-        <Link to="/drafts">Draft stories</Link>
-        <span>/</span>
-        <span>For review</span>
-      </div>
-      <PageIntro eyebrow="DRAFT · NOT VERIFIED" title={d.title}>
+      <PageIntro
+        eyebrow="DRAFT · NOT VERIFIED"
+        title={d.title}
+        breadcrumb={<Breadcrumb to="/drafts" label="Draft stories" context="For review" />}
+      >
         <p>Unfinished source content, preserved for editorial review.</p>
       </PageIntro>
       <section className="container draft-document">

@@ -214,6 +214,7 @@ section[id], article[id] { scroll-margin-top: 112px; }
 .page-intro { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8%; row-gap: 18px; padding-block: 72px 52px; }
 .page-intro > .eyebrow { grid-column: 1 / -1; margin: 0; color: var(--yellow); }
 .page-intro h1 { align-self: start; }
+.page-masthead-with-breadcrumb .page-intro { padding-top: 28px; }
 .intro-description { align-self: end; max-width: 52ch; font-size: 20px; }
 .intro-description p { line-height: 1.6; }
 .panorama { position: relative; }
@@ -290,10 +291,11 @@ section[id], article[id] { scroll-margin-top: 112px; }
 .portfolio .project-card:first-child .project-image { aspect-ratio: 2.66; }
 .empty-state { padding: 64px 24px; background: var(--soft); text-align: center; }
 .empty-state p { margin: 18px 0 26px; }
-.breadcrumb { display: flex; gap: 14px; align-items: center; padding-top: 42px; color: var(--muted); font-size: 14px; }
-.breadcrumb a { color: var(--ink); text-decoration: underline; text-underline-offset: 5px; }
+.breadcrumb { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; padding-top: 28px; color: var(--muted); font-size: 14px; }
+.breadcrumb a { display: inline-flex; align-items: center; min-height: 44px; color: var(--white); text-decoration: underline; text-underline-offset: 5px; text-decoration-color: var(--line); transition: text-decoration-color var(--motion-fast); }
+.breadcrumb a:is(:hover, :focus-visible) { text-decoration-color: var(--yellow); }
 .project-title { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px 7%; padding-block: 28px 44px; }
-.project-title .eyebrow { grid-column: 1 / -1; margin: 0; }
+.project-title .eyebrow { grid-column: 1 / -1; margin: 0; color: var(--yellow); }
 .project-title h1 { font-size: clamp(36px, 4vw, 62px); }
 .project-title > p { align-self: end; font-size: 21px; }
 .project-cover > img { width: 100%; height: clamp(320px, 46vw, 660px); object-fit: cover; }
@@ -538,7 +540,8 @@ section[id], article[id] { scroll-margin-top: 112px; }
   .project-image, .portfolio .project-card:first-child .project-image { aspect-ratio: 1.4; }
   .project-caption h3 { font-size: 23px; }
   .caption-location { font-size: 13px; }
-  .breadcrumb { padding-top: 34px; font-size: 13px; }
+  .breadcrumb { padding-top: 24px; font-size: 13px; }
+  .page-masthead-with-breadcrumb .page-intro { padding-top: 24px; }
   .project-title { padding-block: 24px 30px; }
   .project-title h1 { font-size: 36px; }
   .project-title > p { font-size: 19px; }

@@ -60,7 +60,7 @@ Secondary text is typically 14–16px. Small photo credits, location labels, and
 
 ## Layout
 
-The content width is bounded by the page-max token, with fluid gutters and 60px mobile / 64–104px larger section spacing. Interior titles and summaries share a slate two-column introduction on large screens and stack below 900px. White headings, light secondary text and yellow eyebrows carry the homepage palette into interior routes. People continues this surface through the leadership portraits; its team section returns to a light surface.
+The content width is bounded by the page-max token, with fluid gutters and 60px mobile / 64–104px larger section spacing. Interior titles and summaries share a slate two-column introduction on large screens and stack below 900px. White headings, light secondary text and yellow eyebrows carry the homepage palette into interior routes. People continues this surface through the leadership portraits; its team section returns to a light surface. Project details use the same slate title surface. Project and draft breadcrumbs stay inside that surface, with 44px return links, yellow focus and wrapping on narrow screens; draft warnings remain in the light reading area.
 
 - Home retains the centered documentary video hero and physical filmstrip, followed by facts, the firm introduction, asymmetric services, a field-team spread, and recognition.
 - Services alternate real photographs with explanatory copy. Service details use a readable article and capability index.
