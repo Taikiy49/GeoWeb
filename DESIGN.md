@@ -122,3 +122,9 @@ Contact strips use 30px desktop / 26px mobile vertical padding and 26–34px hea
 Gallery siblings enter with a capped 195ms stagger; photography uses a restrained scale entrance while text uses short translation. Mobile menus open with a 240ms transition and staggered links. Links, filters, disclosure content, and footer navigation give consistent interaction feedback. No continuous decorative effects or extra animation libraries. Reduced-motion preferences cancel active Web Animations and disable CSS animation; route changes clean up observers and animations.
 
 Mobile navigation uses a borderless 44px button with a 28px icon, transparent hover background, yellow hover/focus feedback, and a short press response. Keyboard focus remains visible; forced-colors mode retains its accessibility border.
+
+## Cross-page interaction finish
+
+Project filters use readable 14px desktop / 13px mobile labels with a yellow animated active indicator. Search input is 16px to avoid mobile focus zoom. Footer links are 14px with comfortable mobile hit areas. Leadership credentials use 14px typography and rotating disclosure icons. Image corners consistently use the 2px brand radius. Service-row photos have bounded zoom and linked headings underline on hover/focus. Touch devices retain visible project navigation arrows.
+
+Entrance motion also covers About-page panoramas, culture imagery, audience columns, detail covers, sidebars, and career introductions. Observer targets exclude nested descendants of an animated parent, preventing doubled movement. All transitions retain reduced-motion overrides.

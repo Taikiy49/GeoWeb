@@ -411,7 +411,9 @@ function Services() {
             to={`/services/${s.slug}`}
             className="service-card"
           >
-            <Photo name={s.image} alt={s.imageAlt} />
+            <div className="service-row-photo">
+              <Photo name={s.image} alt={s.imageAlt} />
+            </div>
             <div>
               <span className="eyebrow">{s.caption}</span>
               <h2>{s.title}</h2>

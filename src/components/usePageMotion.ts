@@ -22,8 +22,8 @@ export function usePageMotion(route: string) {
             if (!entry.isIntersecting) return;
             observer?.unobserve(entry.target);
             const element = entry.target;
-            const isGallery = element.matches(".project-card, .home-service-card, .leaders article, .benefits-grid article, .awards-list article, .office-list article");
-            const isPhoto = element.matches(".film-viewer, .recognition > img, .company-intro > div:first-child");
+            const isGallery = element.matches(".project-card, .home-service-card, .leaders article, .benefits-grid article, .awards-list article, .office-list article, .three-columns article");
+            const isPhoto = element.matches(".film-viewer, .recognition > img, .panorama, .project-cover, .detail-hero, .people-feature > img");
             const parent = element.parentElement;
             const order = isGallery && parent ? (groupCounts.get(parent) ?? 0) : 0;
             if (isGallery && parent) groupCounts.set(parent, order + 1);
@@ -48,13 +48,21 @@ export function usePageMotion(route: string) {
         },
         { threshold: 0.08, rootMargin: "0px 0px -24px 0px" },
       );
-      document
+      const candidates = Array.from(document
         .querySelectorAll(
           filtering
             ? "main .project-card"
-            : "main .section-heading, main .film-heading, main .film-viewer, main .filmstrip, main .company-intro > div, main .home-service-card, main .secondary-services > a, main .project-card, main .careers-copy, main .recognition > *, main .page-intro, main .service-card, main .capabilities article, main .leaders article, main .office-list article, main .benefits-grid article, main .awards-list article, main .prose, main .contact-band .container, main .project-title, main .project-detail-image, main .team-photo, main .contact-main, main .application-box, .footer-top > div",
-        )
-        .forEach((element) => observer?.observe(element));
+            : "main .section-heading, main .film-heading, main .film-viewer, main .filmstrip, main .company-intro > div, main .home-service-card, main .secondary-services > a, main .project-card, main .careers-copy, main .recognition > *, main .page-intro, main .service-card, main .capabilities article, main .leaders article, main .office-list article, main .benefits-grid article, main .awards-list article, main .prose, main .contact-band .container, main .project-title, main .project-cover, main .panorama, main .detail-hero, main .people-feature > *, main .three-columns article, main .editorial-grid > aside, main .career-hero .container, main .career-policy, main .contact-main, main .application-box, .footer-top > div",
+        ));
+      const targets = new Set(candidates);
+      candidates.forEach((element) => {
+        let ancestor = element.parentElement;
+        while (ancestor) {
+          if (targets.has(ancestor)) return;
+          ancestor = ancestor.parentElement;
+        }
+        observer?.observe(element);
+      });
     };
     start();
     preference.addEventListener("change", start);
