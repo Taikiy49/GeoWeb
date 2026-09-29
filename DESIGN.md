@@ -3,21 +3,21 @@ version: alpha
 name: Geolabs
 description: A professional engineering portfolio grounded in authentic Wix photography and original Geolabs branding.
 colors:
-  primary: "#332f34"
-  muted: "#686469"
-  yellow: "#edcd1f"
-  soft: "#f5f4f1"
+  primary: "#2d3142"
+  muted: "#626774"
+  yellow: "#f4cd00"
+  soft: "#f5f6f7"
   white: "#ffffff"
-  line: "#dedbd6"
+  line: "#dddfe4"
 typography:
   display:
     fontFamily: "Montserrat, sans-serif"
   sans:
     fontFamily: "DM Sans, sans-serif"
 rounded:
-  DEFAULT: "10px"
+  DEFAULT: "2px"
 spacing:
-  section-gap: "96px"
+  section-gap: "112px"
   page-max: "1280px"
 components:
   button:
@@ -40,7 +40,7 @@ components:
 
 ### Creative North Star
 
-An established engineering firm presented through its real work: broad Montserrat headings, Wix charcoal and yellow, exact original anniversary artwork, and generous, consistent space. The signature is a full-bleed, muted looping video hero using the same Geolabs drilling footage as the Wix homepage. A visible play/pause control accompanies it. The Home (New) filmstrip follows the hero, with a large project viewer, perforated thumbnails, and original HDOT walkway footage. The Base44 reference informed the clearer hierarchy and photo-led service cards. The user explicitly requested this complete visual revision; the prior invented logo and editorial taglines are retired.
+An established engineering firm presented through its real work: centered uppercase Montserrat 800 hero typography, deep slate and signal yellow from the latest user reference, exact original anniversary artwork, and generous, consistent space. The signature is a full-bleed, muted looping video hero using the same Geolabs drilling footage as the Wix homepage. The title is manually broken into two bold lines with a lighter drilling-services line. A visible play/pause control accompanies it. The Home (New) filmstrip follows the hero, with a large project viewer, perforated thumbnails, and original HDOT walkway footage. The latest supplied screenshot governs the masthead and centered composition. A single navigation row places the original anniversary logo at the left; the earlier utility text is preserved in the footer. Interior service pages use open alternating photo/text rows, and projects use a generous two-column gallery. The user explicitly requested this complete visual revision; the prior invented logo and editorial taglines are retired.
 
 ### Product context and register
 
@@ -56,19 +56,19 @@ Ink owns text, navigation, service sections, and footer. Yellow identifies prima
 
 ## Typography
 
-Self-hosted Montserrat 500/600/700 for headings, DM Sans 400/500/600 for content and controls. Body copy is generally 16px with 1.8 line height. Long case-study prose has a constrained measure. Small uppercase tracking is reserved for short labels. Hawaiian diacritics use the font package's extended character support and sans-serif fallback.
+Self-hosted Montserrat 500/600/700/800 for headings, DM Sans 400/500/600 for content and controls. Body copy is generally 16px with 1.8 line height. Long case-study prose has a constrained measure. Small uppercase tracking is reserved for short labels. Hawaiian diacritics use the font package's extended character support and sans-serif fallback.
 
 ## Layout
 
-Maximum content width 1280px; desktop side gutters 56px. At 760px navigation becomes a nonmodal collapsible list. At 760px major grids become one column, gutters reduce to 20px, and section spacing reduces. Main document owns scrolling. Image aspect ratios reserve card geometry; detail images have fixed responsive heights. Search results are deliberately rendered in full (30 projects) with lazy images.
+Maximum content width 1280px; desktop side gutters 56px. At 900px navigation becomes a nonmodal collapsible list. At 760px major grids become one column, gutters reduce to 20px, and section spacing reduces. Main document owns scrolling. Image aspect ratios reserve card geometry; detail images have fixed responsive heights. Search results are deliberately rendered in full (30 projects) with lazy images.
 
 ## Elevation & Depth
 
-Borders, tonal sections, and restrained shadows establish hierarchy on service cards. Hero overlay exists solely for text contrast; sticky charcoal navigation with a yellow anniversary-logo panel sits above content. Draft warnings occupy document flow.
+Tonal sections, open photographic rows, and deliberate whitespace establish hierarchy. Shadows are limited to the masthead and film viewer. Hero overlay exists solely for text contrast; sticky charcoal navigation with a yellow anniversary-logo panel sits above content. Draft warnings occupy document flow.
 
 ## Shapes
 
-Images and cards use 10–12px corners, controls use 6–7px corners, and restrained dividers establish groups. Original brand assets retain their original proportions and colors.
+Photography and controls use subtle 2px corners; open photographic layouts replace boxed service cards. Circular controls are reserved for media playback and carousel navigation. Original brand assets retain their original proportions and colors.
 
 ## Components
 
@@ -78,7 +78,7 @@ All links/buttons are native controls with pointer, hover and visible focus. Pre
 
 ### Buttons and actions
 
-Primary yellow on hero and charcoal on white; text links have a fine underline and directional arrow. The hero also offers an outlined contact link. CTA labels describe destinations. Careers buttons link to the external careers portal. Contact buttons are actual mail/telephone links, not simulated submissions.
+A yellow outlined primary action on the hero, solid yellow on dark sections, and slate on white; text links have a fine underline and directional arrow. The hero also offers an outlined contact link. CTA labels describe destinations. Careers buttons link to the external careers portal. Contact buttons are actual mail/telephone links, not simulated submissions.
 
 ### Navigation and data display
 
@@ -94,7 +94,7 @@ Lucide outline icons, usually 17–25px. Icons accompany text except explicitly 
 
 ### Motion
 
-Short 200ms navigation/action feedback, 550ms restrained image zoom, and a muted looping background video. Reduced-motion disables animation and transitions and uses immediate scrolling. Reduced-motion preferences suppress video autoplay and show a frame from the actual clip; visitors can explicitly start playback. A visible native button pauses or resumes the video. Section headings, cards, and editorial blocks reveal on entry with short fade-and-rise animations; hero text arrives in sequence. Content stays readable without animation support. The featured filmstrip is manually operated, supports arrow/Home/End keys, and resets video playback when the selected project changes. No autoplay carousel.
+Short 200ms navigation/action feedback, restrained photographic zoom, and a muted looping background video. Reduced-motion disables animation and transitions and uses immediate scrolling. Reduced-motion preferences suppress video autoplay and show a frame from the actual clip; visitors can explicitly start playback. A visible native button pauses or resumes the video. Section headings, cards, and editorial blocks reveal on entry with short fade-and-rise animations; hero title lines reveal through a mask in sequence. Search updates animate only the result cards, keeping the heading stable. Content stays readable without animation support. The featured filmstrip is manually operated, supports arrow/Home/End keys, and resets video playback when the selected project changes. No autoplay carousel.
 
 ### Content and data visualization
 
@@ -110,3 +110,7 @@ Page headings use direct source-based names. Homepage company copy comes from Ho
 - Do keep all job application paths on the careers portal.
 - Don't treat draft text as verified project experience.
 - Don't introduce a second navigation or design system for individual pages.
+
+## Reference-led refinement
+
+The September 28, 2026 user screenshot supersedes the earlier charcoal interpretation: deep slate `#2d3142`, signal yellow `#f4cd00`, and white photographic layouts. Anthropic frontend-design and Stark web-design were read and applied. Decisions, selected references, and verification scope are recorded in `docs/ui-refinement-brief.md`. All source-based wording and media stay unchanged; typography casing and layout are presentation choices.

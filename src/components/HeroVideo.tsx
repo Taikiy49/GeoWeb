@@ -61,13 +61,16 @@ export function HeroVideo() {
       <div className="hero-shade" />
       <div className="container hero-content">
         <div className="eyebrow">
-          <span className="yellow-line" /> ESTABLISHED 1975 · EMPLOYEE-OWNED
-          SINCE 1991
+          ESTABLISHED 1975 · EMPLOYEE-OWNED SINCE 1991
         </div>
         <h1>
-          Geotechnical
-          <br />
-          engineering<span>& drilling services</span>
+          <span className="hero-title-line">
+            <span>Geotechnical</span>
+          </span>{" "}
+          <span className="hero-title-line hero-title-accent">
+            <span>engineering</span>
+          </span>{" "}
+          <span className="hero-title-sub">& drilling services</span>
         </h1>
         <p>Hawaiʻi · Pacific Basin · California</p>
         <div className="hero-actions">

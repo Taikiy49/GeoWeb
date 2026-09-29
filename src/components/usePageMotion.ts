@@ -1,8 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 /** Progressive enhancement: content stays visible if observation or motion is unavailable. */
 export function usePageMotion(route: string) {
+  const previousPath = useRef<string>();
   useEffect(() => {
+    const path = route.split("?")[0];
+    const filtering = previousPath.current === path;
+    previousPath.current = path;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const animations = new Set<Animation>();
     let observer: IntersectionObserver | undefined;
@@ -18,11 +22,11 @@ export function usePageMotion(route: string) {
             observer?.unobserve(entry.target);
             const animation = entry.target.animate(
               [
-                { opacity: 0, transform: "translateY(24px)" },
+                { opacity: 0.55, transform: "translateY(14px)" },
                 { opacity: 1, transform: "translateY(0)" },
               ],
               {
-                duration: 680,
+                duration: 580,
                 easing: "cubic-bezier(.2,.65,.3,1)",
                 fill: "backwards",
               },
@@ -35,7 +39,9 @@ export function usePageMotion(route: string) {
       );
       document
         .querySelectorAll(
-          "main .section-heading, main .film-heading, main .film-viewer, main .filmstrip, main .company-intro > div, main .home-service-card, main .secondary-services > a, main .project-card, main .careers-copy, main .recognition > *, main .page-intro, main .service-card, main .capabilities article, main .leaders article, main .office-list article, main .benefits-grid article, main .awards-list article, main .prose, main .contact-band .container",
+          filtering
+            ? "main .project-card"
+            : "main .section-heading, main .film-heading, main .film-viewer, main .filmstrip, main .company-intro > div, main .home-service-card, main .secondary-services > a, main .project-card, main .careers-copy, main .recognition > *, main .page-intro, main .service-card, main .capabilities article, main .leaders article, main .office-list article, main .benefits-grid article, main .awards-list article, main .prose, main .contact-band .container",
         )
         .forEach((element) => observer?.observe(element));
     };

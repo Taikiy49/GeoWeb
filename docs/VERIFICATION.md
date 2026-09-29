@@ -37,3 +37,11 @@ This is functional and visual browser validation, not a formal WCAG certificatio
 ## Filmstrip and palette revision — September 28, 2026
 
 Typecheck, ESLint, production build, strict UI audit, and design token lint passed. Browser verified original 51.51-second HDOT footage playing, next-project selection clearing playback, and Home-key thumbnail selection. Visually checked desktop, 585px, and 320px layouts; 320px viewport has 309px document width and no document overflow. Filmstrip scrolls internally. Reduced-motion mode was enabled during the narrow-screen review; content remained fully visible. Browser settings restored afterward.
+
+## Reference-led visual redesign — September 28, 2026
+
+Read the user-linked Anthropic frontend-design skill and Stark router/web-design plus the selected creative-direction, page-proof, cinematic, brand-motif, and rendered-quality references. Applied their design workflow within the existing React/Vite stack. No new runtime library or media asset was added. Source-based copy in App.tsx and data files is unchanged; hero words were regrouped into spans and utility copy moved to the footer.
+
+`npm run check` passed (TypeScript, ESLint, Vite build). Strict UI audit: zero findings. Design document lint: zero errors/warnings. Browser reviewed desktop hero, film viewer, home services, services, projects, people, and contact. Verified all four leadership portraits loaded. Inspected 390px and 320px hero/navigation. At 320px, service, people, contact, careers, walkway detail, about, awards, and draft routes all had a 309px document width and no overflowing main-content elements.
+
+Verified no-results project search and clear recovery, retained input focus, mobile menu/Escape focus restoration, reduced-motion poster/paused video, film video playback (51.51 seconds) and selection reset. Reduced-motion and viewport emulation restored afterward. Highest-impact visual repairs: simplified the masthead, centered the headline, replaced boxed services with photographic layouts, and stopped search from replaying page-intro motion.

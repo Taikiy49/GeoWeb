@@ -47,15 +47,6 @@ export function Shell() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <div className="utility">
-        <span>HAWAIʻI · PACIFIC BASIN · CALIFORNIA</span>
-        <div>
-          <span>Employee-owned since 1991</span>
-          <a href={applyUrl}>
-            Join our team <ArrowUpRight size={13} />
-          </a>
-        </div>
-      </div>
       <header className="site-header">
         <div className="header-inner">
           <Brand />
@@ -152,6 +143,15 @@ export function Shell() {
             </p>
             <a href="tel:+18088415064">808.841.5064</a>
             <a href="mailto:hawaii@geolabs.net">hawaii@geolabs.net</a>
+          </div>
+        </div>
+        <div className="utility">
+          <span>HAWAIʻI · PACIFIC BASIN · CALIFORNIA</span>
+          <div>
+            <span>Employee-owned since 1991</span>
+            <a href={applyUrl}>
+              Join our team <ArrowUpRight size={13} />
+            </a>
           </div>
         </div>
         <div className="container footer-bottom">
