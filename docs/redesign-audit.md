@@ -40,3 +40,13 @@ The Impeccable detector reported no primary findings and 22 advisory color match
 ## Maintenance
 
 Update canonical selectors and DESIGN.md together. Keep content and source-media manifests as the editorial authority. Motion must not hide content or shift layout. Continue routing applications to careers.geolabs.net. Local review captures are intentionally excluded from git; representative screenshots are supplied in the task's final response.
+
+## Follow-up deployed-site review
+
+At the user's request, a second full pass captured every deployed route at desktop and mobile sizes: 52 pages / 104 screenshots. The searchable local gallery is in the shared Geolabs workspace under `full-site-review/index.html`. Independent visual and technical assessments accompanied the route crawl.
+
+The visual review found imported draft encoding debris, three tower crops with clipped crowns, inconsistent desktop leadership-name alignment, and repetitive related-project choices. Fixed rendering-only entity/punctuation cleanup (raw source JSON and draft warnings retained), subject-aware top crops, explicit leadership grid rows, and market/location-prioritized related projects. The technical review found keyboard focus loss after clearing empty results and accent-sensitive search; focus now returns to search, and queries accept common unaccented/apostrophe-free spellings and whitespace-only input.
+
+All 39 affected detail/profile routes were checked at both sizes after the visual fixes. Search spelling variants, empty-state keyboard recovery and market-related recommendations were separately verified. The underlying content records, source media and routes remain unchanged.
+
+Video failure/retry and synthesized mobile filmstrip swiping passed. Extreme synthetic typing at 0–10ms and artificial doubling of every computed font exposed stress limitations; ordinary typing/paste and normal responsive sizes passed. These synthetic checks are not physical-device or screen-reader certification, nor a confirmed browser-zoom failure. No reliable live detector overlay was produced; the usable CLI scan reported one advisory for the intentional film scrim color, documented above.

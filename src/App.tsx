@@ -35,6 +35,8 @@ import {
   Project,
 } from "./data/site";
 import drafts from "./data/drafts.json";
+import { formatDraftParagraph } from "./data/draftText";
+import { normalizeProjectSearch } from "./data/projectSearch";
 
 function Meta({
   title,
@@ -101,6 +103,7 @@ function Photo({
   return (
     <img
       className={className}
+      data-subject={name}
       src={image(name)}
       alt={alt}
       loading={eager ? "eager" : "lazy"}
@@ -466,12 +469,12 @@ function Projects() {
   const query = params.get("q") || "";
   const market = params.get("market") || "All projects";
   const markets = ["All projects", ...new Set(projects.map((p) => p.market))];
+  const normalizedQuery = normalizeProjectSearch(query);
   const found = projects.filter(
     (p) =>
       (market === "All projects" || p.market === market) &&
-      `${p.title} ${p.location} ${p.summary}`
-        .toLowerCase()
-        .includes(query.toLowerCase()),
+      normalizeProjectSearch(`${p.title} ${p.location} ${p.summary}`)
+        .includes(normalizedQuery),
   );
   const update = (key: string, value: string) => {
     const next = new URLSearchParams(params);
@@ -542,7 +545,10 @@ function Projects() {
             <p>Try another name, island, or market.</p>
             <button
               className="button button-navy"
-              onClick={() => setParams({})}
+              onClick={() => {
+                setParams({});
+                document.querySelector<HTMLInputElement>(".search-field input")?.focus();
+              }}
             >
               Clear filters
             </button>
@@ -618,6 +624,10 @@ function ProjectDetail() {
         <div className="project-grid">
           {projects
             .filter((x) => x.slug !== slug)
+            .sort((a, b) =>
+              Number(b.market === p.market) - Number(a.market === p.market)
+              || Number(b.location === p.location) - Number(a.location === p.location),
+            )
             .slice(0, 3)
             .map((x) => (
               <ProjectCard key={x.slug} project={x} />
@@ -960,7 +970,7 @@ function DraftDetail() {
           alt={`${d.title}, illustrative draft image`}
         />
         <div className="prose draft-prose">
-          {d.paragraphs.map((p, i) => (
+          {d.paragraphs.map(formatDraftParagraph).filter(Boolean).map((p, i) => (
             <p key={i}>{p}</p>
           ))}
         </div>

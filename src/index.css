@@ -289,6 +289,9 @@ section[id], article[id] { scroll-margin-top: 112px; }
 .project-title h1 { font-size: clamp(36px, 4vw, 62px); }
 .project-title > p { align-self: end; font-size: 21px; }
 .project-cover > img { width: 100%; height: clamp(320px, 46vw, 660px); object-fit: cover; }
+.project-cover > img[data-subject="central-ala-moana"],
+.project-cover > img[data-subject="moana-pacific"],
+.draft-document > img[data-subject="hilton-grand-islander"] { object-position: center top; }
 .project-facts > div { padding-block: 20px; border-bottom: 1px solid var(--line); }
 .project-facts > div:first-child { padding-top: 0; }
 .project-facts span { display: block; color: var(--muted); font-size: 13px; margin-bottom: 6px; }
@@ -298,7 +301,7 @@ section[id], article[id] { scroll-margin-top: 112px; }
 /* People: portrait-led profiles with space for actual credentials. */
 .leadership { padding-bottom: var(--section-space); }
 .leaders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px; }
-.leaders article { display: grid; grid-template-columns: .85fr 1fr; gap: 0 28px; align-content: start; padding-bottom: 30px; border-bottom: 1px solid var(--line); }
+.leaders article { display: grid; grid-template-columns: .85fr 1fr; grid-template-rows: max-content max-content 1fr; gap: 0 28px; align-content: start; padding-bottom: 30px; border-bottom: 1px solid var(--line); }
 .leaders article > img { grid-row: span 3; width: 100%; aspect-ratio: .8; object-fit: cover; object-position: top; background: var(--soft); }
 .leaders h3 { padding-top: 12px; font-size: 24px; align-self: end; }
 .leaders article > p { margin-top: 8px; font-size: 15px; }

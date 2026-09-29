@@ -102,3 +102,7 @@ Statistics retain the final value for assistive technology and reserve the final
 - Don't reintroduce the removed yellow “Contact our team” banner.
 - Don't substitute generated imagery, new logos, invented copy, or unverified draft claims.
 - Don't add continuous decorative motion, parallax, letter-by-letter text, or animation dependencies.
+
+### Verified presentation details
+
+Tall-building photographs for Central Ala Moana, Moana Pacific and the Hilton draft use top-aligned subject positioning so desktop crops preserve their crowns. Leadership names and roles use explicit content-sized grid rows regardless of whether credentials are available. The film readability scrim uses translucent slate (`#171b2aaa`). Draft rendering decodes imported numeric entities and known damaged punctuation without altering the archived source JSON or removing draft warnings. Project search accepts common unaccented keyboard spellings; displayed Hawaiian names stay unchanged. Related projects prioritize the same market, then the same location.
