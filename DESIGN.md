@@ -106,3 +106,7 @@ Statistics retain the final value for assistive technology and reserve the final
 ### Verified presentation details
 
 Tall-building photographs for Central Ala Moana, Moana Pacific and the Hilton draft use top-aligned subject positioning so desktop crops preserve their crowns. Leadership names and roles use explicit content-sized grid rows regardless of whether credentials are available. The film readability scrim uses translucent slate (`#171b2aaa`). Draft rendering decodes imported numeric entities and known damaged punctuation without altering the archived source JSON or removing draft warnings. Project search accepts common unaccented keyboard spellings; displayed Hawaiian names stay unchanged. Related projects prioritize the same market, then the same location.
+
+### Gallery and interaction finish
+
+Project categories and locations sit together below unobstructed photos, using readable 13px metadata. Draft warning labels retain their image placement because they communicate verification status. Project titles use a fine underline on hover and keyboard focus alongside the existing arrow motion. Film thumbnail captions use 12px text; selected frames stay steady on hover, and keyboard focus uses a distinct slate outline. Office links have 44px targets and credentials use 15px text. Shared Photo images carry intrinsic dimensions from `src/data/image-sizes.json`; CSS retains responsive image proportions and reserves layout space while assets load. Update this manifest when replacing source image dimensions.

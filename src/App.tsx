@@ -35,8 +35,12 @@ import {
   Project,
 } from "./data/site";
 import drafts from "./data/drafts.json";
+import imageSizes from "./data/image-sizes.json";
+
 import { formatDraftParagraph } from "./data/draftText";
 import { normalizeProjectSearch } from "./data/projectSearch";
+
+const photoDimensions: Record<string, number[]> = imageSizes;
 
 function Meta({
   title,
@@ -105,6 +109,8 @@ function Photo({
       className={className}
       data-subject={name}
       src={image(name)}
+      width={photoDimensions[name]?.[0]}
+      height={photoDimensions[name]?.[1]}
       alt={alt}
       loading={eager ? "eager" : "lazy"}
       decoding="async"
@@ -133,16 +139,13 @@ function ProjectCard({ project }: { project: Project }) {
     <Link className="project-card" to={`/projects/${project.slug}`}>
       <div className="project-image">
         <Photo name={project.image} alt={project.title} />
-        <span className="image-arrow">
-          <ArrowUpRight size={23} />
-        </span>
+      </div>
+      <div className="project-meta">
         <span className="project-market">{project.market}</span>
+        <span className="caption-location">{project.location}</span>
       </div>
       <div className="project-caption">
-        <div>
-          <span className="caption-location">{project.location}</span>
-          <h3>{project.title}</h3>
-        </div>
+        <h3>{project.title}</h3>
         <ArrowUpRight size={20} />
       </div>
     </Link>
