@@ -14,3 +14,14 @@
 - No browser console errors in the inspected final preview. No contact messages, job applications, or Wix changes were submitted.
 
 This is functional and visual browser validation, not a formal WCAG certification or an assertion that draft source claims have been independently verified. Source discrepancies are documented in MIGRATION.md.
+
+## Owner-requested branding and design revision
+
+- `npm run check`: TypeScript, ESLint and Vite production build passed after the redesign; `npm audit --audit-level=moderate` reports zero vulnerabilities.
+- Strict premium audit and official designmd lint passed with zero errors/warnings. Runtime CSS, DESIGN.md and UX-CONTRACT.md describe the revised shared system.
+- Original Wix anniversary and G PNGs were inspected directly. A contact-sheet review covered existing photos and proposed replacements; only visually confirmed replacement subjects were retained. The temporary contact sheet was removed before commit.
+- Desktop visual inspection: header, photographic hero, company intro, service cards, project gallery, field-team careers panel, footer, and service collection.
+- Phone validation at 390px: homepage, portfolio, named project selector, selected-state caption update, navigation open/close, Escape focus restoration, empty search and clear-filters recovery to 30 projects.
+- Narrow validation at 320px: home/about/services/people/awards/contact/careers/drafts/404, all 30 project detail routes and all 5 service detail routes. No document overflow or broken completed images. Eight draft detail pages retained visible warnings and noindex/nofollow metadata, with no overflow.
+- Reduced-motion emulation: photo animation is none, document scroll is auto; emulation and viewport override reset after testing. No console errors in the final preview. Careers links still target the external portal.
+- All 49 photo assets referenced by JSX and content data exist locally. Updated dependency licenses are included. No Wix/Base44 content was modified or published.
