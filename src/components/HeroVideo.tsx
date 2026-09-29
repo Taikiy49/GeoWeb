@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Pause, Play } from "lucide-react";
 
-const watchUrl = "https://www.youtube.com/watch?v=tbyqrhBD-hA";
-
 export function HeroVideo() {
   const video = useRef<HTMLVideoElement>(null);
   const [reducedMotion, setReducedMotion] = useState(
@@ -82,12 +80,6 @@ export function HeroVideo() {
         </div>
       </div>
       <div className="container hero-bottom">
-        <div className="hero-project">
-          <span className="eyebrow">GEOLABS IN THE FIELD</span>
-          <a href={watchUrl} target="_blank" rel="noreferrer">
-            Watch the full video <ArrowUpRight size={18} />
-          </a>
-        </div>
         {!failed && (
           <button
             className="video-control"

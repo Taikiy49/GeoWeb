@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { ArrowUpRight, Menu, X, ArrowRight } from "lucide-react";
+import { usePageMotion } from "./usePageMotion";
 import { applyUrl, offices } from "../data/site";
 
 export function Brand() {
@@ -18,6 +19,7 @@ export function Brand() {
 export function Shell() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  usePageMotion(location.pathname + location.search);
   const menuButton = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     setOpen(false);

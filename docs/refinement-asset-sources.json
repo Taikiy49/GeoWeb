@@ -47,5 +47,17 @@
     "file": "public/images/geolabs-cover-poster.webp",
     "source": "Same Wix video",
     "transformation": "Frame at 1 second, 1280px width, WebP quality 85"
+  },
+  {
+    "file": "public/videos/ala-moana-walkway.mp4",
+    "source": "https://video.wixstatic.com/video/d5b831_f8f8545dcb074f56942708621c043863/1080p/mp4/file.mp4",
+    "sourcePage": "Home (New) featured slideshow, saved Wix editor",
+    "credit": "Video courtesy: HDOT",
+    "transformation": "H.264 1280px, CRF25, AAC128k, faststart; full source footage"
+  },
+  {
+    "file": "public/images/walkway-film-poster.webp",
+    "source": "Same HDOT walkway video from Wix",
+    "transformation": "Frame at 2 seconds, WebP 1280px quality85"
   }
 ]

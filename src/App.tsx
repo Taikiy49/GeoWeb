@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Shell } from "./components/Shell";
 import { HeroVideo } from "./components/HeroVideo";
+import { FeaturedFilm } from "./components/FeaturedFilm";
 import {
   applyUrl,
   careersUrl,
@@ -163,6 +164,7 @@ function Home() {
     <>
       <Meta title="Geotechnical engineering & drilling services" />
       <HeroVideo />
+      <FeaturedFilm />
       <div className="stats container">
         {[
           ["1975", "Year established"],
@@ -241,30 +243,6 @@ function Home() {
               </Link>
             ))}
           </div>
-        </div>
-      </section>
-      <section className="section container">
-        <div className="section-heading">
-          <div>
-            <span className="eyebrow">HAWAIʻI & THE PACIFIC</span>
-            <h2>Featured projects</h2>
-          </div>
-          <ArrowLink to="/projects">View all projects</ArrowLink>
-        </div>
-        <div className="project-grid">
-          {[
-            "ala-moana-walkway",
-            "victoria-place",
-            "palau-wharf",
-            "pali-highway",
-            "international-marketplace",
-            "koa-ridge",
-          ].map((slug) => {
-            const project = projects.find((p) => p.slug === slug);
-            return project ? (
-              <ProjectCard key={slug} project={project} />
-            ) : null;
-          })}
         </div>
       </section>
       <section className="home-careers">

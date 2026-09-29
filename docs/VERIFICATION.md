@@ -33,3 +33,7 @@ This is functional and visual browser validation, not a formal WCAG certificatio
 - Vercel production build completed successfully. Project is connected to GitHub main. Wix CNAME for `test.geolabs.net` now targets `d1f338d741962b13.vercel-dns-017.com`; Vercel verification returned configured-correctly, verified, no issues. Original CNAME and rollback instructions are in DEPLOYMENT.md.
 - HTTPS certificate issued for test.geolabs.net. Public browser verified readyState 4 and advancing playback, no broken loaded images, and direct Palau project navigation. Anonymous HTTPS requests to home, video and a deep link returned 200; video served as video/mp4 with byte-range support. Git integration automatically built the pushed revision successfully.
 - Explicit root response header and hostname-aware robots metadata keep the public test homepage out of search indexes as well as the other staging routes.
+
+## Filmstrip and palette revision — September 28, 2026
+
+Typecheck, ESLint, production build, strict UI audit, and design token lint passed. Browser verified original 51.51-second HDOT footage playing, next-project selection clearing playback, and Home-key thumbnail selection. Visually checked desktop, 585px, and 320px layouts; 320px viewport has 309px document width and no document overflow. Filmstrip scrolls internally. Reduced-motion mode was enabled during the narrow-screen review; content remained fully visible. Browser settings restored afterward.

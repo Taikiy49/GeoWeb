@@ -3,12 +3,12 @@ version: alpha
 name: Geolabs
 description: A professional engineering portfolio grounded in authentic Wix photography and original Geolabs branding.
 colors:
-  primary: "#172b43"
-  muted: "#596a7a"
-  yellow: "#f1c544"
-  soft: "#f4f6f8"
+  primary: "#332f34"
+  muted: "#686469"
+  yellow: "#edcd1f"
+  soft: "#f5f4f1"
   white: "#ffffff"
-  line: "#dbe2e9"
+  line: "#dedbd6"
 typography:
   display:
     fontFamily: "Montserrat, sans-serif"
@@ -40,7 +40,7 @@ components:
 
 ### Creative North Star
 
-An established engineering firm presented through its real work: broad Montserrat headings, restrained navy and gold, exact original anniversary artwork, and generous, consistent space. The signature is a full-bleed, muted looping video hero using the same Geolabs drilling footage as the Wix homepage. A visible play/pause control and full-video link accompany it. The Base44 reference informed the clearer hierarchy and photo-led service cards. The user explicitly requested this complete visual revision; the prior invented logo and editorial taglines are retired.
+An established engineering firm presented through its real work: broad Montserrat headings, Wix charcoal and yellow, exact original anniversary artwork, and generous, consistent space. The signature is a full-bleed, muted looping video hero using the same Geolabs drilling footage as the Wix homepage. A visible play/pause control accompanies it. The Home (New) filmstrip follows the hero, with a large project viewer, perforated thumbnails, and original HDOT walkway footage. The Base44 reference informed the clearer hierarchy and photo-led service cards. The user explicitly requested this complete visual revision; the prior invented logo and editorial taglines are retired.
 
 ### Product context and register
 
@@ -52,7 +52,7 @@ Runtime token ownership: `src/index.css` is canonical. Its `:root` variables map
 
 ## Colors
 
-Ink owns text, navigation, service sections, and footer. Yellow identifies primary actions and emphasis; it always carries dark text. White and soft alternate broad page sections; line separates editorial rows. Muted is secondary body text. Visible teal focus outlines remain distinct from yellow accents. Light theme only; forced-colors uses system scrollbars.
+Ink owns text, navigation, service sections, and footer. Yellow identifies primary actions and emphasis; it always carries dark text. White and soft alternate broad page sections; line separates editorial rows. Muted is secondary body text. Visible ochre focus outlines remain distinct from yellow accents. Light theme only; forced-colors uses system scrollbars.
 
 ## Typography
 
@@ -64,7 +64,7 @@ Maximum content width 1280px; desktop side gutters 56px. At 760px navigation bec
 
 ## Elevation & Depth
 
-Borders, tonal sections, and restrained shadows establish hierarchy on service cards. Hero overlay exists solely for text contrast; sticky white navigation sits above content. Draft warnings occupy document flow.
+Borders, tonal sections, and restrained shadows establish hierarchy on service cards. Hero overlay exists solely for text contrast; sticky charcoal navigation with a yellow anniversary-logo panel sits above content. Draft warnings occupy document flow.
 
 ## Shapes
 
@@ -78,7 +78,7 @@ All links/buttons are native controls with pointer, hover and visible focus. Pre
 
 ### Buttons and actions
 
-Primary yellow on hero and navy on white; text links have a fine underline and directional arrow. The hero also offers an outlined contact link. CTA labels describe destinations. Careers buttons link to the external careers portal. Contact buttons are actual mail/telephone links, not simulated submissions.
+Primary yellow on hero and charcoal on white; text links have a fine underline and directional arrow. The hero also offers an outlined contact link. CTA labels describe destinations. Careers buttons link to the external careers portal. Contact buttons are actual mail/telephone links, not simulated submissions.
 
 ### Navigation and data display
 
@@ -94,7 +94,7 @@ Lucide outline icons, usually 17–25px. Icons accompany text except explicitly 
 
 ### Motion
 
-Short 200ms navigation/action feedback, 550ms restrained image zoom, and a muted looping background video. Reduced-motion disables animation and transitions and uses immediate scrolling. Reduced-motion preferences suppress video autoplay and show a frame from the actual clip; visitors can explicitly start playback. A visible native button pauses or resumes the video. No autoplay carousel.
+Short 200ms navigation/action feedback, 550ms restrained image zoom, and a muted looping background video. Reduced-motion disables animation and transitions and uses immediate scrolling. Reduced-motion preferences suppress video autoplay and show a frame from the actual clip; visitors can explicitly start playback. A visible native button pauses or resumes the video. Section headings, cards, and editorial blocks reveal on entry with short fade-and-rise animations; hero text arrives in sequence. Content stays readable without animation support. The featured filmstrip is manually operated, supports arrow/Home/End keys, and resets video playback when the selected project changes. No autoplay carousel.
 
 ### Content and data visualization
 
