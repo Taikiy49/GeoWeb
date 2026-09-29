@@ -2,11 +2,12 @@ import { useEffect, useRef } from "react";
 
 /** Progressive enhancement: content stays visible if observation or motion is unavailable. */
 export function usePageMotion(route: string) {
-  const previousPath = useRef<string>();
+  const previousRoute = useRef<string>();
   useEffect(() => {
     const path = route.split("?")[0];
-    const filtering = previousPath.current === path;
-    previousPath.current = path;
+    const filtering = previousRoute.current !== route
+      && previousRoute.current?.split("?")[0] === path;
+    previousRoute.current = route;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const animations = new Set<Animation>();
     let observer: IntersectionObserver | undefined;
