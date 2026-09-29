@@ -56,11 +56,11 @@ Ink owns text, navigation, service sections, and footer. Yellow identifies prima
 
 ## Typography
 
-Self-hosted Montserrat 500/600/700/800 for headings, DM Sans 400/500/600 for content and controls. Body copy is generally 16px with 1.8 line height. Long case-study prose has a constrained measure. Small uppercase tracking is reserved for short labels. Hawaiian diacritics use the font package's extended character support and sans-serif fallback.
+Self-hosted Montserrat 500/600/700/800 for headings, DM Sans 400/500/600 for content and controls. Body copy is generally 16px with 1.8 line height. Long case-study prose has a constrained measure. Main navigation uses a consistent 1rem (16px) desktop size and 1.125rem (18px) collapsed-menu size, with Montserrat 700 and 0.04em tracking. Small uppercase tracking is reserved for short labels. Hawaiian diacritics use the font package's extended character support and sans-serif fallback.
 
 ## Layout
 
-Maximum content width 1280px; desktop side gutters 56px. At 900px navigation becomes a nonmodal collapsible list. At 760px major grids become one column, gutters reduce to 20px, and section spacing reduces. Main document owns scrolling. Image aspect ratios reserve card geometry; detail images have fixed responsive heights. Search results are deliberately rendered in full (30 projects) with lazy images.
+Maximum content width 1280px; desktop side gutters 56px. At 1100px navigation becomes a nonmodal collapsible list. At 760px major grids become one column, gutters reduce to 20px, and section spacing reduces. Main document owns scrolling. Image aspect ratios reserve card geometry; detail images have fixed responsive heights. Search results are deliberately rendered in full (30 projects) with lazy images.
 
 ## Elevation & Depth
 
