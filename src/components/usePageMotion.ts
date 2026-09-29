@@ -23,21 +23,22 @@ export function usePageMotion(route: string) {
             observer?.unobserve(entry.target);
             const element = entry.target;
             const isGallery = element.matches(".project-card, .home-service-card, .leaders article, .benefits-grid article, .awards-list article, .office-list article, .three-columns article");
-            const isPhoto = element.matches(".film-viewer, .recognition > img, .panorama, .project-cover, .detail-hero, .people-feature > img");
+            const isPhoto = element.matches("img, .film-viewer, .panorama, .project-cover, .detail-hero");
+            const isText = element.matches("h1, h2, h3, p, li, .eyebrow");
             const parent = element.parentElement;
-            const order = isGallery && parent ? (groupCounts.get(parent) ?? 0) : 0;
-            if (isGallery && parent) groupCounts.set(parent, order + 1);
+            const order = (isGallery || isText) && parent ? (groupCounts.get(parent) ?? 0) : 0;
+            if ((isGallery || isText) && parent) groupCounts.set(parent, order + 1);
             const from = isPhoto
               ? { opacity: 0.65, transform: "scale(.985)" }
-              : { opacity: 0.55, transform: `translateY(${isGallery ? 18 : 10}px)` };
+              : { opacity: 0.55, transform: `translateY(${isGallery ? 14 : 8}px)` };
             const animation = element.animate(
               [
                 from,
                 { opacity: 1, transform: "translateY(0)" },
               ],
               {
-                duration: filtering ? 300 : isPhoto ? 700 : 520,
-                delay: Math.min(order, 3) * 65,
+                duration: filtering ? 300 : isPhoto ? 600 : 420,
+                delay: Math.min(order, 3) * 45,
                 easing: "cubic-bezier(.16,1,.3,1)",
                 fill: "backwards",
               },
@@ -52,10 +53,16 @@ export function usePageMotion(route: string) {
         .querySelectorAll(
           filtering
             ? "main .project-card"
-            : "main .section-heading, main .film-heading, main .film-viewer, main .filmstrip, main .company-intro > div, main .home-service-card, main .secondary-services > a, main .project-card, main .careers-copy, main .recognition > *, main .page-intro, main .service-card, main .capabilities article, main .leaders article, main .office-list article, main .benefits-grid article, main .awards-list article, main .prose, main .contact-band .container, main .project-title, main .project-cover, main .panorama, main .detail-hero, main .people-feature > *, main .three-columns article, main .editorial-grid > aside, main .career-hero .container, main .career-policy, main .contact-main, main .application-box, .footer-top > div",
+            : "main h1, main h2, main h3, main p, main li, main .eyebrow, main img, main .button, main .arrow-link, main .film-viewer, main .filmstrip, .footer-top h2, .footer-top p, .footer-links a, .footer-contact a",
         ));
-      const targets = new Set(candidates);
-      candidates.forEach((element) => {
+      // Hero and film media already have authored motion. Keep numbers under
+      // CountUp's ownership, and do not replay UI labels during search updates.
+      const eligible = candidates.filter((element) =>
+        !element.closest(".hero, .stats, .film-screen, .film-meta, .filmstrip, .portfolio-toolbar, .result-count")
+        || element.matches(".filmstrip"),
+      );
+      const targets = new Set(eligible);
+      eligible.forEach((element) => {
         let ancestor = element.parentElement;
         while (ancestor) {
           if (targets.has(ancestor)) return;
