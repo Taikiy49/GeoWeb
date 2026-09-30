@@ -83,7 +83,7 @@ Keep photographic frames rectangular and buttons nearly square. Circular control
 
 - Navigation: a yellow active underline on desktop, large links in a responsive dropdown, visible keyboard focus, Escape dismissal, current-link dismissal, and dismissal when focus or a pointer leaves the header.
 - Buttons: 52px minimum primary control height, clear focus rings, small arrow movement on hover/focus, and an immediate press response.
-- Project filters: wrapping text controls with a yellow active underline, `aria-pressed`, and URL-backed state. Search is a labeled native search input with a clear action and live result count.
+- Project filters: wrapping text controls with a yellow active underline, `aria-pressed`, and URL-backed state. Search is a labeled native search input with one 44px clear action and a live result count. Suppress the extra WebKit clear decoration when the custom action is present. Router state updates synchronously because it controls the input value; authored reveal animations remain independent of React transitions.
 - Project links: whole photographic entries are clickable; restrained image zoom and persistent arrows make navigation obvious on touch and keyboard.
 - Filmstrip: original Wix-selected imagery and HDOT video, manual previous/next, keyboard arrow/Home/End selection, centered active thumbnail, playback focus transfer, and a retry state.
 - Video: hero plays muted when visible, pauses offscreen/in background tabs, and remembers manual pause intent. Reduced motion starts paused; the user can explicitly play it.

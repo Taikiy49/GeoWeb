@@ -1014,7 +1014,8 @@ function NotFound() {
 }
 function App() {
   return (
-    <BrowserRouter>
+    // Search is controlled by URL state, which must update synchronously with typing.
+    <BrowserRouter useTransitions={false}>
       <Routes>
         <Route element={<Shell />}>
           <Route index element={<Home />} />
