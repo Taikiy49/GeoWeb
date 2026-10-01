@@ -436,6 +436,7 @@ function Services() {
 }
 function ServiceDetail() {
   const { slug } = useParams();
+  const { hash } = useLocation();
   const s = services.find((x) => x.slug === slug);
   if (!s) return <NotFound />;
   return (
@@ -452,7 +453,11 @@ function ServiceDetail() {
         <aside className="sticky-index">
           <span className="eyebrow">CAPABILITIES</span>
           {s.sections.map((section, i) => (
-            <a key={section.title} href={`#capability-${i}`}>
+            <a
+              key={section.title}
+              href={`#capability-${i}`}
+              aria-current={hash === `#capability-${i}` ? "location" : undefined}
+            >
               {section.title}
               <ArrowDown size={13} />
             </a>
@@ -463,7 +468,7 @@ function ServiceDetail() {
         </aside>
         <div className="capabilities">
           {s.sections.map((section, i) => (
-            <article id={`capability-${i}`} key={section.title}>
+            <article id={`capability-${i}`} key={section.title} tabIndex={-1}>
               <h2>{section.title}</h2>
               <p>{section.text}</p>
               {section.items && (

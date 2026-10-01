@@ -53,7 +53,6 @@ address { font-style: normal; }
 ::selection { background: var(--yellow); color: var(--ink); }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 5px; }
 main:focus { outline: none; }
-section[id], article[id] { scroll-margin-top: 112px; }
 .container { width: calc(100% - var(--gutter) * 2); max-width: var(--page-max); margin-inline: auto; }
 .section { padding-block: var(--section-space); }
 .soft-section { background: var(--soft); }
@@ -248,7 +247,8 @@ section[id], article[id] { scroll-margin-top: 112px; }
 .detail-hero figcaption, .project-cover figcaption { margin-top: 12px; color: var(--muted); font-size: 13px; }
 .sticky-index { position: sticky; top: 118px; }
 .sticky-index > a:not(.button) { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-bottom: 1px solid var(--line); padding-block: 14px; min-height: 48px; font-size: 15px; }
-.sticky-index > a:not(.button):hover { color: var(--focus); }
+.sticky-index > a:not(.button):is(:hover, :focus-visible) { color: var(--focus); }
+.sticky-index > a[aria-current="location"] { color: var(--ink); border-bottom-color: var(--yellow); font-weight: 600; }
 .sticky-index .button { margin-top: 28px; }
 .capabilities article { padding-bottom: 36px; margin-bottom: 36px; border-bottom: 1px solid var(--line); }
 .capabilities article:last-child { margin: 0; padding: 0; border: 0; }
