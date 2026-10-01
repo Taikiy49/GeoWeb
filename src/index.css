@@ -147,7 +147,7 @@ main:focus { outline: none; }
 .film-arrows { display: flex; gap: 8px; }
 .film-arrows button { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #a1a6b5; border-radius: 50%; background: transparent; color: white; transition: background 180ms, color 180ms; }
 .film-arrows button:is(:hover, :focus-visible) { background: var(--yellow); color: var(--ink); border-color: var(--yellow); }
-.filmstrip { display: flex; gap: 12px; overflow-x: auto; padding: 22px 4px 12px; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: var(--ink) var(--line); }
+.filmstrip { display: flex; gap: 12px; overflow-x: auto; padding: 22px 12px 12px; scroll-snap-type: x proximity; scrollbar-width: thin; scrollbar-color: var(--ink) var(--line); }
 .film-frame { position: relative; min-width: 0; flex: 1 0 0; padding: 12px 5px; background: var(--ink); border: 1px solid var(--ink); color: white; scroll-snap-align: center; transition: transform 240ms var(--ease-out), box-shadow 240ms; }
 .film-frame::before, .film-frame::after { content: ""; position: absolute; left: 7px; right: 7px; height: 4px; background: repeating-linear-gradient(90deg, white 0 7px, transparent 7px 16px); }
 .film-frame::before { top: 4px; }
