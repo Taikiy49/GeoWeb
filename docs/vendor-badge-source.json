@@ -1,0 +1,22 @@
+{
+  "source_page": "https://www.geolabs.net/",
+  "source_section": "ABOUT, immediately before the established/ESOP/staff/awards statistics",
+  "retrieved_at_utc": "2026-10-01T23:19:39.476427+00:00",
+  "asset": {
+    "file": "public/brand/usfcr-verified-vendor.png",
+    "source": "https://static.wixstatic.com/media/d5b831_18bbee67952e4f0fa01575ed0b775a29~mv2.png",
+    "width": 349,
+    "height": 269,
+    "bytes": 90648,
+    "sha256": "1341dd83937d25bc08060a506e5898fd6074d66e0806e166c11f4be4a0c12892",
+    "format": "PNG RGBA",
+    "transform": "None; original Wix media bytes",
+    "source_element_id": "comp-mqzpi0ec",
+    "source_link": null,
+    "visible_badge_year": "2026"
+  },
+  "source_wording": "Geolabs, Inc. is a verified vendor registered to do business with the U.S. Federal Government through the System for Award Management (SAM).",
+  "wording_element_id": "comp-mqzpl099",
+  "evidence": "The public Wix homepage DOM contains this exact text immediately after the image element. The image is wrapped in a div, not an anchor. Asset visually matches the user-supplied screenshot.",
+  "verification_scope": "This is migration provenance for the existing company website statement and badge. No independent verification of SAM registration, eligibility, or current federal contractor status was performed."
+}

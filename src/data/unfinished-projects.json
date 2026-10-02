@@ -1,0 +1,53 @@
+[
+  {
+    "slug": "resort-concepts",
+    "title": "Resort concepts & regional timelines"
+  },
+  {
+    "slug": "koolina-lagoons",
+    "title": "Koʻolina Lagoons"
+  },
+  {
+    "slug": "marriott",
+    "title": "Marriott’s Ko Olina Beach Club"
+  },
+  {
+    "slug": "beach-villas",
+    "title": "Koʻolina Beach Villas"
+  },
+  {
+    "slug": "aulani",
+    "title": "Aulani"
+  },
+  {
+    "slug": "dynamic-beach-villas",
+    "title": "Beach Villas — alternate draft"
+  },
+  {
+    "slug": "aulani-cms",
+    "title": "Aulani Resort — newer CMS story"
+  },
+  {
+    "slug": "hilton-grand-islander",
+    "title": "Hilton Grand Islander"
+  },
+  {
+    "slug": "straub-medical-center",
+    "title": "Straub Benioff Medical Center",
+    "image": "straub-medical-center",
+    "credit": "Photo Courtesy: Hawaii Pacific Health"
+  },
+  {
+    "slug": "ililani",
+    "title": "Ililani Condominium"
+  },
+  {
+    "slug": "kaiaulu",
+    "title": "Kaiāulu o Kūkuʻia Apartments"
+  },
+  {
+    "slug": "maui-temporary-schools",
+    "title": "Temporary Schools for Maui",
+    "image": "maui-temporary-schools"
+  }
+]

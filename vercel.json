@@ -1,4 +1,306 @@
 {
+  "redirects": [
+    {
+      "source": "/johnylchen",
+      "destination": "/people#john-chen",
+      "permanent": true
+    },
+    {
+      "source": "/robinmlim",
+      "destination": "/people#robin-lim",
+      "permanent": true
+    },
+    {
+      "source": "/geraldyseki",
+      "destination": "/people#gerald-seki",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/people",
+      "permanent": true
+    },
+    {
+      "source": "/leadership-new",
+      "destination": "/people",
+      "permanent": true
+    },
+    {
+      "source": "/team-new",
+      "destination": "/people",
+      "permanent": true
+    },
+    {
+      "source": "/ala-moana-center-expansion",
+      "destination": "/projects/ala-moana-center",
+      "permanent": true
+    },
+    {
+      "source": "/ala-moana-new",
+      "destination": "/projects/ala-moana-center",
+      "permanent": true
+    },
+    {
+      "source": "/copy-of-ala-moana-center-expansion",
+      "destination": "/projects/ala-moana-center",
+      "permanent": true
+    },
+    {
+      "source": "/kahului-new",
+      "destination": "/projects/kahului-airport",
+      "permanent": true
+    },
+    {
+      "source": "/pacifica-honolulu",
+      "destination": "/projects/kahului-airport",
+      "permanent": true
+    },
+    {
+      "source": "/909-kapiolani",
+      "destination": "/projects/kamehameha-athletic-field",
+      "permanent": true
+    },
+    {
+      "source": "/materials-new",
+      "destination": "/services/materials-testing",
+      "permanent": true
+    },
+    {
+      "source": "/new-projects",
+      "destination": "/projects",
+      "permanent": true
+    },
+    {
+      "source": "/application",
+      "destination": "https://careers.geolabs.net/apply",
+      "permanent": true
+    },
+    {
+      "source": "/forensics-new",
+      "destination": "/services/forensic-expert-witness",
+      "permanent": true
+    },
+    {
+      "source": "/moana-pacific",
+      "destination": "/projects/moana-pacific",
+      "permanent": true
+    },
+    {
+      "source": "/navy-dock-new",
+      "destination": "/projects/navy-dry-dock",
+      "permanent": true
+    },
+    {
+      "source": "/honolulu-high-capacity-transit-corridor",
+      "destination": "/projects/honolulu-rail",
+      "permanent": true
+    },
+    {
+      "source": "/copy-of-honolulu-high-capacity-tran",
+      "destination": "/projects/international-marketplace",
+      "permanent": true
+    },
+    {
+      "source": "/blank-4",
+      "destination": "/projects/koolani-tower",
+      "permanent": true
+    },
+    {
+      "source": "/inquiry-services-page",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/book-online",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/projects/aulani-resort",
+      "destination": "/drafts/aulani-cms",
+      "permanent": true
+    },
+    {
+      "source": "/projects/ka-makana-aliʻi",
+      "destination": "/projects/ka-makana-alii",
+      "permanent": true
+    },
+    {
+      "source": "/projects/ka-makana-ali%CA%BBi",
+      "destination": "/projects/ka-makana-alii",
+      "permanent": true
+    },
+    {
+      "source": "/projects/ka-makana-ali%ca%bbi",
+      "destination": "/projects/ka-makana-alii",
+      "permanent": true
+    },
+    {
+      "source": "/projects/hilton-grand-islander",
+      "destination": "/drafts/hilton-grand-islander",
+      "permanent": true
+    },
+    {
+      "source": "/projects/wainiha-landslide-mitigation",
+      "destination": "/projects/wainiha-landslide",
+      "permanent": true
+    },
+    {
+      "source": "/projects/consolidated-car-rental-\\(conrac\\)-facility",
+      "destination": "/projects/kahului-conrac",
+      "permanent": true
+    },
+    {
+      "source": "/projects/consolidated-car-rental-%28conrac%29-facility",
+      "destination": "/projects/kahului-conrac",
+      "permanent": true
+    },
+    {
+      "source": "/projects/pali-highway-landslide-mitigation",
+      "destination": "/projects/pali-highway",
+      "permanent": true
+    },
+    {
+      "source": "/projects/life-sciences-building-at-universit",
+      "destination": "/projects/uh-life-sciences",
+      "permanent": true
+    },
+    {
+      "source": "/projects/hanalei-hills-landslide-mitigation",
+      "destination": "/projects/hanalei-hills",
+      "permanent": true
+    },
+    {
+      "source": "/projects/hnl-consolidated-rental-car-\\(conrac\\)-facility",
+      "destination": "/projects/hnl-conrac",
+      "permanent": true
+    },
+    {
+      "source": "/projects/hnl-consolidated-rental-car-%28conrac%29-facility",
+      "destination": "/projects/hnl-conrac",
+      "permanent": true
+    },
+    {
+      "source": "/projects/mauka-concourse-at-daniel-k.-inouye-international-airport-honolulu,-oahu",
+      "destination": "/projects/mauka-concourse",
+      "permanent": true
+    },
+    {
+      "source": "/projects/mauka-concourse-at-daniel-k.-inouye-international-airport-honolulu%2C-oahu",
+      "destination": "/projects/mauka-concourse",
+      "permanent": true
+    },
+    {
+      "source": "/projects/mauka-concourse-at-daniel-k.-inouye-international-airport-honolulu%2c-oahu",
+      "destination": "/projects/mauka-concourse",
+      "permanent": true
+    },
+    {
+      "source": "/projects/sky-ala-moana-twin-towers",
+      "destination": "/projects/sky-ala-moana",
+      "permanent": true
+    },
+    {
+      "source": "/projects/the-central-ala-moana-",
+      "destination": "/projects/central-ala-moana",
+      "permanent": true
+    },
+    {
+      "source": "/projects/palau-wharf-improvements-",
+      "destination": "/projects/palau-wharf",
+      "permanent": true
+    },
+    {
+      "source": "/projects/makai-slope-repair-below-alelele-slope-piilani-hwy,-maui",
+      "destination": "/projects/makai-alele-slope",
+      "permanent": true
+    },
+    {
+      "source": "/projects/makai-slope-repair-below-alelele-slope-piilani-hwy%2C-maui",
+      "destination": "/projects/makai-alele-slope",
+      "permanent": true
+    },
+    {
+      "source": "/projects/makai-slope-repair-below-alelele-slope-piilani-hwy%2c-maui",
+      "destination": "/projects/makai-alele-slope",
+      "permanent": true
+    },
+    {
+      "source": "/projects/koa-ridge-",
+      "destination": "/projects/koa-ridge",
+      "permanent": true
+    },
+    {
+      "source": "/projects/yap-wharf-improvements",
+      "destination": "/projects/yap-wharf",
+      "permanent": true
+    },
+    {
+      "source": "/projects/rockfall-protection-at-alelele-slope",
+      "destination": "/projects/alele-rockfall",
+      "permanent": true
+    },
+    {
+      "source": "/projects/emergency-slope-scaling-for-kalepa-slope",
+      "destination": "/projects/kalepa-slope",
+      "permanent": true
+    },
+    {
+      "source": "/projects/azure-and-sky-ala-moana-twin-towers",
+      "destination": "/projects/azure-sky-ala-moana",
+      "permanent": true
+    },
+    {
+      "source": "/projects/palau-wharf-improvements",
+      "destination": "/projects/palau-wharf",
+      "permanent": true
+    },
+    {
+      "source": "/projects/ala-moana-elevated-pedestrian-walkway",
+      "destination": "/projects/ala-moana-walkway",
+      "permanent": true
+    },
+    {
+      "source": "/projects/\"the-park-on-keaaumoku\"-twin-towers",
+      "destination": "/projects/park-on-keeaumoku",
+      "permanent": true
+    },
+    {
+      "source": "/projects/%22the-park-on-keaaumoku%22-twin-towers",
+      "destination": "/projects/park-on-keeaumoku",
+      "permanent": true
+    },
+    {
+      "source": "/projects/kahalui-airport-terminal-expansion",
+      "destination": "/projects/kahului-airport",
+      "permanent": true
+    },
+    {
+      "source": "/projects/koolani-condo",
+      "destination": "/projects/koolani-tower",
+      "permanent": true
+    },
+    {
+      "source": "/projects/ala-moana-expansion",
+      "destination": "/projects/ala-moana-center",
+      "permanent": true
+    },
+    {
+      "source": "/specificproject/ko'olina-beach-villas",
+      "destination": "/drafts/dynamic-beach-villas",
+      "permanent": true
+    },
+    {
+      "source": "/specificproject/ko%27olina-beach-villas",
+      "destination": "/drafts/dynamic-beach-villas",
+      "permanent": true
+    },
+    {
+      "source": "/specificproject/mariott-hotel",
+      "destination": "/drafts/marriott",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!assets/|images/|brand/|videos/|licenses/|robots.txt).*)",

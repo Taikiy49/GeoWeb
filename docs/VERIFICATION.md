@@ -77,3 +77,23 @@ Before screenshots showed capability destinations landing 224px from the viewpor
 Desktop and phone screenshots showed the first thumbnail’s focus ring clipped by the scroll container: a 3px outline with 5px offset had only 4px of inner clearance. Increased the filmstrip’s horizontal inner padding to 12px, preserving the original frames, selection treatment and scrolling behavior.
 
 `npm run check` passed. At 1440, 768, 390 and 320px, Home, End and wraparound arrow-key navigation passed (16 checks); all four sides of the focused thumbnail’s outline remained inside the scroll container and selection stayed synchronized. Four automated WCAG A/AA scans of the featured-project section reported no violations. No document overflow or browser page errors occurred. Before/after desktop and mobile evidence is in the local `film-focus-review` directory.
+
+
+## Source fidelity, maps and company presentation — October 1, 2026
+
+Restored the original USFCR artwork/statement, interactive four-office Google map, current published employment policy, omitted credentials/benefits/project detail, and specific About capabilities/sectors. All displayed phone numbers now use the owner's `(808)841-5064` convention with correct international dialing links. Footer heights measured approximately 370px desktop, 450px tablet and 740px phone. Twelve unfinished titles display Under construction; unverified narrative JSON is archived and no longer imported into the browser bundle. See PRODUCTION-READINESS.md for unresolved parity and source issues.
+
+Automated local crawl visited all **56 routes at 1440 and 390px**, saving **112 full-page screenshots**. Every route had exactly one h1, no horizontal overflow, no broken loaded local image, and no dotted phone text. All 56 mobile axe WCAG A/AA scans returned zero violations; no browser page errors. A separate responsive pass visited all 56 routes at 320 and 768px without document overflow. Expanded service approach and all three credential disclosures were checked at 1440/390/320: six additional axe scans returned zero violations. These are browser/automated checks, not formal WCAG certification.
+
+An independent Contact pass confirmed actual Google map tiles/pins/address cards at desktop and narrow mobile sizes, four working office selections, correct address/directions queries, all displayed/dialing phone pairs, keyboard focus and reduced motion. Sixteen representative legacy cases passed locally, including encoded punctuation, profile anchors, query preservation and old homepage fragments. Official Vercel routing compilation and 250 mapping assertions passed separately. Deployed edge redirects require the staging HTTP checks noted below.
+
+React review: components use stable keys, local selection state, derived addresses, cleanup-safe routing effects, lazy images with intrinsic dimensions, and no added runtime dependency. Decorative SVGs animate through their wrapper. Service disclosures own their short entrance and are excluded from the shared reveal observer to avoid double animation. Impeccable detect returned only the existing documented film-readability scrim advisory (#171b2aaa).
+
+
+Additional motion checks at 320px sampled About, a project detail, Services and People during active entrances: no transient horizontal overflow. Switching to reduced motion left zero running document animations and automatic (non-smooth) scrolling. Native service disclosure keyboard activation passed. The source-backed descriptions did not require a new animation library.
+
+
+The final benefits layout gives its longer FSA description a full-width row, avoiding an isolated narrow last card. Careers was rechecked at 1440/768/390/320 with four additional clean axe scans and no overflow. Final `npm run check` passed; the production bundle contains neither tested distinctive raw-placeholder phrase. All current evidence lives in the October review directory; the original September snapshots remain unchanged.
+
+
+Fresh editor review completed: **38 named views** (33 archived views, four additional variants and legacy HOME), plus **all 28 dynamic records** individually reopened. All 33 archived-view and 28 CMS normalized text comparisons matched. See fresh-wix-review.md for per-item evidence, handling of damaged source encoding, and limits. A visual review of service/project/draft layouts prompted a two-line treatment for multi-year awards, preventing an isolated slash on narrow phones.

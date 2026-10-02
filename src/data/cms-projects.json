@@ -5,7 +5,7 @@
     "location": "Honolulu, Oʻahu",
     "market": "Transportation",
     "image": "ala-moana-walkway",
-    "summary": "A new connection between the city and the waterfront.",
+    "summary": "The Ala Moana Elevated Pedestrian Walkway is a thoughtfully designed bridge in Honolulu that offers a safer and more scenic way to cross the busy Ala Moana Boulevard, which carries a high volume of traffic.",
     "body": [
       "An elevated pedestrian bridge across Ala Moana Boulevard connects Kakaʻako and Ward Village with Ala Moana Beach Park and Kewalo Basin. Integrated with Victoria Ward Park, the crossing links landscaped public space with the waterfront and reduces pedestrian conflicts with road traffic."
     ],
@@ -17,7 +17,7 @@
     "location": "Honolulu, Oʻahu",
     "market": "Residential",
     "image": "azure-sky-ala-moana",
-    "summary": "High-rise living in a changing Honolulu neighborhood.",
+    "summary": "Azure and Sky Ala Moana are twin tower developments that contribute prominently to Honolulu's vibrant Ala Moana neighborhood, offering a blend of residential living and hospitality in a dynamic urban setting.",
     "body": [
       "Azure and Sky Ala Moana bring residential and mixed-use development to Honolulu’s Ala Moana district. The developments combine high-rise buildings with shared amenities, parking, and street-level activity in a dense urban setting."
     ],
@@ -29,7 +29,7 @@
     "location": "Kahului, Maui",
     "market": "Airports",
     "image": "kahului-conrac",
-    "summary": "Consolidating rental car operations at Maui’s gateway.",
+    "summary": "Accessible via a short tram from baggage claim.",
     "body": [
       "The consolidated rental car facility at Kahului Airport brings vehicle pickup, returns, parking, and operational support together. The multilevel facility serves airport passengers while coordinating the movement, servicing, and staging of a large vehicle fleet."
     ],
@@ -41,7 +41,7 @@
     "location": "Piʻilani Highway, Maui",
     "market": "Slopes & rockfall",
     "image": "kalepa-slope",
-    "summary": "Restoring access along a vulnerable coastal road.",
+    "summary": "By removing loose rock and debris from the steep volcanic slopes above the roadway, the work reduced the risk of sudden closures and improved safety for drivers traveling this remote coastal corridor.",
     "body": [
       "Emergency slope scaling at Kalepa addressed unstable rock above Piʻilani Highway in East Maui. Specialized crews removed loose material from steep slopes, with traffic controls supporting the work along a narrow and essential coastal route."
     ],
@@ -53,7 +53,7 @@
     "location": "Honolulu, Oʻahu",
     "market": "Airports",
     "image": "hnl-conrac",
-    "summary": "A coordinated airport hub for rental car operations.",
+    "summary": "Streamlining access for millions of arriving passengers via short walks or shuttles from other terminals.",
     "body": [
       "The HNL consolidated rental car facility brings on-airport rental companies together across from Terminal 2 at Daniel K. Inouye International Airport. Its multilevel arrangement combines vehicle parking, customer areas, shuttle access, car washing, fueling, and operational support."
     ],
@@ -65,7 +65,7 @@
     "location": "Kūhiō Highway, Kauaʻi",
     "market": "Slopes & rockfall",
     "image": "hanalei-hills",
-    "summary": "Protecting a vital connection to Kauaʻi’s North Shore.",
+    "summary": "A critical North Shore route at Mile Marker 1 near Hanalei Bridge",
     "body": [
       "Following a major slope failure near Hanalei Bridge, stabilization work addressed a critical section of Kūhiō Highway. The phased response included soil nails, shotcrete, anchored mesh, and drainage improvements to support safer, more reliable access."
     ],
@@ -77,7 +77,7 @@
     "location": "Kapolei, Oʻahu",
     "market": "Retail",
     "image": "ka-makana-alii",
-    "summary": "A gathering place for a growing West Oʻahu community.",
+    "summary": "It serves as a mixed-use hub for Kapolei's expanding population, blending retail therapy, entertainment, and cultural events in a landscape-inspired design reflecting Native Hawaiian motifs.",
     "body": [
       "Ka Makana Aliʻi is an open-air regional shopping center in Kapolei. Retail, dining, entertainment, and gathering spaces serve the surrounding community, supported by phased infrastructure, circulation, and stormwater planning."
     ],
@@ -90,7 +90,7 @@
     "location": "Central Oʻahu",
     "market": "Residential",
     "image": "koa-ridge",
-    "summary": "Connecting homes, services, and open space.",
+    "summary": "Koa Ridge is an expansive master-planned “surban” community in Central Oahu between Mililani and Waipio, developed by Castle & Cooke to blend urban conveniences with suburban tranquility across roughly 670 acres.",
     "body": [
       "Koa Ridge is a master-planned community between Mililani and Waipiʻo. Its mix of housing, commercial uses, parks, and community facilities is connected by pedestrian and cycling routes, with infrastructure phased to support the development’s growth."
     ],
@@ -102,7 +102,7 @@
     "location": "Mānoa, Oʻahu",
     "market": "Education",
     "image": "uh-life-sciences",
-    "summary": "A shared home for life sciences teaching and research.",
+    "summary": "A central atrium designed for informal collaboration among students, faculty, and researchers.",
     "body": [
       "The University of Hawaiʻi at Mānoa’s Life Sciences Building brings teaching laboratories, research spaces, offices, and collaborative areas together on East-West Road. Opened for instruction in 2020, the building was renamed in 2023 to honor Isabella Aiona Abbott."
     ],
@@ -115,7 +115,7 @@
     "location": "Piʻilani Highway, Maui",
     "market": "Slopes & rockfall",
     "image": "makai-alele-slope",
-    "summary": "Strengthening the coastal edge of an essential route.",
+    "summary": "Emergency work here stabilizes the makai (ocean-side) slope below the mauka (mountain-side) repairs already done by Prometheus Construction after 2023 rockfalls, ensuring safer passage through one of Maui's most dramatic and vulnerable highway segments.",
     "body": [
       "The makai slope repair below Alelele addresses erosion and slope instability along East Maui’s rugged coastal highway. The project complements work above the road, with attention to roadway support, drainage, and the challenges of a remote coastal setting."
     ],
@@ -127,7 +127,7 @@
     "location": "Honolulu, Oʻahu",
     "market": "Airports",
     "image": "mauka-concourse",
-    "summary": "More capacity at Hawaiʻi’s aviation gateway.",
+    "summary": "It connects seamlessly post-security to the existing terminal via walkways, enhancing flow for kama'aina (local) passengers while tying into HNL's modernization program.",
     "body": [
       "The Mauka Concourse expands Terminal 1 at Daniel K. Inouye International Airport. The addition connects passenger gates, screening, concessions, and waiting areas with the existing terminal, while new paving and infrastructure support airport operations."
     ],
@@ -140,7 +140,7 @@
     "location": "Malakal Island, Palau",
     "market": "Docks & harbors",
     "image": "palau-wharf",
-    "summary": "Supporting an island nation’s maritime connections.",
+    "summary": "Palau Wharf, located on Malakal Island near Koror, serves as a crucial gateway for both commercial and recreational maritime activities in Palau.",
     "body": [
       "Improvements at Malakal Harbor address Palau’s primary commercial port infrastructure. The project story describes wharf rehabilitation, expanded cargo handling space, and harbor improvements, alongside stormwater and environmental considerations."
     ],
@@ -152,7 +152,7 @@
     "location": "Oʻahu",
     "market": "Slopes & rockfall",
     "image": "pali-highway",
-    "summary": "Resilience through the Koʻolau Mountains.",
+    "summary": "Pali Highway Landslide Mitigation addresses chronic rockfall and debris risks along Oahu's Route 61 between the Nuuanu Pali Tunnels and Kailua",
     "body": [
       "Landslide mitigation along Pali Highway addresses rockfall and debris hazards near the Nuʻuanu Pali Tunnels. The response combines protective structures, slope stabilization, and roadway improvements along a major link between Honolulu and Windward Oʻahu."
     ],
@@ -164,7 +164,7 @@
     "location": "East Maui",
     "market": "Slopes & rockfall",
     "image": "alele-rockfall",
-    "summary": "Reducing rockfall hazards for remote communities.",
+    "summary": "The work focused on protecting a critical coastal route that links remote communities and provides access around the back side of Haleakalā.",
     "body": [
       "Emergency rockfall protection at Alelele followed slope failures that closed a section of the coastal road between Kīpahulu and Kaupō. Specialized rock scaling and protection measures helped restore access and reduce hazards along this essential transportation link."
     ],
@@ -176,7 +176,7 @@
     "location": "Honolulu, Oʻahu",
     "market": "Residential",
     "image": "sky-ala-moana",
-    "summary": "Mixed-use towers along Kapiʻolani Boulevard.",
+    "summary": "The towers anchor a shift toward high-density mixed-use living near Walmart, Target, and eateries, with mauka-makai oriented designs preserving view corridors and pedestrian paths enhancing walkability.",
     "body": [
       "Sky Ala Moana combines residential, hotel, commercial, and shared amenity space across from Ala Moana Center. Its paired towers and common podium bring housing and services together within Honolulu’s evolving urban corridor."
     ],
@@ -188,7 +188,7 @@
     "location": "Honolulu, Oʻahu",
     "market": "Residential",
     "image": "central-ala-moana",
-    "summary": "Housing and everyday connections in urban Honolulu.",
+    "summary": "At ground level, the building incorporates retail fronting Kapiolani Boulevard, plus landscaping and pedestrian paths that connect to nearby sidewalks and bus stops, supporting a more walkable, mixed-use corridor around Ala Moana Center.",
     "body": [
       "The Central Ala Moana is a residential high-rise on Kapiʻolani Boulevard with both market-rate and affordable homes. A parking podium, shared outdoor amenities, and ground-level retail support a mixed-use setting close to shopping and transit."
     ],
@@ -200,7 +200,7 @@
     "location": "Northern Mariana Islands",
     "market": "Airports",
     "image": "tinian-north-field",
-    "summary": "An airfield with a significant Pacific history.",
+    "summary": "Tinian North Field on Tinian Island in the Commonwealth of the Northern Mariana Islands is one of the most historically significant airfields of the Second World War.",
     "body": [
       "North Field occupies the northern end of Tinian in the Commonwealth of the Northern Mariana Islands. Its historic runways and supporting infrastructure reflect a major chapter of Pacific airfield engineering. Contact our team for details about current project scope and Geolabs’ involvement."
     ],
@@ -212,7 +212,7 @@
     "location": "Kakaʻako, Oʻahu",
     "market": "Residential",
     "image": "victoria-place",
-    "summary": "Residential development beside Victoria Ward Park.",
+    "summary": "Victoria Place is a luxurious residential tower located in the heart of Honolulu’s Ward Village, positioned prominently on Ala Moana Boulevard next to the scenic Victoria Ward Park.",
     "body": [
       "Victoria Place is a residential tower on Ala Moana Boulevard in Ward Village. The development combines high-rise residences with landscaped outdoor amenities and shared spaces, connecting its urban setting with views toward the waterfront and Victoria Ward Park."
     ],
@@ -224,7 +224,7 @@
     "location": "Kūhiō Highway, Kauaʻi",
     "market": "Slopes & rockfall",
     "image": "wainiha-landslide",
-    "summary": "Reconnecting communities after severe flooding.",
+    "summary": "Fixing it proved extremely challenging due to the remote, narrow terrain with single-lane bridges, sheer cliffs, and ongoing flood risks.",
     "body": [
       "Landslides following the April 2018 rains disrupted Kūhiō Highway and isolated communities on Kauaʻi’s North Shore. Mitigation work addressed unstable slopes and drainage in a remote, narrow corridor where difficult access and continued rainfall complicated recovery."
     ],
@@ -236,7 +236,7 @@
     "location": "Federated States of Micronesia",
     "market": "Docks & harbors",
     "image": "yap-wharf",
-    "summary": "Infrastructure connecting Yap to the wider Pacific.",
+    "summary": "The Yap Wharf is the main commercial pier serving the port of Colonia on Yap Island in the Federated States of Micronesia.",
     "body": [
       "Yap’s main commercial wharf serves the port of Colonia. The port supports cargo, fuel, and essential supplies, connecting the island with regional trade and its outer islands."
     ],

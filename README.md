@@ -1,6 +1,6 @@
 # Geolabs website
 
-A responsive React + TypeScript website rebuilt from the saved Geolabs Wix editor, including unpublished page variants and dynamic project records. Content and photography were inspected on September 28, 2026.
+A responsive React + TypeScript website rebuilt from the saved Geolabs Wix editor, including unpublished page variants and dynamic project records. The original source capture is dated September 28, 2026; the October 1 review compares it with the published site and fresh saved editor views. See `docs/content-parity-review.md` and `docs/fresh-wix-review.md` for coverage and unresolved source issues.
 
 ## Run locally
 
@@ -20,12 +20,13 @@ npm run preview   # Serve the production build
 
 - `src/data/site.ts`: offices, services, original engineering case studies, leadership, benefits, awards.
 - `src/data/cms-projects.json`: additional distinct projects from Wix's dynamic collection.
-- `src/data/drafts.json`: clearly labeled unfinished stories.
+- `src/data/drafts.json`: archived unfinished source narratives; not imported into the site.
+- `src/data/unfinished-projects.json`: 12 source titles shown as Under construction, with only verified image associations.
 - `docs/wix-source-snapshot.json`: original inspected page text and image metadata, including all 28 dynamic records.
 - `docs/MIGRATION.md`: source precedence, coverage, and editorial decisions.
 - `DESIGN.md`: visual identity and shared interaction conventions.
 
-All applications and resume uploads go to https://careers.geolabs.net/apply. Contact inquiries use working email and telephone links. No Wix runtime or credentials are required. Fonts and project images are hosted locally.
+All applications and resume uploads go to https://careers.geolabs.net/apply. Contact inquiries use working email and telephone links. Four office selectors update a live Google Maps embed with a permanent directions fallback. Displayed phones use `(808)841-5064`; dialing links use international digits. The original Wix contact submission form has no migrated backend. No Wix runtime or credentials are required. Google supplies the embedded map. Fonts and project images are hosted locally.
 
 ## Hosting
 

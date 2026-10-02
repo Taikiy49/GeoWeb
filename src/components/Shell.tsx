@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { ArrowUpRight, Menu, X, ArrowRight } from "lucide-react";
 import { usePageMotion } from "./usePageMotion";
 import { applyUrl, offices } from "../data/site";
+import { formatPhone, phoneHref } from "../data/phone";
 
 export function Brand() {
   return (
@@ -108,7 +109,7 @@ export function Shell() {
       </main>
       <footer className="site-footer">
         <div className="container footer-top">
-          <div>
+          <div className="footer-identity">
             <Link className="footer-brand" to="/" aria-label="Geolabs home">
               <img
                 src="/brand/geolabs-g.png"
@@ -154,6 +155,9 @@ export function Shell() {
               LinkedIn <ArrowUpRight size={13} />
             </a>
             <Link to="/drafts">Draft project stories</Link>
+            <a href={applyUrl}>
+              Join our team <ArrowUpRight size={13} />
+            </a>
           </div>
           <div className="footer-contact">
             <h2>Hawaiʻi office</h2>
@@ -162,25 +166,26 @@ export function Shell() {
               <br />
               {offices[0].locality}
             </p>
-            <a href="tel:+18088415064">808.841.5064</a>
-            <a href="mailto:hawaii@geolabs.net">hawaii@geolabs.net</a>
-          </div>
-        </div>
-        <div className="utility">
-          <span>HAWAIʻI · PACIFIC BASIN · CALIFORNIA</span>
-          <div>
-            <span>Employee-owned since 1991</span>
-            <a href={applyUrl}>
-              Join our team <ArrowUpRight size={13} />
-            </a>
+            <div className="footer-contact-links">
+              <a href={phoneHref(offices[0].phones[0])}>
+                {formatPhone(offices[0].phones[0])}
+              </a>
+              <a href="mailto:hawaii@geolabs.net">hawaii@geolabs.net</a>
+            </div>
           </div>
         </div>
         <div className="container footer-bottom">
-          <span>© {new Date().getFullYear()} Geolabs, Inc.</span>
-          <span>Oʻahu · Maui · Kauaʻi · California</span>
-          <Link to="/contact">
-            Contact us <ArrowRight size={14} />
-          </Link>
+          <div className="footer-facts">
+            <span>HAWAIʻI · PACIFIC BASIN · CALIFORNIA</span>
+            <span>Employee-owned since 1991</span>
+          </div>
+          <div className="footer-legal">
+            <span>© {new Date().getFullYear()} Geolabs, Inc.</span>
+            <span>Oʻahu · Maui · Kauaʻi · California</span>
+            <Link to="/contact">
+              Contact us <ArrowRight size={14} />
+            </Link>
+          </div>
         </div>
       </footer>
     </>

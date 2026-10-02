@@ -67,7 +67,9 @@ The content width is bounded by the page-max token, with fluid gutters and 60px 
 - Projects use three columns with a two-column opening photograph, two equal columns below 900px, and one column below 640px. Search and category filters remain directly above results.
 - People combine individual portraits and names, with credentials in native disclosures. Phones use one profile per row.
 - Awards pair a sticky ceremony photograph with a chronological list; phones stack the photograph above the list.
-- Contact groups the inquiry panel and regional office directory; careers pairs the field team with a slate introduction.
+- Contact groups the inquiry panel and regional office directory, followed by a four-office Google map with 48px selectors and persistent directions. Careers pairs the field team with a slate introduction.
+- About uses a compact original USFCR trust row, a slate capabilities section, open sector columns, and office links. The source Clients section stays explicitly Under construction.
+- Footer padding and grid are compact, while mobile links retain 44px targets. Desktop/tablet/phone heights are approximately 370/450/740px.
 
 The menu switches at 1150px. Main content adaptations occur at 900px and 640px, with a 360px refinement for narrow phones. The anniversary panel overhang is exactly 12px desktop/tablet and 10px mobile. Do not change it as part of general spacing adjustments.
 
@@ -87,7 +89,9 @@ Keep photographic frames rectangular and buttons nearly square. Circular control
 - Project links: whole photographic entries are clickable; restrained image zoom and persistent arrows make navigation obvious on touch and keyboard.
 - Filmstrip: original Wix-selected imagery and HDOT video, manual previous/next, keyboard arrow/Home/End selection, centered active thumbnail, playback focus transfer, and a retry state.
 - Video: hero plays muted when visible, pauses offscreen/in background tabs, and remembers manual pause intent. Reduced motion starts paused; the user can explicitly play it.
-- Disclosures: native `details`/`summary`, generous targets, short icon rotation, and a 220ms content entrance.
+- Disclosures: native `details`/`summary`, generous targets, short icon rotation, and a short content entrance. The service approach disclosures preserve the Home(New) Design and Construction Support paragraphs without expanding every page by default. Their content owns its animation and is excluded from the shared reveal observer.
+- Interior introductions use subtle contour-inspired linework, explicitly decorative rather than a map. A wrapper handles the one-time 900ms entrance; reduced motion disables it. The original logo, documentary media and physical filmstrip remain the main visual anchors.
+- USFCR: original source PNG and exact published statement, 112px art on desktop and 86px on mobile, with no invented certification link.
 
 **The Motion Ownership Rule.** A block or its descendants may reveal, never both. Card groups reveal as a unit; standalone headings, paragraphs, lists, and images reveal independently. Text moves 8px over 420ms, card groups 14px, photography settles over 600ms; sibling delays stop at 135ms. Retained results do not replay when typing. Film transitions use 460ms and menu entry 240ms. All animation starts from already-visible content, never changes document flow, and cancels on route cleanup or reduced-motion preference changes.
 
@@ -105,7 +109,7 @@ Statistics retain the final value for assistive technology and reserve the final
 
 ### Verified presentation details
 
-Tall-building photographs for Central Ala Moana, Moana Pacific and the Hilton draft use top-aligned subject positioning so desktop crops preserve their crowns. Leadership names and roles use explicit content-sized grid rows regardless of whether credentials are available. The film readability scrim uses translucent slate (`#171b2aaa`). Draft rendering decodes imported numeric entities and known damaged punctuation without altering the archived source JSON or removing draft warnings. Project search accepts common unaccented keyboard spellings; displayed Hawaiian names stay unchanged. Related projects prioritize the same market, then the same location.
+Tall-building photographs for Central Ala Moana, Moana Pacific and the Hilton draft use top-aligned subject positioning so desktop crops preserve their crowns. Leadership names and roles use explicit content-sized grid rows regardless of whether credentials are available. The film readability scrim uses translucent slate (`#171b2aaa`). Unfinished pages display source titles and an Under construction notice. Unverified narratives stay in the repository archive and are not bundled. Only imagery with confirmed source subject association is shown; other unfinished entries use abstract slate contour linework. Project search accepts common unaccented keyboard spellings; displayed Hawaiian names stay unchanged. Related projects prioritize the same market, then the same location.
 
 ### Gallery and interaction finish
 

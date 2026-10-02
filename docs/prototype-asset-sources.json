@@ -1,0 +1,66 @@
+{
+  "reviewedAt": "2026-10-01",
+  "sourcePage": "Home (New - Prototypes)",
+  "method": "Signed-in Wix editor UI; rendered preview image alt, src, and parent data-image-info; originals downloaded directly from observed Wix asset identity. Converted to WebP at maximum 1600 pixels, preserving aspect ratio. No image generation or subject replacement.",
+  "assets": [
+    {
+      "title": "Straub Benioff Medical Center",
+      "sourceAlt": "Straub Benioff Medical Center",
+      "sourceUrl": "https://static.wixstatic.com/media/d5b831_b387b1058d774490994785e03d82b9c9~mv2.jpeg",
+      "localAsset": "public/images/straub-medical-center.webp",
+      "displayCredit": "Photo Courtesy: Hawaii Pacific Health",
+      "status": "retained for under-construction entry",
+      "inspection": "Visible building signage reads HAWAII PACIFIC HEALTH STRAUB MEDICAL CENTER; source heading and credit agree. No engineering narrative provided by the prototype."
+    },
+    {
+      "title": "Temporary Schools for Maui",
+      "sourceAlt": "Temporary Schools for Maui",
+      "sourceUrl": "https://static.wixstatic.com/media/d5b831_c1a8dd134704422e8960f1921065446f~mv2.jpeg",
+      "localAsset": "public/images/maui-temporary-schools.webp",
+      "displayCredit": null,
+      "status": "retained for under-construction entry",
+      "inspection": "Photograph shows a temporary modular classroom campus under construction. Title association comes from original Wix img alt. No more-specific project location, date, or engineering narrative verified."
+    },
+    {
+      "title": "Ililani Condominium",
+      "sourceAlt": "Ililani Condominium",
+      "sourceUrl": "https://static.wixstatic.com/media/d5b831_48a660302e65404ea9c2e0934e8e2a34~mv2.jpeg",
+      "localAsset": null,
+      "displayCredit": null,
+      "status": "withheld pending subject confirmation",
+      "inspection": "Wix associates this broad Kakaako skyline with Ililani, but the image contains multiple buildings and does not unambiguously identify the named project. Alternate Ilani Condo.png repeats the same skyline. Use a text-only under-construction entry rather than implying a verified building photo."
+    },
+    {
+      "title": "Kaiāulu o Kūku’ia Apartments",
+      "sourceAlt": "Kaiāulu o Kūku'ia Apartments",
+      "sourceUrl": "https://static.wixstatic.com/media/d5b831_05fdc116bdc6449ebb16b23ecfdffdc8~mv2.jpeg",
+      "localAsset": null,
+      "displayCredit": null,
+      "status": "rejected mismatched subject",
+      "inspection": "Image façade visibly reads KAHULUI LANI. The alternate kaiaulu Apartments.png is the same wrong subject. Another Kaiaulu.png has visible Kaiāulu o Kupuohi signage, also not the requested title. None is safe to display as Kaiāulu o Kūku’ia."
+    }
+  ],
+  "rejectedAlternates": [
+    {
+      "sourceAlt": "kaiaulu Apartments.png",
+      "sourceUrl": "https://static.wixstatic.com/media/d5b831_6f25e4ce2bdb451088dfd1cf13c68c57~mv2.png",
+      "reason": "Same Kahului Lani subject."
+    },
+    {
+      "sourceAlt": "Kaiaulu.png",
+      "sourceUrl": "https://static.wixstatic.com/media/d5b831_41210e4b3b4a473886a588158c35d186~mv2.png",
+      "reason": "Building sign says Kaiāulu o Kupuohi."
+    },
+    {
+      "sourceAlt": "Ilani Condo.png",
+      "sourceUrl": "https://static.wixstatic.com/media/d5b831_8ccc593740574ea59c0e0c6d68a531e1~mv2.png",
+      "reason": "Same broad skyline; named project not independently identifiable."
+    }
+  ],
+  "relatedExistingProject": {
+    "prototypeTitle": "Malakal Port",
+    "sourceAlt": "Malakal  Port",
+    "sourceUrl": "https://static.wixstatic.com/media/d5b831_95b72f456e444c9490c110b0b36d22c2~mv2.jpg",
+    "evidence": "Services (New) captions an existing project Palau Wharf Improvements, Malakal Island (2024). The prototype img filename describes USNS City of Bismarck docked at the Commercial Seaport of Palau in Koror. The labels place the material at the same port area but do not prove that every depicted work package is identical; retain existing Palau Wharf project without inventing an additional scope."
+  }
+}

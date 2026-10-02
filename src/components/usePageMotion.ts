@@ -63,7 +63,7 @@ export function usePageMotion(route: string) {
       // Hero and film media already have authored motion. Keep numbers under
       // CountUp's ownership, and do not replay UI labels during search updates.
       const eligible = candidates.filter((element) =>
-        !element.closest(".hero, .stats, .film-screen, .film-meta, .filmstrip, .portfolio-toolbar, .result-count")
+        !element.closest(".hero, .stats, .film-screen, .film-meta, .filmstrip, .portfolio-toolbar, .result-count, .service-approach details")
         || element.matches(".filmstrip"),
       );
       const targets = new Set(eligible);

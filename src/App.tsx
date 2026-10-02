@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import {
   BrowserRouter,
   Link,
+  Navigate,
   Route,
   Routes,
   useLocation,
@@ -22,6 +23,9 @@ import { CountUp } from "./components/CountUp";
 import { Shell } from "./components/Shell";
 import { HeroVideo } from "./components/HeroVideo";
 import { FeaturedFilm } from "./components/FeaturedFilm";
+import { OfficeMap } from "./components/OfficeMap";
+import { VendorBadge } from "./components/VendorBadge";
+import { ContourAccent } from "./components/ContourAccent";
 import {
   applyUrl,
   careersUrl,
@@ -34,11 +38,12 @@ import {
   benefits,
   Project,
 } from "./data/site";
-import drafts from "./data/drafts.json";
+import unfinishedStories from "./data/unfinished-projects.json";
 import imageSizes from "./data/image-sizes.json";
 
-import { formatDraftParagraph } from "./data/draftText";
 import { normalizeProjectSearch } from "./data/projectSearch";
+import { formatPhone, phoneHref } from "./data/phone";
+import { getLegacyDestination } from "./data/legacyRoutes";
 
 const photoDimensions: Record<string, number[]> = imageSizes;
 
@@ -141,6 +146,7 @@ function PageIntro({
 }) {
   return (
     <div className={`page-masthead slate-surface${connected ? " page-masthead-connected" : ""}${breadcrumb ? " page-masthead-with-breadcrumb" : ""}`}>
+      <ContourAccent />
       {breadcrumb}
       <div className="page-intro container">
         <div className="eyebrow">{eyebrow}</div>
@@ -197,7 +203,7 @@ function Home() {
         </div>
         <div>
           <p className="lead">
-            Geolabs, Inc. is Hawaiʻi’s largest geotechnical engineering firm and
+            Geolabs, Inc. is Hawaii’s largest geotechnical engineering firm and
             a trusted advisor for over 50 years throughout the Hawaiian Islands
             and Pacific Basin.
           </p>
@@ -207,6 +213,7 @@ function Home() {
             construction-friendly solutions tailored to Hawaiʻi’s unique
             subsurface conditions.
           </p>
+          <VendorBadge />
         </div>
       </section>
       <section className="section soft-section">
@@ -268,7 +275,7 @@ function Home() {
             We are a team of more than 80 geotechnical professionals—including
             licensed engineers, seasoned technical specialists, and dedicated
             field personnel—working collaboratively to deliver technically
-            sound, constructible solutions.
+            sound, constructible solutions tailored to the demands of Hawaii and the Pacific Basin.
           </p>
           <a className="button button-yellow" href={careersUrl}>
             View career opportunities <ArrowUpRight size={19} />
@@ -303,8 +310,9 @@ function About() {
       <Meta title="About us" />
       <PageIntro eyebrow="OUR COMPANY" title="About us">
         <p>
-          Hawaiʻi’s largest geotechnical engineering firm. More than 50 years of
-          knowledge, built one project at a time.
+          Geolabs, Inc. is Hawaii’s largest and most experienced geotechnical
+          engineering firm, with over 50 years of proven expertise and a
+          reputation for technical excellence, resilience, and practical innovation.
         </p>
       </PageIntro>
       <div className="container panorama">
@@ -319,83 +327,133 @@ function About() {
         <div className="prose">
           <p className="lead">
             Founded in 1975, Geolabs has built a legacy of solving complex
-            geotechnical challenges with precision, grit, and a deep
-            understanding of Hawaiʻi and the Pacific Basin.
+            geotechnical challenges with precision, grit, and a deep understanding
+            of the unique subsurface conditions in Hawaii and the Pacific Basin.
           </p>
           <p>
-            Our work has helped build the islands’ infrastructure and continues
-            to shape Honolulu’s skyline through the design of high-rise building
-            foundations. Our archive of geologic and soil data spans over five
-            decades, informing recommendations tailored to each site.
+            Our work has played a vital role in building Hawaii’s infrastructure
+            and continues to shape Honolulu’s skyline through the design of many
+            of its high-rise building foundations.
           </p>
           <h3>Our team</h3>
           <p>
-            More than 80 professionals—including licensed engineers, experienced
-            technical specialists, geologists, and field personnel—work together
-            to deliver sound, constructible solutions.
+            We are a team of more than 80 geotechnical professionals—including
+            licensed engineers, seasoned technical specialists, and dedicated
+            field personnel—working collaboratively to deliver technically sound,
+            constructible solutions tailored to the demands of Hawaii and the Pacific Basin.
           </p>
-          <h3>What we do</h3>
-          <p>
-            Our expertise covers foundation investigation, landslide
-            stabilization, rockfall mitigation, trenchless utilities, ground
-            improvement, and geotechnical earthquake engineering. During
-            construction, we provide field observation, special inspections,
-            materials testing, and geotechnical instrumentation.
-          </p>
-          <ArrowLink to="/services">Explore our capabilities</ArrowLink>
+          <VendorBadge />
         </div>
       </section>
-      <section className="soft-section section">
+      <section className="section slate-surface about-capabilities">
         <div className="container">
           <div className="section-heading">
-            <div>
-              <div className="eyebrow">THE COMMUNITIES WE SERVE</div>
-              <h2>Who we serve</h2>
-            </div>
-            <p>
-              Public and private. Local and regional.
-              <br />
-              Our work connects people and places.
-            </p>
+            <h2>What we do</h2>
+            <ArrowLink to="/services" light>Explore our capabilities</ArrowLink>
           </div>
-          <div className="three-columns">
-            {[
-              [
-                "Who we serve",
-                "Military branches, federal and state agencies, municipalities, developers, project owners, architects, engineers, and design-build contractors.",
-              ],
-              [
-                "Where we work",
-                "Offices in Waipahu, Wailuku, Līhuʻe, and Oakland support projects throughout Hawaiʻi and the Pacific Basin.",
-              ],
-              [
-                "What we support",
-                "Highways, airports, harbors, high-rise buildings, housing, commercial and industrial developments, water and wastewater systems, and utility networks.",
-              ],
-            ].map(([t, p]) => (
-              <article key={t}>
-                <h3>{t}</h3>
-                <p>{p}</p>
-              </article>
-            ))}
+          <div className="capability-columns">
+            <div>
+              <h3>Geotechnical engineering</h3>
+              <ul className="capability-list">
+                {[
+                  "Foundation Investigation",
+                  "Landslide Stabilization",
+                  "Rockfall Mitigation",
+                  "Trenchless Utility Installations",
+                  "Ground Improvement",
+                  "Geotechnical Earthquake Engineering",
+                ].map((item, index) => (
+                  <li key={item}><span aria-hidden="true">0{index + 1}</span>{item}</li>
+                ))}
+              </ul>
+              <p>Geotechnical Earthquake Engineering is a vital component in ensuring seismic resilience across the region.</p>
+            </div>
+            <div>
+              <h3>Construction support</h3>
+              <ul className="capability-list">
+                {["Field Observation", "Special Inspections", "Materials Testing", "Geotechnical Instrumentation"].map((item, index) => (
+                  <li key={item}><span aria-hidden="true">0{index + 1}</span>{item}</li>
+                ))}
+              </ul>
+              <p>
+                Our continued involvement ensures that design recommendations
+                are properly implemented and evolving site conditions are
+                addressed with agility and expertise.
+              </p>
+            </div>
+          </div>
+          <p className="about-capabilities-note">
+            Our consulting organization provides the knowledge, equipment, and
+            experienced personnel to successfully accomplish projects ranging
+            from geotechnical foundation investigations to roadway embankments,
+            dams, landslides, and rockfall mitigation.
+          </p>
+        </div>
+      </section>
+      <section className="section container about-sectors">
+        <div className="editorial-grid">
+          <h2>Who we serve</h2>
+          <div className="prose">
+            <ul className="client-types">
+              {["All branches of the Military", "Federal and State Agencies", "Local Municipalities", "Developers and Project Owners", "Architects and Engineers", "Design-Build Contractors"].map((item) => <li key={item}>{item}</li>)}
+            </ul>
+          </div>
+        </div>
+        <h3 className="sector-heading">Key sectors</h3>
+        <div className="three-columns sector-grid">
+          {[
+            ["Transportation", "Highways, Airports, and Harbor Facilities"],
+            ["Vertical construction", "High-rise Buildings, Parking Structures, Residential and Commercial Developments, and Industrial Complexes"],
+            ["Infrastructure development", "Wastewater Treatment Plants, Water Mains, Electrical Transmission Lines, and Advanced Telecommunication Networks—including Trenchless Installations."],
+          ].map(([title, text], index) => (
+            <article key={title}>
+              <span className="sector-index" aria-hidden="true">0{index + 1}</span>
+              <h3>{title}</h3><p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section className="section soft-section">
+        <div className="container editorial-grid">
+          <h2>Where we work</h2>
+          <div className="prose">
+            <p>
+              We maintain a strong regional presence and a vast archive of
+              geologic and soil data spanning over five decades. This depth of
+              knowledge enables us to deliver informed, site-specific recommendations
+              that support resilient, sustainable development.
+            </p>
+            <div className="about-office-links">
+              {offices.map((office) => (
+                <Link to="/contact#office-locations" key={office.name}>
+                  <span>{office.name}<small>{office.city}</small></span><ArrowUpRight size={19} />
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
       <section className="section container people-feature">
-        <Photo
-          name="earthwork"
-          alt="Hoopili development mass grading and slope construction, Oʻahu"
-        />
+        <Photo name="earthwork" alt="Hoopili development mass grading and slope construction, Oʻahu" />
         <div>
           <div className="eyebrow">EMPLOYEE-OWNED SINCE 1991</div>
           <h2>Our culture</h2>
           <p>
-            Employee ownership strengthens our accountability to clients and to
-            one another. We invest in lasting partnerships, technical
-            excellence, and a resilient future for our communities.
+            Since becoming an employee-owned company in 1991, we have fostered
+            a culture of accountability, collaboration, and long-term partnership.
+            Our work has earned engineering awards for innovation and excellence
+            across numerous projects.
+          </p>
+          <h3>Our commitment</h3>
+          <p>
+            At Geolabs, we don’t just engineer solutions—we build trust,
+            resilience, and a foundation for Hawaii’s future.
           </p>
           <ArrowLink to="/people">Meet our people</ArrowLink>
         </div>
+      </section>
+      <section className="container clients-status" id="clients" aria-labelledby="clients-heading">
+        <h2 id="clients-heading">Clients</h2><span>Under construction</span>
       </section>
     </>
   );
@@ -406,8 +464,8 @@ function Services() {
       <Meta title="Our services" />
       <PageIntro eyebrow="OUR EXPERTISE" title="Our services">
         <p>
-          Geotechnical engineering, subsurface investigation, construction
-          support, and materials testing—all working together.
+          Geotechnical engineering, drilling and subsurface investigation,
+          construction support, materials testing, and forensic and expert witness services.
         </p>
       </PageIntro>
       <div className="container service-cards">
@@ -431,6 +489,24 @@ function Services() {
           </Link>
         ))}
       </div>
+      <section className="section soft-section">
+        <div className="container service-approach">
+          <details>
+            <summary>Design <Plus size={20} aria-hidden="true" /></summary>
+            <div>
+              <p>At Geolabs, Inc., we are committed to delivering efficient, high-quality geotechnical recommendations that meet our clients’ needs and contribute to the long-term resilience of our communities. With over 50 years of experience, we have had the privilege of working on many of Hawaii’s most high-profile projects.</p>
+              <p>While we are confident in our expertise, we remain humble in our approach—always striving to innovate, improve, and earn the trust of those we serve, project by project, year after year. Our dedication to forward-thinking solutions and collaborative partnerships continues to shape the future of geotechnical engineering in Hawaii and beyond.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Construction support <Plus size={20} aria-hidden="true" /></summary>
+            <div>
+              <p>At Geolabs, Inc., one of our core strengths lies in confirming that the foundations of buildings, bridges, embankments, roadways, and facilities are structurally sound and built to last.</p>
+              <p>Our team is actively involved in every phase of the process, providing hands-on, day-to-day oversight to ensure each element performs as intended and meets rigorous standards for safety and reliability. With a deep understanding of Hawaii’s unique geotechnical conditions, we apply innovative methods and proven experience to deliver solutions our clients and communities can trust.</p>
+            </div>
+          </details>
+        </div>
+      </section>
     </>
   );
 }
@@ -601,6 +677,7 @@ function ProjectDetail() {
     <>
       <Meta title={p.title} description={p.summary} />
       <div className="page-masthead slate-surface">
+        <ContourAccent />
         <Breadcrumb to="/projects" label="Projects" context={p.market} />
         <div className="container project-title">
           <span className="eyebrow">{p.location}</span>
@@ -665,8 +742,7 @@ function People() {
       <Meta title="Our people" />
       <PageIntro eyebrow="OUR PEOPLE" title="Our people" connected>
         <p>
-          Engineers, geologists, field specialists, and employee owners. A team
-          dedicated to serving you.
+          Dedicated to Serving You
         </p>
       </PageIntro>
       <section className="slate-surface">
@@ -677,7 +753,7 @@ function People() {
           </div>
           <div className="leaders">
             {leaders.map((l) => (
-              <article key={l.name}>
+              <article key={l.name} id={l.image === "robin" ? "robin-lim" : l.image === "gerald" ? "gerald-seki" : l.image === "john" ? "john-chen" : "payton-kiuchi"}>
                 <Photo eager name={l.image} alt={l.name} />
                 <h3>{l.name}</h3>
                 <p>{l.role}</p>
@@ -691,7 +767,7 @@ function People() {
                         <p key={e}>{e}</p>
                       ))}
                       <p>{l.registration}</p>
-                      <a href={`mailto:${l.email}`}>{l.email}</a>
+                      {l.email && <a href={`mailto:${l.email}`}>{l.email}</a>}
                     </div>
                   </details>
                 )}
@@ -705,15 +781,16 @@ function People() {
           <h2>Our team</h2>
           <div className="prose">
             <p className="lead">
-              Our professional staff includes geotechnical engineers with
+              We have a professional staff of geotechnical engineers with
               advanced degrees specializing in geotechnical engineering and
               foundation design.
             </p>
             <p>
-              Licensed engineers, geologists, experienced technical specialists,
-              and field personnel collaborate across the project lifecycle.
-              Employee ownership brings personal accountability to the work and
-              a shared interest in our clients’ success.
+              We are a team of more than 80 geotechnical professionals—including
+              licensed engineers, seasoned technical specialists, and dedicated
+              field personnel—working collaboratively to deliver technically
+              sound, constructible solutions tailored to the demands of Hawaii
+              and the Pacific Basin.
             </p>
             <ArrowLink to="/careers">Find your place at Geolabs</ArrowLink>
           </div>
@@ -728,8 +805,8 @@ function Awards() {
       <Meta title="Awards & recognition" />
       <PageIntro eyebrow="RECOGNITION" title="Awards & recognition">
         <p>
-          Innovative solutions to difficult geotechnical challenges. A record of
-          recognition spanning decades.
+          The high quality of our work is demonstrated by engineering awards
+          that we received for outstanding and innovative design accomplishments.
         </p>
       </PageIntro>
       <div className="container awards-layout">
@@ -743,7 +820,11 @@ function Awards() {
         <section className="awards-list">
           {awards.map(([year, project, award, body]) => (
             <article key={project}>
-              <span className="award-year">{year}</span>
+              <span className="award-year">
+                {year.includes(" / ")
+                  ? year.split(" / ").map((part, index) => <span key={part}>{index > 0 && <small>/ </small>}{part}</span>)
+                  : year}
+              </span>
               <div>
                 <h2>{project}</h2>
                 <p>{award}</p>
@@ -781,7 +862,7 @@ function Contact() {
             hawaii@geolabs.net <ArrowUpRight />
           </a>
           <a className="contact-phone" href="tel:+18088415064">
-            808.841.5064
+            {formatPhone(offices[0].phones[0])}
           </a>
           <div className="contact-careers">
             <span className="eyebrow">LOOKING TO JOIN US?</span>
@@ -808,8 +889,8 @@ function Contact() {
               </address>
               <div className="office-links">
                 {o.phones.map((p) => (
-                  <a key={p} href={`tel:+1${p.replace(/\./g, "")}`}>
-                    {p}
+                  <a key={p} href={phoneHref(p)}>
+                    {formatPhone(p)}
                   </a>
                 ))}
                 <a href={`mailto:${o.email}`}>{o.email}</a>
@@ -828,6 +909,7 @@ function Contact() {
           ))}
         </div>
       </section>
+      <div className="container" id="office-locations"><OfficeMap /></div>
     </>
   );
 }
@@ -846,9 +928,7 @@ function Careers() {
           <span className="eyebrow">EMPLOYMENT</span>
           <h1>Join the team.</h1>
           <p>
-            Make a lasting contribution to Hawaiʻi.
-            <br />
-            Become part of an employee-owned team.
+            Geolabs is a 100% Employee-Owned Company
           </p>
           <a className="button button-yellow" href={careersUrl}>
             Explore career opportunities <ArrowUpRight size={20} />
@@ -861,20 +941,17 @@ function Careers() {
           <h2>Employee-owned since 1991</h2>
         </aside>
         <div className="prose">
-          <p className="lead">
-            Our engineers and technicians work on projects that shape
-            communities across Hawaiʻi and the Pacific.
-          </p>
           <p>
-            We’re a 100% employee-owned company. That means shared
-            responsibility, pride in the work, and an investment in one
-            another’s future.
+            Since becoming an employee-owned company in 1991, we have fostered
+            a culture of accountability, collaboration, and long-term partnership.
+            Our work has earned engineering awards for innovation and excellence
+            across numerous projects.
           </p>
           <div className="application-box">
             <h3>Apply online</h3>
             <p>
               Check current openings, complete your application, and upload your
-              resume securely through the Geolabs careers portal.
+              resume through the Geolabs careers portal.
             </p>
             <a className="button button-navy" href={applyUrl}>
               Apply online <ArrowUpRight size={18} />
@@ -891,31 +968,49 @@ function Careers() {
               <article key={title}>
                 <Check size={21} />
                 <h3>{title}</h3>
-                <p>{text}</p>
+                {text && <p>{text}</p>}
               </article>
             ))}
           </div>
         </div>
       </section>
       <section className="section container career-policy">
-        <h2>Equal employment opportunity</h2>
+        <h2>EEO Statement</h2>
         <p>
-          Geolabs, Inc. provides equal employment opportunities to all employees
-          and applicants for employment without regard to race, color, religion,
-          gender or gender identity, sexual orientation, national origin, age,
-          disability, genetic information, marital status, amnesty or status as
-          a covered veteran and lactation in accordance with applicable federal,
-          state and local laws.
+          Geolabs, Inc. is an equal opportunity employer committed to providing
+          equal employment opportunities to all applicants and employees in
+          accordance with all applicable federal, state, and local laws.
+          Employment decisions are based on individual merit, qualifications,
+          business needs, and the ability to perform the essential functions of the position.
         </p>
         <p>
-          Reasonable accommodations are available during the application
-          process. For accommodation assistance, contact Human Resources at{" "}
-          <a href="tel:+18088415064">808.841.5064</a>. Submit applications and
-          resumes through the <a href={applyUrl}>online careers portal</a>.
+          The Company prohibits unlawful discrimination and harassment on the
+          basis of race, color, religion, sex, gender identity, sexual orientation,
+          national origin, age, disability, genetic information, marital status,
+          citizenship, arrest and court record (as permitted by Hawaii law),
+          amnesty or status as a covered veteran, lactation, or any other
+          characteristic protected by applicable law.
+        </p>
+        <p>
+          As a federal contractor, Geolabs, Inc. complies with all applicable
+          Executive Orders and federal contractor requirements, including
+          Executive Orders 14173 and 14398. The Company does not engage in
+          unlawful discriminatory employment practices, including racially
+          discriminatory DEI activities or preferences prohibited by applicable law.
+        </p>
+        <h2>AAP Statement</h2>
+        <p>
+          Geolabs, Inc. is also an ADA-compliant employer. The Company is committed
+          to providing reasonable accommodations to qualified applicants and
+          employees with disabilities to enable them to perform the essential
+          functions of their positions, unless doing so would impose an undue
+          hardship. Applicants requiring reasonable accommodation during the
+          application process should contact Human Resources at{" "}
+          <a href="tel:+18089135146">{formatPhone("8089135146")}</a> or{" "}
+          <a href="mailto:employment@geolabs.net">employment@geolabs.net</a>.
         </p>
         <a className="arrow-link" href={careersUrl}>
-          View current openings and application information{" "}
-          <ArrowUpRight size={19} />
+          View current openings and application information <ArrowUpRight size={19} />
         </a>
       </section>
     </>
@@ -926,36 +1021,24 @@ function Drafts() {
     <>
       <Meta title="Draft project stories" draft />
       <PageIntro eyebrow="WORK IN PROGRESS" title="Draft project stories">
-        <p>
-          These pages preserve developing project stories for review. They
-          contain unverified placeholder text and are not completed case
-          studies.
-        </p>
+        <p>These project pages are under construction.</p>
       </PageIntro>
       <section className="container draft-index">
         <div className="draft-notice">
-          <span className="draft-tag">DRAFT · NOT VERIFIED</span>
-          <p>
-            Some source material was explicitly labeled as AI-generated
-            placeholder content. Names, dates, project involvement, imagery, and
-            technical claims require editorial verification.
-          </p>
+          <span className="draft-tag">UNDER CONSTRUCTION</span>
+          <p>Unfinished project descriptions are awaiting review.</p>
         </div>
         <div className="project-grid">
-          {drafts.map((d) => (
-            <Link
-              className="project-card"
-              key={d.slug}
-              to={`/drafts/${d.slug}`}
-            >
-              <div className="project-image">
-                <Photo name={d.image} alt={`${d.title} — draft illustration`} />
-                <span className="project-market">Draft for review</span>
+          {unfinishedStories.map((d, index) => (
+            <Link className="project-card" key={d.slug} to={`/drafts/${d.slug}`}>
+              <div className={`project-image${d.image ? "" : " unfinished-artwork"}`}>
+                {d.image ? <Photo name={d.image} alt={d.title} /> : (
+                  <><ContourAccent /><span className="unfinished-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span></>
+                )}
+                <span className="project-market">Under construction</span>
               </div>
-              <div className="project-caption">
-                <h3>{d.title}</h3>
-                <ArrowUpRight size={20} />
-              </div>
+              <div className="project-caption"><h3>{d.title}</h3><ArrowUpRight size={20} /></div>
+              {d.credit && <p className="image-credit">{d.credit}</p>}
             </Link>
           ))}
         </div>
@@ -965,38 +1048,25 @@ function Drafts() {
 }
 function DraftDetail() {
   const { slug } = useParams();
-  const d = drafts.find((x) => x.slug === slug);
+  const d = unfinishedStories.find((x) => x.slug === slug);
   if (!d) return <NotFound />;
   return (
     <>
-      <Meta title={`${d.title} — Draft`} draft />
-      <PageIntro
-        eyebrow="DRAFT · NOT VERIFIED"
-        title={d.title}
-        breadcrumb={<Breadcrumb to="/drafts" label="Draft stories" context="For review" />}
+      <Meta title={`${d.title} — Under construction`} draft />
+      <PageIntro eyebrow="UNDER CONSTRUCTION" title={d.title}
+        breadcrumb={<Breadcrumb to="/drafts" label="Draft stories" context="Under construction" />}
       >
-        <p>Unfinished source content, preserved for editorial review.</p>
+        <p>This project page is under construction.</p>
       </PageIntro>
       <section className="container draft-document">
         <div className="draft-notice">
-          <span className="draft-tag">PLACEHOLDER CONTENT</span>
-          <p>
-            This is not a verified Geolabs case study. The source includes
-            AI-generated material and may contain mismatched locations, project
-            descriptions, imagery, or claims about Geolabs’ work. All content
-            below remains a draft.
-          </p>
+          <span className="draft-tag">WORK IN PROGRESS</span>
+          <p>The project description is awaiting review.</p>
         </div>
-        <Photo
-          eager
-          name={d.image}
-          alt={`${d.title}, illustrative draft image`}
-        />
-        <div className="prose draft-prose">
-          {d.paragraphs.map(formatDraftParagraph).filter(Boolean).map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
-        </div>
+        {d.image && <>
+          <Photo eager name={d.image} alt={d.title} />
+          {d.credit && <p className="image-credit">{d.credit}</p>}
+        </>}
         <ArrowLink to="/drafts">Back to draft stories</ArrowLink>
       </section>
     </>
@@ -1017,10 +1087,25 @@ function NotFound() {
     </>
   );
 }
+function LegacyCompatibility({ children }: { children: React.ReactNode }) {
+  const location = useLocation();
+  const destination = getLegacyDestination(location.pathname, location.hash);
+  const external = destination?.startsWith("https://");
+  useEffect(() => {
+    if (external && destination) window.location.replace(destination);
+  }, [external, destination]);
+  if (external && destination) return <p><a href={destination}>Continue to the careers portal</a></p>;
+  if (destination) {
+    const [path, fragment] = destination.split("#");
+    return <Navigate replace to={`${path}${location.search}${fragment ? `#${fragment}` : ""}`} />;
+  }
+  return children;
+}
 function App() {
   return (
     // Search is controlled by URL state, which must update synchronously with typing.
     <BrowserRouter useTransitions={false}>
+      <LegacyCompatibility>
       <Routes>
         <Route element={<Shell />}>
           <Route index element={<Home />} />
@@ -1038,6 +1123,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
+      </LegacyCompatibility>
     </BrowserRouter>
   );
 }

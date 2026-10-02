@@ -1,4 +1,16 @@
-# Wix migration — September 28, 2026
+# Wix migration — September 28, 2026; reviewed October 1, 2026
+
+## Current review status
+
+The October 1 source-fidelity repairs supersede earlier draft, policy, and contact descriptions below. See [content-parity-review.md](content-parity-review.md), [fresh-wix-review.md](fresh-wix-review.md), [legacy-route-review.md](legacy-route-review.md), and [PRODUCTION-READINESS.md](PRODUCTION-READINESS.md). The site retains 30 completed project pages and now represents 12 unfinished source stories with Under construction pages. Unverified narratives remain in the repository but are no longer imported into the client bundle. Four newly represented prototype titles have no inferred engineering scope. Only the Straub and Maui school prototype photos passed subject checks; the Ililani and Kaiāulu pages have no photo.
+
+The original USFCR art and statement appear under About on Home and About. About sectors, three leaders’ source credentials, seven benefit types, and technical project qualifications were restored. All 30 project summaries and service descriptions now use source excerpts; existing project bodies remain condensed source-based summaries. Navigation and explanatory interface text are editorial. This is not a verbatim reproduction or independent factual certification of Wix content.
+
+Current published HOME and freshly viewed saved HOME provide the EEO/AAP policy and HR accommodation phone `(808)913-5146`; these take precedence over the older Apply(New) wording. Applications still use careers.geolabs.net. All visible phone numbers follow the owner’s no-space parentheses format.
+
+Contact now embeds Google Maps for four directory addresses. The Wix message submission backend is not migrated; email/telephone remain the available inquiry workflow. The latest displayed Oakland address remains 344 20th Street, Suite 340 despite older/differing source maps. Fifty old URL aliases (60 edge rules for encoded variants) and 20 observed homepage fragments have compatibility destinations. Staging noindex remains enabled.
+
+## Initial migration record (historical)
 
 ## Source and scope
 
@@ -49,7 +61,7 @@ The Wix Site Files library was inspected directly for the actual anniversary and
 
 Corrections: the old geotechnical image was generic architecture (now Pali slope mitigation); the drilling image was an island panorama (now the Geolabs CME-75 rig); the materials-testing image showed earthwork (now an actual concrete core in a testing apparatus); careers showed a landscape (now the Geolabs field crew); and the terminal page showed the Kahului rental-car facility (now the terminal photo referenced in Wix CMS). The forensic image is a bridge excavation from its own Wix service page. Award photos display the ceremony without cropping out the group.
 
-No AI-generated photos were used. The source project's unfinished AI-labeled resort copy remains only on clearly marked draft pages, per the owner's earlier instruction. Major invented editorial slogans were replaced with direct headings and Wix company wording. Normalized punctuation, concise technical summaries, navigation labels, and the owner's careers-portal instruction are intentional editorial changes. HR accommodation phone follows Apply (New): 808.841.5064.
+No AI-generated photos were used. The source project's unfinished AI-labeled resort copy remains only on clearly marked draft pages, per the owner's earlier instruction. Major invented editorial slogans were replaced with direct headings and Wix company wording. Normalized punctuation, concise technical summaries, navigation labels, and the owner's careers-portal instruction are intentional editorial changes. At this initial stage the HR accommodation phone followed Apply (New); the October 1 review above supersedes it with the current published policy contact.
 
 ## Home (New) filmstrip refinement — September 28, 2026
 
