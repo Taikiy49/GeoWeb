@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { ArrowUpRight, Menu, X, ArrowRight } from "lucide-react";
+import { ReadingProgress } from "./ReadingProgress";
 import { usePageMotion } from "./usePageMotion";
 import { applyUrl, offices } from "../data/site";
 import { formatPhone, phoneHref } from "../data/phone";
@@ -23,15 +24,19 @@ export function Shell() {
   usePageMotion(location.pathname + location.search);
   const menuButton = useRef<HTMLButtonElement>(null);
   const header = useRef<HTMLElement>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     setOpen(false);
     if (!location.hash) {
       window.scrollTo({ top: 0, behavior: "instant" });
       document.getElementById("main")?.focus({ preventScroll: true });
-    } else
-      requestAnimationFrame(() =>
-        document.getElementById(location.hash.slice(1))?.scrollIntoView(),
-      );
+      // Finish after the browser's link-focus scroll, including an interrupted smooth scroll.
+      const frame = requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "instant" }));
+      return () => cancelAnimationFrame(frame);
+    }
+    const frame = requestAnimationFrame(() =>
+      document.getElementById(location.hash.slice(1))?.scrollIntoView(),
+    );
+    return () => cancelAnimationFrame(frame);
   }, [location.pathname, location.hash]);
   useEffect(() => {
     if (!open) return;
@@ -57,6 +62,7 @@ export function Shell() {
   }, [open]);
   return (
     <>
+      <ReadingProgress route={location.pathname + location.search} />
       <a className="skip-link" href="#main">
         Skip to content
       </a>

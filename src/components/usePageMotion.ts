@@ -12,11 +12,17 @@ export function usePageMotion(route: string) {
     previousRoute.current = route;
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const animations = new Set<Animation>();
+    const pending = new Set<Element>();
+    const showPending = () => {
+      pending.forEach((element) => element.removeAttribute("data-reveal-pending"));
+      pending.clear();
+    };
     let observer: IntersectionObserver | undefined;
     const start = () => {
       observer?.disconnect();
       animations.forEach((animation) => animation.cancel());
       animations.clear();
+      showPending();
       if (preference.matches || !("IntersectionObserver" in window)) return;
       observer = new IntersectionObserver(
         (entries) => {
@@ -25,6 +31,8 @@ export function usePageMotion(route: string) {
             if (!entry.isIntersecting) return;
             observer?.unobserve(entry.target);
             const element = entry.target;
+            element.removeAttribute("data-reveal-pending");
+            pending.delete(element);
             if (revealed.current.has(element)) return;
             revealed.current.add(element);
             const isGallery = element.matches(".project-card, .home-service-card, .leaders article, .benefits-grid article, .awards-list article, .office-list article, .three-columns article");
@@ -34,16 +42,16 @@ export function usePageMotion(route: string) {
             const order = (isGallery || isText) && parent ? (groupCounts.get(parent) ?? 0) : 0;
             if ((isGallery || isText) && parent) groupCounts.set(parent, order + 1);
             const from = isPhoto
-              ? { opacity: 0.65, transform: "scale(.985)" }
-              : { opacity: 0.55, transform: `translateY(${isGallery ? 14 : 8}px)` };
+              ? { opacity: 0.35, transform: "scale(.985)" }
+              : { opacity: 0, transform: `translateY(${isGallery ? 22 : 18}px)` };
             const animation = element.animate(
               [
                 from,
                 { opacity: 1, transform: "translateY(0)" },
               ],
               {
-                duration: filtering ? 300 : isPhoto ? 600 : 420,
-                delay: Math.min(order, 3) * 45,
+                duration: filtering ? 320 : isPhoto ? 750 : 650,
+                delay: Math.min(order, 3) * 70,
                 easing: "cubic-bezier(.16,1,.3,1)",
                 fill: "backwards",
               },
@@ -52,7 +60,7 @@ export function usePageMotion(route: string) {
             animation.onfinish = () => animations.delete(animation);
           });
         },
-        { threshold: 0.08, rootMargin: "0px 0px -24px 0px" },
+        { threshold: 0, rootMargin: "0px 0px -36px 0px" },
       );
       const candidates = Array.from(document
         .querySelectorAll(
@@ -73,14 +81,32 @@ export function usePageMotion(route: string) {
           if (targets.has(ancestor)) return;
           ancestor = ancestor.parentElement;
         }
+        if (!revealed.current.has(element) && element.getBoundingClientRect().top >= window.innerHeight) {
+          element.setAttribute("data-reveal-pending", "");
+          pending.add(element);
+        }
         observer?.observe(element);
       });
     };
+    // Keyboard navigation must never land on an invisible action.
+    const onFocus = (event: FocusEvent) => {
+      if (!(event.target instanceof Element)) return;
+      const target = event.target.closest("[data-reveal-pending]");
+      if (target) {
+        target.removeAttribute("data-reveal-pending");
+        pending.delete(target);
+        revealed.current.add(target);
+        observer?.unobserve(target);
+      }
+    };
+    document.addEventListener("focusin", onFocus);
     start();
     preference.addEventListener("change", start);
     return () => {
       observer?.disconnect();
       animations.forEach((animation) => animation.cancel());
+      showPending();
+      document.removeEventListener("focusin", onFocus);
       preference.removeEventListener("change", start);
     };
   }, [route]);
