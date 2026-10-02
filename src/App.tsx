@@ -277,12 +277,14 @@ function Home() {
             field personnel—working collaboratively to deliver technically
             sound, constructible solutions tailored to the demands of Hawaii and the Pacific Basin.
           </p>
-          <a className="button button-yellow" href={careersUrl}>
-            View career opportunities <ArrowUpRight size={19} />
-          </a>
-          <Link className="arrow-link light" to="/careers">
-            Benefits & employee ownership <ArrowUpRight size={19} />
-          </Link>
+          <div className="careers-actions">
+            <a className="button button-yellow" href={careersUrl}>
+              View career opportunities <ArrowUpRight size={19} />
+            </a>
+            <Link className="arrow-link light" to="/careers">
+              Benefits & employee ownership <ArrowUpRight size={19} />
+            </Link>
+          </div>
         </div>
       </section>
       <section className="section container recognition">
