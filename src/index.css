@@ -35,7 +35,8 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scrollbar-gutter: stable; scroll-padding-top: 112px; }
 body { margin: 0; }
-button, input { font: inherit; }
+button, input, select { font: inherit; }
+input, select { accent-color: var(--yellow); caret-color: var(--focus); }
 button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 button { cursor: pointer; }
 a { color: inherit; text-decoration: none; }
@@ -221,11 +222,12 @@ main:focus { outline: none; }
 @keyframes contour-arrive { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: translateX(0); } }
 .page-masthead-connected { margin-bottom: 0; }
 .content-band { padding-top: 52px; }
+.photo-band { padding-bottom: 40px; }
 .page-intro { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8%; row-gap: 18px; padding-block: 72px 52px; }
 .page-intro > .eyebrow { grid-column: 1 / -1; margin: 0; color: var(--focus); }
 .page-intro h1 { align-self: start; }
 .page-masthead-with-breadcrumb .page-intro { padding-top: 28px; }
-.intro-description { align-self: end; max-width: 52ch; font-size: 20px; }
+.intro-description { align-self: center; max-width: 52ch; font-size: 20px; }
 .intro-description p { line-height: 1.6; }
 .panorama { position: relative; }
 .panorama img { width: 100%; aspect-ratio: 2.65; object-fit: cover; }
@@ -277,7 +279,8 @@ main:focus { outline: none; }
 .service-row-photo > img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--motion-image) var(--ease-out); }
 .service-card:nth-child(even) { grid-template-columns: 1fr 1.15fr; }
 .service-card:nth-child(even) .service-row-photo { order: 2; }
-.service-card h2 { font-size: clamp(28px, 2.8vw, 42px); }
+.service-card h2 { font-size: clamp(28px, 2.8vw, 42px); transition: color 180ms, translate 240ms var(--ease-out); }
+.service-card:is(:hover, :focus-visible) h2 { color: #fff3b0; }
 .service-card p { margin-block: 22px; }
 .service-card .eyebrow { color: var(--muted); }
 .service-card:is(:hover, :focus-visible) img { transform: scale(1.035); }
@@ -306,6 +309,7 @@ main:focus { outline: none; }
 
 /* Project archive: compact wayfinding and a photographic 3-column collection. */
 .portfolio { padding-bottom: var(--section-space); }
+.mobile-market-filter { display: none; }
 .portfolio-toolbar { display: grid; grid-template-columns: 1fr 270px; gap: 32px; padding-block: 24px; border-block: 1px solid var(--line); align-items: start; }
 .filter-tabs { display: flex; flex-wrap: wrap; gap: 4px 20px; }
 .filter-tabs button { position: relative; padding: 10px 0; border: 0; color: var(--muted); background: transparent; font-size: 15px; min-height: 44px; transition: color 180ms; }
@@ -346,8 +350,10 @@ main:focus { outline: none; }
 .project-title { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px 7%; padding-block: 28px 44px; }
 .project-title .eyebrow { grid-column: 1 / -1; margin: 0; color: var(--focus); }
 .project-title h1 { font-size: clamp(36px, 4vw, 62px); }
-.project-title > p { align-self: end; font-size: 21px; }
+.project-title > p { align-self: center; font-size: 21px; }
 .project-cover > img { width: 100%; height: clamp(320px, 46vw, 660px); object-fit: cover; }
+.project-image > img[data-subject="central-ala-moana"],
+.project-image > img[data-subject="moana-pacific"],
 .project-cover > img[data-subject="central-ala-moana"],
 .project-cover > img[data-subject="moana-pacific"],
 .draft-document > img[data-subject="hilton-grand-islander"] { object-position: center top; }
@@ -355,17 +361,17 @@ main:focus { outline: none; }
 .project-facts > div:first-child { padding-top: 0; }
 .project-facts span { display: block; color: var(--muted); font-size: 13px; margin-bottom: 6px; }
 .project-facts strong { font-size: 18px; font-weight: 500; }
-.related { padding-block: 52px var(--section-space); }
+.related { padding-block: 52px var(--section-space); border-top: 1px solid var(--line); }
 
 /* People: portrait-led profiles with space for actual credentials. */
 .leadership { padding-block: 52px var(--section-space); }
 .leadership .section-heading > .eyebrow { color: var(--yellow); }
-.leaders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px; }
-.leaders article { display: grid; grid-template-columns: .85fr 1fr; grid-template-rows: max-content max-content 1fr; gap: 0 28px; align-content: start; padding-bottom: 30px; border-bottom: 1px solid var(--line); }
-.leaders article > img { grid-row: span 3; width: 100%; aspect-ratio: .8; object-fit: cover; object-position: top; background: var(--soft); }
-.leaders h3 { padding-top: 12px; font-size: 24px; align-self: end; }
+.leaders { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; align-items: start; }
+.leaders article { display: grid; grid-template-columns: 1fr; grid-template-rows: auto max-content max-content 1fr; align-content: start; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.leaders article > img { width: 100%; aspect-ratio: .8; object-fit: cover; object-position: top; background: var(--soft); }
+.leaders h3 { padding-top: 22px; font-size: 23px; align-self: start; }
 .leaders article > p { margin-top: 8px; font-size: 15px; }
-.leaders details { margin-top: 22px; font-size: 15px; }
+.leaders details { margin-top: 20px; font-size: 15px; }
 .leaders summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; list-style: none; cursor: pointer; min-height: 48px; font-weight: 500; border-top: 1px solid var(--line); padding-block: 12px; line-height: 1.5; }
 .leaders summary::-webkit-details-marker { display: none; }
 .leaders summary svg { transition: transform 220ms var(--ease-out); }
@@ -380,7 +386,7 @@ main:focus { outline: none; }
 .awards-photo img { width: 100%; height: auto; }
 .awards-list article { display: grid; grid-template-columns: 72px 1fr; gap: 24px; padding-block: 28px; border-bottom: 1px solid var(--line); }
 .awards-list article:first-child { padding-top: 0; }
-.award-year { font: 600 24px/1.4 var(--font-display); letter-spacing: -.03em; }
+.award-year { color: var(--focus); font: 600 24px/1.4 var(--font-display); letter-spacing: -.03em; }
 .award-year > span { display: block; white-space: nowrap; font-size: 20px; line-height: 1.5; }
 .award-year small { font-size: 12px; }
 .awards-list h2 { font-size: 24px; }
@@ -398,10 +404,11 @@ main:focus { outline: none; }
 .contact-careers { padding-top: 28px; margin-top: 28px; border-top: 1px solid #ffffff40; }
 .contact-careers .eyebrow { margin: 0; color: #d8dce5; }
 .contact-careers .arrow-link { margin-top: 18px; color: var(--yellow); border-color: #ffffff55; }
-.office-list { display: grid; grid-template-columns: 1fr; gap: 36px; min-width: 0; }
+.office-list { display: grid; grid-template-columns: 1fr; gap: 44px; min-width: 0; }
 .office-list article { display: grid; grid-template-columns: minmax(200px, .75fr) minmax(0, 1fr); align-items: start; gap: 28px; padding-top: 28px; border-top: 1px solid var(--line); }
+.office-list article:first-child { padding-top: 0; border-top: 0; }
 .office-details { min-width: 0; }
-.office-heading h2 { font-size: 27px; }
+.office-heading h2 { font-size: 29px; }
 .office-heading span { display: block; font-size: 13px; color: var(--muted); margin-block: 5px 18px; }
 .office-list address { color: var(--muted); font-size: 16px; }
 .office-links { display: flex; flex-direction: column; align-items: start; margin-top: 16px; }
@@ -506,7 +513,7 @@ main:focus { outline: none; }
 @keyframes menu-arrive { from { opacity: .7; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
 
 /* Intermediate layouts */
-@media (max-width: 1150px) {
+@media (max-width: 1280px) {
   .header-inner { padding-right: 24px; }
   .brand { width: 235px; }
   .menu-toggle { display: grid; }
@@ -516,9 +523,9 @@ main:focus { outline: none; }
   .main-nav > a::after { display: none; }
   .main-nav .nav-contact { justify-content: space-between; }
   .recognition, .people-feature { gap: 44px; }
-  .leaders { gap: 32px; }
+  .leaders { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
   .leaders article { grid-template-columns: 1fr; }
-  .leaders article > img { grid-row: auto; aspect-ratio: 1; }
+  .leaders article > img { aspect-ratio: .9; }
   .leaders h3 { padding-top: 20px; }
   .contact-layout { gap: 32px; }
   .contact-main { padding: 30px; }
@@ -618,7 +625,8 @@ main:focus { outline: none; }
   .page-masthead { margin-bottom: 0; }
   .page-masthead-connected { margin-bottom: 0; }
 .content-band { padding-top: 52px; }
-  .page-intro { padding-block: 50px 34px; }
+  .page-intro { padding-block: 46px 34px; }
+  .photo-band { padding-bottom: 26px; }
   .intro-description { font-size: 19px; }
   .panorama img { aspect-ratio: 1.25; }
   .panorama > span { bottom: 14px; right: 14px; font-size: 11px; }
@@ -645,7 +653,11 @@ main:focus { outline: none; }
   .sticky-index { position: static; }
   .sticky-index .button { margin-top: 22px; }
   .capabilities h2 { font-size: 27px; }
-  .portfolio-toolbar { padding-block: 18px; }
+  .portfolio-toolbar { padding-block: 0 20px; gap: 14px; border-top: 0; }
+  .portfolio-toolbar .filter-tabs { display: none; }
+  .mobile-market-filter { display: grid; gap: 8px; font-size: 13px; color: var(--muted); }
+  .mobile-market-filter select { width: 100%; min-height: 48px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 2px; background: var(--white); color: var(--ink); font-size: 16px; }
+  .portfolio .result-count { margin-block: 18px 22px; }
   .filter-tabs { gap: 4px 18px; }
   .filter-tabs button { font-size: 14px; }
   .search-field { width: 100%; max-width: none; }
@@ -663,7 +675,7 @@ main:focus { outline: none; }
   .project-facts > div, .project-facts > div:first-child { padding-block: 0 18px; }
   .project-facts strong { font-size: 16px; }
   .leaders { grid-template-columns: 1fr; gap: 32px; }
-  .leaders article { grid-template-columns: .8fr 1fr; gap: 0 22px; }
+  .leaders article { grid-template-columns: .8fr 1fr; grid-template-rows: max-content max-content 1fr; gap: 0 22px; }
   .leaders article > img { grid-row: span 3; aspect-ratio: .8; }
   .leaders h3 { padding-top: 4px; font-size: 23px; }
   .leaders article > p { font-size: 14px; }

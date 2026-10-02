@@ -531,11 +531,13 @@ function ServiceDetail() {
       <PageIntro eyebrow="OUR SERVICES" title={s.title}>
         <p>{s.intro}</p>
       </PageIntro>
-      <div className="content-band slate-surface">
+      <div className="content-band photo-band slate-surface">
       <figure className="container detail-hero">
         <Photo eager name={s.image} alt={s.imageAlt} />
         <figcaption>{s.caption}</figcaption>
       </figure>
+      </div>
+      <div className="light-surface">
       <section className="section container editorial-grid">
         <aside className="sticky-index">
           <span className="eyebrow">CAPABILITIES</span>
@@ -606,6 +608,12 @@ function Projects() {
       <div className="content-band light-surface">
       <section className="container portfolio">
         <div className="portfolio-toolbar">
+          <div className="mobile-market-filter">
+            <label htmlFor="project-category">Project category</label>
+            <select id="project-category" value={market} onChange={(event) => update("market", event.target.value)}>
+              {markets.map((category) => <option key={category} value={category}>{category}</option>)}
+            </select>
+          </div>
           <div className="filter-tabs" role="group" aria-label="Filter projects by market">
             {markets.map((m) => (
               <button
@@ -699,11 +707,13 @@ function ProjectDetail() {
           <p>{p.summary}</p>
         </div>
       </div>
-      <div className="content-band slate-surface">
+      <div className="content-band photo-band slate-surface">
       <figure className="container project-cover">
         <Photo eager name={p.image} alt={p.title} />
         {p.credit && <figcaption>Photo courtesy: {p.credit}</figcaption>}
       </figure>
+      </div>
+      <div className="light-surface">
       <section className="section container editorial-grid">
         <aside className="project-facts">
           <div>
@@ -825,7 +835,7 @@ function Awards() {
           that we received for outstanding and innovative design accomplishments.
         </p>
       </PageIntro>
-      <div className="content-band slate-surface">
+      <div className="content-band light-surface">
       <div className="container awards-layout">
         <div className="awards-photo">
           <Photo
@@ -868,7 +878,7 @@ function Contact() {
           next step.
         </p>
       </PageIntro>
-      <div className="content-band slate-surface">
+      <div className="content-band light-surface">
       <section className="container contact-layout">
         <div className="contact-main">
           <span className="eyebrow">PROJECT INQUIRIES</span>
@@ -998,7 +1008,7 @@ function Careers() {
           </div>
         </div>
       </section>
-      <div className="slate-surface">
+      <div className="light-surface">
       <section className="section container career-policy">
         <h2>EEO Statement</h2>
         <p>
@@ -1086,7 +1096,7 @@ function DraftDetail() {
       >
         <p>This project page is under construction.</p>
       </PageIntro>
-      <div className="content-band slate-surface">
+      <div className="content-band light-surface">
       <section className="container draft-document">
         <div className="draft-notice">
           <span className="draft-tag">WORK IN PROGRESS</span>
