@@ -875,41 +875,43 @@ function Contact() {
             </a>
           </div>
         </div>
-        <div className="office-list">
+        <div className="office-list" id="office-locations">
           {offices.map((o) => (
             <article key={o.name}>
-              <div className="office-heading">
-                <h2>{o.name}</h2>
-                <span>{o.city}</span>
+              <div className="office-details">
+                <div className="office-heading">
+                  <h2>{o.name}</h2>
+                  <span>{o.city}</span>
+                </div>
+                <address>
+                  {o.address}
+                  <br />
+                  {o.locality}
+                </address>
+                <div className="office-links">
+                  {o.phones.map((p) => (
+                    <a key={p} href={phoneHref(p)}>
+                      {formatPhone(p)}
+                    </a>
+                  ))}
+                  <a href={`mailto:${o.email}`}>{o.email}</a>
+                </div>
+                <a
+                  className="map-link"
+                  target="_blank"
+                  rel="noreferrer"
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${o.address}, ${o.locality}`)}`}
+                >
+                  <MapPin size={15} />
+                  Get directions
+                  <ArrowUpRight size={15} />
+                </a>
               </div>
-              <address>
-                {o.address}
-                <br />
-                {o.locality}
-              </address>
-              <div className="office-links">
-                {o.phones.map((p) => (
-                  <a key={p} href={phoneHref(p)}>
-                    {formatPhone(p)}
-                  </a>
-                ))}
-                <a href={`mailto:${o.email}`}>{o.email}</a>
-              </div>
-              <a
-                className="map-link"
-                target="_blank"
-                rel="noreferrer"
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${o.address}, ${o.locality}`)}`}
-              >
-                <MapPin size={15} />
-                Get directions
-                <ArrowUpRight size={15} />
-              </a>
+              <OfficeMap office={o} />
             </article>
           ))}
         </div>
       </section>
-      <div className="container" id="office-locations"><OfficeMap /></div>
     </>
   );
 }

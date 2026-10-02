@@ -26,7 +26,7 @@ npm run preview   # Serve the production build
 - `docs/MIGRATION.md`: source precedence, coverage, and editorial decisions.
 - `DESIGN.md`: visual identity and shared interaction conventions.
 
-All applications and resume uploads go to https://careers.geolabs.net/apply. Contact inquiries use working email and telephone links. Four office selectors update a live Google Maps embed with a permanent directions fallback. Displayed phones use `(808)841-5064`; dialing links use international digits. The original Wix contact submission form has no migrated backend. No Wix runtime or credentials are required. Google supplies the embedded map. Fonts and project images are hosted locally.
+All applications and resume uploads go to https://careers.geolabs.net/apply. Contact inquiries use working email and telephone links. Each office has its own live Google Maps embed beside its contact details, with a permanent directions fallback. On phones each map sits directly below its office details. Displayed phones use `(808)841-5064`; dialing links use international digits. The original Wix contact submission form has no migrated backend. No Wix runtime or credentials are required. Google supplies the embedded map. Fonts and project images are hosted locally.
 
 ## Hosting
 

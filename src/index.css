@@ -379,19 +379,20 @@ main:focus { outline: none; }
 .awards-list p { margin-top: 12px; font-size: 16px; }
 .awards-list article > div > span { display: block; color: var(--muted); font-size: 13px; margin-top: 10px; }
 .award-mark { display: none; }
-.contact-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 64px; align-items: start; padding-bottom: var(--section-space); }
+.contact-layout { display: grid; grid-template-columns: minmax(280px, .6fr) minmax(0, 1.4fr); gap: 48px; align-items: start; padding-bottom: var(--section-space); }
 .contact-main { background: var(--ink); color: white; padding: 40px; }
 .contact-main h2 { font-size: 36px; }
 .contact-main .eyebrow { color: var(--yellow); }
 .contact-main p { color: #d8dce5; margin-top: 20px; }
-.contact-email { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 32px; font-size: 22px; overflow-wrap: anywhere; }
+.contact-email { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 32px; font-size: clamp(18px, 1.5vw, 22px); overflow-wrap: anywhere; }
 .contact-phone { display: inline-flex; align-items: center; min-height: 44px; margin-top: 8px; font-size: 22px; }
 .contact-main a:is(:hover, :focus-visible) { color: var(--yellow); }
 .contact-careers { padding-top: 28px; margin-top: 28px; border-top: 1px solid #ffffff40; }
 .contact-careers .eyebrow { margin: 0; color: #d8dce5; }
 .contact-careers .arrow-link { margin-top: 18px; color: var(--yellow); border-color: #ffffff55; }
-.office-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 30px; }
-.office-list article { padding-top: 22px; border-top: 1px solid var(--line); }
+.office-list { display: grid; grid-template-columns: 1fr; gap: 36px; min-width: 0; }
+.office-list article { display: grid; grid-template-columns: minmax(200px, .75fr) minmax(0, 1fr); align-items: start; gap: 28px; padding-top: 28px; border-top: 1px solid var(--line); }
+.office-details { min-width: 0; }
 .office-heading h2 { font-size: 27px; }
 .office-heading span { display: block; font-size: 13px; color: var(--muted); margin-block: 5px 18px; }
 .office-list address { color: var(--muted); font-size: 16px; }
@@ -481,9 +482,9 @@ main:focus { outline: none; }
   .leaders article { grid-template-columns: 1fr; }
   .leaders article > img { grid-row: auto; aspect-ratio: 1; }
   .leaders h3 { padding-top: 20px; }
-  .contact-layout { gap: 36px; grid-template-columns: 1fr 1.1fr; }
+  .contact-layout { gap: 32px; }
   .contact-main { padding: 30px; }
-  .office-list { grid-template-columns: 1fr; gap: 24px; }
+  .office-list article { gap: 24px; }
   .career-hero > .container { padding: 40px; }
   .footer-top { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 32px; }
   .footer-identity { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
@@ -491,7 +492,11 @@ main:focus { outline: none; }
   .footer-bottom { align-items: start; }
   .footer-legal { justify-content: end; gap: 4px 20px; }
 }
+@media (min-width: 901px) and (min-height: 800px) {
+  .contact-main { position: sticky; top: 112px; }
+}
 @media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; }
   .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .portfolio .project-card:first-child { grid-column: auto; }
   .portfolio .project-card:first-child .project-image { aspect-ratio: 1.28; }
@@ -632,8 +637,9 @@ main:focus { outline: none; }
   .contact-layout { grid-template-columns: 1fr; gap: 36px; }
   .contact-main { padding: 28px 24px; }
   .contact-main h2 { font-size: 31px; }
-  .contact-email, .contact-phone { font-size: 21px; }
-  .office-list { grid-template-columns: 1fr; }
+  .contact-email { font-size: clamp(18px, 5.2vw, 21px); }
+  .contact-phone { font-size: 21px; }
+  .office-list article { grid-template-columns: 1fr; gap: 20px; }
   .career-hero { grid-template-columns: 1fr; min-height: 0; }
   .career-hero > img { min-height: 0; height: 300px; }
   .career-hero > .container { padding: 36px var(--gutter) 44px; }

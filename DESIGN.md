@@ -67,7 +67,7 @@ The content width is bounded by the page-max token, with fluid gutters and 60px 
 - Projects use three columns with a two-column opening photograph, two equal columns below 900px, and one column below 640px. Search and category filters remain directly above results.
 - People combine individual portraits and names, with credentials in native disclosures. Phones use one profile per row.
 - Awards pair a sticky ceremony photograph with a chronological list; phones stack the photograph above the list.
-- Contact groups the inquiry panel and regional office directory, followed by a four-office Google map with 48px selectors and persistent directions. Careers pairs the field team with a slate introduction.
+- Contact groups the inquiry panel and regional office directory, with a separate Google map beside each office’s details and persistent directions links. Office rows stack details above their own map on narrow phones. Careers pairs the field team with a slate introduction.
 - About uses a compact original USFCR trust row, a slate capabilities section, open sector columns, and office links. The source Clients section stays explicitly Under construction.
 - Footer padding and grid are compact, while mobile links retain 44px targets. Desktop/tablet/phone heights are approximately 370/450/740px.
 
