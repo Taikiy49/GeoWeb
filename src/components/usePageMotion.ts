@@ -55,8 +55,8 @@ export function usePageMotion(route: string) {
                 { opacity: 1, transform: "translateY(0)" },
               ],
               {
-                duration: filtering ? 320 : isPhoto ? 1200 : 2000,
-                delay: filtering ? 0 : Math.min(order, 3) * 180,
+                duration: filtering ? 320 : 1000,
+                delay: filtering ? 0 : Math.min(order, 3) * 90,
                 easing: filtering ? "cubic-bezier(.16,1,.3,1)" : "cubic-bezier(.4,0,.2,1)",
                 fill: "backwards",
               },

@@ -8,7 +8,7 @@ export const offices = [
     city: "Waipahu",
     address: "94-429 Koaki Street, Suite 200",
     locality: "Waipahu, HI 96797",
-    phones: ["(808)841-5064"],
+    phones: ["(808) 841-5064"],
     email: "hawaii@geolabs.net",
   },
   {
@@ -16,7 +16,7 @@ export const offices = [
     city: "Wailuku",
     address: "780 Alua Street, 1st Floor",
     locality: "Wailuku, HI 96793",
-    phones: ["(808)244-4435"],
+    phones: ["(808) 244-4435"],
     email: "maui@geolabs.net",
   },
   {
@@ -24,7 +24,7 @@ export const offices = [
     city: "Līhuʻe",
     address: "1639 Haleukana Street, Unit #5",
     locality: "Lihue, HI 96766",
-    phones: ["(808)913-5151", "(808)479-2488"],
+    phones: ["(808) 913-5151", "(808) 479-2488"],
     email: "kauai@geolabs.net",
   },
   {
@@ -32,7 +32,7 @@ export const offices = [
     city: "Oakland",
     address: "344 20th Street, Suite 340",
     locality: "Oakland, CA 94612",
-    phones: ["(510)710-3140"],
+    phones: ["(510) 710-3140"],
     email: "oakland@geolabs.net",
   },
 ];

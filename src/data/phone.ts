@@ -2,7 +2,7 @@
 export function formatPhone(value: string) {
   const digits = value.replace(/\D/g, "").replace(/^1(?=\d{10}$)/, "");
   return digits.length === 10
-    ? `(${digits.slice(0, 3)})${digits.slice(3, 6)}-${digits.slice(6)}`
+    ? `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`
     : value;
 }
 
