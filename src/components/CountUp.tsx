@@ -25,7 +25,7 @@ export function CountUp({ value }: { value: string }) {
         observer?.disconnect();
         const start = performance.now();
         const tick = (now: number) => {
-          const progress = Math.min((now - start) / 1400, 1);
+          const progress = Math.min((now - start) / 650, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
           element.textContent = `${Math.round(target * eased)}${suffix}`;
           if (progress < 1) frame = requestAnimationFrame(tick);

@@ -18,62 +18,82 @@ export function usePageMotion(route: string) {
       pending.clear();
     };
     let observer: IntersectionObserver | undefined;
+    let exitObserver: IntersectionObserver | undefined;
+    let footerObserver: IntersectionObserver | undefined;
     const start = () => {
       observer?.disconnect();
+      exitObserver?.disconnect();
+      footerObserver?.disconnect();
       animations.forEach((animation) => animation.cancel());
       animations.clear();
       showPending();
       if (preference.matches || !("IntersectionObserver" in window)) return;
-      observer = new IntersectionObserver(
-        (entries) => {
+      const reveal: IntersectionObserverCallback = (entries) => {
           const groupCounts = new Map<Element, number>();
           entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            observer?.unobserve(entry.target);
             const element = entry.target;
+            if (!entry.isIntersecting) return;
             element.removeAttribute("data-reveal-pending");
             pending.delete(element);
             if (revealed.current.has(element)) return;
             revealed.current.add(element);
             const isGallery = element.matches(".project-card, .home-service-card, .leaders article, .benefits-grid article, .awards-list article, .office-list article, .three-columns article");
             const isPhoto = element.matches("img, .film-viewer, .panorama, .project-cover, .detail-hero");
-            const isText = element.matches("h1, h2, h3, p, li, .eyebrow");
+            const isText = !isPhoto;
             const parent = element.parentElement;
             const order = (isGallery || isText) && parent ? (groupCounts.get(parent) ?? 0) : 0;
             if ((isGallery || isText) && parent) groupCounts.set(parent, order + 1);
             const from = isPhoto
               ? { opacity: 0.35, transform: "scale(.985)" }
-              : { opacity: 0, transform: `translateY(${isGallery ? 22 : 18}px)` };
+              : { opacity: 0, transform: `translateY(${isGallery ? 22 : 28}px)` };
+            animations.forEach((active) => {
+              if ((active.effect as KeyframeEffect)?.target === element) { active.cancel(); animations.delete(active); }
+            });
             const animation = element.animate(
               [
                 from,
                 { opacity: 1, transform: "translateY(0)" },
               ],
               {
-                duration: filtering ? 320 : isPhoto ? 1200 : 1400,
-                delay: filtering ? 0 : Math.min(order, 3) * 140,
-                easing: filtering ? "cubic-bezier(.16,1,.3,1)" : "cubic-bezier(.22,.61,.36,1)",
+                duration: filtering ? 320 : isPhoto ? 1200 : 2000,
+                delay: filtering ? 0 : Math.min(order, 3) * 180,
+                easing: filtering ? "cubic-bezier(.16,1,.3,1)" : "cubic-bezier(.4,0,.2,1)",
                 fill: "backwards",
               },
             );
             animations.add(animation);
             animation.onfinish = () => animations.delete(animation);
           });
-        },
-        { threshold: 0, rootMargin: "0px 0px -36px 0px" },
-      );
-      const candidates = Array.from(document
-        .querySelectorAll(
-          filtering
-            ? "main .project-card"
-            : "main .project-card, main .home-service-card, main .service-card, main .leaders article, main .benefits-grid article, main .awards-list article, main .office-list article, main .three-columns article, main h1, main h2, main h3, main p, main li, main .eyebrow, main img, main .button, main .arrow-link, main .film-viewer, main .filmstrip, .footer-top h2, .footer-top p, .footer-links a, .footer-contact a",
-        ));
-      // Hero and film media already have authored motion. Keep numbers under
-      // CountUp's ownership, and do not replay UI labels during search updates.
-      const eligible = candidates.filter((element) =>
-        !element.closest(".hero, .stats, .film-screen, .film-meta, .filmstrip, .portfolio-toolbar, .result-count, .service-approach details")
-        || element.matches(".filmstrip"),
-      );
+        };
+      observer = new IntersectionObserver(reveal, { threshold: 0, rootMargin: `0px 0px -${Math.round(window.innerHeight * .15)}px 0px` });
+      // The final footer lines cannot scroll farther into the page; reveal at the edge.
+      footerObserver = new IntersectionObserver(reveal);
+      // A separate full-viewport observer prevents jitter around the entrance threshold.
+      exitObserver = new IntersectionObserver((entries) => {
+        entries.forEach(({ target, isIntersecting, boundingClientRect }) => {
+          if (isIntersecting || target.contains(document.activeElement)) return;
+          if (boundingClientRect.bottom < 0 || boundingClientRect.top >= window.innerHeight) {
+            revealed.current.delete(target);
+            target.setAttribute("data-reveal-pending", "");
+            pending.add(target);
+          }
+        });
+      });
+      const candidates = Array.from(document.querySelectorAll(
+        filtering
+          ? "main .project-card"
+          : "main h1, main h2, main h3, main h4, main p, main li, main span, main strong, main address, main summary, main a, main figcaption, main dt, main dd, main .eyebrow, main img, main .portfolio-toolbar, main .filmstrip, .site-footer h2, .site-footer p, .site-footer a, .footer-facts span, .footer-legal span",
+      ));
+      // Text owns its entrance independently of tall photo/card containers.
+      // Media, counters, live search feedback and opened disclosures retain their own motion.
+      const eligible = candidates.filter((element) => {
+        if (filtering) return true;
+        if (element.closest(".hero, .count-up, .film-screen, .filmstrip, .result-count, [aria-live], [aria-hidden='true']")) return element.matches(".filmstrip");
+        const details = element.closest("details");
+        if (details && !element.matches("summary")) return false;
+        if (element.matches("a") && element.querySelector("h1, h2, h3, p, img")) return false;
+        return element.matches("img, .filmstrip") || !!element.textContent?.trim();
+      });
       const targets = new Set(eligible);
       eligible.forEach((element) => {
         let ancestor = element.parentElement;
@@ -81,11 +101,14 @@ export function usePageMotion(route: string) {
           if (targets.has(ancestor)) return;
           ancestor = ancestor.parentElement;
         }
-        if (!revealed.current.has(element) && element.getBoundingClientRect().top >= window.innerHeight) {
+        if (!revealed.current.has(element) && element.getBoundingClientRect().top >= window.innerHeight * .85) {
           element.setAttribute("data-reveal-pending", "");
           pending.add(element);
         }
-        observer?.observe(element);
+        element.setAttribute("data-reveal-target", "");
+        if (element.closest(".site-footer")) footerObserver?.observe(element);
+        else observer?.observe(element);
+        exitObserver?.observe(element);
       });
     };
     // Keyboard navigation must never land on an invisible action.
@@ -97,17 +120,22 @@ export function usePageMotion(route: string) {
         pending.delete(target);
         revealed.current.add(target);
         observer?.unobserve(target);
+        footerObserver?.unobserve(target);
       }
     };
     document.addEventListener("focusin", onFocus);
     start();
     preference.addEventListener("change", start);
+    window.addEventListener("resize", start);
     return () => {
       observer?.disconnect();
+      exitObserver?.disconnect();
+      footerObserver?.disconnect();
       animations.forEach((animation) => animation.cancel());
       showPending();
       document.removeEventListener("focusin", onFocus);
       preference.removeEventListener("change", start);
+      window.removeEventListener("resize", start);
     };
   }, [route]);
 }
