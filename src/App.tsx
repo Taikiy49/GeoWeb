@@ -145,7 +145,7 @@ function PageIntro({
   breadcrumb?: React.ReactNode;
 }) {
   return (
-    <div className={`page-masthead slate-surface${connected ? " page-masthead-connected" : ""}${breadcrumb ? " page-masthead-with-breadcrumb" : ""}`}>
+    <div className={`page-masthead${connected ? " page-masthead-connected" : ""}${breadcrumb ? " page-masthead-with-breadcrumb" : ""}`}>
       <ContourAccent />
       {breadcrumb}
       <div className="page-intro container">
@@ -464,12 +464,13 @@ function Services() {
   return (
     <>
       <Meta title="Our services" />
-      <PageIntro eyebrow="OUR EXPERTISE" title="Our services">
+      <PageIntro eyebrow="OUR EXPERTISE" title="Our services" connected>
         <p>
           Geotechnical engineering, drilling and subsurface investigation,
           construction support, materials testing, and forensic and expert witness services.
         </p>
       </PageIntro>
+      <div className="content-band slate-surface">
       <div className="container service-cards">
         {services.map((s) => (
           <Link
@@ -490,6 +491,7 @@ function Services() {
             </div>
           </Link>
         ))}
+      </div>
       </div>
       <section className="section soft-section">
         <div className="container service-approach">
@@ -587,12 +589,13 @@ function Projects() {
   return (
     <>
       <Meta title="Our projects" />
-      <PageIntro eyebrow="OUR EXPERIENCE" title="Our projects">
+      <PageIntro eyebrow="OUR EXPERIENCE" title="Our projects" connected>
         <p>
           From the foundations of Honolulu’s skyline to the infrastructure
           connecting our islands. Explore the work behind our experience.
         </p>
       </PageIntro>
+      <div className="content-band slate-surface">
       <section className="container portfolio">
         <div className="portfolio-toolbar">
           <div className="filter-tabs" role="group" aria-label="Filter projects by market">
@@ -668,6 +671,7 @@ function Projects() {
           <ArrowLink to="/drafts">View draft stories</ArrowLink>
         </div>
       </section>
+      </div>
     </>
   );
 }
@@ -678,7 +682,7 @@ function ProjectDetail() {
   return (
     <>
       <Meta title={p.title} description={p.summary} />
-      <div className="page-masthead slate-surface">
+      <div className="page-masthead">
         <ContourAccent />
         <Breadcrumb to="/projects" label="Projects" context={p.market} />
         <div className="container project-title">
@@ -939,6 +943,7 @@ function Careers() {
           </a>
         </div>
       </section>
+      <div className="slate-surface">
       <section className="section container editorial-grid">
         <aside>
           <span className="eyebrow">EMPLOYEE OWNERSHIP</span>
@@ -957,12 +962,13 @@ function Careers() {
               Check current openings, complete your application, and upload your
               resume through the Geolabs careers portal.
             </p>
-            <a className="button button-navy" href={applyUrl}>
+            <a className="button button-yellow" href={applyUrl}>
               Apply online <ArrowUpRight size={18} />
             </a>
           </div>
         </div>
       </section>
+      </div>
       <section className="section soft-section">
         <div className="container">
           <span className="eyebrow">INVESTING IN OUR PEOPLE</span>

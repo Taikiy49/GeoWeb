@@ -48,7 +48,7 @@ Present an established engineering firm through authentic project and field phot
 
 ## Colors
 
-Slate anchors navigation, footer, interior page mastheads, the People leadership gallery, and career/inquiry panels. Yellow identifies primary actions, selected navigation, and original artwork. White and cool gray alternate by content group, not on every section. Muted text remains readable against both light surfaces. Dark panels use lighter slate-tinted text and yellow keyboard outlines; light surfaces use the dark gold focus token.
+Cool-gray opening sections with slate headings distinguish every interior page from the dark navigation. Slate anchors navigation, footer, service and project galleries, the People leadership gallery, and career ownership/inquiry panels. Yellow identifies primary actions, selected navigation, and original artwork. White and cool gray alternate by content group, not on every section. Muted text remains readable against both light surfaces. Dark panels use lighter slate-tinted text and yellow keyboard outlines; light surfaces use the dark gold focus token.
 
 **The Brand Rule.** Keep the supplied palette and artwork. Gradients are limited to readability scrims over actual imagery and the physical film-thumbnail treatment; they are not decorative section backgrounds.
 
