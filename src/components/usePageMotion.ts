@@ -18,11 +18,9 @@ export function usePageMotion(route: string) {
       pending.clear();
     };
     let observer: IntersectionObserver | undefined;
-    let exitObserver: IntersectionObserver | undefined;
     let footerObserver: IntersectionObserver | undefined;
     const start = () => {
       observer?.disconnect();
-      exitObserver?.disconnect();
       footerObserver?.disconnect();
       animations.forEach((animation) => animation.cancel());
       animations.clear();
@@ -33,6 +31,8 @@ export function usePageMotion(route: string) {
           entries.forEach((entry) => {
             const element = entry.target;
             if (!entry.isIntersecting) return;
+            observer?.unobserve(element);
+            footerObserver?.unobserve(element);
             element.removeAttribute("data-reveal-pending");
             pending.delete(element);
             if (revealed.current.has(element)) return;
@@ -68,17 +68,6 @@ export function usePageMotion(route: string) {
       observer = new IntersectionObserver(reveal, { threshold: 0, rootMargin: `0px 0px -${Math.round(window.innerHeight * .15)}px 0px` });
       // The final footer lines cannot scroll farther into the page; reveal at the edge.
       footerObserver = new IntersectionObserver(reveal);
-      // A separate full-viewport observer prevents jitter around the entrance threshold.
-      exitObserver = new IntersectionObserver((entries) => {
-        entries.forEach(({ target, isIntersecting, boundingClientRect }) => {
-          if (isIntersecting || target.contains(document.activeElement)) return;
-          if (boundingClientRect.bottom < 0 || boundingClientRect.top >= window.innerHeight) {
-            revealed.current.delete(target);
-            target.setAttribute("data-reveal-pending", "");
-            pending.add(target);
-          }
-        });
-      });
       const candidates = Array.from(document.querySelectorAll(
         filtering
           ? "main .project-card"
@@ -101,14 +90,14 @@ export function usePageMotion(route: string) {
           if (targets.has(ancestor)) return;
           ancestor = ancestor.parentElement;
         }
-        if (!revealed.current.has(element) && element.getBoundingClientRect().top >= window.innerHeight * .85) {
+        if (revealed.current.has(element)) return;
+        if (element.getBoundingClientRect().top >= window.innerHeight * .85) {
           element.setAttribute("data-reveal-pending", "");
           pending.add(element);
         }
         element.setAttribute("data-reveal-target", "");
         if (element.closest(".site-footer")) footerObserver?.observe(element);
         else observer?.observe(element);
-        exitObserver?.observe(element);
       });
     };
     // Keyboard navigation must never land on an invisible action.
@@ -129,7 +118,6 @@ export function usePageMotion(route: string) {
     window.addEventListener("resize", start);
     return () => {
       observer?.disconnect();
-      exitObserver?.disconnect();
       footerObserver?.disconnect();
       animations.forEach((animation) => animation.cancel());
       showPending();
