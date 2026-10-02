@@ -317,6 +317,7 @@ function About() {
           reputation for technical excellence, resilience, and practical innovation.
         </p>
       </PageIntro>
+      <div className="content-band slate-surface">
       <div className="container panorama">
         <Photo eager name="koa-ridge" alt="Koa Ridge development on Oʻahu" />
         <span>Koa Ridge, Oʻahu · 2023</span>
@@ -347,11 +348,12 @@ function About() {
           <VendorBadge />
         </div>
       </section>
-      <section className="section slate-surface about-capabilities">
+      </div>
+      <section className="section soft-section about-capabilities">
         <div className="container">
           <div className="section-heading">
             <h2>What we do</h2>
-            <ArrowLink to="/services" light>Explore our capabilities</ArrowLink>
+            <ArrowLink to="/services">Explore our capabilities</ArrowLink>
           </div>
           <div className="capability-columns">
             <div>
@@ -392,6 +394,7 @@ function About() {
           </p>
         </div>
       </section>
+      <div className="slate-surface">
       <section className="section container about-sectors">
         <div className="editorial-grid">
           <h2>Who we serve</h2>
@@ -415,6 +418,7 @@ function About() {
           ))}
         </div>
       </section>
+      </div>
       <section className="section soft-section">
         <div className="container editorial-grid">
           <h2>Where we work</h2>
@@ -435,6 +439,7 @@ function About() {
           </div>
         </div>
       </section>
+      <div className="slate-surface">
       <section className="section container people-feature">
         <Photo name="earthwork" alt="Hoopili development mass grading and slope construction, Oʻahu" />
         <div>
@@ -454,6 +459,7 @@ function About() {
           <ArrowLink to="/people">Meet our people</ArrowLink>
         </div>
       </section>
+      </div>
       <section className="container clients-status" id="clients" aria-labelledby="clients-heading">
         <h2 id="clients-heading">Clients</h2><span>Under construction</span>
       </section>
@@ -525,6 +531,7 @@ function ServiceDetail() {
       <PageIntro eyebrow="OUR SERVICES" title={s.title}>
         <p>{s.intro}</p>
       </PageIntro>
+      <div className="content-band slate-surface">
       <figure className="container detail-hero">
         <Photo eager name={s.image} alt={s.imageAlt} />
         <figcaption>{s.caption}</figcaption>
@@ -542,7 +549,7 @@ function ServiceDetail() {
               <ArrowDown size={13} />
             </a>
           ))}
-          <Link className="button button-navy" to="/contact">
+          <Link className="button button-yellow" to="/contact">
             Discuss your project <ArrowUpRight size={17} />
           </Link>
         </aside>
@@ -565,6 +572,7 @@ function ServiceDetail() {
           ))}
         </div>
       </section>
+      </div>
     </>
   );
 }
@@ -691,6 +699,7 @@ function ProjectDetail() {
           <p>{p.summary}</p>
         </div>
       </div>
+      <div className="content-band slate-surface">
       <figure className="container project-cover">
         <Photo eager name={p.image} alt={p.title} />
         {p.credit && <figcaption>Photo courtesy: {p.credit}</figcaption>}
@@ -721,6 +730,7 @@ function ProjectDetail() {
           <ArrowLink to="/contact">Talk about a similar project</ArrowLink>
         </article>
       </section>
+      </div>
       <section className="container related">
         <div className="section-heading">
           <h2>Related projects</h2>
@@ -815,6 +825,7 @@ function Awards() {
           that we received for outstanding and innovative design accomplishments.
         </p>
       </PageIntro>
+      <div className="content-band slate-surface">
       <div className="container awards-layout">
         <div className="awards-photo">
           <Photo
@@ -843,6 +854,7 @@ function Awards() {
           ))}
         </section>
       </div>
+      </div>
     </>
   );
 }
@@ -856,6 +868,7 @@ function Contact() {
           next step.
         </p>
       </PageIntro>
+      <div className="content-band slate-surface">
       <section className="container contact-layout">
         <div className="contact-main">
           <span className="eyebrow">PROJECT INQUIRIES</span>
@@ -918,6 +931,7 @@ function Contact() {
           ))}
         </div>
       </section>
+      </div>
     </>
   );
 }
@@ -984,6 +998,7 @@ function Careers() {
           </div>
         </div>
       </section>
+      <div className="slate-surface">
       <section className="section container career-policy">
         <h2>EEO Statement</h2>
         <p>
@@ -1023,6 +1038,7 @@ function Careers() {
           View current openings and application information <ArrowUpRight size={19} />
         </a>
       </section>
+      </div>
     </>
   );
 }
@@ -1033,6 +1049,7 @@ function Drafts() {
       <PageIntro eyebrow="WORK IN PROGRESS" title="Draft project stories">
         <p>These project pages are under construction.</p>
       </PageIntro>
+      <div className="content-band slate-surface">
       <section className="container draft-index">
         <div className="draft-notice">
           <span className="draft-tag">UNDER CONSTRUCTION</span>
@@ -1053,6 +1070,7 @@ function Drafts() {
           ))}
         </div>
       </section>
+      </div>
     </>
   );
 }
@@ -1068,6 +1086,7 @@ function DraftDetail() {
       >
         <p>This project page is under construction.</p>
       </PageIntro>
+      <div className="content-band slate-surface">
       <section className="container draft-document">
         <div className="draft-notice">
           <span className="draft-tag">WORK IN PROGRESS</span>
@@ -1079,6 +1098,7 @@ function DraftDetail() {
         </>}
         <ArrowLink to="/drafts">Back to draft stories</ArrowLink>
       </section>
+      </div>
     </>
   );
 }
