@@ -603,7 +603,7 @@ function Projects() {
           connecting our islands. Explore the work behind our experience.
         </p>
       </PageIntro>
-      <div className="content-band slate-surface">
+      <div className="content-band light-surface">
       <section className="container portfolio">
         <div className="portfolio-toolbar">
           <div className="filter-tabs" role="group" aria-label="Filter projects by market">
@@ -1049,7 +1049,7 @@ function Drafts() {
       <PageIntro eyebrow="WORK IN PROGRESS" title="Draft project stories">
         <p>These project pages are under construction.</p>
       </PageIntro>
-      <div className="content-band slate-surface">
+      <div className="content-band light-surface">
       <section className="container draft-index">
         <div className="draft-notice">
           <span className="draft-tag">UNDER CONSTRUCTION</span>
