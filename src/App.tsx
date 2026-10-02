@@ -317,7 +317,7 @@ function About() {
           reputation for technical excellence, resilience, and practical innovation.
         </p>
       </PageIntro>
-      <div className="content-band slate-surface">
+      <div className="content-band light-surface">
       <div className="container panorama">
         <Photo eager name="koa-ridge" alt="Koa Ridge development on Oʻahu" />
         <span>Koa Ridge, Oʻahu · 2023</span>
@@ -394,7 +394,7 @@ function About() {
           </p>
         </div>
       </section>
-      <div className="slate-surface">
+      <div className="light-surface">
       <section className="section container about-sectors">
         <div className="editorial-grid">
           <h2>Who we serve</h2>
@@ -476,7 +476,7 @@ function Services() {
           construction support, materials testing, and forensic and expert witness services.
         </p>
       </PageIntro>
-      <div className="content-band slate-surface">
+      <div className="content-band light-surface">
       <div className="container service-cards">
         {services.map((s) => (
           <Link
@@ -531,13 +531,13 @@ function ServiceDetail() {
       <PageIntro eyebrow="OUR SERVICES" title={s.title}>
         <p>{s.intro}</p>
       </PageIntro>
-      <div className="content-band photo-band slate-surface">
+      <div className="content-band photo-band light-surface">
       <figure className="container detail-hero">
         <Photo eager name={s.image} alt={s.imageAlt} />
         <figcaption>{s.caption}</figcaption>
       </figure>
       </div>
-      <div className="light-surface">
+      <div className="soft-section">
       <section className="section container editorial-grid">
         <aside className="sticky-index">
           <span className="eyebrow">CAPABILITIES</span>
@@ -707,13 +707,13 @@ function ProjectDetail() {
           <p>{p.summary}</p>
         </div>
       </div>
-      <div className="content-band photo-band slate-surface">
+      <div className="content-band photo-band light-surface">
       <figure className="container project-cover">
         <Photo eager name={p.image} alt={p.title} />
         {p.credit && <figcaption>Photo courtesy: {p.credit}</figcaption>}
       </figure>
       </div>
-      <div className="light-surface">
+      <div className="soft-section">
       <section className="section container editorial-grid">
         <aside className="project-facts">
           <div>
@@ -771,7 +771,7 @@ function People() {
           Dedicated to Serving You
         </p>
       </PageIntro>
-      <section className="slate-surface">
+      <section className="light-surface">
         <div className="container leadership">
           <div className="section-heading">
             <h2>Our leadership</h2>

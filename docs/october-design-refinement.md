@@ -24,3 +24,9 @@ Reviewed Snøhetta’s project archive (https://www.snohetta.com/projects) and A
 - Evidence: `/Users/tyamashita/Documents/ChatGPT/Geolabs/october-design-refinement/after/`.
 
 The bulk screenshots capture lazy Google maps in their loading state; this pass verifies their retained iframe placement, not third-party map availability. Brand assets, source copy, application destinations, original media and entrance timings were preserved. This is a staging presentation update, not a new Wix content-parity audit or production DNS cutover.
+
+## Follow-up: homepage-led light palette
+
+The user refined the direction to predominantly white and soft gray with occasional slate emphasis. About’s photo/legacy and sectors, the Services catalog, People leadership, and detail photographs are now white. Service and project reading sections use soft gray. Slate remains in the shared header/footer, homepage features, About culture, Careers ownership and contact inquiry panel. The homepage and all content/behavior remain unchanged. Updated light-surface label and service-hover colors preserve contrast.
+
+Verification: all 56 routes captured at 390px and 1440px; 112 checks with no overflow or broken images, and 24 representative WCAG A/AA scans with no violations. Reviewed the resulting About, Services, People and project-detail compositions. TypeScript, lint, production build and diff checks pass.

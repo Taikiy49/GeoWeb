@@ -280,7 +280,7 @@ main:focus { outline: none; }
 .service-card:nth-child(even) { grid-template-columns: 1fr 1.15fr; }
 .service-card:nth-child(even) .service-row-photo { order: 2; }
 .service-card h2 { font-size: clamp(28px, 2.8vw, 42px); transition: color 180ms, translate 240ms var(--ease-out); }
-.service-card:is(:hover, :focus-visible) h2 { color: #fff3b0; }
+.service-card:is(:hover, :focus-visible) h2 { color: #51576a; }
 .service-card p { margin-block: 22px; }
 .service-card .eyebrow { color: var(--muted); }
 .service-card:is(:hover, :focus-visible) img { transform: scale(1.035); }
@@ -365,7 +365,7 @@ main:focus { outline: none; }
 
 /* People: portrait-led profiles with space for actual credentials. */
 .leadership { padding-block: 52px var(--section-space); }
-.leadership .section-heading > .eyebrow { color: var(--yellow); }
+.leadership .section-heading > .eyebrow { color: var(--focus); }
 .leaders { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; align-items: start; }
 .leaders article { display: grid; grid-template-columns: 1fr; grid-template-rows: auto max-content max-content 1fr; align-content: start; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
 .leaders article > img { width: 100%; aspect-ratio: .8; object-fit: cover; object-position: top; background: var(--soft); }
