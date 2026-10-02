@@ -97,3 +97,10 @@ The final benefits layout gives its longer FSA description a full-width row, avo
 
 
 Fresh editor review completed: **38 named views** (33 archived views, four additional variants and legacy HOME), plus **all 28 dynamic records** individually reopened. All 33 archived-view and 28 CMS normalized text comparisons matched. See fresh-wix-review.md for per-item evidence, handling of damaged source encoding, and limits. A visual review of service/project/draft layouts prompted a two-line treatment for multi-year awards, preventing an isolated slash on narrow phones.
+
+
+### Deployed staging verification
+
+Implementation commit `c61accc` was pushed to GitHub main and Vercel reported Deployment has completed. All **60 configured legacy HTTP rules** returned the expected **308** and exact destination on `https://test.geolabs.net`. Six canonical/deep-link pages and three added image assets returned 200 with correct MIME types; staging `noindex, nofollow` headers remained present. Public browser checks confirmed the USFCR artwork on Home/About, ten About capabilities, actual four-office map/selection/directions, every Contact phone/dial pair, restored Gerald credentials with no undefined email link, all seven benefits, current HR accommodation number, careers portal links, and twelve Under construction stories. Mobile Contact had no overflow and the real Google map rendered. No browser page errors.
+
+A final visual follow-up confirmed the Drafts footer is visible at its expected 740px mobile height; the earlier blank tail was a full-page capture timing artifact, not an omitted footer. Its screenshot was recaptured. Multi-year awards fit within their 58px mobile column on two lines without overflow. Local live evidence is in `october-content-review/deployed-http.json`, `deployed-browser.json`, and the `live-*` screenshots. The production domain remains on Wix; no DNS cutover was performed.

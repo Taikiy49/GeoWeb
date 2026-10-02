@@ -39,3 +39,8 @@ Temporary local evidence, outside the repository:
 - `/tmp/geolabs-map-maui-confirmed.png`, `/tmp/geolabs-map-office-1.png`, `/tmp/geolabs-map-office-2.png`: rendered Maui, Kauaʻi and California map snapshots.
 - `/tmp/geolabs-map-render-1440.png`, `/tmp/geolabs-map-render-390.png`, `/tmp/geolabs-map-render-320.png`: loaded Oʻahu map snapshots.
 - `/tmp/geolabs-integrated-contact-full-1440.png`, `/tmp/geolabs-integrated-contact-full-390.png`, `/tmp/geolabs-integrated-contact-full-320.png`: full Contact layouts captured during the initial interaction pass. Some provider tiles were still loading at the instant of these captures; use the dedicated map snapshots above to verify the rendered map.
+
+
+## Root task staging follow-up
+
+After implementation commit `c61accc` deployed, all 60 configured redirects passed actual HTTP308/destination checks on test.geolabs.net. Public browser checks confirmed map selection, source addresses, formatted phone/dial pairs, mobile reflow, and loaded map rendering. See VERIFICATION.md and the October review directory's deployed-http.json/deployed-browser.json. No primary-domain cutover occurred.

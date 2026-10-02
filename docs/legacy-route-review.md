@@ -50,3 +50,8 @@ Fragments never reach the server, so `getLegacyDestination(pathname, hash)` must
 - Integration and deployed HTTP checks remain the main task's responsibility. Local Vite does not process `vercel.json` edge redirects. Check both CONRAC paths, apostrophe/quoted/ʻokina variants, application forwarding, profile fragments and the existing asset routes after deployment.
 
 Source inventory: [published sitemap](https://www.geolabs.net/sitemap.xml), [published homepage](https://www.geolabs.net/), and the page-by-page source review linked above. Obsolete booking paths map to Contact; this does not restore or imply a booking backend. Applications map to the owner-approved `https://careers.geolabs.net/apply`.
+
+
+## Deployed result
+
+The root task verified all 60 configured rules on test.geolabs.net after commit `c61accc` deployed. Every request returned HTTP308 with its exact expected destination, including the encoded/literal punctuation variants. Canonical pages and source assets returned200; global staging noindex headers remained intact. Evidence is in the October review directory's deployed-http.json. No primary-domain DNS cutover occurred.
