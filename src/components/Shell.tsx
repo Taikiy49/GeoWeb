@@ -33,9 +33,11 @@ export function Shell() {
       const frame = requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "instant" }));
       return () => cancelAnimationFrame(frame);
     }
-    const frame = requestAnimationFrame(() =>
-      document.getElementById(location.hash.slice(1))?.scrollIntoView(),
-    );
+    const frame = requestAnimationFrame(() => {
+      const target = document.getElementById(location.hash.slice(1));
+      target?.focus({ preventScroll: true });
+      target?.scrollIntoView();
+    });
     return () => cancelAnimationFrame(frame);
   }, [location.pathname, location.hash]);
   useEffect(() => {

@@ -4,6 +4,7 @@ export const applyUrl = `${careersUrl}/apply`;
 export const image = (name: string) => `/images/${name}.webp`;
 export const offices = [
   {
+    id: "office-oahu",
     name: "Oʻahu",
     city: "Waipahu",
     address: "94-429 Koaki Street, Suite 200",
@@ -12,6 +13,7 @@ export const offices = [
     email: "hawaii@geolabs.net",
   },
   {
+    id: "office-maui",
     name: "Maui",
     city: "Wailuku",
     address: "780 Alua Street, 1st Floor",
@@ -20,6 +22,7 @@ export const offices = [
     email: "maui@geolabs.net",
   },
   {
+    id: "office-kauai",
     name: "Kauaʻi",
     city: "Līhuʻe",
     address: "1639 Haleukana Street, Unit #5",
@@ -28,6 +31,7 @@ export const offices = [
     email: "kauai@geolabs.net",
   },
   {
+    id: "office-california",
     name: "California",
     city: "Oakland",
     address: "344 20th Street, Suite 340",

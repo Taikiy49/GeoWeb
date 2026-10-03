@@ -117,3 +117,7 @@ Project categories and locations sit together below unobstructed photos, using r
 ### October site-wide refinement
 
 References: Snøhetta’s project archive (https://www.snohetta.com/projects) for quiet image-led browsing and Arup’s projects page (https://www.arup.com/projects/) for legible hierarchy. Adapt these principles within Geolabs’ approved identity; do not import their fonts, colors or assets. Long-form service/project descriptions use soft gray; awards, contact directories, draft notices and career policies use white reading surfaces. Keep the original video, filmstrip, one-second entrances and once-per-visit behavior. Gallery crops for Central Ala Moana and Moana Pacific align to the top to preserve tower crowns.
+
+### Office wayfinding
+
+About’s regional office links target stable, named office anchors on Contact (`office-oahu`, `office-maui`, `office-kauai`, `office-california`). Hash navigation moves focus to the destination before scrolling, using the existing sticky-header offset and reduced-motion behavior. Office rows are programmatically focusable and labeled by their visible heading; Tab proceeds into that office’s contact links. Preserve the general `office-locations` anchor for existing links.

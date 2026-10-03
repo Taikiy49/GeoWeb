@@ -431,7 +431,7 @@ function About() {
             </p>
             <div className="about-office-links">
               {offices.map((office) => (
-                <Link to="/contact#office-locations" key={office.name}>
+                <Link to={`/contact#${office.id}`} key={office.id}>
                   <span>{office.name}<small>{office.city}</small></span><ArrowUpRight size={19} />
                 </Link>
               ))}
@@ -906,10 +906,10 @@ function Contact() {
         </div>
         <div className="office-list" id="office-locations">
           {offices.map((o) => (
-            <article key={o.name}>
+            <article key={o.id} id={o.id} tabIndex={-1} aria-labelledby={`${o.id}-heading`}>
               <div className="office-details">
                 <div className="office-heading">
-                  <h2>{o.name}</h2>
+                  <h2 id={`${o.id}-heading`}>{o.name}</h2>
                   <span>{o.city}</span>
                 </div>
                 <address>
