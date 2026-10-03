@@ -14,6 +14,8 @@ import {
   ArrowRight,
   ArrowUpRight,
   Check,
+  LayoutGrid,
+  List,
   MapPin,
   Plus,
   Search,
@@ -156,19 +158,28 @@ function PageIntro({
     </div>
   );
 }
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, showSummary = false, spotlight = false }: {
+  project: Project;
+  showSummary?: boolean;
+  spotlight?: boolean;
+}) {
+  const Heading = showSummary ? "h2" : "h3";
   return (
-    <Link className="project-card" to={`/projects/${project.slug}`}>
+    <Link className={`project-card${spotlight ? " project-spotlight" : ""}`} to={`/projects/${project.slug}`} aria-label={`Explore ${project.title}`}>
       <div className="project-image">
         <Photo name={project.image} alt={project.title} />
       </div>
-      <div className="project-meta">
-        <span className="project-market">{project.market}</span>
-        <span className="caption-location">{project.location}</span>
-      </div>
-      <div className="project-caption">
-        <h3>{project.title}</h3>
-        <ArrowUpRight size={20} />
+      <div className="project-card-copy">
+        <div className="project-meta">
+          <span className="project-market">{project.market}</span>
+          <span className="caption-location">{project.location}</span>
+        </div>
+        <div className="project-caption">
+          <Heading>{project.title}</Heading>
+          <ArrowUpRight size={20} aria-hidden="true" />
+        </div>
+        {showSummary && <p className="project-summary">{project.summary}</p>}
+        {spotlight && <span className="project-story-link">Explore project <ArrowUpRight size={19} aria-hidden="true" /></span>}
       </div>
     </Link>
   );
@@ -582,6 +593,8 @@ function Projects() {
   const [params, setParams] = useSearchParams();
   const query = params.get("q") || "";
   const market = params.get("market") || "All projects";
+  const listView = params.get("view") === "list";
+  const showSpotlights = !listView && !query && market === "All projects";
   const markets = ["All projects", ...new Set(projects.map((p) => p.market))];
   const normalizedQuery = normalizeProjectSearch(query);
   const found = projects.filter(
@@ -652,12 +665,22 @@ function Projects() {
             )}
           </div>
         </div>
-        <p className="result-count" aria-live="polite">
-          {found.length} {found.length === 1 ? "project" : "projects"}
-        </p>
-        <div className="project-grid">
-          {found.map((p) => (
-            <ProjectCard key={p.slug} project={p} />
+        <div className="portfolio-results-bar">
+          <p className="result-count" aria-live="polite">
+            {found.length} {found.length === 1 ? "project" : "projects"}
+          </p>
+          <div className="portfolio-view" role="group" aria-label="Project display">
+            <button aria-pressed={!listView} onClick={() => update("view", "")}>
+              <LayoutGrid size={17} aria-hidden="true" /> Gallery
+            </button>
+            <button aria-pressed={listView} onClick={() => update("view", "list")}>
+              <List size={19} aria-hidden="true" /> List
+            </button>
+          </div>
+        </div>
+        <div className={`project-grid portfolio-grid${listView ? " is-list" : ""}`}>
+          {found.map((p, index) => (
+            <ProjectCard key={p.slug} project={p} showSummary spotlight={showSpotlights && index % 10 === 0} />
           ))}
         </div>
         {!found.length && (
@@ -667,7 +690,7 @@ function Projects() {
             <button
               className="button button-navy"
               onClick={() => {
-                setParams({});
+                setParams(listView ? { view: "list" } : {});
                 document.querySelector<HTMLInputElement>(".search-field input")?.focus();
               }}
             >

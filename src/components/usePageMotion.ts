@@ -103,14 +103,25 @@ export function usePageMotion(route: string) {
     // Keyboard navigation must never land on an invisible action.
     const onFocus = (event: FocusEvent) => {
       if (!(event.target instanceof Element)) return;
-      const target = event.target.closest("[data-reveal-pending]");
-      if (target) {
+      const ancestor = event.target.closest("[data-reveal-target]");
+      const targets = new Set([
+        ...(ancestor ? [ancestor] : []),
+        ...event.target.querySelectorAll("[data-reveal-target]"),
+      ]);
+      targets.forEach((target) => {
         target.removeAttribute("data-reveal-pending");
         pending.delete(target);
         revealed.current.add(target);
         observer?.unobserve(target);
         footerObserver?.unobserve(target);
-      }
+      });
+      animations.forEach((animation) => {
+        const target = (animation.effect as KeyframeEffect)?.target;
+        if (target && targets.has(target)) {
+          animation.cancel();
+          animations.delete(animation);
+        }
+      });
     };
     document.addEventListener("focusin", onFocus);
     start();
