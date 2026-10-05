@@ -38,6 +38,7 @@ import {
   image,
   offices,
   services,
+  serviceDescriptionsUnderReview,
   projects,
   awards,
   benefits,
@@ -431,7 +432,6 @@ function About() {
                   "Foundation Investigation",
                   "Landslide Stabilization",
                   "Rockfall Mitigation",
-                  "Trenchless Utility Installations",
                   "Ground Improvement",
                   "Geotechnical Earthquake Engineering",
                 ].map((item, index) => (
@@ -442,16 +442,15 @@ function About() {
             </div>
             <div id="construction-support" tabIndex={-1}>
               <h3>Construction support</h3>
-              <p>Beyond design-phase services, Geolabs provides comprehensive support during construction:</p>
+              <p>Beyond design-phase services, Geolabs provides geotechnical support during construction:</p>
               <ul className="capability-list">
                 {["Field Observation", "Special Inspections", "Materials Testing", "Geotechnical Instrumentation"].map((item, index) => (
                   <li key={item}><span aria-hidden="true">0{index + 1}</span>{item}</li>
                 ))}
               </ul>
               <p>
-                Our continued involvement ensures that design recommendations
-                are properly implemented and evolving site conditions are
-                addressed with agility and expertise.
+                Our construction support helps the project team evaluate site
+                conditions and address geotechnical questions during construction.
               </p>
             </div>
           </div>
@@ -550,8 +549,8 @@ function DesignApproach() {
           <details>
             <summary>Construction support <Plus size={20} aria-hidden="true" /></summary>
             <div>
-              <p>At Geolabs, Inc., one of our core strengths lies in confirming that the foundations of buildings, bridges, embankments, roadways, and facilities are structurally sound and built to last.</p>
-              <p>Our team is actively involved in every phase of the process, providing hands-on, day-to-day oversight to ensure each element performs as intended and meets rigorous standards for safety and reliability. With a deep understanding of Hawaii’s unique geotechnical conditions, we apply innovative methods and proven experience to deliver solutions our clients and communities can trust.</p>
+              <p>Geolabs provides geotechnical support during construction, including field observation, special inspections, materials testing, and geotechnical instrumentation.</p>
+              <p>The scope of observation, inspection, testing, and monitoring is defined for each project. Contact us to discuss your project requirements.</p>
             </div>
           </details>
         </div>
@@ -571,7 +570,7 @@ function Services() {
       <nav className="container service-navigation" aria-label="Services on this page">
         {services.map(s => <a href={`#service-${s.slug}`} key={s.slug}>{s.title}<ArrowDown size={17} aria-hidden="true" /></a>)}
       </nav>
-      <div className="container services-source-heading"><h2>From start to end —<br />We are with you</h2></div>
+      <div className="container services-source-heading"><h2>Geotechnical engineering<br />& construction support</h2></div>
       <div className="container service-source-panorama">
         <figure><Photo name="service-pali" alt="Pali Highway Emergency Slope Stabilization, Oahu (2019)" /><figcaption>Pali Highway Emergency Slope Stabilization, Oahu (2019)</figcaption></figure>
         <figure><Photo name="hoopili-parcel49" alt="Hoopili Development Phase 11 Parcel 49, Oahu (2024)" /><figcaption>Hoopili Development Phase 11 Parcel 49, Oahu (2024)</figcaption></figure>
@@ -611,7 +610,24 @@ function ServiceDetail() {
   const { slug } = useParams();
   const { hash } = useLocation();
   const s = services.find((x) => x.slug === slug);
-  if (!s) return <NotFound />;
+  if (!s) {
+    const title = slug && Object.prototype.hasOwnProperty.call(serviceDescriptionsUnderReview, slug)
+      ? serviceDescriptionsUnderReview[slug] : undefined;
+    if (!title) return <NotFound />;
+    return (
+      <>
+        <Meta title={`${title} — Under review`} description="This service description is under review." draft />
+        <PageIntro eyebrow="UNDER REVIEW" title={title}>
+          <p>This service description is under review.</p>
+        </PageIntro>
+        <div className="content-band light-surface">
+          <section className="section container">
+            <ArrowLink to="/services">View our services</ArrowLink>
+          </section>
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <Meta title={s.title} />
@@ -693,9 +709,8 @@ function Projects() {
       <Meta title="Our projects" />
       <PageIntro eyebrow="OUR EXPERIENCE" title="Our projects" connected>
         <p>
-          One of our biggest strengths at Geolabs, Inc. is the experience we have. The various projects we have completed and received awards for have allowed us to gain the versatility needed to ensure satisfaction when we undertake a project. With each of these projects, we fulfilled the requirements of our clients and created a better community in the process.
+          One of our biggest strengths at Geolabs, Inc. is the experience we have. Explore our projects and engineering awards.
         </p>
-        <p>We deliver end-to-end project solutions, specializing in Planning, Execution, and Quality Assurance to ensure lasting success.</p>
       </PageIntro>
       <div className="content-band light-surface">
       <section className="container portfolio">

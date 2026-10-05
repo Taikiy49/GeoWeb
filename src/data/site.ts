@@ -116,7 +116,6 @@ export const services: Service[] = [
         text: "Our services span a wide range of geotechnical areas:",
         items: [
           "Landslide stabilization",
-          "Trenchless utility installations",
           "Geotechnical earthquake engineering (a vital component in ensuring seismic resilience across the region)",
         ],
       },
@@ -129,8 +128,8 @@ export const services: Service[] = [
     imageAlt: "Mass grading and earthwork at Hoopili development",
     caption: "Hoopili development mass grading & slope, Oʻahu",
     intro:
-      "Services during construction is the on-site phase of geotechnical practice that ensures designs are implemented correctly and safely as conditions evolve in the field. It focuses on how subsurface conditions, foundations, and support systems perform during active work, bringing together construction support, geotechnical special inspection, and real-time decision-making to align plans with actual site behavior. This includes targeted oversight for deep foundations, shallow foundations, earthwork, and shoring systems, with verification that methods and materials meet design intent.",
-    overview: ["The primary goal is to confirm that geotechnical elements perform as designed through geotechnical instrumentation and monitoring, construction materials engineering and testing (CoMET), excavation shoring design, and dewatering evaluation and design, so constructed works are safe, compliant, and durable.", "Construction support refers to the technical assistance and oversight provided by engineers—especially geotechnical, structural, and civil engineers—during the construction phase of a project. It ensures that the design intent is properly implemented in the field and that any unforeseen conditions or challenges are addressed promptly and effectively."],
+      "Services during construction focuses on how subsurface conditions and foundations perform during active work. Geotechnical construction support includes field observation, special inspections, materials testing, and geotechnical instrumentation.",
+    overview: ["The scope of observation, inspection, testing, and monitoring is defined for each project. Contact us to discuss your project requirements."],
     sections: [
       {
         title: "Construction support",
@@ -160,15 +159,7 @@ export const services: Service[] = [
         title: "Construction materials engineering & testing",
         image: "rock-scaling",
         caption: "Rock Slope Scaling along Kalanianaole Highway at Makapuu, Oahu (2002)",
-        text: "Construction Materials Engineering and Testing (CoMET) ensure that building materials meet quality and safety standards throughout a project. These services verify the strength, durability, and suitability of materials like concrete, soil, asphalt, and steel. Reliable testing helps prevent failures and supports long-lasting, compliant construction.",
-      },
-      {
-        title: "Excavation shoring design",
-        text: "Excavation Shoring Design provides temporary structural support to excavation walls, preventing soil collapse and protecting workers and nearby structures. Proper shoring design is essential for safe, efficient construction in challenging ground conditions. It helps maintain stability throughout excavation, reducing risks and ensuring project success.",
-      },
-      {
-        title: "Dewatering evaluation & design",
-        text: "Dewatering Evaluation and Design manage groundwater on construction sites to keep excavations dry and stable. This process involves assessing site conditions, selecting effective dewatering methods, and designing systems to control water levels. Proper dewatering supports safe construction and protects surrounding structures.",
+        text: "Construction materials engineering and testing (CoMET) evaluates soil and concrete against project specifications. Contact us to discuss the testing required for your project.",
       },
     ],
   },
@@ -190,10 +181,6 @@ export const services: Service[] = [
         title: "Rotary drilling",
         text: "Rotary Drilling is a technique that involves creating boreholes in the ground. This method of drilling is versatile as it can be adapted to various drilling objectives and ground conditions.",
       },
-      {
-        title: "Offshore drilling",
-        text: "Offshore Drilling evaluates seabed materials to support safe marine construction. It guides foundation design for offshore platforms by analyzing soil strength, layering, and stability underwater.",
-      },
     ],
   },
   {
@@ -203,16 +190,12 @@ export const services: Service[] = [
     imageAlt: "Concrete core sample in a testing apparatus",
     caption: "Concrete core testing",
     intro:
-      "Materials testing involves evaluating the physical, mechanical, and chemical properties of materials that are used in infrastructure. We test and ensure that the quality and performance of these materials guarantee safety among us and the community.",
-    overview: ["Construction Materials Engineering and Testing (CoMET) is a vital process in infrastructure development that ensures the quality, safety, and performance of materials used in construction. It involves evaluating the physical, mechanical, and chemical properties of materials such as soil, concrete, asphaltic concrete, steel, and aggregates to verify that they meet project specifications, industry standards, and regulatory requirements."],
+      "Materials testing involves evaluating the properties of soil and concrete used in construction.",
+    overview: ["Construction materials engineering and testing (CoMET) evaluates soil and concrete against project specifications. Contact us to discuss the testing required for your project."],
     sections: [
       {
         title: "Soils & concrete",
-        text: "Both soil and concrete are widely used as foundations in infrastructure. Proper assessment and characterization of these materials are vital to ensure the stability and safety of these large projects.",
-      },
-      {
-        title: "Construction quality control",
-        text: "Construction Quality Control refers to the activities to ensure that the work meets the client's quality standards and conforms to all codes/regulations. We closely work with all people on a job site to guarantee that the work is done to the best of everyone's ability.",
+        text: "Both soil and concrete are widely used as foundations in infrastructure. Assessment and characterization provide information about their properties.",
       },
       {
         title: "Geotechnical instrumentation",
@@ -220,35 +203,15 @@ export const services: Service[] = [
       },
       {
         title: "Slope stability analysis",
-        text: "Slope stability analysis is used to prevent any type of slope from failing. To mitigate these risks, we precisely test and monitor how the materials involved in these slopes are interacting with the environment around them.",
-      },
-    ],
-  },
-  {
-    slug: "forensic-expert-witness",
-    title: "Forensic & expert witness services",
-    image: "forensic-damage",
-    imageAlt: "Excavation and foundation exposure beneath a bridge",
-    caption: "Bridge foundation investigation",
-    intro:
-      "Forensic and Expert Witnesses are people who possess specialized knowledge and experience in a field relevant in a legal case. These witnesses are called upon to provide this expertise/opinions to help the court understand the complex issues regarding the case.",
-    overview: ["When structural failures occur, we don't study them to point blame, we study them to ensure that it never happens again. For the safety of our community, we carefully investigate what caused these events and provide a plan to prevent them from happening again."],
-    sections: [
-      {
-        title: "Litigation support",
-        text: "Litigation refers to the process of settling legal disputes through a court system. Litigation often occurs when the parties involved in these cases need the expertise from specialized companies, like Geolabs.",
-      },
-      {
-        title: "Insurance claim investigations",
-        text: "Insurance Claims during forensic investigations are often filed to investigate the cause, extent, and value of the damages a structural failure caused.",
-      },
-      {
-        title: "Arbitration",
-        text: "Arbitration is an alternative dispute resolution method in which parties agree to have their case heard by the arbitrator(s) instead of going to a court.",
+        text: "Slope stability analysis evaluates natural and engineered slopes to understand their potential for movement or failure.",
       },
     ],
   },
 ];
+// Original withheld descriptions are archived outside the browser bundle in docs/content-review-holds-2026-10-05.json.
+export const serviceDescriptionsUnderReview: Record<string, string> = {
+  "forensic-expert-witness": "Forensic & expert witness services",
+};
 export interface Project {
   slug: string;
   title: string;

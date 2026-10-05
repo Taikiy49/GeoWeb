@@ -1,5 +1,7 @@
 # Production readiness review — updated October 4, 2026
 
+**October 5 owner update:** Specific service promises and unconfirmed offerings are now qualified or withheld pending Robin review; see [wording holds](content-review-holds-2026-10-05.md). This exception supersedes prior full-publication requirements for those passages. Employment/application/USFCR content and project narratives remain unchanged. Source fidelity and this editorial reduction do not certify legal compliance or eliminate all risk.
+
 The latest content-restoration checklist is [wix-complete-parity-review-2026-10-04.md](wix-complete-parity-review-2026-10-04.md). It supersedes earlier claims about condensed copy and absent team data.
 
 This review prepares the replacement website on **test.geolabs.net**. It does not approve or perform a geolabs.net/www.geolabs.net cutover.

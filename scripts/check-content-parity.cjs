@@ -22,6 +22,7 @@ vm.runInNewContext(ts.transpile(fs.readFileSync(sitePath, 'utf8'), {
 const { projects, services } = site.exports;
 const narratives = read('docs/wix-narrative-coverage.json');
 const source = read('docs/wix-complete-source-text-2026-10-04.json');
+const review = read('docs/content-review-holds-2026-10-05.json');
 const coverage = read('docs/wix-complete-parity-review-2026-10-04.json');
 const drafts = read('src/data/unfinished-projects.json');
 const team = read('src/data/team.json');
@@ -70,8 +71,36 @@ const serviceParagraphs = new Set(servicePages.flatMap(name => source[name].bloc
     && !block.text.startsWith('We are a full-serve'))
   .map(block => serviceText(block.text))));
 for (const paragraph of serviceParagraphs) {
-  assert.ok(serviceCopy.includes(paragraph), `Missing service explanation: ${paragraph.slice(0, 85)}`);
+  const hold = review.heldSourceParagraphs.find(item => serviceText(item.text) === paragraph);
+  assert.ok(serviceCopy.includes(paragraph) || hold,
+    `Missing service explanation without an owner-authorized hold: ${paragraph.slice(0, 85)}`);
 }
+// Holds are exact source paragraphs, not a blanket exemption from Wix fidelity.
+const archivedServiceCopy = serviceText(strings(review.originalServices).join(' '));
+for (const hold of review.heldSourceParagraphs) {
+  const paragraph = serviceText(hold.text);
+  assert.ok(serviceParagraphs.has(paragraph), `Unknown held source paragraph: ${paragraph.slice(0, 85)}`);
+  assert.ok(archivedServiceCopy.includes(paragraph), 'Held source copy must remain recoverable in the review archive');
+  assert.ok(!serviceCopy.includes(paragraph), 'An active review hold must not be publicly advertised');
+}
+assert.equal(review.heldSourceParagraphs.length, 16, 'New wording holds require an explicit owner review');
+const appCopy = fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8');
+const previewCopy = fs.readFileSync(path.join(root, 'src/data/aboutTopics.ts'), 'utf8');
+const marketingCopy = narrativeText([serviceCopy, appCopy, previewCopy].join(' ')).toLowerCase();
+for (const phrase of [
+  'ensure that it never happens again', 'guarantee safety',
+  'prevent any type of slope from failing', 'best of everyones ability',
+  'all codes/regulations', 'day-to-day oversight', 'actively involved in every phase',
+  'built to last', 'end-to-end project solutions', 'ensure lasting success', 'ensure satisfaction',
+  'offshore platforms', 'chemical properties', 'trenchless utility installations',
+  'excavation shoring design', 'dewatering evaluation', 'litigation support',
+  'insurance claim investigations',
+]) {
+  assert.ok(!marketingCopy.includes(phrase), `Held public claim reintroduced: ${phrase}`);
+}
+assert.ok(!services.some(service => service.slug === 'forensic-expert-witness'));
+assert.equal(site.exports.serviceDescriptionsUnderReview['forensic-expert-witness'],
+  'Forensic & expert witness services', 'Preserve the held service URL/title for review');
 
 const publicRoutes = new Set([
   ...projects.map(item => `/projects/${item.slug}`),
@@ -99,6 +128,7 @@ for (const item of [...projects, ...drafts.filter(item => item.gallery)]) {
 
 console.log(JSON.stringify({
   stories: narratives.length, paragraphs, serviceParagraphs: serviceParagraphs.size,
+  ownerAuthorizedServiceHolds: review.heldSourceParagraphs.length,
   sourceFilmSlides: sourceSlides.length, featuredSlides: film.exports.featuredProjects.length,
   galleryTiles: coverage.galleryTileCoverage.length,
   publicGalleryEntries: publicRoutes.size, teamMembers: team.length, result: 'passed',

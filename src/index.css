@@ -206,6 +206,7 @@ main:focus { outline: none; }
 .home-service-card:first-child h3 { font-size: clamp(28px, 2.8vw, 40px); }
 .service-card-copy p { margin-block: 16px 18px; }
 .secondary-services { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; margin-top: 48px; }
+.secondary-services > a:only-child { grid-column: 1 / -1; }
 .secondary-services > a { display: flex; gap: 22px; align-items: center; padding-top: 28px; border-top: 1px solid var(--line); }
 .secondary-services img { width: 100px; height: 90px; object-fit: cover; }
 .secondary-services .eyebrow { margin-bottom: 6px; }

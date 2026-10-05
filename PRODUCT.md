@@ -19,3 +19,7 @@ Current content and route structure in src/App.tsx and src/data; source-fidelity
 ## Content restoration — October 4, 2026
 
 Preserve the complete New/Newer Wix source content, including nested Team Master data and carousel slides. The team directory is a reviewed CSV snapshot (refresh with scripts/sync-team.py). Direct contact-form delivery remains an explicit integration gap; current fields prepare an email draft without claiming delivery. Full current coverage, editorial exceptions and source conflicts: docs/wix-content-restoration-2026-10-04.md.
+
+## Owner-authorized wording holds — October 5, 2026
+
+The owner subsequently requested removing/qualifying the listed service guarantees and unconfirmed offerings while preserving their originals for Robin's review. This overrides source-exact publication for those specific passages only. Do not restore held text merely to satisfy earlier Wix parity instructions. See docs/content-review-holds-2026-10-05.md and its exact-copy JSON archive. Employment, benefits, application links, USFCR/SAM, and project narratives are outside this change. The test site retains core geotechnical, drilling, construction support, and soil/concrete testing descriptions; forensic descriptions, offshore/platform drilling, excavation shoring design, dewatering design, construction quality-control promises, broad chemical/materials testing, and trenchless installation claims remain withheld pending owner review. Original descriptions are private repository documentation, not public assets or browser imports.

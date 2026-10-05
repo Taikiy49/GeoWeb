@@ -133,6 +133,8 @@ Catalogue cards retain their originating search, market, display mode and card a
 
 ## Restored source content — October 4, 2026
 
+**October 5 content exception:** Owner-authorized wording holds supersede source-exact rendering for the passages listed in docs/content-review-holds-2026-10-05.md. Preserve the visual system, photos, motion, and unaffected content. Four services remain in public navigation; the single secondary service fills its existing row. The canonical forensic service URL and its legacy redirect show a noindex, under-review description with a working return to Services. Original held narratives stay outside the public bundle. Do not reintroduce held capabilities in About previews, menus, metadata, or closed disclosures.
+
 Keep long engineering narratives in the established reading column, with source captions on their actual project photos. The Team directory uses a yellow-headed semantic table on desktop and stacked records plus native sorting on phones; never shrink a four-column table until names are unreadable. Search/sort feedback is immediate; initial row motion uses the shared once-per-visit reveal and respects reduced motion. The contact field set makes its email-draft handoff explicit and never shows a sent confirmation.
 
 ## Higgsfield-guided presentation pass — October 4, 2026
