@@ -30,7 +30,9 @@ export function usePageMotion(route: string) {
     const animations = new Set<Animation>();
     const pending = new Set<Element>();
     const tokens = getComputedStyle(document.documentElement);
-    const duration = parseFloat(tokens.getPropertyValue("--motion-reveal")) || 560;
+    // Production CSS can minify 560ms to .56s; WAAPI always expects milliseconds.
+    const timing = tokens.getPropertyValue("--motion-reveal").trim();
+    const duration = (parseFloat(timing) * (timing.endsWith("ms") ? 1 : 1000)) || 560;
     const distance = parseFloat(tokens.getPropertyValue("--reveal-distance")) || 32;
     const ease = tokens.getPropertyValue("--ease-out").trim() || "cubic-bezier(.16,1,.3,1)";
     const showPending = () => {

@@ -8,7 +8,7 @@ const ts = require('typescript');
 const source = fs.readFileSync(path.join(root, 'src/components/usePageMotion.ts'), 'utf8');
 const js = ts.transpile(source.replace(/import[^;]+;/, ''), { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS });
 
-function harness(reduced = false, observation = true) {
+function harness(reduced = false, observation = true, timing = '560ms') {
   const refs = []; let cursor = 0, cleanup;
   const events = new Map(), docEvents = new Map(), mediaEvents = new Map();
   const calls = [], observers = [], candidates = [];
@@ -35,7 +35,7 @@ function harness(reduced = false, observation = true) {
   if (observation) win.IntersectionObserver = Observer;
   const context = vm.createContext({exports: {}, Element, IntersectionObserver: Observer, window: win,
     document: {documentElement: {}, querySelectorAll: () => candidates, addEventListener: (name, cb) => docEvents.set(name, cb), removeEventListener: name => docEvents.delete(name)},
-    getComputedStyle: () => ({getPropertyValue: key => ({'--motion-reveal':'560ms','--reveal-distance':'32px','--ease-out':'cubic-bezier(.16, 1, .3, 1)'})[key] || ''}),
+    getComputedStyle: () => ({getPropertyValue: key => ({'--motion-reveal':timing,'--reveal-distance':'32px','--ease-out':'cubic-bezier(.16, 1, .3, 1)'})[key] || ''}),
     useRef: initial => refs[cursor++] ||= {current: initial},
     useEffect: callback => {cleanup = callback();},
   });
@@ -75,4 +75,5 @@ const filter = harness(); const card = new filter.Element('.project-card'); cons
 filter.candidates.splice(0,1,card); filter.render('/projects?q=hawaii'); filter.intersect(); assert.equal(filter.calls.length,1); checks.push('retained-project-does-not-replay-on-search');
 const added = new filter.Element('.project-card'); filter.candidates.push(added); filter.render('/projects?q=maui'); filter.intersect(); assert.equal(filter.calls.length,2); assert.equal(filter.calls[1].options.duration,280); assert.equal(filter.calls[1].options.delay,0); checks.push('new-filter-result-short-entrance');
 
+const production = harness(false,true,'.56s'); const productionText = new production.Element('p'); production.candidates.push(productionText); production.render('/about'); production.intersect(); assert.equal(production.calls[0].options.duration,560); checks.push('minified-seconds-convert-to-waapi-milliseconds');
 console.log(JSON.stringify({passed:checks.length,checks},null,2));
