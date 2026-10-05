@@ -240,7 +240,7 @@ function Home() {
             <ArrowLink to="/services">Explore all services</ArrowLink>
           </div>
           <div className="home-services">
-            {services.slice(0, 3).map((service, i) => (
+            {services.slice(0, 3).map((service) => (
               <Link
                 className="home-service-card"
                 to={`/services/${service.slug}`}
@@ -248,7 +248,6 @@ function Home() {
               >
                 <div className="service-card-photo">
                   <Photo name={service.image} alt={service.imageAlt} />
-                  <span>0{i + 1}</span>
                 </div>
                 <div className="service-card-copy">
                   <h3>{service.title}</h3>
@@ -522,6 +521,9 @@ function Services() {
         </p>
       </PageIntro>
       <div className="content-band light-surface">
+      <nav className="container service-navigation" aria-label="Services on this page">
+        {services.map(s => <a href={`#service-${s.slug}`} key={s.slug}>{s.title}<ArrowDown size={17} aria-hidden="true" /></a>)}
+      </nav>
       <div className="container services-source-heading"><h2>From start to end —<br />We are with you</h2></div>
       <div className="container service-source-panorama">
         <figure><Photo name="service-pali" alt="Pali Highway Emergency Slope Stabilization, Oahu (2019)" /><figcaption>Pali Highway Emergency Slope Stabilization, Oahu (2019)</figcaption></figure>
@@ -532,13 +534,18 @@ function Services() {
           <article
             key={s.slug}
             className="service-card"
+            id={`service-${s.slug}`}
+            tabIndex={-1}
+            aria-labelledby={`service-${s.slug}-heading`}
           >
+            <figure className="service-row-media">
             <div className="service-row-photo">
               <Photo name={s.slug === "geotechnical-engineering" ? "service-victoria" : s.slug === "construction-support" ? "service-palau" : s.image} alt={s.slug === "geotechnical-engineering" ? "Victoria Place, Honolulu, Oahu (2024)" : s.slug === "construction-support" ? "Palau Wharf Improvements, Malakal Island (2024)" : s.imageAlt} />
             </div>
+              <figcaption>{s.slug === "geotechnical-engineering" ? "Victoria Place, Honolulu, Oahu (2024)" : s.slug === "construction-support" ? "Palau Wharf Improvements, Malakal Island (2024)" : s.caption}</figcaption>
+            </figure>
             <div>
-              <span className="eyebrow">{s.slug === "geotechnical-engineering" ? "Victoria Place, Honolulu, Oahu (2024)" : s.slug === "construction-support" ? "Palau Wharf Improvements, Malakal Island (2024)" : s.caption}</span>
-              <h2>{s.title}</h2>
+              <h2 id={`service-${s.slug}-heading`}>{s.title}</h2>
               <p>{s.intro}</p>
               {s.overview?.map(text => <p key={text}>{text}</p>)}
               <Link className="arrow-link" to={`/services/${s.slug}`}>
@@ -831,8 +838,10 @@ function People() {
             {leaders.map((l) => (
               <article key={l.name} id={l.image === "robin" ? "robin-lim" : l.image === "gerald" ? "gerald-seki" : l.image === "john" ? "john-chen" : "payton-kiuchi"}>
                 <Photo eager name={l.image} alt={l.name} />
+                <div className="leader-identity">
                 <h3>{l.name}</h3>
                 <p>{l.role}</p>
+                </div>
                 {l.education && (
                   <details>
                     <summary>
