@@ -10,6 +10,7 @@ colors:
   soft: "#f3f4f5"
   line: "#d9dce2"
   focus: "#806000"
+  error: "#a22c32"
 typography:
   display:
     fontFamily: "Montserrat, sans-serif"
@@ -142,4 +143,8 @@ About Us (New) uses nine topic photographs that reveal text on hover. Preserve t
 
 ## Source parity follow-up
 
-The main project catalogue includes all named newer Wix gallery projects; gallery-only entries retain exact titles, locations and photos and use explicit Under construction status. They share ProjectCard, filters, search and Gallery/List behaviors with completed stories, and link to noindex draft routes. Award photographs use native Project photo disclosures; blank or mismatched source photos are withheld. No new palette, typography or independent card system is introduced. Native select geometry and keyboard behavior are intentionally platform-owned. Contact constraint validation is browser-owned through reportValidity; the message field grows to its contents.
+The main project catalogue includes all named newer Wix gallery projects; gallery-only entries retain exact titles, locations and photos and use explicit Under construction status. They share ProjectCard, filters, search and Gallery/List behaviors with completed stories, and link to noindex draft routes. Award photographs use native Project photo disclosures; blank or mismatched source photos are withheld. Native select geometry and keyboard behavior are intentionally platform-owned. ContactInquiry owns inline validation and recovery, using native input validity metadata without browser validation bubbles; the message field grows to its contents.
+
+## Production polish — October 4, 2026
+
+Contact field errors use the semantic `colors.error` → `--error` → invalid input border and inline error text mapping. Keep the original brand palette for every other surface. Error rows reserve a line of space, corrected fields clear their feedback, and invalid submission focuses the first field at the viewport center. The ready draft appears on a white panel with a yellow left rule; its action receives focus and the copy explicitly says the message has not been sent. Small About photo panels use a three-line excerpt and two preview list items at container widths up to 380px; at 300px the excerpt uses two lines. All source text stays in the linked full section. Excerpts never flex-shrink to fractional line heights. Mobile navigation contains its own scrolling; reduced motion removes photograph and portrait hover scaling as well as arrow movement.

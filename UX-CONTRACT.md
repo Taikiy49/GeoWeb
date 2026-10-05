@@ -13,3 +13,5 @@ This public marketing website serves prospective clients and applicants. Source 
 
 - Featured projects use a manual filmstrip with named, pressed-state thumbnail buttons and previous/next controls. Arrow keys, Home, and End navigate thumbnails. Selection resets playback. The HDOT walkway video plays only after an explicit click, uses native controls, and provides a retry state on failure. Horizontal thumbnail scrolling does not move the document.
 - Entry reveals run once per route render; search updates reveal result cards only and honor live reduced-motion changes. No content depends on animation to become readable.
+
+- ContactInquiry owns required-field and email-format feedback. Blank or whitespace-only required fields cannot prepare a draft. Inline errors are associated with their fields, invalid submission focuses the first correction, and correction preserves all entered values. Valid preparation focuses the ready draft action; editing any field removes the stale draft. Preparing a draft never opens an email app or sends a message automatically. Direct delivery remains the integration gap documented in docs/PRODUCTION-READINESS.md.

@@ -3,7 +3,7 @@
   "sourceRoots": ["src"],
   "ownership": {
     "Select/Listbox": "native",
-    "Form": "native"
+    "Form": "src/components/ContactInquiry.tsx"
   },
   "commands": {
     "check": "npm run check"

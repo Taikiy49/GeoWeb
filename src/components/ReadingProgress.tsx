@@ -14,14 +14,14 @@ export function ReadingProgress({ route }: { route: string }) {
     const schedule = () => {
       if (!frame) frame = requestAnimationFrame(update);
     };
-    const resize = new ResizeObserver(schedule);
-    resize.observe(document.body);
+    const resize = "ResizeObserver" in window ? new ResizeObserver(schedule) : undefined;
+    resize?.observe(document.body);
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", schedule);
     schedule();
     return () => {
       cancelAnimationFrame(frame);
-      resize.disconnect();
+      resize?.disconnect();
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", schedule);
     };
