@@ -1,9 +1,12 @@
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
 
+const messageLimit = 1500;
+
 /** Wix's field set, with an explicit email handoff until a delivery backend is configured. */
 export function ContactInquiry() {
   const [draft, setDraft] = useState<string>();
+  const [messageLength, setMessageLength] = useState(0);
   function prepare(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const values = new FormData(event.currentTarget);
@@ -20,9 +23,13 @@ export function ContactInquiry() {
       </div>
       <label>Email<input name="email" type="email" autoComplete="email" spellCheck={false} required maxLength={254} /></label>
       <label>Phone <span>(optional)</span><input name="phone" type="tel" autoComplete="tel" maxLength={40} /></label>
-      <label>Leave us a message…<textarea name="message" rows={5} required maxLength={1500} /></label>
-      <button className="button button-yellow" type="submit">Prepare email <ArrowUpRight size={18} /></button>
-      {draft && <div className="inquiry-handoff" role="status"><p>Your email draft is ready. It has not been sent.</p><a href={draft} className="arrow-link">Open draft in your email app <ArrowUpRight size={18} /></a></div>}
+      <div className="inquiry-message">
+        <label>Leave us a message…<textarea name="message" rows={5} required maxLength={messageLimit} aria-describedby="message-length" onChange={event => setMessageLength(event.target.value.length)} /></label>
+        <span id="message-length" className="inquiry-message-count">{messageLength.toLocaleString("en-US")} / 1,500 characters</span>
+        <span className="sr-only" role="status">{messageLength === messageLimit ? "Message limit reached. Shorten your message to add more text." : ""}</span>
+      </div>
+      <button className="button button-yellow" type="submit">Prepare email <ArrowUpRight size={18} aria-hidden="true" /></button>
+      {draft && <div className="inquiry-handoff" role="status"><p>Your email draft is ready. It has not been sent.</p><a href={draft} className="arrow-link">Open draft in your email app <ArrowUpRight size={18} aria-hidden="true" /></a></div>}
     </form>
   </section>;
 }

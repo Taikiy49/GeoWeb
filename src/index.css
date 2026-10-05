@@ -454,6 +454,8 @@ main:focus { outline: none; }
 .inquiry-form label > span { display: contents; color: var(--muted); }
 .inquiry-form :is(input, textarea) { width: 100%; min-width: 0; color: var(--ink); background: white; border: 1px solid #9499a6; border-radius: 2px; padding: 12px 14px; font: inherit; }
 .inquiry-form textarea { resize: vertical; }
+.inquiry-message { display: grid; gap: 8px; }
+.inquiry-message-count { justify-self: end; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
 .inquiry-names { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .inquiry-form .button { justify-self: start; }
 .inquiry-handoff { border-top: 1px solid var(--line); padding-top: 20px; }
@@ -477,6 +479,9 @@ main:focus { outline: none; }
   .inquiry-names { gap: 14px; }
   .directory-heading { align-items: stretch; flex-direction: column; gap: 24px; }
   .directory-search { width: 100%; }
+}
+@media (max-width: 360px) {
+  .inquiry-names { grid-template-columns: 1fr; gap: 22px; }
 }
 
 /* Recognition and regional contact information */
