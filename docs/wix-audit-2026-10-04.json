@@ -1,0 +1,288 @@
+{
+  "reviewCompleted": "2026-10-04",
+  "method": "Read the signed-in Wix editor preview DOM after each page settled, including all 28 primary CMS records, both secondary CMS records, three leadership slides, four Why Us slides, and the nested Table Master iframe. Fingerprint decodes entities, lowercases, collapses non-ASCII-letter/digit separators, and rolls unsigned 32-bit h = h*31 + character. Matching source fingerprints verify source freshness, not migration completeness or independent factual accuracy.",
+  "namedViews": [
+    {
+      "page": "Copy of Services (New)",
+      "hash": 4129822139
+    },
+    {
+      "page": "Leadership (New)",
+      "hash": 3694372388
+    },
+    {
+      "page": "Leadership (New) — Gerald",
+      "hash": 4079196160
+    },
+    {
+      "page": "Leadership (New) — John",
+      "hash": 679526196
+    },
+    {
+      "page": "Team (New)",
+      "hash": 2635033475
+    },
+    {
+      "page": "Home (New)",
+      "hash": 349051634
+    },
+    {
+      "page": "About Us (New)",
+      "hash": 1991397404
+    },
+    {
+      "page": "Services (New)",
+      "hash": 1037109341
+    },
+    {
+      "page": "Geotechnical Engineering (New)",
+      "hash": 2996534247
+    },
+    {
+      "page": "Services After Construction",
+      "hash": 2990438940
+    },
+    {
+      "page": "Drilling and Subsurface Investigation (",
+      "hash": 1337970083
+    },
+    {
+      "page": "Materials Testing (New)",
+      "hash": 1771667693
+    },
+    {
+      "page": "Forensic and Expert Witness (New)",
+      "hash": 1532737428
+    },
+    {
+      "page": "Projects (New)",
+      "hash": 861598112
+    },
+    {
+      "page": "International Marketplace (New)",
+      "hash": 2839205529
+    },
+    {
+      "page": "Honolulu Rail (Newer)",
+      "hash": 3939900341
+    },
+    {
+      "page": "Kamehameha (Newer)",
+      "hash": 363368249
+    },
+    {
+      "page": "Copy of Kamehameha (Newer)",
+      "hash": 363368249
+    },
+    {
+      "page": "Ala Moana Center Expansion (New)",
+      "hash": 479741114
+    },
+    {
+      "page": "Honolulu High Capacity Transit (New)",
+      "hash": 2413170511
+    },
+    {
+      "page": "Kamehameha School Athletic Field (New)",
+      "hash": 1700566102
+    },
+    {
+      "page": "The Moana Pacific (New)",
+      "hash": 103220511
+    },
+    {
+      "page": "Ko'olani Tower (New)",
+      "hash": 1851579278
+    },
+    {
+      "page": "Kahului Airport Terminal Complex (New)",
+      "hash": 1874848715
+    },
+    {
+      "page": "Navy's Dry Dock 3 Replacement (New)",
+      "hash": 3579393012
+    },
+    {
+      "page": "Kapolei Harborside Redevelopment (New)",
+      "hash": 3241353561
+    },
+    {
+      "page": "New Projects",
+      "hash": 2067958177
+    },
+    {
+      "page": "Awards (New)",
+      "hash": 4077506539
+    },
+    {
+      "page": "Contact (New)",
+      "hash": 1693451390
+    },
+    {
+      "page": "Apply (New)",
+      "hash": 3323304151
+    },
+    {
+      "page": "Home (New - Prototypes)",
+      "hash": 1941657647
+    },
+    {
+      "page": "SpecificProject (Title)",
+      "hash": 854693127
+    },
+    {
+      "page": "SpecificProject — Mariott Hotel",
+      "hash": 1354441334
+    },
+    {
+      "page": "Resorts",
+      "hash": 3032358699
+    },
+    {
+      "page": "Ko'olina Lagoons",
+      "hash": 4098941373
+    },
+    {
+      "page": "Mariott Hotel",
+      "hash": 3413743177
+    },
+    {
+      "page": "Ko'olina Beach Villas",
+      "hash": 3019492062
+    },
+    {
+      "page": "Aulani",
+      "hash": 1324339824
+    },
+    {
+      "page": "TEAM",
+      "hash": 3541093060
+    }
+  ],
+  "primaryCMS": [
+    {
+      "index": 0,
+      "hash": 3975403542
+    },
+    {
+      "index": 1,
+      "hash": 4013486989
+    },
+    {
+      "index": 2,
+      "hash": 3448163750
+    },
+    {
+      "index": 3,
+      "hash": 3764887850
+    },
+    {
+      "index": 4,
+      "hash": 2706145670
+    },
+    {
+      "index": 5,
+      "hash": 2703449244
+    },
+    {
+      "index": 6,
+      "hash": 2648028789
+    },
+    {
+      "index": 7,
+      "hash": 2019803622
+    },
+    {
+      "index": 8,
+      "hash": 2146762798
+    },
+    {
+      "index": 9,
+      "hash": 3093631823
+    },
+    {
+      "index": 10,
+      "hash": 2793242261
+    },
+    {
+      "index": 11,
+      "hash": 2211054278
+    },
+    {
+      "index": 12,
+      "hash": 3829458936
+    },
+    {
+      "index": 13,
+      "hash": 188080796
+    },
+    {
+      "index": 14,
+      "hash": 2459457482
+    },
+    {
+      "index": 15,
+      "hash": 1676424244
+    },
+    {
+      "index": 16,
+      "hash": 2751357417
+    },
+    {
+      "index": 17,
+      "hash": 1352732464
+    },
+    {
+      "index": 18,
+      "hash": 2035872190
+    },
+    {
+      "index": 19,
+      "hash": 509030744
+    },
+    {
+      "index": 20,
+      "hash": 3523714269
+    },
+    {
+      "index": 21,
+      "hash": 4282294928
+    },
+    {
+      "index": 22,
+      "hash": 743282215
+    },
+    {
+      "index": 23,
+      "hash": 2995919295
+    },
+    {
+      "index": 24,
+      "hash": 762243291
+    },
+    {
+      "index": 25,
+      "hash": 3082218820
+    },
+    {
+      "index": 26,
+      "hash": 3008022294
+    },
+    {
+      "index": 27,
+      "hash": 525026860
+    }
+  ],
+  "team": {
+    "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vS9U2PxD7GuLVd2s6kjuL4qN6ymWBJOZda8oR6tMtsvbWYuQXJpM1PPkmortdlFv6DZpd_99KEc-G-g/pub?output=csv",
+    "records": 32,
+    "columns": [
+      "Name",
+      "Position",
+      "Degree",
+      "Licensed"
+    ],
+    "destination": "/people#team",
+    "refresh": "python3 scripts/sync-team.py; review, commit and deploy. Not a live runtime fetch."
+  }
+}

@@ -125,3 +125,7 @@ About’s regional office links target stable, named office anchors on Contact (
 ### Project browsing refinement
 
 The October 3 section review captured 56 routes at desktop and mobile sizes. Larger project stories interrupt the archive’s repeated card rhythm without adding marketing claims or replacing source assets. The alternating image position belongs only to occasional gallery spotlights; all surfaces remain white or soft gray. Gallery headings use h2 below the page title, and related entries use h3 below their section heading. Keyboard focus reveals a photographic link’s pending descendants immediately and cancels their active entrance, so the focused title is readable without waiting.
+
+## Restored source content — October 4, 2026
+
+Keep long engineering narratives in the established reading column, with source captions on their actual project photos. The Team directory uses a yellow-headed semantic table on desktop and stacked records plus native sorting on phones; never shrink a four-column table until names are unreadable. Search/sort feedback is immediate; initial row motion uses the existing once-per-visit, one-second reveal and respects reduced motion. The contact field set makes its email-draft handoff explicit and never shows a sent confirmation.

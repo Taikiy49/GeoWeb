@@ -1,408 +1,281 @@
 [
   {
-    "slug": "ala-moana-walkway",
-    "title": "Ala Moana Elevated Pedestrian Walkway",
-    "location": "Honolulu, Oʻahu",
-    "market": "Transportation",
-    "image": "ala-moana-walkway",
-    "summary": "The Ala Moana Elevated Pedestrian Walkway is a thoughtfully designed bridge in Honolulu that offers a safer and more scenic way to cross the busy Ala Moana Boulevard, which carries a high volume of traffic.",
-    "body": [
+    "source": "Wix CMS item 1: Ala Moana Elevated Pedestrian Walkway",
+    "route": "/projects/ala-moana-walkway",
+    "paragraphs": [
       "The Ala Moana Elevated Pedestrian Walkway is a thoughtfully designed bridge in Honolulu that offers a safer and more scenic way to cross the busy Ala Moana Boulevard, which carries a high volume of traffic. Spanning six lanes, this $17.8 million elevated walkway connects the vibrant Kaka’ako district and the Ward Village neighborhood directly to the beloved Ala Moana Beach Park and Kewalo Basin, creating an easy link between urban city life and the waterfront.",
       "More than just a functional crossing, the walkway is integrated into the newly developed Victoria Ward Park and provides a pleasant walking experience with winding paths, tropical landscaping, and artistic design elements. This space offers not only improved pedestrian safety but also an inviting environment that enhances the overall urban pedestrian experience. It supports the community vision of a walkable, connected neighborhood that encourages residents and visitors to embrace outdoor living and recreation.",
       "The project was a collaborative effort supported by federal and local funding, with significant contributions from local developers to ensure both environmental and aesthetic goals were met. It serves as an example of modern infrastructure blending connectivity, safety, and public space benefits without expanding the city's footprint. This elevated walkway is expected to be used by thousands daily, significantly reducing pedestrian and vehicle conflicts on one of Honolulu’s busiest roads while offering a welcoming passage from the city to the beach."
-    ],
-    "source": "Wix CMS item 1: Ala Moana Elevated Pedestrian Walkway",
-    "facts": [
-      [
-        "Completion",
-        "2025"
-      ]
     ]
   },
   {
-    "slug": "azure-sky-ala-moana",
-    "title": "Azure & Sky Ala Moana",
-    "location": "Honolulu, Oʻahu",
-    "market": "Residential",
-    "image": "azure-sky-ala-moana",
-    "summary": "Azure and Sky Ala Moana are twin tower developments that contribute prominently to Honolulu's vibrant Ala Moana neighborhood, offering a blend of residential living and hospitality in a dynamic urban setting.",
-    "body": [
+    "source": "Wix CMS item 4: Azure and Sky Ala Moana Twin Towers",
+    "route": "/projects/azure-sky-ala-moana",
+    "paragraphs": [
       "Azure and Sky Ala Moana are twin tower developments that contribute prominently to Honolulu's vibrant Ala Moana neighborhood, offering a blend of residential living and hospitality in a dynamic urban setting. Azure Ala Moana, completed in 2019, is a sophisticated high-rise condominium with 41 stories housing 330 units that range from one to three bedrooms. Its sleek modern architecture stands out with high-end interior finishes such as Grohe chrome fixtures, walnut veneer cabinetry, quartz countertops, and stainless steel Bosch appliances, providing contemporary comfort with ocean and city views. The building boasts an array of amenities including a heated pool, fitness center, BBQ area, whirlpool, recreation room, and a resident manager service, fostering a community-oriented lifestyle full of relaxation and convenience.",
       "Sky Ala Moana complements Azure with its twin tower design, embodying a pet-friendly 43-story contemporary condominium experience. The Sky tower offers 390 residential units primarily featuring one and two-bedroom floor plans, alongside a hotel component in the East Tower, which provides an integrated live-work-play environment while capturing panoramic vistas. The towers share an extensive amenity deck of over 53,000 square feet, complete with two pools, spas, cabanas, a fitness center, and expansive outdoor lounging spaces designed to enhance resident well-being and social interaction.",
       "Technically, these towers are engineered with cast-in-place concrete and steel reinforcement structures designed to withstand Honolulu's wind loads and seismic activity, ensuring resilience and safety. The towers include multiple elevators and well-planned core layouts that maximize living space and views. Structural design variations accommodate large terrace areas and open floor plans, providing both beauty and functionality. Mechanical systems incorporate multi-zone air conditioning for climate control efficiency, and the buildings are equipped with advanced security and property management infrastructure. Together, Azure and Sky Ala Moana represent a pinnacle of urban luxury living and thoughtful architectural planning in one of Honolulu’s most desirable locales."
-    ],
-    "source": "Wix CMS item 4: Azure and Sky Ala Moana Twin Towers",
-    "facts": [
-      [
-        "Completion",
-        "2023"
-      ]
     ]
   },
   {
-    "slug": "kahului-conrac",
-    "title": "Kahului Airport ConRAC Facility",
-    "location": "Kahului, Maui",
-    "market": "Airports",
-    "image": "kahului-conrac",
-    "summary": "Accessible via a short tram from baggage claim.",
-    "body": [
+    "source": "Wix CMS item 5: Consolidated Car Rental (ConRAC) Facility",
+    "route": "/projects/kahului-conrac",
+    "paragraphs": [
       "The Consolidated Car Rental (ConRAC) Facility at Kahului Airport (OGG) on Maui is a three-to-four-story, 1.3 to 1.85 million square foot structure that consolidates over 12 major rental companies (Alamo, Avis, Budget, Dollar, Enterprise, Hertz, National, Payless, Sixt, Thrifty) into one efficient hub, accessible via a short tram from baggage claim.",
       "This $340 million project, part of Maui's airport modernization, houses over 3,700 rental stalls, 700 employee spaces, 72 fuel positions, 12 car wash bays, and 11 maintenance stations, streamlining operations for high tourist volumes while freeing terminal space.",
       "From a technical standpoint, the open-floor moment frame design with no interior bearing walls maximizes ventilation and flexibility, using strong column-weak beam principles for seismic resilience on Maui's site, plus sustainable features like natural circulation."
-    ],
-    "source": "Wix CMS item 5: Consolidated Car Rental (ConRAC) Facility",
-    "facts": [
-      [
-        "Completion",
-        "2021"
-      ]
     ]
   },
   {
-    "slug": "kalepa-slope",
-    "title": "Emergency Slope Scaling at Kalepa",
-    "location": "Piʻilani Highway, Maui",
-    "market": "Slopes & rockfall",
-    "image": "kalepa-slope",
-    "summary": "By removing loose rock and debris from the steep volcanic slopes above the roadway, the work reduced the risk of sudden closures and improved safety for drivers traveling this remote coastal corridor.",
-    "body": [
+    "source": "Wix CMS item 6: Emergency Slope Scaling for Kalepa Slope",
+    "route": "/projects/kalepa-slope",
+    "paragraphs": [
       "The Emergency Slope Scaling for Kalepa Slope along Piilani Highway on Maui was an urgent rockfall mitigation effort completed in 2023 to protect a narrow rural highway that serves as a critical access route for East Maui communities and visitors. By removing loose rock and debris from the steep volcanic slopes above the roadway, the work reduced the risk of sudden closures and improved safety for drivers traveling this remote coastal corridor.",
       "Located along a rugged section of Piilani Highway, the Kalepa Slope area is characterized by steep basalt cliffs and erosive gulches where intense rainfall and natural weathering can trigger rockfalls and shallow landslides. When inspections and field observations identified unstable material threatening the highway, emergency scaling was initiated to address the hazard before it resulted in major blockages or damage to the roadway.",
       "More than a simple debris clearing effort, the project relied on rope-access crews and specialized scaling techniques to safely reach and dislodge loose boulders, rock slabs, and overhanging soils high on the slope face. Excavation, hauling, and careful traffic control were then used to remove thousands of tons of material from the roadway corridor while maintaining limited local access where feasible and minimizing impacts to nearby communities.",
       "The emergency scaling at Kalepa Slope enhanced corridor reliability by reducing the likelihood of future rockfall incidents and the extended road closures that can isolate East Maui residents and disrupt emergency response. It also supports broader county and state efforts to manage landslide and rockfall hazards along high‑risk coastal and mountain highways, where geotechnical stabilization is essential to long‑term resilience.",
       "This work was completed through coordination between county agencies, geotechnical specialists, and a contractor experienced in slope stabilization and scaling in Hawaiʻi’s challenging terrain. The project demonstrates how targeted emergency interventions can improve safety, preserve vital transportation links, and respect the unique environmental and cultural setting of Maui’s coastline."
-    ],
-    "source": "Wix CMS item 6: Emergency Slope Scaling for Kalepa Slope",
-    "facts": [
-      [
-        "Completion",
-        "2023"
-      ]
     ]
   },
   {
-    "slug": "hnl-conrac",
-    "title": "HNL Consolidated Rental Car Facility",
-    "location": "Honolulu, Oʻahu",
-    "market": "Airports",
-    "image": "hnl-conrac",
-    "summary": "Streamlining access for millions of arriving passengers via short walks or shuttles from other terminals.",
-    "body": [
+    "source": "Wix CMS item 7: HNL Consolidated Rental Car (ConRAC) Facility",
+    "route": "/projects/hnl-conrac",
+    "paragraphs": [
       "The HNL Consolidated Rental Car (ConRAC) Facility at Daniel K. Inouye International Airport in Honolulu is a massive five-story, 1.8-million-square-foot hub that opened in December 2021, consolidating all ten on-airport rental companies (Alamo, Avis, Budget, Dollar, Enterprise, Hertz, National, Payless, Sixt, Thrifty) into one efficient location across from Terminal 2 baggage claims. Spanning 22 acres bounded by Aolele Street, Paiea Street, and the arrivals roadway, it houses 2,250 parking stalls, ready/return areas, a bus terminal, operations baseyard, car wash bays, commercial fueling stations, and ground transportation for shuttles and tours, streamlining access for millions of arriving passengers via short walks or shuttles from other terminals.",
       "This $377 million project, funded entirely by a $4.50 daily Customer Facility Charge on rentals (no state taxes), replaced scattered old lots and an interim setup, boosting security, operations, and customer flow while freeing up 727 public parking stalls in Terminal 2's structure. LEED Gold certified, it supports Hawaii's tourism engine by handling peak loads near retail like Walmart and Ala Moana, with counters on Level 2, preferred services on upper floors, and after-hours key drops for convenience.",
       "From a technical standpoint, the cast-in-place concrete structure was built in phased Steps A-C (Step A occupied by December 2019) after demolishing existing rental buildings, incorporating multilevel quick-turnaround zones for washing/fueling, resilient paving for heavy traffic, and integrated utilities over the 11-acre core site. Engineering features include efficient vertical circulation via elevators/escalators, stormwater management, and seismic/wind-resistant design suited to Oahu's conditions, all self-performed by contractors like Contrack Watts for concrete, finishes, and site work totaling hundreds of thousands of craft hours. The layout optimizes vehicle staging and shuttle pickups (blue/white curbs at Terminals 1-3), minimizing congestion in HNL's modernization push"
-    ],
-    "source": "Wix CMS item 7: HNL Consolidated Rental Car (ConRAC) Facility",
-    "facts": [
-      [
-        "Completion",
-        "2021"
-      ]
     ]
   },
   {
-    "slug": "hanalei-hills",
-    "title": "Hanalei Hills Landslide Mitigation",
-    "location": "Kūhiō Highway, Kauaʻi",
-    "market": "Slopes & rockfall",
-    "image": "hanalei-hills",
-    "summary": "A critical North Shore route at Mile Marker 1 near Hanalei Bridge",
-    "body": [
+    "source": "Wix CMS item 8: Hanalei Hills Landslide Mitigation",
+    "route": "/projects/hanalei-hills",
+    "paragraphs": [
       "Hanalei Hills Landslide Mitigation along Kuhio Highway (Route 560) on Kauai secures a critical North Shore route at Mile Marker 1 near Hanalei Bridge, where a massive March 2021 slope failure from heavy rains dumped over 80,000 tons of debris across the road, severing access to Hanalei and beyond. This $24 million project, completed in late September 2025 after four years (with 80% federal funding), restored two-way traffic reliability for locals, tourists, and emergency services on Kauai's only land route to the scenic North Shore, addressing vulnerabilities from flooding, old irrigation tunnels, and steep terrain.",
       "The effort unfolded in three phases: Phase 1 (2021) built a shotcrete wall and installed 500+ soil nails up to 40 feet deep for emergency hold; Phase 2 (2023-2025) added 800 more nails, anchored wire mesh via helicopter lifts, and minimized daytime disruptions with night work despite single-lane limits; Phase 3 rerouted hillside water through pipes to the Hanalei River, repaved the road, upgraded guardrails, shoulders, and drainage during full nighttime closures from July to September 2025. It boosts resilience for the area's tourism-dependent economy and communities, though adjacent Waikoko slope work wraps up by January 2026.",
       "From a technical standpoint, the stabilization anchors the slope above and below the highway with over 1,300 soil nails grouted into bedrock, double-layer wire mesh draped and tensioned across sheer faces to catch rockfall, and shotcrete facing for erosion control, all tied to an upgraded drainage network capturing runoff from a discovered irrigation tunnel that triggered the initial slide. Engineering tackled logistics on a narrow, high-traffic switchback with phased construction, helicopter ops for mesh, and BMPs for stormwater to protect the Hanalei River watershed, while pavement overlays and 10-ton weight limits (ongoing above the site) enhance load-bearing for heavier vehicles post-repair."
-    ],
-    "source": "Wix CMS item 8: Hanalei Hills Landslide Mitigation",
-    "facts": [
-      [
-        "Completion",
-        "Under review"
-      ]
     ]
   },
   {
-    "slug": "ka-makana-alii",
-    "title": "Ka Makana Aliʻi",
-    "location": "Kapolei, Oʻahu",
-    "market": "Retail",
-    "image": "ka-makana-alii",
-    "summary": "It serves as a mixed-use hub for Kapolei's expanding population, blending retail therapy, entertainment, and cultural events in a landscape-inspired design reflecting Native Hawaiian motifs.",
-    "body": [
+    "source": "Wix CMS item 10: Ka Makana Aliʻi",
+    "route": "/projects/ka-makana-alii",
+    "paragraphs": [
       "Ka Makana Aliʻi is Hawaii's first major regional shopping center in over 30 years, located at 91-5431 Kapolei Parkway in Kapolei, the heart of West Oahu's fastest-growing community near Ko Olina resorts and UH West Oahu. This 1.15 million square foot open-air mall anchors with Macy's and features over 100 stores like Rip Curl, Forever 21, and local Hawaiian boutiques, plus dining highlights including The Cheesecake Factory, California Pizza Kitchen, and an food court for family meals.",
       "The center emphasizes community with free shuttles from resorts, Military Mondays discounts, monthly hula performances at center court, a 14-screen theater, and ample parking in a relaxed, uncrowded vibe compared to Ala Moana. It serves as a mixed-use hub for Kapolei's expanding population, blending retail therapy, entertainment, and cultural events in a landscape-inspired design reflecting Native Hawaiian motifs.",
       "From a technical standpoint, the development spans multiple phases on former sugar lands with master-planned civil engineering for stormwater management, traffic flow on wide promenades, and sustainable features like shaded walkways and efficient parking layouts supporting high daily foot traffic. Phase Two expansions continue to integrate urban retail with West Oahu's residential boom on a site optimized for seismic resilience and pedestrian connectivity"
-    ],
-    "source": "Wix CMS item 10: Ka Makana Aliʻi",
-    "credit": "6 Pillars Marketing",
-    "facts": [
-      [
-        "Completion",
-        "2016"
-      ]
     ]
   },
   {
-    "slug": "koa-ridge",
-    "title": "Koa Ridge",
-    "location": "Central Oʻahu",
-    "market": "Residential",
-    "image": "koa-ridge",
-    "summary": "Koa Ridge is an expansive master-planned “surban” community in Central Oahu between Mililani and Waipio, developed by Castle & Cooke to blend urban conveniences with suburban tranquility across roughly 670 acres.",
-    "body": [
+    "source": "Wix CMS item 12: Koa Ridge",
+    "route": "/projects/koa-ridge",
+    "paragraphs": [
       "Koa Ridge is a expansive master-planned \"surban\" community in Central Oahu between Mililani and Waipio, developed by Castle & Cooke to blend urban conveniences with suburban tranquility across roughly 670 acres. It will ultimately house about 3,500 residences in phases over 8-10 years, including affordable condos and townhomes (like the Keolu series with 1-3 bedrooms from 487-1,079 sq ft), market-rate single-family homes (3-4 bedrooms in neighborhoods like Nanea and Waioha), duplexes, senior housing, and multi-generational options on average 4,500 sq ft lots. The community emphasizes walkability with a 7.5-mile Ho'ala Trail linking parks, schools, shopping at The Gateway (grocery, retail, hotel, restaurants), cultural events at Hale Lau Koa pavilion, a new elementary school, community center, fire station, daycare, and a 28-acre healthcare campus partnering with Wahiawa Hospital.",
       "At the heart is a lifestyle promoting outdoor activity and 'ohana ties, with neighborhood parks featuring tennis courts, baseball fields, grassy areas, and bike-friendly paths that reduce car dependence while offering Waianae Mountain views. About 1,050 units target affordable buyers (80-120% area median income) via lotteries with approved lenders, while market homes cater to families, retirees, and first-timers in Oahu's red-soil heartland—Central Oahu's first major residential push since the 1990s. Phases like Malu Koa West (4-story mid-rises) and Malina townhomes roll out modern features such as solar water heaters and smart home tech.",
       "From a technical standpoint, Koa Ridge's infrastructure supports its mixed-use density with landscaped sidewalks, shared-use paths, and public transit integration tying into nearby hubs like Costco and Waipio services, all under an Urban Design Plan ensuring small-town character amid 3,500 homes. Civil engineering includes stormwater management, traffic-calmed streets, and phased utilities (water, power, sewer) scaled for growth, with the Ho'ala Trail built as a permeable, multi-use corridor minimizing environmental impact on Oahu's central plateau. The Gateway commercial core and business park provide on-site jobs, while donated land for medical facilities enhances long-term sustainability in this self-contained surban model."
-    ],
-    "source": "Wix CMS item 12: Koa Ridge",
-    "facts": [
-      [
-        "Completion",
-        "2023"
-      ]
     ]
   },
   {
-    "slug": "uh-life-sciences",
-    "title": "Isabella Aiona Abbott Life Sciences Building",
-    "location": "Mānoa, Oʻahu",
-    "market": "Education",
-    "image": "uh-life-sciences",
-    "summary": "A central atrium designed for informal collaboration among students, faculty, and researchers.",
-    "body": [
+    "source": "Wix CMS item 14: Life Sciences Building at University of Hawaii Manoa",
+    "route": "/projects/uh-life-sciences",
+    "paragraphs": [
       "The Life Sciences Building at the University of Hawaiʻi at Mānoa is a three-story, roughly 70,000–76,000 square foot, LEED Silver facility on East-West Road that opened for instruction in Fall 2020 as the new home for the School of Life Sciences and the Pacific Biosciences Research Center. In 2023 it was formally renamed the Isabella Aiona Abbott Life Sciences Building to honor the pioneering Native Hawaiian phycologist known as the “First Lady of Limu.”",
       "Inside, the building consolidates teaching and research spaces that were previously scattered across older facilities, with six state-of-the-art teaching labs and about fifteen research labs, along with computational labs, offices, prep rooms, and a central atrium designed for informal collaboration among students, faculty, and researchers. It serves biology, botany, microbiology, and related programs, supporting over a thousand students and dozens of faculty and graduate researchers each week in flexible lab spaces that can be reconfigured as life sciences technologies and research needs evolve.",
       "From a technical and sustainability standpoint, the project replaced Henke Hall on a remediated brownfield site and uses structural steel framing with SidePlate moment frames for an open, easily adaptable floor plan, wrapped in high-performance curtain wall and aluminum composite panels to maximize daylight and views while controlling heat gain. The building’s LEED Silver design incorporates bioretention basins for stormwater treatment, low-flow plumbing fixtures, high-efficiency HVAC (including a water-cooled centrifugal chiller and high-efficiency gas water heating), enhanced insulation, and occupancy-based lighting and temperature controls to reduce energy and water use over its life cycle"
-    ],
-    "source": "Wix CMS item 14: Life Sciences Building at University of Hawaii Manoa",
-    "credit": "G70 Design",
-    "facts": [
-      [
-        "Completion",
-        "2020"
-      ]
     ]
   },
   {
-    "slug": "makai-alele-slope",
-    "title": "Makai Slope Repair below Alelele",
-    "location": "Piʻilani Highway, Maui",
-    "market": "Slopes & rockfall",
-    "image": "makai-alele-slope",
-    "summary": "Emergency work here stabilizes the makai (ocean-side) slope below the mauka (mountain-side) repairs already done by Prometheus Construction after 2023 rockfalls, ensuring safer passage through one of Maui's most dramatic and vulnerable highway segments.",
-    "body": [
+    "source": "Wix CMS item 15: Makai Slope Repair below Alelele Slope",
+    "route": "/projects/makai-alele-slope",
+    "paragraphs": [
       "Makai Slope Repair below Alelele Slope along Piilani Highway (Route 360) on Maui addresses critical erosion and rockfall risks at Alelele Point near Mile Marker 38 in East Maui's rugged coastal section, where the highway hugs steep cliffs overlooking the ocean. This remote stretch serves as the main route connecting Central Maui to Hana, handling both local traffic and tourists heading to scenic spots like the Pools of 'Ohe'o (Seven Sacred Pools), but frequent heavy rains and seismic activity have caused repeated slope failures threatening roadway stability. Emergency work here stabilizes the makai (ocean-side) slope below the mauka (mountain-side) repairs already done by Prometheus Construction after 2023 rockfalls, ensuring safer passage through one of Maui's most dramatic and vulnerable highway segments.",
       "The project builds on prior interventions like the nearby Nuanualoa Gulch slope stabilization, which repaired landslide damage with soil nails and shotcrete, by focusing on the lower slope's loose material and debris accumulation to prevent further incursions onto the pavement. It supports Maui County's ongoing infrastructure resilience efforts post-wildfires and amid climate challenges, keeping this vital East Maui lifeline open year-round without major detours.",
       "From a technical standpoint, the repairs involve scaling loose rocks from the basalt cliff faces, installing wire mesh or rockfall netting anchored into the slope, and applying shotcrete or grouted soil nails for reinforcement, similar to the Nuanualoa Gulch approach just upslope. Earthwork clears debris buildup, with erosion control measures like hydromulch seeding, mechanical anchors, and BMPs (best management practices) to manage runoff into the ocean and protect sensitive marine habitats. Guardrail upgrades, shoulder reconstruction, and traffic control during work phases ensure minimal disruption on the narrow two-lane highway, with phased execution typical of Maui Public Works' emergency slope projects costing in the $200,000–$1.5 million range."
-    ],
-    "source": "Wix CMS item 15: Makai Slope Repair below Alelele Slope",
-    "facts": [
-      [
-        "Completion",
-        "2024"
-      ]
     ]
   },
   {
-    "slug": "mauka-concourse",
-    "title": "Mauka Concourse at HNL",
-    "location": "Honolulu, Oʻahu",
-    "market": "Airports",
-    "image": "mauka-concourse",
-    "summary": "It connects seamlessly post-security to the existing terminal via walkways, enhancing flow for kama'aina (local) passengers while tying into HNL's modernization program.",
-    "body": [
+    "source": "Wix CMS item 16: Mauka Concourse at Daniel K. Inouye International Airport",
+    "route": "/projects/mauka-concourse",
+    "paragraphs": [
       "The Mauka Concourse at Daniel K. Inouye International Airport (HNL) in Honolulu is a 230,000-square-foot extension to Terminal 1 (Interisland Terminal), opened in August 2021 as the first major gate expansion there since 1993. This $270-340 million facility adds six wide-body or up to 12 narrow-body gates with dual passenger loading bridges each, easing midday peak congestion for Hawaiian Airlines' neighbor island flights and accommodating 8,000 daily travelers with new TSA checkpoints (six lanes), USDA stations, hold rooms, concessions, retail, restrooms, and info kiosks. It connects seamlessly post-security to the existing terminal via walkways, enhancing flow for kama'aina (local) passengers while tying into HNL's modernization program.",
       "The design celebrates Hawaii's essence through a soaring two-story \"glass prism\" with floor-to-ceiling windows and skylights flooding the space with natural light, blending interior and exterior views of the Waialua Ahupuaa cultural landscape via commissioned art sculptures and Hawaiian motifs. Amenities prioritize passenger comfort with eco-shafts directing AC efficiently, high-performance envelopes cutting solar heat, and LEED Gold certification for sustainability—HNL's greenest terminal addition. It relieves overcrowding amid rising travel demand, supporting Oahu's role as Hawaii's aviation gateway without state taxpayer funds, financed via bonds and fees.",
       "From a technical standpoint, the concourse uses an innovative open-truss structural system with light wells and no interior load-bearing walls for flexibility, self-supported by eco-shaft framing over 23 acres of taxiway asphalt and 9.5 acres of concrete paving. Hensel Phelps self-performed 300,000+ craft hours on concrete (site, structural, precast), jet blast barriers, fencing, finishes like millwork and trellises, plus demolition of utilities and buildings. LED lighting, ventilation shafts, and resilient paving handle Hawaii's seismic, wind, and humidity loads, with integrated wayfinding promoting aloha culture through native materials and graphics."
-    ],
-    "source": "Wix CMS item 16: Mauka Concourse at Daniel K. Inouye International Airport",
-    "credit": "Hensel Phelps",
-    "facts": [
-      [
-        "Completion",
-        "2021"
-      ]
     ]
   },
   {
-    "slug": "palau-wharf",
-    "title": "Palau Wharf Improvements",
-    "location": "Malakal Island, Palau",
-    "market": "Docks & harbors",
-    "image": "palau-wharf",
-    "summary": "Palau Wharf, located on Malakal Island near Koror, serves as a crucial gateway for both commercial and recreational maritime activities in Palau.",
-    "body": [
+    "source": "Wix CMS item 19: Palau Wharf Improvements",
+    "route": "/projects/palau-wharf",
+    "paragraphs": [
       "Palau Wharf Improvements on Malakal Island represent a major upgrade to the Republic of Palau's primary port facility in Malakal Harbor, originally constructed by Japan in 1944 and now undergoing modernization to handle larger commercial vessels, boost local cargo capacity, and support mutual U.S.-Palau defense logistics under their Compact of Free Association. The project expands the wharf's northeast face by 181 feet to add roughly 112,000 square feet of container storage and operational space, while repairing subsidence damage from decades of heavy use, demolishing a corroded building, installing modern lighting, stormwater systems, and clearing accumulated debris from the berthing area. Dredging along the north and eastern edges will deepen approaches for bigger ships, and dredge material will reclaim about 240,000 square feet of adjacent land for a new public park called Ice Box Park, benefiting Koror State's community spaces.",
       "These enhancements address the port's current limitations to medium-sized container ships, aiming to attract more shipping lines, lower import costs, and stimulate Palau's economy while enabling U.S. naval resupply and operations in the region. Public meetings and an Environmental Impact Statement (EIS) led by a local Palau contractor ensure community input on issues like traffic, coral protection via silt curtains, and marine species relocation, balancing development with the island's UNESCO-listed Rock Islands ecosystem. The project, with designs nearly complete as of late 2025, underscores Palau's strategic maritime hub role amid eco-tourism, fishing, and growing regional security needs.",
       "From a technical standpoint, the improvements involve comprehensive wharf rehabilitation with structural strengthening to modern standards, including elevated deck surfaces against subsidence and sea-level rise, plus dredging to increase berth depths for larger vessels alongside the existing footprint. Engineering features incorporate compliant stormwater management to prevent harbor pollution, night-time operational lighting, and expanded container handling areas with reinforced surfaces for heavy loads, all while integrating environmental mitigations like turbidity monitoring during dredging. The overall design enhances resilience for both commercial throughput—critical for Palau's import-dependent economy—and military logistics, with phased construction minimizing disruptions to daily harbor traffic from dive boats, ferries, and cargo ops."
-    ],
-    "source": "Wix CMS item 19: Palau Wharf Improvements",
-    "facts": [
-      [
-        "Completion",
-        "Under review"
-      ]
     ]
   },
   {
-    "slug": "pali-highway",
-    "title": "Pali Highway Landslide Mitigation",
-    "location": "Oʻahu",
-    "market": "Slopes & rockfall",
-    "image": "pali-highway",
-    "summary": "Pali Highway Landslide Mitigation addresses chronic rockfall and debris risks along Oahu's Route 61 between the Nuuanu Pali Tunnels and Kailua",
-    "body": [
+    "source": "Wix CMS item 20: Pali Highway Landslide Mitigation",
+    "route": "/projects/pali-highway",
+    "paragraphs": [
       "Pali Highway Landslide Mitigation addresses chronic rockfall and debris risks along Oahu's Route 61 between the Nuuanu Pali Tunnels and Kailua, where heavy rains in 2019 triggered major slides from Old Pali Road above, dumping boulders and concrete onto the lanes and closing this vital Windward-to-Honolulu artery.",
       "The emergency response, completed by early 2020 as part of a broader resurfacing project, restored full access after weeks of contraflow and single-lane ops, protecting commuters, tourists, and emergency routes through the Koolau Mountains while blending fixes into the highway's historic landscape.",
       "From a technical standpoint, crews built an 80-foot precast concrete rock shed with aesthetic matching to the tunnel portals using colored concrete and textured slabs, plus slope mesh stabilization, attenuators to catch debris, guardrail upgrades, and 5 miles of asphalt resurfacing with stone matrix overlay for durability against Oahu's wet conditions. Phased night work and environmental compliance ensured minimal disruption on this narrow, high-traffic pass, with the $20 million effort (including federal relief) setting a model for Hawaii DOT's slope resilience in steep terrain."
-    ],
-    "source": "Wix CMS item 20: Pali Highway Landslide Mitigation",
-    "facts": [
-      [
-        "Completion",
-        "Under review"
-      ]
     ]
   },
   {
-    "slug": "alele-rockfall",
-    "title": "Rockfall Protection at Alelele Slope",
-    "location": "East Maui",
-    "market": "Slopes & rockfall",
-    "image": "alele-rockfall",
-    "summary": "The work focused on protecting a critical coastal route that links remote communities and provides access around the back side of Haleakalā.",
-    "body": [
+    "source": "Wix CMS item 21: Rockfall Protection at Alelele Slope",
+    "route": "/projects/alele-rockfall",
+    "paragraphs": [
       "Rockfall Protection at Alelele Slope was an emergency project in rural East Maui to address hazardous rockfall above a narrow section of Hāna Highway near Alelele Point, between Kīpahulu and Kaupō. The work focused on protecting a critical coastal route that links remote communities and provides access around the back side of Haleakalā.",
       "Following increased rockfall activity and a major April 2023 rockfall that rendered the road impassable, the county closed roughly one mile of highway between the Alelele and Lelekea bridges and initiated emergency rockfall protection and slope stabilization. An estimated 1,500–2,300 tons of unstable rock and debris were targeted for removal to restore safe passage and reduce the risk of future sudden closures.",
       "More than a routine clearing effort, the project used specialized rock scaling crews who worked from the slope face to dislodge loose rock, boulders, and fractured outcrops in a controlled manner before they could fall onto the roadway. Rockfall protection included installation of anchors and other safety measures so that the steep volcanic slope above the highway would be less prone to renewed failures during heavy rainfall and ongoing weathering.",
       "The Alelele Slope work significantly improved safety and reliability along this isolated reach of highway by lowering rockfall hazards and enabling a phased reopening with limited, then expanded, hours of access. For East Maui residents, visitors, and emergency responders, the project restored an essential transportation link while supporting broader efforts to manage landslide and rockfall risks across Hawaiʻi’s coastal and mountain roads."
-    ],
-    "source": "Wix CMS item 21: Rockfall Protection at Alelele Slope",
-    "facts": [
-      [
-        "Completion",
-        "2023"
-      ]
     ]
   },
   {
-    "slug": "sky-ala-moana",
-    "title": "Sky Ala Moana Twin Towers",
-    "location": "Honolulu, Oʻahu",
-    "market": "Residential",
-    "image": "sky-ala-moana",
-    "summary": "The towers anchor a shift toward high-density mixed-use living near Walmart, Target, and eateries, with mauka-makai oriented designs preserving view corridors and pedestrian paths enhancing walkability.",
-    "body": [
+    "source": "Wix CMS item 22: Sky Ala Moana Twin Towers",
+    "route": "/projects/sky-ala-moana",
+    "paragraphs": [
       "Sky Ala Moana Twin Towers form a striking mixed-use development in Honolulu's Ala Moana neighborhood at 1388 and 1400 Kapiolani Boulevard, directly across from Ala Moana Center and steps from the planned rail station. The West (Ewa) Tower rises 400 feet over 43 stories with 388-389 market-rate condominium residences featuring one- and two-bedroom layouts and a 30-day rental minimum, while the East (Diamond Head) Tower reaches the same height across 37-39 stories, housing a 300-unit condo-hotel plus 90 affordable for-sale units in \"The Flats\" on lower floors. Ground-level commercial spaces, 991 parking stalls, and 436 bike stalls support the transit-oriented design linking Kapiolani Boulevard's commercial strip to Waikiki and downtown.",
       "Residents and guests enjoy over 50,000 square feet of resort-style amenities on the Sky Terrace, including multiple pools, cabanas, BBQs, lush gardens, private lounges, fitness centers, and contemporary interiors blending luxury with island vibes. The towers anchor a shift toward high-density mixed-use living near Walmart, Target, and eateries, with mauka-makai oriented designs preserving view corridors and pedestrian paths enhancing walkability. Developed by JL Capital at a $507 million cost and built by Kobayashi Inc., the project adds housing, jobs, and connectivity to this bustling corridor.",
       "From a technical standpoint, both towers employ cast-in-place concrete structures with steel reinforcement to meet Honolulu's seismic and wind standards, topped by a shared podium for efficient parking and retail integration on a compact urban site. Multi-zone HVAC, elevators in a central core, and smart systems optimize energy use across 15,000 sq ft of commercial space, while environmental features like bike facilities and landscaping align with TOD zoning up to 9.51 FAR. Phased construction minimizes disruption, with affordable units locked for 10-30 years to fulfill housing mandates amid the neighborhood's transformation."
-    ],
-    "source": "Wix CMS item 22: Sky Ala Moana Twin Towers",
-    "facts": [
-      [
-        "Completion",
-        "2023"
-      ]
     ]
   },
   {
-    "slug": "central-ala-moana",
-    "title": "The Central Ala Moana",
-    "location": "Honolulu, Oʻahu",
-    "market": "Residential",
-    "image": "central-ala-moana",
-    "summary": "At ground level, the building incorporates retail fronting Kapiolani Boulevard, plus landscaping and pedestrian paths that connect to nearby sidewalks and bus stops, supporting a more walkable, mixed-use corridor around Ala Moana Center.",
-    "body": [
+    "source": "Wix CMS item 23: The Central Ala Moana",
+    "route": "/projects/central-ala-moana",
+    "paragraphs": [
       "The Central Ala Moana is a 43‑story residential high‑rise in Honolulu’s Ala Moana district, standing about 421 feet tall and located at 1391 Kapiolani Boulevard, across from Ala Moana Center and near the future rail terminus. It contains 512 condominium units and is designed as a transit‑oriented, urban living tower with easy access to shopping, dining, parks, and bus and rail connections.",
       "A key aspect of the project is its mix of market‑rate and affordable housing: roughly 310 units are designated as affordable under state programs, with the remaining 202 sold at market prices. Units range from studios to three‑bedroom layouts, and typical floors are planned with a balanced mix of small and larger units so both first‑time buyers and move‑up owners can live in the building. Most residences include at least one parking stall, with larger units generally receiving two, and many homes have mountain, city, or partial ocean views thanks to the tower’s height and siting.",
       "The project’s amenity deck sits above the parking structure and functions as an elevated courtyard, with a swimming pool, keiki (children’s) pool, barbecue cabanas, seating areas, and a small fitness space that gives residents an outdoor gathering area shielded from street traffic below. At ground level, the building incorporates retail fronting Kapiolani Boulevard, plus landscaping and pedestrian paths that connect to nearby sidewalks and bus stops, supporting a more walkable, mixed‑use corridor around Ala Moana Center.",
       "From a technical perspective, The Central Ala Moana follows a typical Honolulu high‑rise configuration with a multi‑level concrete parking podium topped by a cast‑in‑place reinforced concrete tower, designed to handle local wind and seismic loads while maximizing efficiency in a relatively narrow urban lot. The structural core houses elevators, stairs, and utilities, allowing the perimeter to be used for living spaces and glazing to capture views, while mechanical systems and fire‑life‑safety features are integrated to meet modern high‑rise codes in Hawaii’s urban environment."
-    ],
-    "source": "Wix CMS item 23: The Central Ala Moana",
-    "facts": [
-      [
-        "Completion",
-        "2021"
-      ]
     ]
   },
   {
-    "slug": "tinian-north-field",
-    "title": "Tinian North Field",
-    "location": "Northern Mariana Islands",
-    "market": "Airports",
-    "image": "tinian-north-field",
-    "summary": "Tinian North Field on Tinian Island in the Commonwealth of the Northern Mariana Islands is one of the most historically significant airfields of the Second World War.",
-    "body": [
+    "source": "Wix CMS item 24: Tinian North Field",
+    "route": "/projects/tinian-north-field",
+    "paragraphs": [
       "Tinian North Field on Tinian Island in the Commonwealth of the Northern Mariana Islands is one of the most historically significant airfields of the Second World War. It was built up by U.S. forces after the capture of Tinian in mid‑1944 and became a primary base for B‑29 Superfortress operations against the Japanese home islands in the final year of the war. From here, long‑range bombing missions, including the atomic bomb attacks on Hiroshima and Nagasaki, were launched, making the site a key operational hub in the closing stages of the Pacific campaign.",
       "The airfield occupies the northern tip of Tinian, near Ushi Point, and was originally developed by the Japanese as Ushi Point Airfield before being heavily bombed and then captured by U.S. Marines in July 1944. U.S. Navy Seabees rapidly expanded the facility into what became one of the busiest airfields in the world at the time, with four long, parallel runways, extensive hardstands, and support infrastructure capable of hosting hundreds of heavy bombers. North Field and the adjacent landing beaches now form part of a designated National Historic Landmark District, reflecting their importance in military and world history.",
       "Technically, North Field was a massive wartime engineering project carved out of coral and limestone in just weeks, involving the movement of close to a million cubic yards of material to create multiple runways and taxiways strong enough for fully loaded B‑29s. The American expansion produced four roughly east–west, crushed‑coral runways around 8,000 feet long, surrounded by dispersal areas and hardstands designed to reduce vulnerability to attack while streamlining maintenance and turnaround for large bomber fleets. Specialized facilities included bomb loading pits used for handling the oversized atomic weapons, where aircraft such as the Enola Gay and Bockscar were positioned over recessed pits so the bombs could be hoisted directly into their bays. Today, the runways and bomb pits remain visible, and although much of the wartime infrastructure has disappeared, the site is a powerful open‑air memorial and a growing focus of preservation and limited reuse discussions in the region"
-    ],
-    "source": "Wix CMS item 24: Tinian North Field",
-    "facts": [
-      [
-        "Completion",
-        "Under review"
-      ]
     ]
   },
   {
-    "slug": "victoria-place",
-    "title": "Victoria Place",
-    "location": "Kakaʻako, Oʻahu",
-    "market": "Residential",
-    "image": "victoria-place",
-    "summary": "Victoria Place is a luxurious residential tower located in the heart of Honolulu’s Ward Village, positioned prominently on Ala Moana Boulevard next to the scenic Victoria Ward Park.",
-    "body": [
+    "source": "Wix CMS item 25: Victoria Place",
+    "route": "/projects/victoria-place",
+    "paragraphs": [
       "Victoria Place is a luxurious residential tower located in the heart of Honolulu’s Ward Village, positioned prominently on Ala Moana Boulevard next to the scenic Victoria Ward Park. This ultra-luxury 40-story building features 350 thoughtfully designed residences ranging from 1-bedroom units (749 to 946 sq. ft.), to 2-bedrooms (1,084 to 1,287 sq. ft.), and spacious 3-bedroom residences (1,758 to 1,846 sq. ft.). The residences stand out with generous 9-foot ceilings throughout, while the top three floors boast soaring 10-foot ceilings. Each home includes open, contemporary kitchens with high-end finishes such as custom quartzite countertops and islands, StudioBecker cabinets, and top-of-the-line appliances including Wolf gas stoves, Sub-Zero refrigerators, and Cove dishwashers. For additional comfort, the residences feature large Juliette balconies that open up to 12 feet, blending indoor and outdoor living without the maintenance of traditional lanais.",
       "Victoria Place offers an exceptional lifestyle with over 64,000 square feet of amenities at the fifth-floor amenity deck. This expansive area hosts multiple pools including an infinity-edge lap pool, luxurious cabanas, a lush great lawn, and barbecue cabanas for social gatherings. Wellness is prioritized with a state-of-the-art fitness center, yoga areas, and separate men’s and women’s spa facilities featuring hot tubs, cold plunge pools, steam rooms, and private treatment rooms. Unique features such as a rustic wine room with private lockers, chef’s table, private dining, and a catering kitchen add to the exclusivity and comfort available to residents.",
       "From a technical standpoint, Victoria Place is constructed using cast-in-place concrete for the main vertical and lateral structural elements, combined with steel reinforcement to provide strength and durability suitable for Honolulu’s seismic and wind conditions. The floor systems also use concrete spans designed for efficient load transfer and structural resilience. The building is divided into two vestibule areas serviced by multiple elevators, optimizing accessibility and traffic flow within the tower. Centralized trash chutes, freight elevators, and staircases are cleverly located in a connecting core between the two areas, providing efficient service while maximizing living space. Thoughtful architectural planning ensures wide peripheral views from many residences, capturing expansive vistas of the ocean, nearby mountains, Diamond Head, and Victoria Ward Park. The entire development complements its sophisticated urban setting by blending modern luxury with practical design and sustainability considerations in one of Honolulu’s premier neighborhoods."
-    ],
-    "source": "Wix CMS item 25: Victoria Place",
-    "facts": [
-      [
-        "Completion",
-        "2024"
-      ]
     ]
   },
   {
-    "slug": "wainiha-landslide",
-    "title": "Wainiha Landslide Mitigation",
-    "location": "Kūhiō Highway, Kauaʻi",
-    "market": "Slopes & rockfall",
-    "image": "wainiha-landslide",
-    "summary": "Fixing it proved extremely challenging due to the remote, narrow terrain with single-lane bridges, sheer cliffs, and ongoing flood risks.",
-    "body": [
+    "source": "Wix CMS item 26: Wainiha Landslide Mitigation",
+    "route": "/projects/wainiha-landslide",
+    "paragraphs": [
       "The Wainiha landslide in April 2018 was triggered by record-breaking rainfall exceeding 40 inches in 24 hours on Kauai's North Shore, causing a massive debris flow from steep valley walls that buried sections of Kuhio Highway (Route 560) near Mile Marker 25 with boulders, mud, and trees, completely blocking the only road access to Wainiha Valley, Haena, and Kee Beach. This isolated over 300 residents and stranded tourists, severed emergency services, and halted tourism to popular sites like Na Pali Coast, with damages estimated at $180 million across 12 slide sites that made the highway impassable for months.",
       "Fixing it proved extremely challenging due to the remote, narrow terrain with single-lane bridges, sheer cliffs, and ongoing flood risks that prevented heavy equipment access, forcing helicopter lifts for debris removal and hand-scaling of unstable slopes. Crews faced repeated rain delays, cultural site protections (like Native Hawaiian burials), environmental regulations for the sensitive watershed, and logistical hurdles hauling material over winding roads from Lihue, stretching repairs into 2019 with phased single-lane convoys.",
       "Mitigation involved soil nails, shotcrete walls, drainage rerouting, and culvert upgrades similar to Hanalei Hills, but Wainiha's wetter microclimate and private land ownership complicated long-term monitoring and funding, relying on federal disaster aid amid Kauai's high slide recurrence."
-    ],
-    "source": "Wix CMS item 26: Wainiha Landslide Mitigation",
-    "facts": [
-      [
-        "Completion",
-        "2018"
-      ]
     ]
   },
   {
-    "slug": "yap-wharf",
-    "title": "Yap Wharf Improvements",
-    "location": "Federated States of Micronesia",
-    "market": "Docks & harbors",
-    "image": "yap-wharf",
-    "summary": "The Yap Wharf is the main commercial pier serving the port of Colonia on Yap Island in the Federated States of Micronesia.",
-    "body": [
+    "source": "Wix CMS item 27: Yap Wharf Improvements",
+    "route": "/projects/yap-wharf",
+    "paragraphs": [
       "The Yap Wharf is the main commercial pier serving the port of Colonia on Yap Island in the Federated States of Micronesia. It sits within a naturally protected harbor (often referred to as Tomil Harbour) that provides safe anchorage for medium‑sized cargo vessels, fuel tankers, and fishing boats.",
       "Physically, the wharf functions as a straight, solid, cargo-handling dock with a main berth where oceangoing vessels tie up alongside and transfer goods directly to trucks and storage areas on shore. Its purpose is to act as Yap’s primary gateway for imports and exports, supporting the movement of containerized and break‑bulk cargo, fuel, and supplies that connect Yap to regional trade routes and to its outer islands."
-    ],
-    "source": "Wix CMS item 27: Yap Wharf Improvements",
-    "facts": [
-      [
-        "Completion",
-        "2023"
-      ]
+    ]
+  },
+  {
+    "source": "International Marketplace (New)",
+    "route": "/projects/international-marketplace",
+    "paragraphs": [
+      "For decades, the International Market Place (IMP) has been an icon in the heart of Waikiki in Honolulu, Hawaii. It was famous for Duke Kahanamoku’s restaurant where people flocked to hear Don Ho singing in the 60s and 70s. Later, it was a bustling, open-air hub of small vendors who peddled everything from Hawaiian souvenirs and jewelry to food court meals and farmer’s market produce. Small buildings and shacks that housed the businesses were located on a curved tract of land, just one block off the beach, that stretches from Kalakaua Avenue to Kuhio Avenue. The entrance to the complex is dominated by a huge, old (circa 1850) Banyan tree. The land is owned by the Queen Emma Land Company. Queen Emma was a Hawaiian Queen from the 1800s. Revenue from the land has supported the Queen’s Medical Center in Honolulu for decades.",
+      "The reimagined IMP is owned by Taubman Centers, of Bloomfield Hills, Mich., and CoastWood Capital Group of San Francisco, Calif. The IMP offers a distinctive collection of upscale fashion and lifestyle retailers, restaurants, and two large open-air courts, the first of which has the huge Banyan tree as its entryway centerpiece.",
+      "The installation of the micropiles at IMP had significant difficulties and constraints: highly variable substrata, live trees protected in place, archeological concerns, working on an island, artesian ground water, complex critical path schedule, and the list goes on. These significant challenges were met by a diverse project team that worked cooperatively with the project’s goals clearly in focus. The use of a design-assist concept with the foundation contractor provided a unique atmosphere of technical cooperation to the benefit of the project. The project team members met weekly throughout the project to discuss the current and upcoming challenges. The agreed goals and open communication created a partnering environment between the contractor, owner, consultants, and specialty foundation contractor to ensure performance in safety, quality, financial control, and schedule.",
+      "Project Team Members: Owner, Taubman Centers, Inc.; General Contractor, dck-FWF; Owner’s Consultant, Ehlert Consulting Services; Structural Engineer, Ludwig Structural Consulting; Geotechnical Engineers, SME and Geolabs, Inc.; Micropile Design-Build/Design Assist Contractor, Hayward Baker Inc."
+    ]
+  },
+  {
+    "source": "Honolulu Rail (Newer)",
+    "route": "/projects/honolulu-rail",
+    "paragraphs": [
+      "The Honolulu High-Capacity Transit Corridor Project (HHCTCP) involved the construction and operation of a fixed-guideway transit system in the corridor between Kapolei and the University of Hawaii at Manoa with a branch to Waikiki on the Island of Oahu, Hawaii.",
+      "The initial conceptual plans [circa 2008] were for the guideway alignment to advance the project design team efforts with the conceptual engineering phase of the aerial guideway foundations being the primary focus.",
+      "The HHCTCP consisted of a dual track, aerially supported guideway, transit stations, and transit system appurtenant facilities, and requires revisions to the existing infrastructure, including utilities associated with project execution. The top of rail for the guideway varied from almost 29 feet to 75 feet above the existing ground. Spans between columns were planned as being in the range of 125 feet 25 feet based on studies completed for segmental construction. Several sections required spans exceeding 180 feet were designated special structures and were envisioned as balanced cantilever guideway construction.",
+      "Geolabs provided geotechnical engineering services in support of the conceptual engineering and preliminary engineering phases of the project. Our scope of work consisted of drilling and sampling 130 borings totaling over 16,000 lineal feet of geotechnical exploration; performing seismic cone penetration tests; performing seismic shear wave velocity profiling; converting selected borings into groundwater monitoring points with installation of vibrating wire piezometers; and monitoring groundwater levels in the groundwater monitoring points.",
+      "Our geotechnical engineering efforts also included performing preliminary foundation analyses including compression load and lateral load analyses to establish the diameters and lengths of the drilled shaft foundations along the entire 20-mile Minimum Operating Segment during the Conceptual Engineering and Preliminary Engineering Phases."
+    ]
+  },
+  {
+    "source": "Kamehameha (Newer)",
+    "route": "/projects/kamehameha-athletic-field",
+    "paragraphs": [
+      "Geolabs performed geotechnical engineering services on the Kamehameha School Athletic Field. The purpose of the project was to build a state-of-the-art high school athletic complex (tri-level complex) on a rocky mountain ridge, with a vertical relief of 80 feet, by creating a stable horizontal building surface.",
+      "Engineers repositioned the project footprint and employed five different retaining wall systems, the majority of which were recommended by Geolabs, which included tie-back soldier pile walls, MSE walls, and soil nail walls. The more traditional cantilevered concrete retaining walls and gravity walls were also used.",
+      "The project was built at a cost nearly 50 percent less than original estimate budget. The project was awarded the 2002 Grand Conceptor Award at the local ACEC Competition and received an Honorable Mention Award at the National Civil Engineering Competition held in Washington DC in 2002."
+    ]
+  },
+  {
+    "source": "Ala Moana Center Expansion (New)",
+    "route": "/projects/ala-moana-center",
+    "paragraphs": [
+      "Geolabs served as the geotechnical consultant for the expansion of Ala Moana Center, the largest shopping center in the State of Hawaii. As part of the expansion project, General Growth Properties developed the area to the north of the existing shopping center by constructing a three-level Nordstrom Store and a seven-level parking structure with provisions for a future residential tower structure atop the parking garage. In addition, the project also included a new three-level retail connector to tie into the existing shopping center. The long rectangular-shaped parcel for the expansion project encompassed about 173,300 square feet in land area.",
+      "This project site was unique in that the upper coral ledge that is generally present at depths of about 15 to 20 feet below the ground surface in the Ala Moana-Kaka’ako area was absent across a portion of the project site probably due to erosion by an ancient alluvial stream channel. The presence of an ancient alluvial stream channel across a portion of the project site posed significant challenges to the design and construction of foundations for this project.",
+      "Because of the variable subsurface conditions across the project site, Geolabs in conjunction with the design and construction team utilized various types of foundation systems including cast-in-place concrete drilled shafts, Augered Cast-In-Place concrete piles, driven concrete piles, and drilled micropiles for the expansion project depending on the structural load demands and the prevalent subsurface conditions for the elements. This flexible foundation approach helped the Owner in reducing the overall foundation costs for the project."
+    ]
+  },
+  {
+    "source": "The Moana Pacific (New)",
+    "route": "/projects/moana-pacific",
+    "paragraphs": [
+      "The Moana Pacific high-rise condominium project is located at the intersection of Piikoi Street and Kapiolani Boulevard in Honolulu on the Island of Oahu, Hawaii. The development consisted of a luxury high-rise condominium with a five-level above ground parking garage encompassing the majority of the project site. Two oval-shaped, high-rise residential towers above the parking garage are located at the northeastern and southwestern portions of the property. Each residential tower included 46 stories of apartments and two levels of penthouses, comprising a total of 416 living units for each tower.",
+      "Geolabs served as the geotechnical consultant. The subsurface conditions at the project site generally consisted of fill materials at the ground surface underlain by soft lagoonal deposits. Coral formation interbedded with layers of coralline detritus was encountered below the lagoonal deposits. Based on the subsurface conditions encountered and the structural demands on the building foundation and parking garage foundation, Geolabs recommended supporting the new structures by a deep foundation system consisting of cast-in-place concrete drilled shafts. The high capacity drilled shaft foundations derived support from friction in the alluvial and coralline deposits beneath the site.",
+      "Drilled shafts with diameters of 24, 42 and 48 inches extending down to depths up to 130 feet below the ground surface were recommended based on the structural demands of up to 3,500 kips per drilled shaft. The larger diameter and deeper drilled shafts were generally recommended for areas with relatively high column loads, such as the main tower structure. The project consisted of installing about 310 drilled shafts to support the building and parking structures. Geolabs observed installation of all the drilled shaft foundations and provided Special Inspection services."
+    ]
+  },
+  {
+    "source": "Ko'olani Tower (New)",
+    "route": "/projects/koolani-tower",
+    "paragraphs": [
+      "The Ko’olani Tower Condominium is at the intersection of Waimanu Street and Pensacola Street in Honolulu on the Island of Oahu, Hawaii. The project consisted of a new luxury high-rise condominium comprising of 46 stories and providing approximately 750,000 square feet of interior space with a recreation center and commercial spaces in the first five floors and a five-story parking garage constructed adjacent to the main tower.",
+      "The subsurface conditions at the project site generally consisted of fill materials at the ground surface underlain by soft lagoonal deposits. Coral formations interbedded with layers of coralline detritus were encountered below the lagoonal deposits. Based on the subsurface conditions encountered and the structural demands on the high‑rise building foundation and parking garage foundation, Geolabs recommended supporting the new structures by a deep foundation system consisting of cast-in-place concrete drilled shafts. Drilled shafts with diameters of 36, 42 and 48 inches extending down to depths ranging from 45 to 130 feet below the ground surface were recommended based on the structural demands of up to 3,500 kips per drilled shaft. The larger diameter and deeper drilled shafts were generally recommended for areas with relatively high column loads, such as the main tower structure. The project consisted of installing about 274 drilled shafts to support the building and parking structures. Geolabs observed installation of all the drilled shaft foundations and provided Special Inspection services.",
+      "Geolabs also provided geotechnical engineering services in support of the Auahi Trunk Sewer project by preparing construction documents to install 1,200 linear feet of 30-inch diameter gravity sewer line by microtunneling methods. The sewer line alignment traversed sensitive areas, such as Ala Moana Boulevard and the Ala Moana Drainage Canal, before discharging into the 69-inch Ala Moana Trunk Sewer. As part of the project, jet grout column supports were utilized to support the sewer line in the long term."
+    ]
+  },
+  {
+    "source": "Kahului Airport Terminal Complex (New)",
+    "route": "/projects/kahului-airport",
+    "paragraphs": [
+      "Airport work, a Geolabs Specialty, requires experience in all aspects of Geotechnical Engineering: Testing, Foundation Work, Site Stabilization and Pavement Design.",
+      "Geolabs served as the geotechnical engineering consultant for all phases of the design of the Kahului Airport expansion project. Included in the work was the evaluation of the existing aircraft and vehicular pavements for defects and effective service life. Design efforts included traffic analysis and design for new vehicular and aircraft pavements using Federal Highway Administration and Federal Aviation Administration methods as appropriate. The projects involved both rigid and flexible pavements with transitional thicknesses between sections with differing traffic loadings.",
+      "A new terminal building; air cargo building and baggage handling facility were also included in the project. Most of the field work was done during evening hours to avoid disruption of aircraft traffic schedules."
+    ]
+  },
+  {
+    "source": "Navy's Dry Dock 3 Replacement (New)",
+    "route": "/projects/navy-dry-dock",
+    "paragraphs": [
+      "The Navy's Dry Dock 3 Replacement project at Join Base Pearl Harbor-Hickam is valued at approximately $2 billion to $4 billion. \"It will be huge,” says Steve Baginski, 2023 president of the General Contractors Association of Hawaii. The project dovetails with enormous contracts recently awarded by Naval Facilities Engineering Systems Command (NAVAC) to local and offshore general contractors. These include:",
+      "$8.5 billion from NAVFAC Pacific awarded in late 2021 for work in Hawaii and Washington state to five Shipyard Infrastructure Optimization Program (SIOP) contractors. Local GCs include Hawaiian Dredging Construction Co. Inc., Nan Inc. and Kiewit, all operating as members of three separate joint ventures (JV). The contract expires in 2029.",
+      "Approximately $3 billion in four separate MACCs (multiple award construction contracts), awarded for work in Hawaii, Washington state and the Pacific to local GCs, often operating in tandem or separately as joint ventures. Hawaii GCs include Healy Tibbitts Builders Inc., Hawaiian Dredging, Hensel Phelps, Nan Inc., Kiewit Infrastructure West and others.",
+      "Contracts run from 2025 through 2027. And this doesn't even touch on military projects currently underway. One, valued at $342 million, indicates the Size and scope of current and upcoming construction. \"Hensel Phelps was contracted to construct the third phase of the U.S. Army Pacific's (USARPAC) new Command and Control Facility (C2F) Complex on Fort Shafter,\" says Thomas J. Diersbock, Hensel Phelps vice president and Pacific Thomas I. Diersbock District manager. C2F will be the new headquarters for USARPAC to support administrative and special-use operations in the Pacific. The project's third phase includes new construction of three administrative facilities divided into specified security zones, all built within the constraints of the two existing buildings. The project also includes a Sensitive Compartmented Information Facility space, independent fueling station, mechanical yard, generator yard and architectural concrete flatwork. \"The Command and Control Facility is not only a very complex construction project in terms of its technological design, but bringing numerous stakeholders together to complete their vision and expectations was a major feat by the entire project team,\" Diersbock says. \"We use the term 'EXCELLENCE' on this project to describe the energy and expertise brought forward by the entire team to create this exceptional complex.\""
+    ]
+  },
+  {
+    "source": "Kapolei Harborside Redevelopment (New)",
+    "route": "/projects/kapolei-harborside",
+    "paragraphs": [
+      "Geolabs is at the center of Oahu's West Side utilities redevelopment. The Kamaaina company that built Kapolei from scratch is developing more of Oahu's West Side in a very big way. \"James Campbell Co. is currently building approximately $30 million of critical infrastructure at its Kapolei Harborside development, an approximately 360-acre industrial park located near the Kalaeloa Barbers Point Harbor,\" says Peter Phillips, Project & Construction manager, Kapolei Properties Division, James Campbell Co. LLC.",
+      "The project is being built in four phases. New infrastructure includes wastewater systems, drainage, roadway and electrical improvements, and will service Harborside's first phase of approximately 72 acres. That's plenty of work for Hawaii contractors in 2023. And there's plenty of power nearby to back it up. Kapolei Energy Storage, a 185MW Plus Power battery storage project currently underway by Moss & Associates, is \" scheduled to wrap in March and is scheduled to wrap in March and is \"the first stand-alone, largest battery-storage project in the state,\" says Josh Meyers, Moss vice president of energy in Hawaii. But for many would-be Harborside builders, there's a catch. \"Oahu's industrial vacancy rate [is] anticipated to drop below 1% in 2023,\" says Robert Kelley, vice president at Avalon Development Co. LLC. \"There is currently almost no fee-simple industrial warehouse space under construction, leaving local businesses stunted in growth or forced to choose from existing inventory that is often functionally obsolete.\" Avalon is moving quickly. \"Currently, Avalon is developing Coral Creek Center at Gentry Business Park-Ew and The Crossing at Kapolei Business Park West,\" Kelley says.",
+      "Combined the two sites will create over 430,000 square feet of industrial space for West Oahu. “Coral Creek Center offers IMX-zoned mixed-use industrial condominiums ranging from approximately 1,100 square feet, up to approximately 111,000 square feet of contiguous space,\" Kelley says. \"The Crossing offers I-2 zoned industrial condominiums at the prime corner of Kalaeloa Boulevard and Lauwiliwili Street, ranging from approximately 1,000 square feet to approximately 59,000 square feet of contiguous space. Both are slated to break ground in 2023 and for delivery in 2024-2025. Harborside's developer is also eyeing this market: \"The James Campbell Co. is designing an approximately 100,000-square-foot industrial spec building for lease,\" Phillips says."
+    ]
+  },
+  {
+    "source": "Wix CMS item 0",
+    "route": "/projects/park-on-keeaumoku",
+    "paragraphs": [
+      "The Park on Keeaumoku is a striking twin-tower condominium development located in the heart of Honolulu's Ala Moana neighborhood, offering a vibrant, modern community experience. Spanning over 3.5 acres, it features nearly 1,000 residences ranging from studios to three-bedroom units designed for contemporary urban living, complete with floor-to-ceiling windows, open floor plans, private lanais, and upscale finishes such as quartz countertops and Samsung appliances.",
+      "The project emphasizes community and lifestyle with an expansive nearly half-acre green space known as The Park. This lush outdoor landscaped area includes picnic spaces, a playground, and comfortable seating, creating a tranquil retreat in the middle of the city. Surrounding this green haven is The Grove, an exclusive shopping and dining area that offers an 11,200-square-foot food hall featuring a variety of restaurants and a full-service bar.",
+      "Residents enjoy an impressive suite of resort-style amenities, including a rooftop amenity deck connecting the two towers. This deck boasts an infinity pool and spa with private cabanas and a sun deck for relaxation. Additional amenities include private barbecue pavilions, a state-of-the-art fitness center with cardio and strength equipment, a yoga room, sauna, a movie theater with surround sound, co-working spaces with technology integration, and multi-media rooms perfect for entertainment or work-from-home needs.",
+      "The Park on Keeaumoku aims to provide a holistic lifestyle combining urban conveniences with natural beauty and community engagement, making it a highly desirable address that offers the kind of amenities many people travel to experience. It is strategically situated near the Ala Moana Center and other key neighborhoods, providing easy access to shopping, dining, entertainment, and public transportation options.",
+      "Overall, The Park on Keeaumoku is more than just a residential development; it is a thoughtfully crafted living environment designed to foster connection, wellness, and comfort in one of Honolulu's sought-after locations."
     ]
   }
 ]

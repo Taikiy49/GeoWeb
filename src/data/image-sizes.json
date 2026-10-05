@@ -246,5 +246,41 @@
   "straub-medical-center": [
     1600,
     1066
+  ],
+  "service-pali": [
+    1024,
+    576
+  ],
+  "hoopili-parcel49": [
+    1800,
+    1156
+  ],
+  "service-victoria": [
+    1800,
+    1349
+  ],
+  "service-palau": [
+    1620,
+    1080
+  ],
+  "investigation-h1": [
+    1500,
+    961
+  ],
+  "park-foundations": [
+    1800,
+    1349
+  ],
+  "wainiha-walls": [
+    1280,
+    720
+  ],
+  "rock-scaling": [
+    1200,
+    900
+  ],
+  "ground-improvement": [
+    1280,
+    488
   ]
 }

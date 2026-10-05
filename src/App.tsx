@@ -27,6 +27,8 @@ import { HeroVideo } from "./components/HeroVideo";
 import { FeaturedFilm } from "./components/FeaturedFilm";
 import { OfficeMap } from "./components/OfficeMap";
 import { VendorBadge } from "./components/VendorBadge";
+import { TeamDirectory } from "./components/TeamDirectory";
+import { ContactInquiry } from "./components/ContactInquiry";
 import { ContourAccent } from "./components/ContourAccent";
 import {
   applyUrl,
@@ -195,7 +197,7 @@ function Home() {
           ["1975", "Year established"],
           ["1991", "Employee-owned since"],
           ["80+", "Geotechnical professionals"],
-          ["4", "Regional offices"],
+          ["16", "Awards won"],
         ].map(([value, label]) => (
           <div key={label}>
             <CountUp value={value} />
@@ -221,9 +223,10 @@ function Home() {
           <p>
             Our team of 80+ geotechnical professionals—including licensed
             engineers and seasoned geotechnical specialists—delivers reliable,
-            construction-friendly solutions tailored to Hawaiʻi’s unique
+            construction-friendly solutions tailored to Hawaii’s unique
             subsurface conditions.
           </p>
+          <p>We proudly serve a diverse range of clients across both public and private sectors, including military branches, government agencies, local municipalities, and private developers. From highways, land developments, and high-rises to wastewater systems and telecom networks, Geolabs is committed to technical excellence, sustainable design, and long-term partnerships that help shape resilient communities.</p>
           <VendorBadge />
         </div>
       </section>
@@ -271,6 +274,7 @@ function Home() {
           </div>
         </div>
       </section>
+      <DesignApproach />
       <section className="home-careers">
         <div className="careers-image">
           <Photo
@@ -337,6 +341,7 @@ function About() {
         <aside>
           <span className="eyebrow">ESTABLISHED 1975</span>
           <h2>Our legacy</h2>
+          <figure className="about-source-photo"><Photo name="park-foundations" alt="The Park on Keaaumoku Twin Towers, Honolulu, Oahu (2025)" /><figcaption>The Park on Keaaumoku Twin Towers, Honolulu, Oahu (2025)</figcaption></figure>
         </aside>
         <div className="prose">
           <p className="lead">
@@ -360,6 +365,11 @@ function About() {
         </div>
       </section>
       </div>
+      <div className="container about-source-highlights">
+        <article><p>Leading provider of Geotechnical Engineering services in Hawaii</p></article>
+        <article><p>In-house staff of experienced Engineers and Geologists</p></article>
+        <article><p>Branch offices in Maui and Oakland, California</p></article>
+      </div>
       <section className="section soft-section about-capabilities">
         <div className="container">
           <div className="section-heading">
@@ -369,6 +379,7 @@ function About() {
           <div className="capability-columns">
             <div>
               <h3>Geotechnical engineering</h3>
+              <p>Our services span a wide range of geotechnical areas:</p>
               <ul className="capability-list">
                 {[
                   "Foundation Investigation",
@@ -385,6 +396,7 @@ function About() {
             </div>
             <div>
               <h3>Construction support</h3>
+              <p>Beyond design-phase services, Geolabs provides comprehensive support during construction:</p>
               <ul className="capability-list">
                 {["Field Observation", "Special Inspections", "Materials Testing", "Geotechnical Instrumentation"].map((item, index) => (
                   <li key={item}><span aria-hidden="true">0{index + 1}</span>{item}</li>
@@ -408,8 +420,9 @@ function About() {
       <div className="light-surface">
       <section className="section container about-sectors">
         <div className="editorial-grid">
-          <h2>Who we serve</h2>
+          <div><h2>Who we serve</h2><figure className="about-source-photo"><Photo name="yap-wharf" alt="Yap Wharf Improvements, Federated States of Micronesia (2023)" /><figcaption>Yap Wharf Improvements, Federated States of Micronesia (2023)</figcaption></figure></div>
           <div className="prose">
+            <p>We support a diverse portfolio of public and private-sector clients, including the following:</p>
             <ul className="client-types">
               {["All branches of the Military", "Federal and State Agencies", "Local Municipalities", "Developers and Project Owners", "Architects and Engineers", "Design-Build Contractors"].map((item) => <li key={item}>{item}</li>)}
             </ul>
@@ -432,7 +445,7 @@ function About() {
       </div>
       <section className="section soft-section">
         <div className="container editorial-grid">
-          <h2>Where we work</h2>
+          <div><h2>Where we work</h2><figure className="about-source-photo"><Photo name="kuilei" alt="Kuilei Place High-Rise, Honolulu, Oahu (2025)" /><figcaption>Kuilei Place High-Rise, Honolulu, Oahu (2025)</figcaption></figure></div>
           <div className="prose">
             <p>
               We maintain a strong regional presence and a vast archive of
@@ -477,39 +490,8 @@ function About() {
     </>
   );
 }
-function Services() {
+function DesignApproach() {
   return (
-    <>
-      <Meta title="Our services" />
-      <PageIntro eyebrow="OUR EXPERTISE" title="Our services" connected>
-        <p>
-          Geotechnical engineering, drilling and subsurface investigation,
-          construction support, materials testing, and forensic and expert witness services.
-        </p>
-      </PageIntro>
-      <div className="content-band light-surface">
-      <div className="container service-cards">
-        {services.map((s) => (
-          <Link
-            key={s.slug}
-            to={`/services/${s.slug}`}
-            className="service-card"
-          >
-            <div className="service-row-photo">
-              <Photo name={s.image} alt={s.imageAlt} />
-            </div>
-            <div>
-              <span className="eyebrow">{s.caption}</span>
-              <h2>{s.title}</h2>
-              <p>{s.intro}</p>
-              <span className="arrow-link">
-                Explore service <ArrowUpRight size={20} />
-              </span>
-            </div>
-          </Link>
-        ))}
-      </div>
-      </div>
       <section className="section soft-section">
         <div className="container service-approach">
           <details>
@@ -528,6 +510,46 @@ function Services() {
           </details>
         </div>
       </section>
+  );
+}
+function Services() {
+  return (
+    <>
+      <Meta title="Our services" />
+      <PageIntro eyebrow="OUR EXPERTISE" title="Our services" connected>
+        <p>
+          We are a full-serve Geotechnical Engineering firm with specialties in Subsurface Investigation, Construction Support, and Construction Materials Engineering and Testing.
+        </p>
+      </PageIntro>
+      <div className="content-band light-surface">
+      <div className="container services-source-heading"><h2>From start to end —<br />We are with you</h2></div>
+      <div className="container service-source-panorama">
+        <figure><Photo name="service-pali" alt="Pali Highway Emergency Slope Stabilization, Oahu (2019)" /><figcaption>Pali Highway Emergency Slope Stabilization, Oahu (2019)</figcaption></figure>
+        <figure><Photo name="hoopili-parcel49" alt="Hoopili Development Phase 11 Parcel 49, Oahu (2024)" /><figcaption>Hoopili Development Phase 11 Parcel 49, Oahu (2024)</figcaption></figure>
+      </div>
+      <div className="container service-cards">
+        {services.map((s) => (
+          <article
+            key={s.slug}
+            className="service-card"
+          >
+            <div className="service-row-photo">
+              <Photo name={s.slug === "geotechnical-engineering" ? "service-victoria" : s.slug === "construction-support" ? "service-palau" : s.image} alt={s.slug === "geotechnical-engineering" ? "Victoria Place, Honolulu, Oahu (2024)" : s.slug === "construction-support" ? "Palau Wharf Improvements, Malakal Island (2024)" : s.imageAlt} />
+            </div>
+            <div>
+              <span className="eyebrow">{s.slug === "geotechnical-engineering" ? "Victoria Place, Honolulu, Oahu (2024)" : s.slug === "construction-support" ? "Palau Wharf Improvements, Malakal Island (2024)" : s.caption}</span>
+              <h2>{s.title}</h2>
+              <p>{s.intro}</p>
+              {s.overview?.map(text => <p key={text}>{text}</p>)}
+              <Link className="arrow-link" to={`/services/${s.slug}`}>
+                Explore service <ArrowUpRight size={20} />
+              </Link>
+            </div>
+          </article>
+        ))}
+      </div>
+      </div>
+      <DesignApproach />
     </>
   );
 }
@@ -567,10 +589,12 @@ function ServiceDetail() {
           </Link>
         </aside>
         <div className="capabilities">
+          {s.overview && <div className="service-overview-copy">{s.overview.map(text => <p key={text}>{text}</p>)}</div>}
           {s.sections.map((section, i) => (
             <article id={`capability-${i}`} key={section.title} tabIndex={-1}>
               <h2>{section.title}</h2>
               <p>{section.text}</p>
+              {section.groups?.map(group => <div className="capability-group" key={group.title}><h3>{group.title}</h3><ul className="check-list">{group.items.map(item => <li key={item}><Check size={17} aria-hidden="true" />{item}</li>)}</ul></div>)}
               {section.items && (
                 <ul className="check-list">
                   {section.items.map((t) => (
@@ -581,6 +605,7 @@ function ServiceDetail() {
                   ))}
                 </ul>
               )}
+              {section.image && <figure className="capability-photo"><Photo name={section.image} alt={section.caption || section.title} /><figcaption>{section.caption}</figcaption></figure>}
             </article>
           ))}
         </div>
@@ -614,9 +639,9 @@ function Projects() {
       <Meta title="Our projects" />
       <PageIntro eyebrow="OUR EXPERIENCE" title="Our projects" connected>
         <p>
-          From the foundations of Honolulu’s skyline to the infrastructure
-          connecting our islands. Explore the work behind our experience.
+          One of our biggest strengths at Geolabs, Inc. is the experience we have. The various projects we have completed and received awards for have allowed us to gain the versatility needed to ensure satisfaction when we undertake a project. With each of these projects, we fulfilled the requirements of our clients and created a better community in the process.
         </p>
+        <p>We deliver end-to-end project solutions, specializing in Planning, Execution, and Quality Assurance to ensure lasting success.</p>
       </PageIntro>
       <div className="content-band light-surface">
       <section className="container portfolio">
@@ -727,6 +752,7 @@ function ProjectDetail() {
         <div className="container project-title">
           <span className="eyebrow">{p.location}</span>
           <h1>{p.title}</h1>
+          {p.slug === "honolulu-rail" && <span className="project-era">Conceptual & preliminary engineering · Initial plans: 2008</span>}
           <p>{p.summary}</p>
         </div>
       </div>
@@ -793,9 +819,10 @@ function People() {
         <p>
           Dedicated to Serving You
         </p>
+        <div className="people-jump-links"><a className="arrow-link" href="#leadership">Leadership <ArrowDown size={17} /></a><a className="arrow-link" href="#team">The Team <ArrowDown size={17} /></a></div>
       </PageIntro>
       <section className="light-surface">
-        <div className="container leadership">
+        <div className="container leadership" id="leadership">
           <div className="section-heading">
             <h2>Our leadership</h2>
             <span className="eyebrow">GEOLABS, INC.</span>
@@ -809,12 +836,16 @@ function People() {
                 {l.education && (
                   <details>
                     <summary>
-                      Education & credentials <Plus size={16} />
+                      Experience & credentials <Plus size={16} />
                     </summary>
                     <div>
+                      <h4>Years of Experience</h4>
+                      <p>{l.experience}</p>
+                      <h4>Education</h4>
                       {l.education.map((e) => (
                         <p key={e}>{e}</p>
                       ))}
+                      <h4>Professional Registration</h4>
                       <p>{l.registration}</p>
                       {l.email && <a href={`mailto:${l.email}`}>{l.email}</a>}
                     </div>
@@ -825,15 +856,19 @@ function People() {
           </div>
         </div>
       </section>
+      <TeamDirectory />
       <section className="section soft-section">
         <div className="container editorial-grid">
-          <h2>Our team</h2>
+          <h2>Why us?</h2>
           <div className="prose">
             <p className="lead">
               We have a professional staff of geotechnical engineers with
               advanced degrees specializing in geotechnical engineering and
               foundation design.
             </p>
+            <p>Our engineers are licensed in Hawaii and/or in Guam and California.</p>
+            <p>Our engineers have the education, diverse technical experience, and demonstrated capabilities to fulfill their assigned project roles.</p>
+            <p>Our geologists help interpret geologic conditions and perform geologic reconnaissance and aerial photograph analysis.</p>
             <p>
               We are a team of more than 80 geotechnical professionals—including
               licensed engineers, seasoned technical specialists, and dedicated
@@ -896,10 +931,7 @@ function Contact() {
     <>
       <Meta title="Contact us" />
       <PageIntro eyebrow="LET’S WORK TOGETHER" title="Contact us">
-        <p>
-          Tell us what you’re planning. Our local teams can help you take the
-          next step.
-        </p>
+        <p>We would love to hear from you</p>
       </PageIntro>
       <div className="content-band light-surface">
       <section className="container contact-layout">
@@ -965,6 +997,7 @@ function Contact() {
         </div>
       </section>
       </div>
+      <div className="soft-section"><ContactInquiry /></div>
     </>
   );
 }

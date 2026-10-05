@@ -71,7 +71,7 @@ export function usePageMotion(route: string) {
       const candidates = Array.from(document.querySelectorAll(
         filtering
           ? "main .project-card"
-          : "main h1, main h2, main h3, main h4, main p, main li, main span, main strong, main address, main summary, main a, main figcaption, main dt, main dd, main .eyebrow, main img, main .portfolio-toolbar, main .filmstrip, .site-footer h2, .site-footer p, .site-footer a, .footer-facts span, .footer-legal span",
+          : "main h1, main h2, main h3, main h4, main p, main li, main span, main strong, main address, main summary, main a, main figcaption, main dt, main dd, main .eyebrow, main img, main .portfolio-toolbar, main .directory-table tbody tr, main .filmstrip, .site-footer h2, .site-footer p, .site-footer a, .footer-facts span, .footer-legal span",
       ));
       // Text owns its entrance independently of tall photo/card containers.
       // Media, counters, live search feedback and opened disclosures retain their own motion.
