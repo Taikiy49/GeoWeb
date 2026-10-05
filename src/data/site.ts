@@ -208,7 +208,7 @@ export const services: Service[] = [
     sections: [
       {
         title: "Soils & concrete",
-        text: "Both soil and concrete and widely used as foundations in infrastructure. Proper assessment and characterization of these materials are vital to ensure the stability and safety of these large projects.",
+        text: "Both soil and concrete are widely used as foundations in infrastructure. Proper assessment and characterization of these materials are vital to ensure the stability and safety of these large projects.",
       },
       {
         title: "Construction quality control",

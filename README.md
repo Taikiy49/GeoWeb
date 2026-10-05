@@ -8,7 +8,7 @@ Geolabs' responsive engineering portfolio, rebuilt from the Wix **New/Newer** pa
 
 There are 68 canonical routes: nine main pages, five service detail pages, 30 completed project stories, and 24 explicitly unfinished project stories. Unknown paths show the site's 404 page. Verified legacy Wix paths and fragments have compatibility destinations.
 
-- **Home:** original background video with visibility-aware playback and pause/play controls, a manual featured-project filmstrip with the HDOT walkway video, statistic counters, services, company information, careers, and recognition.
+- **Home:** original background video with visibility-aware playback and pause/play controls, a seven-frame manual filmstrip containing all five authored Wix Home slides and the existing Park/Azure features, statistic counters, services, company information, careers, and recognition. The HDOT walkway film and the restored Halawa View/Ka Haku photos retain their credits; image-only features have no invented case-study links.
 - **About:** nine photographic topic links, readable full sections, original USFCR artwork and source statement, capabilities, sectors, regional office links, and the explicitly unfinished Clients section.
 - **Services:** a jump index, photographic discipline spreads, source design/construction-support disclosures, and individual capability pages.
 - **Projects:** 44 gallery entries, including 14 marked Under construction; search, market filters, Gallery/List views, and URL-backed browsing state. Completed stories retain source narratives, photo credits, and related projects.
@@ -42,7 +42,8 @@ Open [http://127.0.0.1:5174](http://127.0.0.1:5174). No Wix runtime, Wix credent
 npm run typecheck    # TypeScript
 npm run lint         # ESLint
 npm run test:motion  # 13 actual-hook lifecycle and directional-motion checks
-npm run check        # TypeScript, ESLint, and production build
+npm run test:content # Wix narratives, services, film slides, gallery routes, and roster
+npm run check        # TypeScript, ESLint, content parity, and production build
 npm audit --omit=dev --audit-level=high
 ```
 
@@ -53,7 +54,7 @@ npm run build
 npm run preview -- --host 127.0.0.1 --port 4174
 ```
 
-Open [http://127.0.0.1:4174](http://127.0.0.1:4174). `check` does not include `test:motion`; run both before shipping motion changes.
+Open [http://127.0.0.1:4174](http://127.0.0.1:4174). `check` includes `test:content` but does not include `test:motion`; run both before shipping motion changes. The content guard uses the checked-in independent Wix capture/manifests: 102 project paragraphs, 34 service explanations, five original film slides/credits, 48 gallery tile destinations, and 32 team qualification records. Run it from a full checkout containing `docs/`.
 
 ## Code and content guide
 
@@ -66,6 +67,7 @@ Open [http://127.0.0.1:4174](http://127.0.0.1:4174). `check` does not include `t
 | `src/data/cms-projects.json` | Additional distinct projects from the Wix dynamic collection |
 | `src/data/team.json` | Reviewed team-directory snapshot; no runtime spreadsheet dependency |
 | `src/data/aboutTopics.ts` | About photo-topic content and source-associated imagery |
+| `src/data/featuredProjects.ts` | Featured film slides, image associations, credits, and optional verified story links |
 | `src/data/image-sizes.json` | Intrinsic photo dimensions; update when replacing source images |
 | `src/data/unfinished-projects.json` | Public unfinished stories with verified titles/image associations and explicit notices |
 | `src/data/drafts.json` | Archived unfinished narratives; not imported into the browser bundle |
@@ -94,11 +96,14 @@ No root/www DNS cutover or sending integration was performed by the October UI r
 
 ## Verification and review records
 
+The latest signed-in Wix recheck reopened 29 New/Newer-related pages, including the prototype and service children, read every named newer-gallery tile and its link configuration, and reviewed the Home/Team slides and leadership credentials. It found and restored the missing Halawa View Apartments and Ka Haku Timeshare film slides, restored the Central Ala Moana photo credit, and corrected one materials-testing typo. All 44 live gallery destinations and 102 rendered project paragraphs passed comparison. The expanded filmstrip passed image, counter, keyboard wrapping, and overflow checks at 320px, 390px, 768px, and 1280px. Full scope and source exceptions are recorded in the [fresh Wix recheck](docs/wix-new-page-recheck.md).
+
 The October 4 production-polish review passed TypeScript, ESLint, the production build, all 13 motion checks, and a strict UI static audit. The production dependency audit reported zero vulnerabilities at that time. Browser validation covered all 68 canonical routes at 390px and 1280px, plus eight main routes at 320px and 768px: 152 layout checks with one h1 per route, no horizontal document overflow, and no failed already-loaded images. Contact validation/draft recovery, short-screen menu behavior, preview geometry, and portfolio empty-state/filter recovery were also exercised.
 
 The deployment was verified on test.geolabs.net. These checks are dated evidence, not a guarantee about future changes, every lazy-loaded/external asset, or a formal screen-reader/WCAG certification. Motion lifecycle tests simulate DOM and preference events; they do not replace real-device reduced-motion testing.
 
 - [Latest production UI polish](docs/production-polish-2026-10-04.md)
+- [Fresh Wix pages and interaction recheck](docs/wix-new-page-recheck.md) and [original Home film evidence](docs/wix-home-film-source.json)
 - [Directional motion and shared presentation](docs/directional-ui-refinement-2026-10-04.md)
 - [Complete Wix parity review](docs/wix-complete-parity-review-2026-10-04.md): saved audit covering 49 standalone pages, 30 dynamic records, and named newer-gallery tiles
 - [Content restoration](docs/wix-content-restoration-2026-10-04.md) and [Wix interactions](docs/wix-interaction-restoration-2026-10-04.md)

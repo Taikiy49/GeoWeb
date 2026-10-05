@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-04",
+  "page": "Home (New)",
+  "method": "Signed-in Wix Preview. All five slide selectors clicked; title, credit and slide content read independently. Two missing original Wix photographs downloaded from their observed media identities, converted to WebP without changing the subject, and visually inspected.",
+  "slides": [
+    { "title": "Ala Moana Elevated Pedestrian Walkway", "credit": "Video courtesy: HDOT" },
+    { "title": "Kuilei Place High-Rise", "credit": null },
+    { "title": "The Central Ala Moana", "credit": "Photo courtesy: Homes.com" },
+    { "title": "Halawa View Apartments", "credit": "Photo courtesy: PCL Construction", "sourceAlt": "Halawa.jfif", "sourceUrl": "https://static.wixstatic.com/media/d5b831_856bf2206dcf460ca7c7a0bf43b5cfc5~mv2.jpg", "localAsset": "public/images/halawa-view.webp" },
+    { "title": "Ka Haku Timeshare", "credit": "Photo courtesy: Mike Betz", "sourceAlt": "1754585578786.jfif", "sourceUrl": "https://static.wixstatic.com/media/d5b831_0da364417cdd472ab46310bda7c9b3a2~mv2.jpg", "localAsset": "public/images/ka-haku-timeshare.webp" }
+  ],
+  "editorialBoundary": "These image-only source slides do not provide engineering narratives or destinations for Kuilei, Halawa or Ka Haku. The rebuild displays their photography without invented case studies, locations for the two restored slides, or speculative links."
+}

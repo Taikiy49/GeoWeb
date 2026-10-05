@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "typecheck": "tsc -b",
     "test:motion": "node scripts/check-motion.cjs",
-    "check": "npm run typecheck && npm run lint && npm run build"
+    "test:content": "node scripts/check-content-parity.cjs",
+    "check": "npm run typecheck && npm run lint && npm run test:content && npm run build"
   },
   "dependencies": {
     "@fontsource/dm-sans": "^5.3.0",

@@ -2,44 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { image } from "../data/site";
-
-const frames = [
-  {
-    title: "The Park on Keʻeaumoku",
-    image: "park",
-    slug: "park-on-keeaumoku",
-    location: "Honolulu, Oʻahu",
-    video: false,
-  },
-  {
-    title: "Azure & Sky Ala Moana",
-    image: "azure",
-    slug: "azure-sky-ala-moana",
-    location: "Honolulu, Oʻahu",
-    video: false,
-  },
-  {
-    title: "Ala Moana Elevated Pedestrian Walkway",
-    image: "walkway-film-poster",
-    slug: "ala-moana-walkway",
-    location: "Honolulu, Oʻahu",
-    video: true,
-  },
-  {
-    title: "Kuilei Place",
-    image: "kuilei",
-    slug: null,
-    location: "Honolulu, Oʻahu",
-    video: false,
-  },
-  {
-    title: "The Central Ala Moana",
-    image: "central-ala-moana",
-    slug: "central-ala-moana",
-    location: "Honolulu, Oʻahu",
-    video: false,
-  },
-];
+import { featuredProjects as frames } from "../data/featuredProjects";
 
 export function FeaturedFilm() {
   const [selected, setSelected] = useState(2);
@@ -134,7 +97,7 @@ export function FeaturedFilm() {
                 />
                 <div className="film-shade" />
                 <div className="film-title">
-                  <span className="eyebrow">{frame.location}</span>
+                  {frame.location && <span className="eyebrow">{frame.location}</span>}
                   <h3>{frame.title}</h3>
                 </div>
                 {frame.video && !videoError && (
@@ -171,12 +134,12 @@ export function FeaturedFilm() {
           <div className="film-meta">
             <div className="film-current" aria-live="polite">
               <span className="film-count">
-                {String(selected + 1).padStart(2, "0")} / 05
+                {String(selected + 1).padStart(2, "0")} / {String(frames.length).padStart(2, "0")}
               </span>
               <span>{frame.title}</span>
             </div>
             <span className="film-credit">
-              {frame.video ? "Video courtesy: HDOT" : frame.location}
+              {frame.video ? "Video courtesy: HDOT" : frame.credit || frame.location}
             </span>
             <div className="film-arrows">
               <button
