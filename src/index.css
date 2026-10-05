@@ -470,7 +470,15 @@ main:focus { outline: none; }
 .inquiry-form label { display: grid; gap: 8px; font-weight: 500; }
 .inquiry-form label > span { display: contents; color: var(--muted); }
 .inquiry-form :is(input, textarea) { width: 100%; min-width: 0; color: var(--ink); background: white; border: 1px solid #9499a6; border-radius: 2px; padding: 12px 14px; font: inherit; }
-.inquiry-form textarea { resize: vertical; }
+.inquiry-form textarea { resize: none; min-height: 160px; }
+.award-photo-disclosure { margin-top: 16px; max-width: 380px; }
+.award-photo-disclosure summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; list-style: none; cursor: pointer; font-weight: 500; }
+.award-photo-disclosure summary::-webkit-details-marker { display: none; }
+.award-photo-disclosure summary svg { transition: transform 240ms var(--ease-out); }
+.award-photo-disclosure[open] summary svg { transform: rotate(45deg); }
+.award-photo-disclosure figure { margin: 8px 0 0; }
+.award-photo-disclosure img { display: block; width: 100%; height: auto; }
+.award-photo-disclosure figcaption { margin-top: 8px; font-size: 13px; line-height: 1.5; color: var(--muted); }
 .inquiry-message { display: grid; gap: 8px; }
 .inquiry-message-count { justify-self: end; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
 .inquiry-names { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }

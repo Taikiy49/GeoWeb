@@ -45,12 +45,29 @@ import {
 } from "./data/site";
 import unfinishedStories from "./data/unfinished-projects.json";
 import imageSizes from "./data/image-sizes.json";
+import awardPhotos from "./data/award-photos.json";
 
 import { normalizeProjectSearch } from "./data/projectSearch";
 import { formatPhone, phoneHref } from "./data/phone";
 import { getLegacyDestination } from "./data/legacyRoutes";
 
 const photoDimensions: Record<string, number[]> = imageSizes;
+const awardMedia: Record<string, { image: string; credit: string }> = awardPhotos;
+const projectCatalogue: Project[] = [
+  ...projects,
+  ...unfinishedStories.filter((story) => story.gallery).map((story): Project => ({
+    slug: story.slug,
+    title: story.title,
+    location: story.location || "",
+    image: story.image || "",
+    credit: story.credit,
+    market: "Under construction",
+    summary: "This project page is under construction.",
+    body: [],
+    source: story.source || "New Projects",
+    draft: true,
+  })),
+];
 
 function Meta({
   title,
@@ -168,7 +185,7 @@ function ProjectCard({ project, showSummary = false, spotlight = false }: {
 }) {
   const Heading = showSummary ? "h2" : "h3";
   return (
-    <Link className={`project-card${spotlight ? " project-spotlight" : ""}`} to={`/projects/${project.slug}`} aria-label={`Explore ${project.title}`}>
+    <Link className={`project-card${spotlight ? " project-spotlight" : ""}`} to={`/${project.draft ? "drafts" : "projects"}/${project.slug}`} aria-label={`Explore ${project.title}${project.draft ? " — under construction" : ""}`}>
       <div className="project-image">
         <Photo name={project.image} alt={project.title} />
         <div className="project-reveal reveal-panel" aria-hidden="true">
@@ -651,9 +668,9 @@ function Projects() {
   const market = params.get("market") || "All projects";
   const listView = params.get("view") === "list";
   const showSpotlights = !listView && !query && market === "All projects";
-  const markets = ["All projects", ...new Set(projects.map((p) => p.market))];
+  const markets = ["All projects", ...new Set(projectCatalogue.map((p) => p.market))];
   const normalizedQuery = normalizeProjectSearch(query);
-  const found = projects.filter(
+  const found = projectCatalogue.filter(
     (p) =>
       (market === "All projects" || p.market === market) &&
       normalizeProjectSearch(`${p.title} ${p.location} ${p.summary}`)
@@ -736,7 +753,7 @@ function Projects() {
         </div>
         <div className={`project-grid portfolio-grid${listView ? " is-list" : ""}`}>
           {found.map((p, index) => (
-            <ProjectCard key={p.slug} project={p} showSummary spotlight={showSpotlights && index % 10 === 0} />
+            <ProjectCard key={p.slug} project={p} showSummary spotlight={showSpotlights && !p.draft && index % 10 === 0} />
           ))}
         </div>
         {!found.length && (
@@ -893,6 +910,7 @@ function Awards() {
     <>
       <Meta title="Awards & recognition" />
       <PageIntro eyebrow="RECOGNITION" title="Awards & recognition">
+        <p>We have an outstanding record for completing projects within the required schedules.</p>
         <p>
           The high quality of our work is demonstrated by engineering awards
           that we received for outstanding and innovative design accomplishments.
@@ -908,7 +926,7 @@ function Awards() {
           />
         </div>
         <section className="awards-list">
-          {awards.map(([year, project, award, body]) => (
+          {awards.map(([year, project, award, body, location], index) => (
             <article key={project}>
               <span className="award-year">
                 {year.includes(" / ")
@@ -917,8 +935,16 @@ function Awards() {
               </span>
               <div>
                 <h2>{project}</h2>
+                <p className="image-credit">{location}</p>
                 <p>{award}</p>
                 <span>{body}</span>
+                {awardMedia[index] && <details className="award-photo-disclosure">
+                  <summary>Project photo <Plus size={17} aria-hidden="true" /></summary>
+                  <figure>
+                    <Photo name={awardMedia[index].image} alt={project} />
+                    {awardMedia[index].credit && <figcaption>{awardMedia[index].credit}</figcaption>}
+                  </figure>
+                </details>}
               </div>
               <span className="award-mark" aria-hidden="true">
                 ✳
@@ -1155,6 +1181,7 @@ function DraftDetail() {
       <PageIntro eyebrow="UNDER CONSTRUCTION" title={d.title}
         breadcrumb={<Breadcrumb to="/drafts" label="Draft stories" context="Under construction" />}
       >
+        {d.location && <p>{d.location}</p>}
         <p>This project page is under construction.</p>
       </PageIntro>
       <div className="content-band light-surface">

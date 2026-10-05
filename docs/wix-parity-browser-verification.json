@@ -1,0 +1,180 @@
+{
+  "routes": [
+    "/drafts/resort-concepts",
+    "/drafts/koolina-lagoons",
+    "/drafts/marriott",
+    "/drafts/beach-villas",
+    "/drafts/aulani",
+    "/drafts/dynamic-beach-villas",
+    "/drafts/aulani-cms",
+    "/drafts/hilton-grand-islander",
+    "/drafts/straub-medical-center",
+    "/drafts/ililani",
+    "/drafts/kaiaulu",
+    "/drafts/maui-temporary-schools",
+    "/drafts/joint-traffic-management-center",
+    "/drafts/kalanianaole-rock-scaling",
+    "/drafts/turtle-bay-resort",
+    "/drafts/hilton-grand-waikikian",
+    "/drafts/kukio-golf-beach-club",
+    "/drafts/interstate-h3",
+    "/drafts/uh-west-oahu-campus",
+    "/drafts/andersen-air-force-base",
+    "/drafts/villages-of-kapolei",
+    "/drafts/h1-waimalu-viaduct",
+    "/drafts/four-seasons-hualalai",
+    "/drafts/koolina-infrastructure"
+  ],
+  "matrix": [
+    {
+      "route": "/projects?market=Under+construction",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/drafts/turtle-bay-resort",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/drafts/joint-traffic-management-center",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/projects/palau-wharf",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/awards",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/people#gerald-seki",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "route": "/projects?market=Under+construction",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/drafts/turtle-bay-resort",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/drafts/joint-traffic-management-center",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/projects/palau-wharf",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/awards",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/contact",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/people#gerald-seki",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "route": "/projects?market=Under+construction",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/drafts/turtle-bay-resort",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/drafts/joint-traffic-management-center",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/projects/palau-wharf",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/awards",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/contact",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/people#gerald-seki",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "route": "/projects?market=Under+construction",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/drafts/turtle-bay-resort",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/drafts/joint-traffic-management-center",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/projects/palau-wharf",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/awards",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/contact",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "route": "/people#gerald-seki",
+      "width": 320,
+      "overflow": false
+    }
+  ],
+  "interactions": [
+    "44 projects; 14 unfinished filter; list; search; keyboard draft navigation; browser back; no-results recovery and focus",
+    "Native required validation, growing message field, unsent email draft and edit invalidation; no message sent"
+  ],
+  "sourceChecks": [
+    "Both fresh Palau CMS records appear in full",
+    "Rail ± notation preserved",
+    "Three full leadership profiles and contact credentials"
+  ],
+  "errors": []
+}

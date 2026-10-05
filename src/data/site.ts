@@ -260,6 +260,7 @@ export interface Project {
   facts?: [string, string][];
   body: string[];
   source: string;
+  draft?: boolean;
 }
 export const projects: Project[] = [
   {
@@ -302,7 +303,7 @@ export const projects: Project[] = [
     body: [
           "The Honolulu High-Capacity Transit Corridor Project (HHCTCP) involved the construction and operation of a fixed-guideway transit system in the corridor between Kapolei and the University of Hawaii at Manoa with a branch to Waikiki on the Island of Oahu, Hawaii.",
           "The initial conceptual plans [circa 2008] were for the guideway alignment to advance the project design team efforts with the conceptual engineering phase of the aerial guideway foundations being the primary focus.",
-          "The HHCTCP consisted of a dual track, aerially supported guideway, transit stations, and transit system appurtenant facilities, and requires revisions to the existing infrastructure, including utilities associated with project execution. The top of rail for the guideway varied from almost 29 feet to 75 feet above the existing ground. Spans between columns were planned as being in the range of 125 feet 25 feet based on studies completed for segmental construction. Several sections required spans exceeding 180 feet were designated special structures and were envisioned as balanced cantilever guideway construction.",
+          "The HHCTCP consisted of a dual track, aerially supported guideway, transit stations, and transit system appurtenant facilities, and requires revisions to the existing infrastructure, including utilities associated with project execution. The top of rail for the guideway varied from almost 29 feet to 75 feet above the existing ground. Spans between columns were planned as being in the range of 125 feet ± 25 feet based on studies completed for segmental construction. Several sections required spans exceeding 180 feet were designated special structures and were envisioned as balanced cantilever guideway construction.",
           "Geolabs provided geotechnical engineering services in support of the conceptual engineering and preliminary engineering phases of the project. Our scope of work consisted of drilling and sampling 130 borings totaling over 16,000 lineal feet of geotechnical exploration; performing seismic cone penetration tests; performing seismic shear wave velocity profiling; converting selected borings into groundwater monitoring points with installation of vibrating wire piezometers; and monitoring groundwater levels in the groundwater monitoring points.",
           "Our geotechnical engineering efforts also included performing preliminary foundation analyses including compression load and lateral load analyses to establish the diameters and lengths of the drilled shaft foundations along the entire 20-mile Minimum Operating Segment during the Conceptual Engineering and Preliminary Engineering Phases."
     ],
@@ -504,90 +505,105 @@ export const awards = [
     "Hoʻopili Development",
     "Excellence Award for Foundation Innovation",
     "ACEC Hawaiʻi",
+    "Ewa, Oahu, Hawaii",
   ],
   [
     "2016",
     "International Market Place",
     "Project of the Year",
     "Deep Foundations Institute",
+    "Honolulu, Hawaii",
   ],
   [
     "2013 / 2014",
     "Kūhiō Highway Emergency Slope Repairs",
     "Grand Conceptor Awards",
     "ACEC Hawaiʻi",
+    "Lumahai, Kauai, Hawaii",
   ],
   [
     "2013 / 2014",
     "Honoapiʻilani Highway Realignment",
     "Outstanding Civil Engineering Achievement / Grand Conceptor Award",
     "ACEC Hawaiʻi",
+    "Lahaina, Maui, Hawaii",
   ],
   [
     "2005",
     "Hāna Highway Rockfall Mitigation, MP 11",
     "Engineering Excellence Award",
     "ACEC Hawaiʻi",
+    "Hana, Maui, Hawaii",
   ],
   [
     "2003",
     "Kunuiakea Athletic Complex",
     "Engineering Excellence Grand Conceptor Award",
     "ACEC Hawaiʻi",
+    "Honolulu, Oahu, Hawaii",
   ],
   [
     "2002",
     "Halekuai Center",
     "Kūkulu Hale Award — New Project of the Year",
     "NAIOP",
+    "Kapolei, Oahu, Hawaii",
   ],
   [
     "2001",
     "Kapiʻolani Park Bandstand",
     "Kūkulu Hale Award — Renovation of the Year",
     "NAIOP",
+    "Honolulu, Oahu, Hawaii",
   ],
   [
     "2001",
     "Kūhiō Beach Park / Kalākaua Promenade",
     "Kūkulu Hale Award — Renovation of the Year",
     "NAIOP",
+    "Honolulu, Oahu, Hawaii",
   ],
   [
     "1996",
     "University of Hawaiʻi at Mānoa Faculty Housing",
     "Honor Award — Innovative Shallow Foundation Design Using “Wick Drains”",
     "Consulting Engineers Council of Hawaiʻi",
+    "Honolulu, Oahu, Hawaii",
   ],
   [
     "1995",
     "Aloha Tower Marketplace",
     "Honor Award — Shallow Foundation Design Over Soft Soil",
     "Consulting Engineers Council of Hawaiʻi",
+    "Honolulu, Oahu, Hawaii",
   ],
   [
     "1992",
     "Sewer Tunnel Relief, Increment 2",
     "Excellence Award — Innovative and Highly Accurate Methods in Determining Subsurface Conditions Enabling the Project to Complete On-Time and Within Cost",
     "Consulting Engineers Council of Hawaiʻi",
+    "Cartwright Field to Metcalf Street, Honolulu, Oahu, Hawaii",
   ],
   [
     "—", // Published Awards says 1993; saved Awards (New) says 1992. See content-parity-review.md.
     "H-3 Trans-Koʻolau Tunnel and Portals",
     "Excellence Award — Innovative Field Exploration Techniques",
     "Consulting Engineers Council of Hawaiʻi",
+    "North Halawa and Haiku Valleys, Oahu, Hawaii",
   ],
   [
     "1991",
     "Pearl Kai Center",
-    "Excellence Award — Foundation Design in a Marginal-Use Wetland Area",
+    "Excellence Award — Foundation Design in Marginal-Use Wetland Area",
     "CECH / American Consulting Engineers Council",
+    "Aiea, Oahu, Hawaii",
   ],
   [
     "1990",
     "Maintenance Hangar Facility",
     "Excellence Award — Innovative Slope Stabilization",
     "CECH / American Consulting Engineers Council",
+    "FY85 Milcon P-516 U.S. Naval Air Station Cubi Point, Republic of the Philippines",
   ],
 ];
 export const benefits = [

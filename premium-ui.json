@@ -1,0 +1,11 @@
+{
+  "profile": "marketing",
+  "sourceRoots": ["src"],
+  "ownership": {
+    "Select/Listbox": "native",
+    "Form": "native"
+  },
+  "commands": {
+    "check": "npm run check"
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "date": "2026-10-04",
+  "method": "Signed-in Wix editor/Preview; rendered DOM read, all dynamic records selected after session refresh. Transitional/mixed page states were discarded. Team Table Master iframe read independently.",
+  "standalonePages": [
+    "Home (New)",
+    "About Us (New)",
+    "Leadership (New)",
+    "Team (New)",
+    "Services (New)",
+    "Copy of Services (New)",
+    "Geotechnical Engineering (New)",
+    "Services After Construction",
+    "Drilling and Subsurface Investigation (",
+    "Materials Testing (New)",
+    "Forensic and Expert Witness (New)",
+    "Projects (New)",
+    "New Projects",
+    "International Marketplace (New)",
+    "Honolulu Rail (Newer)",
+    "Kamehameha (Newer)",
+    "Copy of Kamehameha (Newer)",
+    "Ala Moana Center Expansion (New)",
+    "Honolulu High Capacity Transit (New)",
+    "Kamehameha School Athletic Field (New)",
+    "The Moana Pacific (New)",
+    "Ko'olani Tower (New)",
+    "Kahului Airport Terminal Complex (New)",
+    "Navy's Dry Dock 3 Replacement (New)",
+    "Kapolei Harborside Redevelopment (New)",
+    "Awards (New)",
+    "Contact (New)",
+    "Apply (New)",
+    "Home (New - Prototypes)",
+    "Resorts",
+    "Ko'olina Lagoons",
+    "Mariott Hotel",
+    "Ko'olina Beach Villas",
+    "Aulani",
+    "TEAM",
+    "HOME",
+    "AWARDS",
+    "International Marketplace",
+    "Honolulu High-Capacity Transit Corridor",
+    "Ala Moana Center Expansion",
+    "Copy of Ala Moana Center Expansion",
+    "Moana Pacific",
+    "Kamehameha School Athletic Field",
+    "Kahului Airport Terminal Complex",
+    "Ko'olani Tower",
+    "Robin M. Lim",
+    "Gerald Y. Seki",
+    "John Y.L. Chen",
+    "Application"
+  ],
+  "primaryDynamicRecords": 28,
+  "secondaryDynamicRecords": 2,
+  "sourceParagraphChecks": {
+    "paragraphs": 102,
+    "passed": 102,
+    "failures": []
+  },
+  "galleryTileCoverage": [
+    {
+      "sourceTile": 0,
+      "sourceTitle": "International Market Place\nHonolulu, Oahu",
+      "route": "/projects/international-marketplace",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 1,
+      "sourceTitle": "Moana Pacific Twin Towers\nHonolulu, Oahu",
+      "route": "/projects/moana-pacific",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 2,
+      "sourceTitle": "\"The Park on Keaaumoku\" Twin Towers\nHonolulu, Oahu",
+      "route": "/projects/park-on-keeaumoku",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 3,
+      "sourceTitle": "Azure & Sky Ala Moana Twin Towers\nHonolulu, Oahu",
+      "route": "/projects/azure-sky-ala-moana",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 4,
+      "sourceTitle": "Tinian North Field\nCommonwealth of Northern Mariana Islands",
+      "route": "/projects/tinian-north-field",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 5,
+      "sourceTitle": "Koa Ridge\nCentral Oahu",
+      "route": "/projects/koa-ridge",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 6,
+      "sourceTitle": "Hanalei Hills Landslide Mitigation\nKuhio Highway, Kauai",
+      "route": "/projects/hanalei-hills",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 7,
+      "sourceTitle": "Wainiha Landslide Mitigation Kuhio Highway, Kauai",
+      "route": "/projects/wainiha-landslide",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 8,
+      "sourceTitle": "Joint Traffic Management Center Parking Structure\nHonolulu, Oahu",
+      "route": "/drafts/joint-traffic-management-center",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 9,
+      "sourceTitle": "Rock Scope Scaling along Kalanianaole Highway \nMakapuu, Oahu",
+      "route": "/drafts/kalanianaole-rock-scaling",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 10,
+      "sourceTitle": "Turtle Bay Resort\nKawela Bay, Oahu",
+      "route": "/drafts/turtle-bay-resort",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 11,
+      "sourceTitle": "Ala Moana Elevated Pedestrian Walkway\nHonolulu, Oahu",
+      "route": "/projects/ala-moana-walkway",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 12,
+      "sourceTitle": "Honolulu High Capacity Transit\nHonolulu, Oahu",
+      "route": "/projects/honolulu-rail",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 13,
+      "sourceTitle": "Kahului Airport Terminal Complex Expansion \nKahului, Maui",
+      "route": "/projects/kahului-airport",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 14,
+      "sourceTitle": "Ala Moana Elevated Pedestrian Walkway\nHonolulu, Oahu",
+      "route": "/projects/ala-moana-walkway",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 15,
+      "sourceTitle": "Emergency Slope Scaling for Kalepa Slope\nPiilani Hwy, Maui",
+      "route": "/projects/kalepa-slope",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 16,
+      "sourceTitle": "The Central Ala Moana\nHonolulu, Oahu",
+      "route": "/projects/central-ala-moana",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 17,
+      "sourceTitle": "Sky Ala Moana Twin Towers\nHonolulu, Oahu",
+      "route": "/projects/sky-ala-moana",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 18,
+      "sourceTitle": "Life Sciences Building at University of Hawaii Manoa\nHonolulu, Oahu",
+      "route": "/projects/uh-life-sciences",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 19,
+      "sourceTitle": "Hilton Grand Islander\nHonolulu, Oahu",
+      "route": "/drafts/hilton-grand-islander",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 20,
+      "sourceTitle": "Hilton Grand Waikikian\nHonolulu, Oahu",
+      "route": "/drafts/hilton-grand-waikikian",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 21,
+      "sourceTitle": "Kukio Golf and Beach Club\nKona Coast, Big Island",
+      "route": "/drafts/kukio-golf-beach-club",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 22,
+      "sourceTitle": "Various Units of Interstate Route H-3\nOahu",
+      "route": "/drafts/interstate-h3",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 23,
+      "sourceTitle": "Ala Moana Elevated Pedestrian Walkway\nHonolulu, Oahu",
+      "route": "/projects/ala-moana-walkway",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 24,
+      "sourceTitle": "Ala Moana Center Expansion\nHonolulu, Oahu",
+      "route": "/projects/ala-moana-center",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 25,
+      "sourceTitle": "Koolani Tower\nHonolulu, Oahu",
+      "route": "/projects/koolani-tower",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 26,
+      "sourceTitle": "Palau Wharf Improvements\nMalakal Island",
+      "route": "/projects/palau-wharf",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 27,
+      "sourceTitle": "Rockfall Protection at Alelele Slope\nPiilani Hwy, Maui",
+      "route": "/projects/alele-rockfall",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 28,
+      "sourceTitle": "Palau Wharf Improvements\nMalakal Island",
+      "route": "/projects/palau-wharf",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 29,
+      "sourceTitle": "Mauka Concourse at Daniel K. Inouye International Airport\nHonolulu, Oahu",
+      "route": "/projects/mauka-concourse",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 30,
+      "sourceTitle": "Pali Highway Landslide Mitigation\nOahu",
+      "route": "/projects/pali-highway",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 31,
+      "sourceTitle": "Ka Makana Aliʻi\nKapolei, Oahu",
+      "route": "/projects/ka-makana-alii",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 32,
+      "sourceTitle": "University of Hawaii West Oahu Campus Development\nKapolei, Oahu",
+      "route": "/drafts/uh-west-oahu-campus",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 33,
+      "sourceTitle": "Various Projects at Andersen Air Force Base\nGuam",
+      "route": "/drafts/andersen-air-force-base",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 34,
+      "sourceTitle": "Villages of Kapolei, Mass Grading/Infrastructure\nKapolei, Oahu",
+      "route": "/drafts/villages-of-kapolei",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 35,
+      "sourceTitle": "Ala Moana Elevated Pedestrian Walkway\nHonolulu, Oahu",
+      "route": "/projects/ala-moana-walkway",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 36,
+      "sourceTitle": "Kamehameha School Athletic Field\nPukalani, Maui",
+      "route": "/projects/kamehameha-athletic-field",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 37,
+      "sourceTitle": "Tinian North Field\nCommonwealth of the Northern Mariana Islands",
+      "route": "/projects/tinian-north-field",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 38,
+      "sourceTitle": "Victoria Place\nHonolulu, Oahu",
+      "route": "/projects/victoria-place",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 39,
+      "sourceTitle": "Yap Wharf Improvements\nFederated States of Micronesia",
+      "route": "/projects/yap-wharf",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 40,
+      "sourceTitle": "Makai Slope Repair below Alelele Slope\nPiilani Hwy, Maui",
+      "route": "/projects/makai-alele-slope",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 41,
+      "sourceTitle": "HNL Consolidated Rental Car (ConRAC) Facility\nHonolulu, Oahu",
+      "route": "/projects/hnl-conrac",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 42,
+      "sourceTitle": "Consolidated Car Rental (ConRAC) Facility\nKahului Airport, Maui",
+      "route": "/projects/kahului-conrac",
+      "status": "source narrative preserved"
+    },
+    {
+      "sourceTile": 43,
+      "sourceTitle": "Aulani Resort\nKapolei, Oahu",
+      "route": "/drafts/aulani-cms",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 44,
+      "sourceTitle": "Interstate Route H-1 Widening Waimalu Viaduct, Oahu",
+      "route": "/drafts/h1-waimalu-viaduct",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 45,
+      "sourceTitle": "Four Seasons Resort Hualalai\nKona Coast, Big Island",
+      "route": "/drafts/four-seasons-hualalai",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 46,
+      "sourceTitle": "Koolina Resort Infrastructure\nKapolei, Oahu",
+      "route": "/drafts/koolina-infrastructure",
+      "status": "under construction"
+    },
+    {
+      "sourceTile": 47,
+      "sourceTitle": "Ala Moana Elevated Pedestrian Walkway\nHonolulu, Oahu",
+      "route": "/projects/ala-moana-walkway",
+      "status": "source narrative preserved"
+    }
+  ],
+  "sourceTextEvidence": "wix-complete-source-text-2026-10-04.json",
+  "restoredGalleryAssets": "wix-gallery-asset-sources.json",
+  "restoredAwardAssets": "wix-award-asset-sources.json",
+  "exceptions": [
+    "Duplicate pages/tiles consolidated; obsolete 40/49-year copy and resume-email application replaced by newer source wording and owner-authorized careers portal.",
+    "Explicit ChatGPT placeholder resort copy and mismatched CMS Aulani/Hilton records remain archived, under construction in UI.",
+    "Three Awards photos withheld: UH housing PNG is wholly transparent; Kailua-Regional image on Cartwright/Metcalf award and Hawaiian Airlines hangar on Cubi Point award have uncertain subject associations. Their original tile text/URIs are retained in wix-award-source-tiles.json.",
+    "Unlabeled gallery tiles and editor-only decorative/system scaffolding are not promoted into invented business content.",
+    "Contact fields prepare an unsent email draft; original Wix inbox submission still needs a delivery backend.",
+    "Source-authored narrative/date discrepancies remain documented and are not independently certified."
+  ]
+}

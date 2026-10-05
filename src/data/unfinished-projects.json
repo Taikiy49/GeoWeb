@@ -25,11 +25,19 @@
   },
   {
     "slug": "aulani-cms",
-    "title": "Aulani Resort — newer CMS story"
+    "title": "Aulani Resort",
+    "location": "Kapolei, Oahu",
+    "image": "gallery-aulani-cms",
+    "gallery": true,
+    "source": "New Projects"
   },
   {
     "slug": "hilton-grand-islander",
-    "title": "Hilton Grand Islander"
+    "title": "Hilton Grand Islander",
+    "location": "Honolulu, Oahu",
+    "image": "gallery-hilton-grand-islander",
+    "gallery": true,
+    "source": "New Projects"
   },
   {
     "slug": "straub-medical-center",
@@ -49,5 +57,110 @@
     "slug": "maui-temporary-schools",
     "title": "Temporary Schools for Maui",
     "image": "maui-temporary-schools"
+  },
+  {
+    "slug": "joint-traffic-management-center",
+    "title": "Joint Traffic Management Center Parking Structure",
+    "location": "Honolulu, Oahu",
+    "image": "joint-traffic-management-center",
+    "gallery": true,
+    "source": "New Projects"
+  },
+  {
+    "slug": "kalanianaole-rock-scaling",
+    "title": "Rock Scope Scaling along Kalanianaole Highway",
+    "location": "Makapuu, Oahu",
+    "image": "kalanianaole-rock-scaling",
+    "gallery": true,
+    "source": "New Projects"
+  },
+  {
+    "slug": "turtle-bay-resort",
+    "title": "Turtle Bay Resort",
+    "location": "Kawela Bay, Oahu",
+    "image": "turtle-bay-resort",
+    "gallery": true,
+    "source": "New Projects",
+    "credit": "Photo Courtesy: Booking.com"
+  },
+  {
+    "slug": "hilton-grand-waikikian",
+    "title": "Hilton Grand Waikikian",
+    "location": "Honolulu, Oahu",
+    "image": "hilton-grand-waikikian",
+    "gallery": true,
+    "source": "New Projects",
+    "credit": "Photo Courtesy: Booking.com"
+  },
+  {
+    "slug": "kukio-golf-beach-club",
+    "title": "Kukio Golf and Beach Club",
+    "location": "Kona Coast, Big Island",
+    "image": "kukio-golf-beach-club",
+    "gallery": true,
+    "source": "New Projects",
+    "credit": "Photo Courtesy: www.kuhio.com"
+  },
+  {
+    "slug": "interstate-h3",
+    "title": "Various Units of Interstate Route H-3",
+    "location": "Oahu",
+    "image": "interstate-h3",
+    "gallery": true,
+    "source": "New Projects",
+    "credit": "Photo Courtesy: Polynesia,com"
+  },
+  {
+    "slug": "uh-west-oahu-campus",
+    "title": "University of Hawaii West Oahu Campus Development",
+    "location": "Kapolei, Oahu",
+    "image": "uh-west-oahu-campus",
+    "gallery": true,
+    "source": "New Projects",
+    "credit": "Photo Courtesy: UH West O’ahu"
+  },
+  {
+    "slug": "andersen-air-force-base",
+    "title": "Various Projects at Andersen Air Force Base",
+    "location": "Guam",
+    "image": "andersen-air-force-base",
+    "gallery": true,
+    "source": "New Projects",
+    "credit": "Photo Courtesy: Andersen Air Force Base, Guam"
+  },
+  {
+    "slug": "villages-of-kapolei",
+    "title": "Villages of Kapolei, Mass Grading/Infrastructure",
+    "location": "Kapolei, Oahu",
+    "image": "villages-of-kapolei",
+    "gallery": true,
+    "source": "New Projects",
+    "credit": "Photo Courtesy: Hawaii Real Estate"
+  },
+  {
+    "slug": "h1-waimalu-viaduct",
+    "title": "Interstate Route H-1 Widening Waimalu Viaduct, Oahu",
+    "location": "Oahu",
+    "image": "h1-waimalu-viaduct",
+    "gallery": true,
+    "source": "New Projects"
+  },
+  {
+    "slug": "four-seasons-hualalai",
+    "title": "Four Seasons Resort Hualalai",
+    "location": "Kona Coast, Big Island",
+    "image": "four-seasons-hualalai",
+    "gallery": true,
+    "source": "New Projects",
+    "credit": "Photo Courtesy: Four Seasons"
+  },
+  {
+    "slug": "koolina-infrastructure",
+    "title": "Koolina Resort Infrastructure",
+    "location": "Kapolei, Oahu",
+    "image": "koolina-infrastructure",
+    "gallery": true,
+    "source": "New Projects",
+    "credit": "Photo Courtesy: Meet Hawaii"
   }
 ]

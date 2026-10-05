@@ -1,5 +1,7 @@
 # Wix content restoration — October 4, 2026
 
+**Follow-up:** [Complete parity review](wix-complete-parity-review-2026-10-04.md) supersedes this pass’s gallery exclusions, Palau coverage and counts. It restored 12 missing gallery titles/photos and the omitted second Palau narrative.
+
 ## What this review fixes
 
 The prior review proved that the source archive was still current. It did **not** prove that every piece of Wix content appeared in the new site. This review found and restored real omissions: the embedded Team table, three additional Why Us slides, leadership experience/contact details, service sentences and photo captions, and shortened project narratives.
