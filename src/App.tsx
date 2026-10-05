@@ -29,6 +29,8 @@ import { OfficeMap } from "./components/OfficeMap";
 import { VendorBadge } from "./components/VendorBadge";
 import { TeamDirectory } from "./components/TeamDirectory";
 import { ContactInquiry } from "./components/ContactInquiry";
+import { LeadershipGallery } from "./components/LeadershipGallery";
+import { aboutTopics } from "./data/aboutTopics";
 import { ContourAccent } from "./components/ContourAccent";
 import {
   applyUrl,
@@ -37,7 +39,6 @@ import {
   offices,
   services,
   projects,
-  leaders,
   awards,
   benefits,
   Project,
@@ -170,6 +171,9 @@ function ProjectCard({ project, showSummary = false, spotlight = false }: {
     <Link className={`project-card${spotlight ? " project-spotlight" : ""}`} to={`/projects/${project.slug}`} aria-label={`Explore ${project.title}`}>
       <div className="project-image">
         <Photo name={project.image} alt={project.title} />
+        <div className="project-reveal reveal-panel" aria-hidden="true">
+          <p>{project.summary}</p><span>Explore project <ArrowUpRight size={19} /></span>
+        </div>
       </div>
       <div className="project-card-copy">
         <div className="project-meta">
@@ -332,11 +336,23 @@ function About() {
         </p>
       </PageIntro>
       <div className="content-band light-surface">
-      <div className="container panorama">
-        <Photo eager name="koa-ridge" alt="Koa Ridge development on Oʻahu" />
-        <span>Koa Ridge, Oʻahu · 2023</span>
-      </div>
-      <section className="section container editorial-grid">
+      <nav className="container about-topic-grid" aria-label="Explore About Geolabs">
+        {aboutTopics.map((topic) => <figure key={topic.id}>
+          <Link className="about-topic-card" to={`/about#${topic.id}`} aria-label={`Read ${topic.title}`}>
+            <div className="about-topic-photo">
+              <Photo name={topic.image} alt={topic.caption} />
+              <div className="about-topic-reveal reveal-panel" aria-hidden="true">
+                <p>{topic.preview}</p>
+                {topic.items && <ul>{topic.items.slice(0, 3).map(item => <li key={item}>{item}</li>)}</ul>}
+                <span>Read section <ArrowDown size={18} /></span>
+              </div>
+            </div>
+            <div className="about-topic-title"><h2>{topic.title}</h2><ArrowUpRight size={21} aria-hidden="true" /></div>
+          </Link>
+          <figcaption>{topic.caption}</figcaption>
+        </figure>)}
+      </nav>
+      <section className="section container editorial-grid" id="our-legacy" tabIndex={-1}>
         <aside>
           <span className="eyebrow">ESTABLISHED 1975</span>
           <h2>Our legacy</h2>
@@ -353,7 +369,7 @@ function About() {
             and continues to shape Honolulu’s skyline through the design of many
             of its high-rise building foundations.
           </p>
-          <h3>Our team</h3>
+          <h3 id="our-team" tabIndex={-1}>Our team</h3>
           <p>
             We are a team of more than 80 geotechnical professionals—including
             licensed engineers, seasoned technical specialists, and dedicated
@@ -364,11 +380,19 @@ function About() {
         </div>
       </section>
       </div>
-      <div className="container about-source-highlights">
-        <article><p>Leading provider of Geotechnical Engineering services in Hawaii</p></article>
-        <article><p>In-house staff of experienced Engineers and Geologists</p></article>
-        <article><p>Branch offices in Maui and Oakland, California</p></article>
-      </div>
+      <section className="container about-quality" aria-labelledby="about-quality-heading">
+        <h2 id="about-quality-heading">We Strive for Quality & Excellence</h2>
+        <div className="about-source-highlights">
+          {[
+            ["park-foundations", "The Park on Keaaumoku Twin Towers, Honolulu, Oahu (2025)", "Leading provider of Geotechnical Engineering services in Hawaii", "park-on-keeaumoku"],
+            ["about-koa", "Koa Ridge, Oahu (2023)", "In-house staff of experienced Engineers and Geologists", "koa-ridge"],
+            ["alele-rockfall", "Rockfall Protection at Alelele Slope along Piilani Highway, Maui (2023)", "Branch offices in Maui and Oakland, California", "alele-rockfall"],
+          ].map(([photo, caption, text, slug]) => <article key={photo}>
+            <Link to={`/projects/${slug}`} aria-label={`Explore ${caption}`}><Photo name={photo} alt={caption} /><p>{text}<ArrowUpRight size={18} aria-hidden="true" /></p></Link>
+            <span className="quality-caption">{caption}</span>
+          </article>)}
+        </div>
+      </section>
       <section className="section soft-section about-capabilities">
         <div className="container">
           <div className="section-heading">
@@ -376,7 +400,7 @@ function About() {
             <ArrowLink to="/services">Explore our capabilities</ArrowLink>
           </div>
           <div className="capability-columns">
-            <div>
+            <div id="what-we-do" tabIndex={-1}>
               <h3>Geotechnical engineering</h3>
               <p>Our services span a wide range of geotechnical areas:</p>
               <ul className="capability-list">
@@ -393,7 +417,7 @@ function About() {
               </ul>
               <p>Geotechnical Earthquake Engineering is a vital component in ensuring seismic resilience across the region.</p>
             </div>
-            <div>
+            <div id="construction-support" tabIndex={-1}>
               <h3>Construction support</h3>
               <p>Beyond design-phase services, Geolabs provides comprehensive support during construction:</p>
               <ul className="capability-list">
@@ -417,7 +441,7 @@ function About() {
         </div>
       </section>
       <div className="light-surface">
-      <section className="section container about-sectors">
+      <section className="section container about-sectors" id="who-we-serve" tabIndex={-1}>
         <div className="editorial-grid">
           <div><h2>Who we serve</h2><figure className="about-source-photo"><Photo name="yap-wharf" alt="Yap Wharf Improvements, Federated States of Micronesia (2023)" /><figcaption>Yap Wharf Improvements, Federated States of Micronesia (2023)</figcaption></figure></div>
           <div className="prose">
@@ -427,7 +451,7 @@ function About() {
             </ul>
           </div>
         </div>
-        <h3 className="sector-heading">Key sectors</h3>
+        <h3 className="sector-heading" id="key-sectors" tabIndex={-1}>Key sectors</h3>
         <div className="three-columns sector-grid">
           {[
             ["Transportation", "Highways, Airports, and Harbor Facilities"],
@@ -442,7 +466,7 @@ function About() {
         </div>
       </section>
       </div>
-      <section className="section soft-section">
+      <section className="section soft-section" id="where-we-work" tabIndex={-1}>
         <div className="container editorial-grid">
           <div><h2>Where we work</h2><figure className="about-source-photo"><Photo name="kuilei" alt="Kuilei Place High-Rise, Honolulu, Oahu (2025)" /><figcaption>Kuilei Place High-Rise, Honolulu, Oahu (2025)</figcaption></figure></div>
           <div className="prose">
@@ -463,8 +487,8 @@ function About() {
         </div>
       </section>
       <div className="slate-surface">
-      <section className="section container people-feature">
-        <Photo name="earthwork" alt="Hoopili development mass grading and slope construction, Oʻahu" />
+      <section className="section container people-feature" id="our-culture" tabIndex={-1}>
+        <Photo name="about-culture" alt="Malakal Port, Republic of Palau, (2024)" />
         <div>
           <div className="eyebrow">EMPLOYEE-OWNED SINCE 1991</div>
           <h2>Our culture</h2>
@@ -474,7 +498,7 @@ function About() {
             Our work has earned engineering awards for innovation and excellence
             across numerous projects.
           </p>
-          <h3>Our commitment</h3>
+          <h3 id="our-commitment" tabIndex={-1}>Our commitment</h3>
           <p>
             At Geolabs, we don’t just engineer solutions—we build trust,
             resilience, and a foundation for Hawaii’s future.
@@ -834,35 +858,7 @@ function People() {
             <h2>Our leadership</h2>
             <span className="eyebrow">GEOLABS, INC.</span>
           </div>
-          <div className="leaders">
-            {leaders.map((l) => (
-              <article key={l.name} id={l.image === "robin" ? "robin-lim" : l.image === "gerald" ? "gerald-seki" : l.image === "john" ? "john-chen" : "payton-kiuchi"}>
-                <Photo eager name={l.image} alt={l.name} />
-                <div className="leader-identity">
-                <h3>{l.name}</h3>
-                <p>{l.role}</p>
-                </div>
-                {l.education && (
-                  <details>
-                    <summary>
-                      Experience & credentials <Plus size={16} />
-                    </summary>
-                    <div>
-                      <h4>Years of Experience</h4>
-                      <p>{l.experience}</p>
-                      <h4>Education</h4>
-                      {l.education.map((e) => (
-                        <p key={e}>{e}</p>
-                      ))}
-                      <h4>Professional Registration</h4>
-                      <p>{l.registration}</p>
-                      {l.email && <a href={`mailto:${l.email}`}>{l.email}</a>}
-                    </div>
-                  </details>
-                )}
-              </article>
-            ))}
-          </div>
+          <LeadershipGallery />
         </div>
       </section>
       <TeamDirectory />

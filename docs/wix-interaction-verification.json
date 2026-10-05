@@ -1,0 +1,213 @@
+{
+  "layouts": [
+    {
+      "width": 1440,
+      "route": "/about",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1440,
+      "route": "/people",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 1440,
+      "route": "/projects",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 768,
+      "route": "/about",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 768,
+      "route": "/people",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 768,
+      "route": "/projects",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 390,
+      "route": "/about",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 390,
+      "route": "/people",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 390,
+      "route": "/projects",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 320,
+      "route": "/about",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 320,
+      "route": "/people",
+      "overflow": false,
+      "broken": 0
+    },
+    {
+      "width": 320,
+      "route": "/projects",
+      "overflow": false,
+      "broken": 0
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 1440,
+      "route": "/about",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/people",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/people#gerald-seki",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/people#john-chen",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/people#payton-kiuchi",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/projects",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/projects?view=list",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/about",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/people",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/people#gerald-seki",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/people#john-chen",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/people#payton-kiuchi",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/projects",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/projects?view=list",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "route": "/about",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "route": "/people",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "route": "/people#gerald-seki",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "route": "/people#john-chen",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "route": "/people#payton-kiuchi",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "route": "/projects",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "route": "/projects?view=list",
+      "violations": []
+    }
+  ],
+  "motionAndProfiles": [
+    {
+      "width": 1440,
+      "intermediate": {
+        "clip": "inset(9.71134% 0px 0px)",
+        "duration": "0.65s, 0.35s"
+      },
+      "revealed": "inset(0px)"
+    },
+    {
+      "width": 1440,
+      "profileContent": true,
+      "history": true,
+      "reducedMotion": true
+    },
+    {
+      "width": 390,
+      "intermediate": {
+        "clip": "inset(0px)",
+        "duration": "0.65s, 0.35s"
+      },
+      "revealed": "inset(0px)"
+    },
+    {
+      "width": 390,
+      "profileContent": true,
+      "history": true,
+      "reducedMotion": true
+    }
+  ]
+}

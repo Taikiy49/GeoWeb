@@ -77,7 +77,7 @@ export function usePageMotion(route: string) {
       // Media, counters, live search feedback and opened disclosures retain their own motion.
       const eligible = candidates.filter((element) => {
         if (filtering) return true;
-        if (element.closest(".hero, .count-up, .film-screen, .filmstrip, .result-count, [aria-live], [aria-hidden='true']")) return element.matches(".filmstrip");
+        if (element.closest(".hero, .count-up, .film-screen, .filmstrip, .result-count, .reveal-panel, .portrait-reveal, [aria-live], [aria-hidden='true']")) return element.matches(".filmstrip");
         const details = element.closest("details");
         if (details && !element.matches("summary")) return false;
         if (element.matches("a") && element.querySelector("h1, h2, h3, p, img")) return false;

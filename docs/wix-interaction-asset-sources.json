@@ -1,0 +1,42 @@
+[
+  {
+    "file": "public/images/about-team.webp",
+    "source": "https://static.wixstatic.com/media/d5b831_97e54a24c3a642b39d227ea522c351a9~mv2.png",
+    "page": "About Us (New)",
+    "caption": "Rock Scope Scaling along Kalanianaole Highway, Oahu (2002)",
+    "captured": "2026-10-04",
+    "transform": "WebP, maximum edge 1200px, quality 85; real Wix source image"
+  },
+  {
+    "file": "public/images/about-support.webp",
+    "source": "https://static.wixstatic.com/media/d5b831_48c4bb56fe70443da163f3e6fdddce33~mv2.jpg",
+    "page": "About Us (New)",
+    "caption": "Pali Highway Landslide Mitigation, Oahu (2019)",
+    "captured": "2026-10-04",
+    "transform": "WebP, maximum edge 1200px, quality 85; real Wix source image"
+  },
+  {
+    "file": "public/images/about-wharf.webp",
+    "source": "https://static.wixstatic.com/media/d5b831_e1bc5bad05c04e56b656bdc56df3927c~mv2.png",
+    "page": "About Us (New)",
+    "caption": "Yap Wharf Improvements, Federated States of Micronesia (2023)",
+    "captured": "2026-10-04",
+    "transform": "WebP, maximum edge 1200px, quality 85; real Wix source image"
+  },
+  {
+    "file": "public/images/about-culture.webp",
+    "source": "https://static.wixstatic.com/media/d5b831_f3f8ca77830f4d96a3fa926b227fcdb5~mv2.jpg",
+    "page": "About Us (New)",
+    "caption": "Malakal Port, Republic of Palau, (2024)",
+    "captured": "2026-10-04",
+    "transform": "WebP, maximum edge 1200px, quality 85; real Wix source image"
+  },
+  {
+    "file": "public/images/about-koa.webp",
+    "source": "https://static.wixstatic.com/media/d5b831_bf2e9f27166e4c8c9688f698a2529568~mv2.jpg",
+    "page": "About Us (New)",
+    "caption": "Koa Ridge, Oahu (2023)",
+    "captured": "2026-10-04",
+    "transform": "WebP, maximum edge 1200px, quality 85; real Wix source image"
+  }
+]

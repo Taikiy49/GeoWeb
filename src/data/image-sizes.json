@@ -282,5 +282,25 @@
   "ground-improvement": [
     1280,
     488
+  ],
+  "about-team": [
+    1200,
+    800
+  ],
+  "about-support": [
+    1200,
+    900
+  ],
+  "about-wharf": [
+    1200,
+    800
+  ],
+  "about-culture": [
+    1200,
+    800
+  ],
+  "about-koa": [
+    1200,
+    572
   ]
 }
