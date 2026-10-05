@@ -48,6 +48,7 @@ import imageSizes from "./data/image-sizes.json";
 import awardPhotos from "./data/award-photos.json";
 
 import { normalizeProjectSearch } from "./data/projectSearch";
+import { getProjectReturnTo } from "./data/projectNavigation";
 import { formatPhone, phoneHref } from "./data/phone";
 import { getLegacyDestination } from "./data/legacyRoutes";
 
@@ -183,9 +184,14 @@ function ProjectCard({ project, showSummary = false, spotlight = false }: {
   showSummary?: boolean;
   spotlight?: boolean;
 }) {
+  const location = useLocation();
+  const cardId = `project-${project.slug}`;
+  const projectReturnTo = location.pathname === "/projects"
+    ? `${location.pathname}${location.search}#${cardId}`
+    : getProjectReturnTo(location.state);
   const Heading = showSummary ? "h2" : "h3";
   return (
-    <Link className={`project-card${spotlight ? " project-spotlight" : ""}`} to={`/${project.draft ? "drafts" : "projects"}/${project.slug}`} aria-label={`Explore ${project.title}${project.draft ? " — under construction" : ""}`}>
+    <Link id={cardId} className={`project-card${spotlight ? " project-spotlight" : ""}`} to={`/${project.draft ? "drafts" : "projects"}/${project.slug}`} state={projectReturnTo ? { projectReturnTo } : undefined} aria-label={`Explore ${project.title}${project.draft ? " — under construction" : ""}`}>
       <div className="project-image">
         <Photo name={project.image} alt={project.title} />
         <div className="project-reveal reveal-panel" aria-hidden="true">
@@ -789,6 +795,8 @@ function Projects() {
 }
 function ProjectDetail() {
   const { slug } = useParams();
+  const { state } = useLocation();
+  const projectReturnTo = getProjectReturnTo(state);
   const p = projects.find((x) => x.slug === slug);
   if (!p) return <NotFound />;
   return (
@@ -796,7 +804,7 @@ function ProjectDetail() {
       <Meta title={p.title} description={p.summary} />
       <div className="page-masthead">
         <ContourAccent />
-        <Breadcrumb to="/projects" label="Projects" context={p.market} />
+        <Breadcrumb to={projectReturnTo || "/projects"} label="Projects" context={p.market} />
         <div className="container project-title">
           <span className="eyebrow">{p.location}</span>
           <h1>{p.title}</h1>
@@ -841,7 +849,7 @@ function ProjectDetail() {
       <section className="container related">
         <div className="section-heading">
           <h2>Related projects</h2>
-          <ArrowLink to="/projects">All projects</ArrowLink>
+          <ArrowLink to={projectReturnTo || "/projects"}>{projectReturnTo ? "Back to projects" : "All projects"}</ArrowLink>
         </div>
         <div className="project-grid">
           {projects
@@ -1173,13 +1181,16 @@ function Drafts() {
 }
 function DraftDetail() {
   const { slug } = useParams();
+  const { state } = useLocation();
+  const projectReturnTo = getProjectReturnTo(state);
+  const returnTo = projectReturnTo || "/drafts";
   const d = unfinishedStories.find((x) => x.slug === slug);
   if (!d) return <NotFound />;
   return (
     <>
       <Meta title={`${d.title} — Under construction`} draft />
       <PageIntro eyebrow="UNDER CONSTRUCTION" title={d.title}
-        breadcrumb={<Breadcrumb to="/drafts" label="Draft stories" context="Under construction" />}
+        breadcrumb={<Breadcrumb to={returnTo} label={projectReturnTo ? "Projects" : "Draft stories"} context="Under construction" />}
       >
         {d.location && <p>{d.location}</p>}
         <p>This project page is under construction.</p>
@@ -1194,7 +1205,7 @@ function DraftDetail() {
           <Photo eager name={d.image} alt={d.title} />
           {d.credit && <p className="image-credit">{d.credit}</p>}
         </>}
-        <ArrowLink to="/drafts">Back to draft stories</ArrowLink>
+        <ArrowLink to={returnTo}>{projectReturnTo ? "Back to projects" : "Back to draft stories"}</ArrowLink>
       </section>
       </div>
     </>

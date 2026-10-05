@@ -1,0 +1,348 @@
+{
+  "date": "2026-10-05",
+  "before": [
+    {
+      "width": 1440,
+      "name": "completed",
+      "origin": "/projects?q=Koa&market=Residential&view=list",
+      "selected": "/projects/koa-ridge",
+      "returnedTo": "/projects",
+      "count": "44 projects",
+      "active": "main"
+    },
+    {
+      "width": 1440,
+      "name": "draft",
+      "origin": "/projects?q=Turtle&market=Under+construction&view=list",
+      "selected": "/drafts/turtle-bay-resort",
+      "returnedTo": "/drafts",
+      "count": null,
+      "active": "main"
+    },
+    {
+      "width": 390,
+      "name": "completed",
+      "origin": "/projects?q=Koa&market=Residential&view=list",
+      "selected": "/projects/koa-ridge",
+      "returnedTo": "/projects",
+      "count": "44 projects",
+      "active": "main"
+    },
+    {
+      "width": 390,
+      "name": "draft",
+      "origin": "/projects?q=Turtle&market=Under+construction&view=list",
+      "selected": "/drafts/turtle-bay-resort",
+      "returnedTo": "/drafts",
+      "count": null,
+      "active": "main"
+    }
+  ],
+  "returnFlows": {
+    "origin": "http://127.0.0.1:5174",
+    "flows": [
+      {
+        "width": 1440,
+        "motion": "reduce",
+        "name": "completed",
+        "selected": "/projects/koa-ridge",
+        "returnTo": "/projects?q=Koa&market=Residential&view=list#project-koa-ridge",
+        "focused": "project-koa-ridge",
+        "results": "1 project"
+      },
+      {
+        "width": 1440,
+        "motion": "reduce",
+        "name": "draft",
+        "selected": "/drafts/turtle-bay-resort",
+        "returnTo": "/projects?q=Turtle&market=Under+construction&view=list#project-turtle-bay-resort",
+        "focused": "project-turtle-bay-resort",
+        "results": "1 project"
+      },
+      {
+        "width": 1440,
+        "motion": "reduce",
+        "name": "gallery",
+        "selected": "/projects/honolulu-rail",
+        "returnTo": "/projects?market=Transportation#project-honolulu-rail",
+        "focused": "project-honolulu-rail",
+        "results": "2 projects"
+      },
+      {
+        "width": 1440,
+        "motion": "no-preference",
+        "name": "completed",
+        "selected": "/projects/koa-ridge",
+        "returnTo": "/projects?q=Koa&market=Residential&view=list#project-koa-ridge",
+        "focused": "project-koa-ridge",
+        "results": "1 project"
+      },
+      {
+        "width": 1440,
+        "motion": "no-preference",
+        "name": "draft",
+        "selected": "/drafts/turtle-bay-resort",
+        "returnTo": "/projects?q=Turtle&market=Under+construction&view=list#project-turtle-bay-resort",
+        "focused": "project-turtle-bay-resort",
+        "results": "1 project"
+      },
+      {
+        "width": 1440,
+        "motion": "no-preference",
+        "name": "gallery",
+        "selected": "/projects/honolulu-rail",
+        "returnTo": "/projects?market=Transportation#project-honolulu-rail",
+        "focused": "project-honolulu-rail",
+        "results": "2 projects"
+      },
+      {
+        "width": 768,
+        "motion": "reduce",
+        "name": "completed",
+        "selected": "/projects/koa-ridge",
+        "returnTo": "/projects?q=Koa&market=Residential&view=list#project-koa-ridge",
+        "focused": "project-koa-ridge",
+        "results": "1 project"
+      },
+      {
+        "width": 768,
+        "motion": "reduce",
+        "name": "draft",
+        "selected": "/drafts/turtle-bay-resort",
+        "returnTo": "/projects?q=Turtle&market=Under+construction&view=list#project-turtle-bay-resort",
+        "focused": "project-turtle-bay-resort",
+        "results": "1 project"
+      },
+      {
+        "width": 768,
+        "motion": "reduce",
+        "name": "gallery",
+        "selected": "/projects/honolulu-rail",
+        "returnTo": "/projects?market=Transportation#project-honolulu-rail",
+        "focused": "project-honolulu-rail",
+        "results": "2 projects"
+      },
+      {
+        "width": 768,
+        "motion": "no-preference",
+        "name": "completed",
+        "selected": "/projects/koa-ridge",
+        "returnTo": "/projects?q=Koa&market=Residential&view=list#project-koa-ridge",
+        "focused": "project-koa-ridge",
+        "results": "1 project"
+      },
+      {
+        "width": 768,
+        "motion": "no-preference",
+        "name": "draft",
+        "selected": "/drafts/turtle-bay-resort",
+        "returnTo": "/projects?q=Turtle&market=Under+construction&view=list#project-turtle-bay-resort",
+        "focused": "project-turtle-bay-resort",
+        "results": "1 project"
+      },
+      {
+        "width": 768,
+        "motion": "no-preference",
+        "name": "gallery",
+        "selected": "/projects/honolulu-rail",
+        "returnTo": "/projects?market=Transportation#project-honolulu-rail",
+        "focused": "project-honolulu-rail",
+        "results": "2 projects"
+      },
+      {
+        "width": 390,
+        "motion": "reduce",
+        "name": "completed",
+        "selected": "/projects/koa-ridge",
+        "returnTo": "/projects?q=Koa&market=Residential&view=list#project-koa-ridge",
+        "focused": "project-koa-ridge",
+        "results": "1 project"
+      },
+      {
+        "width": 390,
+        "motion": "reduce",
+        "name": "draft",
+        "selected": "/drafts/turtle-bay-resort",
+        "returnTo": "/projects?q=Turtle&market=Under+construction&view=list#project-turtle-bay-resort",
+        "focused": "project-turtle-bay-resort",
+        "results": "1 project"
+      },
+      {
+        "width": 390,
+        "motion": "reduce",
+        "name": "gallery",
+        "selected": "/projects/honolulu-rail",
+        "returnTo": "/projects?market=Transportation#project-honolulu-rail",
+        "focused": "project-honolulu-rail",
+        "results": "2 projects"
+      },
+      {
+        "width": 390,
+        "motion": "no-preference",
+        "name": "completed",
+        "selected": "/projects/koa-ridge",
+        "returnTo": "/projects?q=Koa&market=Residential&view=list#project-koa-ridge",
+        "focused": "project-koa-ridge",
+        "results": "1 project"
+      },
+      {
+        "width": 390,
+        "motion": "no-preference",
+        "name": "draft",
+        "selected": "/drafts/turtle-bay-resort",
+        "returnTo": "/projects?q=Turtle&market=Under+construction&view=list#project-turtle-bay-resort",
+        "focused": "project-turtle-bay-resort",
+        "results": "1 project"
+      },
+      {
+        "width": 390,
+        "motion": "no-preference",
+        "name": "gallery",
+        "selected": "/projects/honolulu-rail",
+        "returnTo": "/projects?market=Transportation#project-honolulu-rail",
+        "focused": "project-honolulu-rail",
+        "results": "2 projects"
+      },
+      {
+        "width": 320,
+        "motion": "reduce",
+        "name": "completed",
+        "selected": "/projects/koa-ridge",
+        "returnTo": "/projects?q=Koa&market=Residential&view=list#project-koa-ridge",
+        "focused": "project-koa-ridge",
+        "results": "1 project"
+      },
+      {
+        "width": 320,
+        "motion": "reduce",
+        "name": "draft",
+        "selected": "/drafts/turtle-bay-resort",
+        "returnTo": "/projects?q=Turtle&market=Under+construction&view=list#project-turtle-bay-resort",
+        "focused": "project-turtle-bay-resort",
+        "results": "1 project"
+      },
+      {
+        "width": 320,
+        "motion": "reduce",
+        "name": "gallery",
+        "selected": "/projects/honolulu-rail",
+        "returnTo": "/projects?market=Transportation#project-honolulu-rail",
+        "focused": "project-honolulu-rail",
+        "results": "2 projects"
+      },
+      {
+        "width": 320,
+        "motion": "no-preference",
+        "name": "completed",
+        "selected": "/projects/koa-ridge",
+        "returnTo": "/projects?q=Koa&market=Residential&view=list#project-koa-ridge",
+        "focused": "project-koa-ridge",
+        "results": "1 project"
+      },
+      {
+        "width": 320,
+        "motion": "no-preference",
+        "name": "draft",
+        "selected": "/drafts/turtle-bay-resort",
+        "returnTo": "/projects?q=Turtle&market=Under+construction&view=list#project-turtle-bay-resort",
+        "focused": "project-turtle-bay-resort",
+        "results": "1 project"
+      },
+      {
+        "width": 320,
+        "motion": "no-preference",
+        "name": "gallery",
+        "selected": "/projects/honolulu-rail",
+        "returnTo": "/projects?market=Transportation#project-honolulu-rail",
+        "focused": "project-honolulu-rail",
+        "results": "2 projects"
+      }
+    ],
+    "checks": [
+      "context survives related projects",
+      "footer return matches breadcrumb",
+      "fallback direct story links",
+      "keyboard focus and header clearance",
+      "filtered list and gallery restoration",
+      "narrow overflow",
+      "normal and reduced motion",
+      "reload and browser back"
+    ],
+    "pageErrors": []
+  },
+  "accessibility": [
+    {
+      "route": "/projects?q=Koa&view=list",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/projects/koa-ridge",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/drafts/turtle-bay-resort",
+      "width": 1440,
+      "violations": []
+    },
+    {
+      "route": "/projects?q=Koa&view=list",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "/projects/koa-ridge",
+      "width": 390,
+      "violations": []
+    },
+    {
+      "route": "/drafts/turtle-bay-resort",
+      "width": 390,
+      "violations": []
+    }
+  ],
+  "sharedNavigation": {
+    "checks": [
+      {
+        "width": 1440,
+        "route": "/contact#office-maui",
+        "focus": "office-maui"
+      },
+      {
+        "width": 1440,
+        "route": "/services/geotechnical-engineering#capability-1",
+        "focus": "capability-1"
+      },
+      {
+        "width": 1440,
+        "route": "/people#gerald-seki",
+        "focus": "gerald-seki"
+      },
+      {
+        "width": 390,
+        "route": "/contact#office-maui",
+        "focus": "office-maui"
+      },
+      {
+        "width": 390,
+        "route": "/services/geotechnical-engineering#capability-1",
+        "focus": "capability-1"
+      },
+      {
+        "width": 390,
+        "route": "/people#gerald-seki",
+        "focus": "gerald-seki"
+      }
+    ],
+    "filteringFocusAndScroll": "passed",
+    "emptyRecovery": "passed",
+    "newRouteReset": "passed"
+  },
+  "checks": [
+    "npm run check",
+    "strict premium audit: zero findings",
+    "git diff --check"
+  ],
+  "sourceContent": "No business copy or assets changed."
+}

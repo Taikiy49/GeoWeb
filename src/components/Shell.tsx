@@ -24,8 +24,13 @@ export function Shell() {
   usePageMotion(location.pathname + location.search);
   const menuButton = useRef<HTMLButtonElement>(null);
   const header = useRef<HTMLElement>(null);
+  const previousLocation = useRef({ pathname: location.pathname, search: location.search });
   useLayoutEffect(() => {
+    const previous = previousLocation.current;
+    previousLocation.current = { pathname: location.pathname, search: location.search };
     setOpen(false);
+    // Filtering may remove a return anchor; it is still the same reading surface.
+    if (previous.pathname === location.pathname && previous.search !== location.search && !location.hash) return;
     if (!location.hash) {
       window.scrollTo({ top: 0, behavior: "instant" });
       document.getElementById("main")?.focus({ preventScroll: true });
@@ -39,7 +44,7 @@ export function Shell() {
       target?.scrollIntoView();
     });
     return () => cancelAnimationFrame(frame);
-  }, [location.pathname, location.hash]);
+  }, [location.pathname, location.search, location.hash]);
   useEffect(() => {
     if (!open) return;
     const close = (e: KeyboardEvent) => {
