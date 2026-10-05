@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "typecheck": "tsc -b",
+    "test:motion": "node scripts/check-motion.cjs",
     "check": "npm run typecheck && npm run lint && npm run build"
   },
   "dependencies": {

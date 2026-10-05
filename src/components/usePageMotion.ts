@@ -1,5 +1,21 @@
 import { useEffect, useRef } from "react";
 
+// Resolve the rendered column, including CSS-reordered service/project spreads.
+// A stacked/full-width block gets a quiet vertical entrance instead.
+function textDirection(element: Element): "left" | "right" | "up" {
+  const layout = element.closest(
+    ".page-intro, .project-title, .company-intro, .home-service-card, .home-careers, .career-hero, .recognition, .editorial-grid, .people-feature, .service-card, .project-spotlight, .capability-columns, .contact-layout, .awards-layout, .office-list article",
+  );
+  if (!layout) return "up";
+  let column = element;
+  while (column.parentElement && column.parentElement !== layout) column = column.parentElement;
+  const container = layout.getBoundingClientRect();
+  const bounds = column.getBoundingClientRect();
+  if (!container.width || bounds.width >= container.width * .8) return "up";
+  const center = (bounds.left + bounds.width / 2 - container.left) / container.width;
+  return center < .45 ? "left" : center > .55 ? "right" : "up";
+}
+
 /** Progressive enhancement: content stays visible if observation or motion is unavailable. */
 export function usePageMotion(route: string) {
   const previousRoute = useRef<string>();
@@ -13,6 +29,10 @@ export function usePageMotion(route: string) {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
     const animations = new Set<Animation>();
     const pending = new Set<Element>();
+    const tokens = getComputedStyle(document.documentElement);
+    const duration = parseFloat(tokens.getPropertyValue("--motion-reveal")) || 560;
+    const distance = parseFloat(tokens.getPropertyValue("--reveal-distance")) || 32;
+    const ease = tokens.getPropertyValue("--ease-out").trim() || "cubic-bezier(.16,1,.3,1)";
     const showPending = () => {
       pending.forEach((element) => element.removeAttribute("data-reveal-pending"));
       pending.clear();
@@ -37,27 +57,35 @@ export function usePageMotion(route: string) {
             pending.delete(element);
             if (revealed.current.has(element)) return;
             revealed.current.add(element);
+            // Filtering observes whole cards; initial browsing observes their contents.
+            // Remember a viewed card in both modes so typing never replays it.
+            const projectCard = element.closest(".project-card");
+            if (projectCard) revealed.current.add(projectCard);
             const isGallery = element.matches(".project-card, .home-service-card, .leaders article, .benefits-grid article, .awards-list article, .office-list article, .three-columns article");
             const isPhoto = element.matches("img, .film-viewer, .panorama, .project-cover, .detail-hero");
             const isText = !isPhoto;
+            const direction = isPhoto || filtering ? "up" : textDirection(element);
+            element.setAttribute("data-reveal-direction", direction);
             const parent = element.parentElement;
             const order = (isGallery || isText) && parent ? (groupCounts.get(parent) ?? 0) : 0;
             if ((isGallery || isText) && parent) groupCounts.set(parent, order + 1);
             const from = isPhoto
               ? { opacity: 0.35, transform: "scale(.985)" }
-              : { opacity: 0, transform: `translateY(${isGallery ? 22 : 28}px)` };
+              : { opacity: 0, transform: direction === "up"
+                ? `translateY(${filtering || isGallery ? 12 : 16}px)`
+                : `translateX(${direction === "left" ? -distance : distance}px)` };
             animations.forEach((active) => {
               if ((active.effect as KeyframeEffect)?.target === element) { active.cancel(); animations.delete(active); }
             });
             const animation = element.animate(
               [
                 from,
-                { opacity: 1, transform: "translateY(0)" },
+                { opacity: 1, transform: "none" },
               ],
               {
-                duration: filtering ? 320 : 1000,
-                delay: filtering ? 0 : Math.min(order, 3) * 90,
-                easing: filtering ? "cubic-bezier(.16,1,.3,1)" : "cubic-bezier(.4,0,.2,1)",
+                duration: filtering ? 280 : duration,
+                delay: filtering ? 0 : Math.min(order, 3) * 40,
+                easing: ease,
                 fill: "backwards",
               },
             );
@@ -65,7 +93,7 @@ export function usePageMotion(route: string) {
             animation.onfinish = () => animations.delete(animation);
           });
         };
-      observer = new IntersectionObserver(reveal, { threshold: 0, rootMargin: `0px 0px -${Math.round(window.innerHeight * .15)}px 0px` });
+      observer = new IntersectionObserver(reveal, { threshold: 0, rootMargin: `0px 0px -${Math.round(window.innerHeight * .08)}px 0px` });
       // The final footer lines cannot scroll farther into the page; reveal at the edge.
       footerObserver = new IntersectionObserver(reveal);
       const candidates = Array.from(document.querySelectorAll(
@@ -77,7 +105,7 @@ export function usePageMotion(route: string) {
       // Media, counters, live search feedback and opened disclosures retain their own motion.
       const eligible = candidates.filter((element) => {
         if (filtering) return true;
-        if (element.closest(".hero, .count-up, .film-screen, .filmstrip, .result-count, .reveal-panel, .portrait-reveal, [aria-live], [aria-hidden='true']")) return element.matches(".filmstrip");
+        if (element.closest(".hero, .count-up, .film-screen, .filmstrip, .profile-content, .result-count, .reveal-panel, .portrait-reveal, [aria-live], [aria-hidden='true']")) return element.matches(".filmstrip");
         const details = element.closest("details");
         if (details && !element.matches("summary")) return false;
         if (element.matches("a") && element.querySelector("h1, h2, h3, p, img")) return false;
@@ -91,7 +119,7 @@ export function usePageMotion(route: string) {
           ancestor = ancestor.parentElement;
         }
         if (revealed.current.has(element)) return;
-        if (element.getBoundingClientRect().top >= window.innerHeight * .85) {
+        if (element.getBoundingClientRect().top >= window.innerHeight * .92) {
           element.setAttribute("data-reveal-pending", "");
           pending.add(element);
         }
@@ -124,6 +152,14 @@ export function usePageMotion(route: string) {
       });
     };
     document.addEventListener("focusin", onFocus);
+    const onPrint = () => {
+      observer?.disconnect();
+      footerObserver?.disconnect();
+      animations.forEach((animation) => animation.cancel());
+      animations.clear();
+      showPending();
+    };
+    window.addEventListener("beforeprint", onPrint);
     start();
     preference.addEventListener("change", start);
     window.addEventListener("resize", start);
@@ -133,6 +169,7 @@ export function usePageMotion(route: string) {
       animations.forEach((animation) => animation.cancel());
       showPending();
       document.removeEventListener("focusin", onFocus);
+      window.removeEventListener("beforeprint", onPrint);
       preference.removeEventListener("change", start);
       window.removeEventListener("resize", start);
     };
