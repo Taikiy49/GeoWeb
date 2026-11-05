@@ -152,3 +152,17 @@ The main project catalogue includes all named newer Wix gallery projects; galler
 ## Production polish — October 4, 2026
 
 Contact field errors use the semantic `colors.error` → `--error` → invalid input border and inline error text mapping. Keep the original brand palette for every other surface. Error rows reserve a line of space, corrected fields clear their feedback, and invalid submission focuses the first field at the viewport center. The ready draft appears on a white panel with a yellow left rule; its action receives focus and the copy explicitly says the message has not been sent. Small About photo panels use a three-line excerpt and two preview list items at container widths up to 380px; at 300px the excerpt uses two lines. All source text stays in the linked full section. Excerpts never flex-shrink to fractional line heights. Mobile navigation contains its own scrolling; reduced motion removes photograph and portrait hover scaling as well as arrow movement.
+
+
+## November 5 website-notes refinement
+
+The supplied seven-page review overrides earlier presentation choices for the named surfaces. Runtime tokens, typography, original Geolabs art/media, source wording holds and project narratives remain authoritative.
+
+- Home presents Geotechnical engineering and Services during construction as the two main photographic groups; drilling and materials testing follow as supporting disciplines. Design and Construction Support prose is visible in context, rather than hidden in a separate dropdown. Home photo captions name the source project or actual testing/equipment subject; introduction paragraphs share the ink color.
+- The hero retains a compact 44px icon-only play/pause control with an accessible name and tooltip. Reducing visual prominence preserves the ability to pause autoplay.
+- Concrete-core photography is displayed upright using a dedicated CSS wrapper and 90-degree rotation, preserving the original asset. Motion skips the nested image so entrances cannot override its orientation.
+- About uses nine URL-selected full-content topics instead of repeating nine long sections. Desktop links and a labeled mobile native selector select a single photograph/caption and complete text; existing topic hashes and office destinations remain. The original quality statements and USFCR art/statement remain in compact rows. The Clients placeholder is removed.
+- Projects default to uniform photographic tiles with always-visible titles/locations over a small bottom readability scrim. Opaque white preview panels, summary blocks and spotlights are removed. Gallery/List, search, categories, return anchors and related project links remain.
+- Places over time adds selectable Ko Olina/Waikiki chronology. Source concept years and role remain visibly pending review; approved International Market Place story context is distinct. Missing concept photos are not guessed. A quiet link to Stories in development replaces the footer's draft link as the discovery path.
+- Leadership portraits retain visible faces at hover/focus; the full selected profile owns credentials. Awards retain 15 records with 12 verified photographs visible by default. Awards is also present in the main navigation. The footer no longer links Draft project stories.
+- Component styles live beside AboutPage, ProjectCatalogue, RegionalStories and AwardsPage. Global typography, palette, gutters, navigation and motion remain owned by src/index.css; component styles consume those tokens.

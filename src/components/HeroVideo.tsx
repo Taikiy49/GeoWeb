@@ -116,12 +116,13 @@ export function HeroVideo() {
           <button
             className="video-control"
             onClick={togglePlayback}
+            title={playing ? "Pause background video" : "Play background video"}
             aria-label={
               playing ? "Pause background video" : "Play background video"
             }
           >
             {playing ? <Pause size={16} /> : <Play size={16} />}
-            <span>{playing ? "Pause video" : "Play video"}</span>
+            <span className="sr-only">{playing ? "Pause video" : "Play video"}</span>
           </button>
         )}
       </div>

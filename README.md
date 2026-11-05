@@ -35,7 +35,7 @@ The website was rebuilt from AJ and Robin’s saved Wix New/Newer pages and proj
 | Page | What you’ll find |
 | --- | --- |
 | **[Home](https://test.geolabs.net/)** | Original drilling footage, seven featured project frames, company milestones, services, and careers. |
-| **[About](https://test.geolabs.net/about)** | Nine photographic company topics, capabilities, sectors, culture, and regional offices. |
+| **[About](https://test.geolabs.net/about)** | Nine selectable company topics with photographs, capabilities, sectors, culture, and regional offices. |
 | **[Services](https://test.geolabs.net/services)** | Geotechnical engineering, construction support, drilling, and materials testing with detailed capability pages. |
 | **[Projects](https://test.geolabs.net/projects)** | 44 catalogue entries, searchable by project and filterable by market, with Gallery/List views. |
 | **[Our people](https://test.geolabs.net/people)** | Four leadership profiles and a searchable, sortable 32-person team directory. |
@@ -56,7 +56,7 @@ The website was rebuilt from AJ and Robin’s saved Wix New/Newer pages and proj
 | Item | Current boundary |
 | --- | --- |
 | **Contact form** | Prepares an explicitly unsent email draft. Direct inbox delivery needs a sending integration. |
-| **Unfinished content** | 24 unfinished story routes overall, including the 14 catalogue entries. Clients and Payton’s detailed biography also remain under construction. |
+| **Unfinished content** | 24 unfinished story routes overall, including the 14 catalogue entries. Payton’s detailed biography also remains under construction. |
 | **Service wording** | Selected promises and unconfirmed offerings are qualified or withheld pending Robin’s review. Originals are preserved in the [wording archive](./docs/content-review-holds-2026-10-05.md). |
 | **Source conflicts** | Disputed dates and uncertain photo associations retain their documented treatment; source capture does not establish factual approval. |
 | **Launch** | Staging intentionally blocks search indexing. Primary-domain configuration, editorial approval, and launch checks remain separate. |
@@ -95,6 +95,7 @@ The source-content guard checks project narratives, service explanations and aut
 
 ## Guides and evidence
 
+- [November website-note changes](./docs/website-notes-2026-11-05.md) — note-by-note fixes and review boundaries.
 - [Development and maintenance](./docs/DEVELOPMENT.md) — commands, content ownership, directory refresh, and verification history.
 - [Deployment and rollback](./docs/DEPLOYMENT.md) — staging hosting and domain boundaries.
 - [Wix migration](./docs/MIGRATION.md) — source precedence and editorial decisions.

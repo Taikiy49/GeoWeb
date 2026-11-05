@@ -104,6 +104,7 @@ export function Shell() {
               ["/about", "About us"],
               ["/services", "Services"],
               ["/projects", "Projects"],
+              ["/awards", "Awards"],
               ["/people", "Our people"],
               ["/careers", "Careers"],
             ].map(([to, label]) => (
@@ -167,7 +168,6 @@ export function Shell() {
             >
               LinkedIn <ArrowUpRight size={13} />
             </a>
-            <Link to="/drafts">Draft project stories</Link>
             <a href={applyUrl}>
               Join our team <ArrowUpRight size={13} />
             </a>

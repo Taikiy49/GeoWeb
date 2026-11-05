@@ -29,10 +29,6 @@ export function LeadershipGallery() {
       >
         <div className="leadership-image">
           <img src={image(person.image)} alt={person.name} width="400" height="500" decoding="async" />
-          <div className="portrait-reveal" aria-hidden="true">
-            {person.experience && <p>{person.experience}</p>}
-            <span>View profile <ArrowRight size={20} /></span>
-          </div>
         </div>
         <div className="leadership-name"><h3>{person.name}</h3><p>{person.role}</p><ArrowUpRight size={20} aria-hidden="true" /></div>
       </Link>)}

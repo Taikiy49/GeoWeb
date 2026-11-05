@@ -1,5 +1,7 @@
 # Website development and maintenance
 
+**November 5 update:** The latest [website-note refinements](website-notes-2026-11-05.md) supersede the older About/gallery/disclosure/footer presentation descriptions below. Contact delivery, source content holds and staging boundaries remain.
+
 Geolabs' responsive engineering portfolio, rebuilt from the Wix **New/Newer** pages and dynamic project collections. Built with React 18, TypeScript, React Router 7, and Vite 7. The original Geolabs slate/yellow branding, anniversary artwork, project photography, and documentary footage are retained; Montserrat and DM Sans are self-hosted.
 
 **Live test site:** [test.geolabs.net](https://test.geolabs.net/). GitHub `main` deploys automatically through the existing Vercel integration. This is a staging site, not an approved cutover of geolabs.net or www.geolabs.net.

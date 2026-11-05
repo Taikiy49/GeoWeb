@@ -16,3 +16,11 @@ This public marketing website serves prospective clients and applicants. Source 
 - Entry reveals run once per route render; search updates reveal result cards only and honor live reduced-motion changes. No content depends on animation to become readable.
 
 - ContactInquiry owns required-field and email-format feedback. Blank or whitespace-only required fields cannot prepare a draft. Inline errors are associated with their fields, invalid submission focuses the first correction, and correction preserves all entered values. Valid preparation focuses the ready draft action; editing any field removes the stale draft. Preparing a draft never opens an email app or sends a message automatically. Direct delivery remains the integration gap documented in docs/PRODUCTION-READINESS.md.
+
+
+## November review interactions
+
+- About's selected topic is reflected by the existing hash, preserves full source text and captions, moves focus to the selected article, and works through browser history. Mobile uses a labeled native selector; desktop uses ordinary links.
+- Project catalogue cards preserve query/view/category state in contextual return links. Uniform tiles keep names visible on touch and keyboard without requiring hover.
+- Regional story selectors use named buttons and pressed state, preserve other URL search parameters, and distinguish draft chronology from completed source stories. All unfinished destinations retain notices/noindex.
+- Award photos require no disclosure action; leadership credentials remain available in full profiles without overlaying portrait faces. The hero video always exposes a usable named pause/play action.

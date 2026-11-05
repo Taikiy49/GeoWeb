@@ -86,7 +86,10 @@ for (const hold of review.heldSourceParagraphs) {
 assert.equal(review.heldSourceParagraphs.length, 16, 'New wording holds require an explicit owner review');
 const appCopy = fs.readFileSync(path.join(root, 'src/App.tsx'), 'utf8');
 const previewCopy = fs.readFileSync(path.join(root, 'src/data/aboutTopics.ts'), 'utf8');
-const marketingCopy = narrativeText([serviceCopy, appCopy, previewCopy].join(' ')).toLowerCase();
+const componentCopy = fs.readdirSync(path.join(root, 'src/components'))
+  .filter(name => name.endsWith('.tsx'))
+  .map(name => fs.readFileSync(path.join(root, 'src/components', name), 'utf8')).join(' ');
+const marketingCopy = narrativeText([serviceCopy, appCopy, previewCopy, componentCopy].join(' ')).toLowerCase();
 for (const phrase of [
   'ensure that it never happens again', 'guarantee safety',
   'prevent any type of slope from failing', 'best of everyones ability',

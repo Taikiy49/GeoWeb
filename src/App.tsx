@@ -7,19 +7,13 @@ import {
   Routes,
   useLocation,
   useParams,
-  useSearchParams,
 } from "react-router-dom";
 import {
   ArrowDown,
   ArrowRight,
   ArrowUpRight,
   Check,
-  LayoutGrid,
-  List,
   MapPin,
-  Plus,
-  Search,
-  X,
 } from "lucide-react";
 import { CountUp } from "./components/CountUp";
 import { Shell } from "./components/Shell";
@@ -30,7 +24,10 @@ import { VendorBadge } from "./components/VendorBadge";
 import { TeamDirectory } from "./components/TeamDirectory";
 import { ContactInquiry } from "./components/ContactInquiry";
 import { LeadershipGallery } from "./components/LeadershipGallery";
-import { aboutTopics } from "./data/aboutTopics";
+import { AboutPage } from "./components/AboutPage";
+import { AwardsPage } from "./components/AwardsPage";
+import { ProjectCatalogue } from "./components/ProjectCatalogue";
+import { RegionalStories } from "./components/RegionalStories";
 import { ContourAccent } from "./components/ContourAccent";
 import {
   applyUrl,
@@ -40,21 +37,17 @@ import {
   services,
   serviceDescriptionsUnderReview,
   projects,
-  awards,
   benefits,
   Project,
 } from "./data/site";
 import unfinishedStories from "./data/unfinished-projects.json";
 import imageSizes from "./data/image-sizes.json";
-import awardPhotos from "./data/award-photos.json";
 
-import { normalizeProjectSearch } from "./data/projectSearch";
 import { getProjectReturnTo } from "./data/projectNavigation";
 import { formatPhone, phoneHref } from "./data/phone";
 import { getLegacyDestination } from "./data/legacyRoutes";
 
 const photoDimensions: Record<string, number[]> = imageSizes;
-const awardMedia: Record<string, { image: string; credit: string }> = awardPhotos;
 const projectCatalogue: Project[] = [
   ...projects,
   ...unfinishedStories.filter((story) => story.gallery).map((story): Project => ({
@@ -133,18 +126,18 @@ function Photo({
   className?: string;
   eager?: boolean;
 }) {
-  return (
-    <img
-      className={className}
-      data-subject={name}
-      src={image(name)}
-      width={photoDimensions[name]?.[0]}
-      height={photoDimensions[name]?.[1]}
-      alt={alt}
-      loading={eager ? "eager" : "lazy"}
-      decoding="async"
-    />
-  );
+  const photo = <img
+    className={className}
+    data-subject={name}
+    src={image(name)}
+    width={photoDimensions[name]?.[0]}
+    height={photoDimensions[name]?.[1]}
+    alt={alt}
+    loading={eager ? "eager" : "lazy"}
+    decoding="async"
+  />;
+  // The supplied photograph is sideways. Present it upright without altering source pixels.
+  return name === "concrete-core" ? <span className="photo-upright">{photo}</span> : photo;
 }
 function Breadcrumb({ to, label, context }: { to: string; label: string; context: string }) {
   return (
@@ -195,9 +188,6 @@ function ProjectCard({ project, showSummary = false, spotlight = false }: {
     <Link id={cardId} className={`project-card${spotlight ? " project-spotlight" : ""}`} to={`/${project.draft ? "drafts" : "projects"}/${project.slug}`} state={projectReturnTo ? { projectReturnTo } : undefined} aria-label={`Explore ${project.title}${project.draft ? " — under construction" : ""}`}>
       <div className="project-image">
         <Photo name={project.image} alt={project.title} />
-        <div className="project-reveal reveal-panel" aria-hidden="true">
-          <p>{project.summary}</p><span>Explore project <ArrowUpRight size={19} /></span>
-        </div>
       </div>
       <div className="project-card-copy">
         <div className="project-meta">
@@ -268,40 +258,40 @@ function Home() {
             <ArrowLink to="/services">Explore all services</ArrowLink>
           </div>
           <div className="home-services">
-            {services.slice(0, 3).map((service) => (
-              <Link
-                className="home-service-card"
-                to={`/services/${service.slug}`}
-                key={service.slug}
-              >
-                <div className="service-card-photo">
-                  <Photo name={service.image} alt={service.imageAlt} />
-                </div>
+            {services.slice(0, 2).map((service) => (
+              <article className="home-service-card" key={service.slug}>
+                <figure>
+                  <Link className="service-card-photo" to={`/services/${service.slug}`} aria-label={`Explore ${service.title}`}>
+                    <Photo name={service.image} alt={service.imageAlt} />
+                  </Link>
+                  <figcaption>{service.caption}</figcaption>
+                </figure>
                 <div className="service-card-copy">
-                  <h3>{service.title}</h3>
+                  <h3><Link to={`/services/${service.slug}`}>{service.title}</Link></h3>
                   <p>{service.intro}</p>
-                  <span className="arrow-link">
-                    Explore service <ArrowUpRight size={19} />
-                  </span>
+                  <ServiceApproach slug={service.slug} />
+                  <ArrowLink to={`/services/${service.slug}`}>Explore service</ArrowLink>
                 </div>
-              </Link>
+              </article>
             ))}
           </div>
           <div className="secondary-services">
-            {services.slice(3).map((service) => (
-              <Link to={`/services/${service.slug}`} key={service.slug}>
-                <Photo name={service.image} alt={service.imageAlt} />
-                <div>
-                  <span className="eyebrow">SPECIALIST SERVICES</span>
-                  <h3>{service.title}</h3>
-                </div>
-                <ArrowUpRight size={23} />
-              </Link>
+            {services.slice(2).map((service) => (
+              <article key={service.slug}>
+                <figure>
+                  <Link className="secondary-service-photo" to={`/services/${service.slug}`} aria-label={`Explore ${service.title}`}>
+                    <Photo name={service.image} alt={service.imageAlt} />
+                  </Link>
+                  <figcaption>{service.caption}</figcaption>
+                </figure>
+                <h3><Link to={`/services/${service.slug}`}>{service.title}</Link></h3>
+                <p>{service.intro}</p>
+                <ArrowLink to={`/services/${service.slug}`}>Explore service</ArrowLink>
+              </article>
             ))}
           </div>
         </div>
       </section>
-      <DesignApproach />
       <section className="home-careers">
         <div className="careers-image">
           <Photo
@@ -349,213 +339,21 @@ function Home() {
   );
 }
 function About() {
-  return (
-    <>
-      <Meta title="About us" />
-      <PageIntro eyebrow="OUR COMPANY" title="About us">
-        <p>
-          Geolabs, Inc. is Hawaii’s largest and most experienced geotechnical
-          engineering firm, with over 50 years of proven expertise and a
-          reputation for technical excellence, resilience, and practical innovation.
-        </p>
-      </PageIntro>
-      <div className="content-band light-surface">
-      <nav className="container about-topic-grid" aria-label="Explore About Geolabs">
-        {aboutTopics.map((topic) => <figure key={topic.id}>
-          <Link className="about-topic-card" to={`/about#${topic.id}`} aria-label={`Read ${topic.title}`}>
-            <div className="about-topic-photo">
-              <Photo name={topic.image} alt={topic.caption} />
-              <div className="about-topic-reveal reveal-panel" aria-hidden="true">
-                <p>{topic.preview}</p>
-                {topic.items && <ul>{topic.items.slice(0, 3).map(item => <li key={item}>{item}</li>)}</ul>}
-                <span>Read section <ArrowDown size={18} /></span>
-              </div>
-            </div>
-            <div className="about-topic-title"><h2>{topic.title}</h2><ArrowUpRight size={21} aria-hidden="true" /></div>
-          </Link>
-          <figcaption>{topic.caption}</figcaption>
-        </figure>)}
-      </nav>
-      <section className="section container editorial-grid" id="our-legacy" tabIndex={-1}>
-        <aside>
-          <span className="eyebrow">ESTABLISHED 1975</span>
-          <h2>Our legacy</h2>
-          <figure className="about-source-photo"><Photo name="park-foundations" alt="The Park on Keaaumoku Twin Towers, Honolulu, Oahu (2025)" /><figcaption>The Park on Keaaumoku Twin Towers, Honolulu, Oahu (2025)</figcaption></figure>
-        </aside>
-        <div className="prose">
-          <p className="lead">
-            Founded in 1975, Geolabs has built a legacy of solving complex
-            geotechnical challenges with precision, grit, and a deep understanding
-            of the unique subsurface conditions in Hawaii and the Pacific Basin.
-          </p>
-          <p>
-            Our work has played a vital role in building Hawaii’s infrastructure
-            and continues to shape Honolulu’s skyline through the design of many
-            of its high-rise building foundations.
-          </p>
-          <h3 id="our-team" tabIndex={-1}>Our team</h3>
-          <p>
-            We are a team of more than 80 geotechnical professionals—including
-            licensed engineers, seasoned technical specialists, and dedicated
-            field personnel—working collaboratively to deliver technically sound,
-            constructible solutions tailored to the demands of Hawaii and the Pacific Basin.
-          </p>
-          <VendorBadge />
-        </div>
-      </section>
-      </div>
-      <section className="container about-quality" aria-labelledby="about-quality-heading">
-        <h2 id="about-quality-heading">We Strive for Quality & Excellence</h2>
-        <div className="about-source-highlights">
-          {[
-            ["park-foundations", "The Park on Keaaumoku Twin Towers, Honolulu, Oahu (2025)", "Leading provider of Geotechnical Engineering services in Hawaii", "park-on-keeaumoku"],
-            ["about-koa", "Koa Ridge, Oahu (2023)", "In-house staff of experienced Engineers and Geologists", "koa-ridge"],
-            ["alele-rockfall", "Rockfall Protection at Alelele Slope along Piilani Highway, Maui (2023)", "Branch offices in Maui and Oakland, California", "alele-rockfall"],
-          ].map(([photo, caption, text, slug]) => <article key={photo}>
-            <Link to={`/projects/${slug}`} aria-label={`Explore ${caption}`}><Photo name={photo} alt={caption} /><p>{text}<ArrowUpRight size={18} aria-hidden="true" /></p></Link>
-            <span className="quality-caption">{caption}</span>
-          </article>)}
-        </div>
-      </section>
-      <section className="section soft-section about-capabilities">
-        <div className="container">
-          <div className="section-heading">
-            <h2>What we do</h2>
-            <ArrowLink to="/services">Explore our capabilities</ArrowLink>
-          </div>
-          <div className="capability-columns">
-            <div id="what-we-do" tabIndex={-1}>
-              <h3>Geotechnical engineering</h3>
-              <p>Our services span a wide range of geotechnical areas:</p>
-              <ul className="capability-list">
-                {[
-                  "Foundation Investigation",
-                  "Landslide Stabilization",
-                  "Rockfall Mitigation",
-                  "Ground Improvement",
-                  "Geotechnical Earthquake Engineering",
-                ].map((item, index) => (
-                  <li key={item}><span aria-hidden="true">0{index + 1}</span>{item}</li>
-                ))}
-              </ul>
-              <p>Geotechnical Earthquake Engineering is a vital component in ensuring seismic resilience across the region.</p>
-            </div>
-            <div id="construction-support" tabIndex={-1}>
-              <h3>Construction support</h3>
-              <p>Beyond design-phase services, Geolabs provides geotechnical support during construction:</p>
-              <ul className="capability-list">
-                {["Field Observation", "Special Inspections", "Materials Testing", "Geotechnical Instrumentation"].map((item, index) => (
-                  <li key={item}><span aria-hidden="true">0{index + 1}</span>{item}</li>
-                ))}
-              </ul>
-              <p>
-                Our construction support helps the project team evaluate site
-                conditions and address geotechnical questions during construction.
-              </p>
-            </div>
-          </div>
-          <p className="about-capabilities-note">
-            Our consulting organization provides the knowledge, equipment, and
-            experienced personnel to successfully accomplish projects ranging
-            from geotechnical foundation investigations to roadway embankments,
-            dams, landslides, and rockfall mitigation.
-          </p>
-        </div>
-      </section>
-      <div className="light-surface">
-      <section className="section container about-sectors" id="who-we-serve" tabIndex={-1}>
-        <div className="editorial-grid">
-          <div><h2>Who we serve</h2><figure className="about-source-photo"><Photo name="yap-wharf" alt="Yap Wharf Improvements, Federated States of Micronesia (2023)" /><figcaption>Yap Wharf Improvements, Federated States of Micronesia (2023)</figcaption></figure></div>
-          <div className="prose">
-            <p>We support a diverse portfolio of public and private-sector clients, including the following:</p>
-            <ul className="client-types">
-              {["All branches of the Military", "Federal and State Agencies", "Local Municipalities", "Developers and Project Owners", "Architects and Engineers", "Design-Build Contractors"].map((item) => <li key={item}>{item}</li>)}
-            </ul>
-          </div>
-        </div>
-        <h3 className="sector-heading" id="key-sectors" tabIndex={-1}>Key sectors</h3>
-        <div className="three-columns sector-grid">
-          {[
-            ["Transportation", "Highways, Airports, and Harbor Facilities"],
-            ["Vertical construction", "High-rise Buildings, Parking Structures, Residential and Commercial Developments, and Industrial Complexes"],
-            ["Infrastructure development", "Wastewater Treatment Plants, Water Mains, Electrical Transmission Lines, and Advanced Telecommunication Networks—including Trenchless Installations."],
-          ].map(([title, text], index) => (
-            <article key={title}>
-              <span className="sector-index" aria-hidden="true">0{index + 1}</span>
-              <h3>{title}</h3><p>{text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-      </div>
-      <section className="section soft-section" id="where-we-work" tabIndex={-1}>
-        <div className="container editorial-grid">
-          <div><h2>Where we work</h2><figure className="about-source-photo"><Photo name="kuilei" alt="Kuilei Place High-Rise, Honolulu, Oahu (2025)" /><figcaption>Kuilei Place High-Rise, Honolulu, Oahu (2025)</figcaption></figure></div>
-          <div className="prose">
-            <p>
-              We maintain a strong regional presence and a vast archive of
-              geologic and soil data spanning over five decades. This depth of
-              knowledge enables us to deliver informed, site-specific recommendations
-              that support resilient, sustainable development.
-            </p>
-            <div className="about-office-links">
-              {offices.map((office) => (
-                <Link to={`/contact#${office.id}`} key={office.id}>
-                  <span>{office.name}<small>{office.city}</small></span><ArrowUpRight size={19} />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-      <div className="slate-surface">
-      <section className="section container people-feature" id="our-culture" tabIndex={-1}>
-        <Photo name="about-culture" alt="Malakal Port, Republic of Palau, (2024)" />
-        <div>
-          <div className="eyebrow">EMPLOYEE-OWNED SINCE 1991</div>
-          <h2>Our culture</h2>
-          <p>
-            Since becoming an employee-owned company in 1991, we have fostered
-            a culture of accountability, collaboration, and long-term partnership.
-            Our work has earned engineering awards for innovation and excellence
-            across numerous projects.
-          </p>
-          <h3 id="our-commitment" tabIndex={-1}>Our commitment</h3>
-          <p>
-            At Geolabs, we don’t just engineer solutions—we build trust,
-            resilience, and a foundation for Hawaii’s future.
-          </p>
-          <ArrowLink to="/people">Meet our people</ArrowLink>
-        </div>
-      </section>
-      </div>
-      <section className="container clients-status" id="clients" aria-labelledby="clients-heading">
-        <h2 id="clients-heading">Clients</h2><span>Under construction</span>
-      </section>
-    </>
-  );
+  return <><Meta title="About us" /><AboutPage /></>;
 }
-function DesignApproach() {
-  return (
-      <section className="section soft-section">
-        <div className="container service-approach">
-          <details>
-            <summary>Design <Plus size={20} aria-hidden="true" /></summary>
-            <div>
-              <p>At Geolabs, Inc., we are committed to delivering efficient, high-quality geotechnical recommendations that meet our clients’ needs and contribute to the long-term resilience of our communities. With over 50 years of experience, we have had the privilege of working on many of Hawaii’s most high-profile projects.</p>
-              <p>While we are confident in our expertise, we remain humble in our approach—always striving to innovate, improve, and earn the trust of those we serve, project by project, year after year. Our dedication to forward-thinking solutions and collaborative partnerships continues to shape the future of geotechnical engineering in Hawaii and beyond.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Construction support <Plus size={20} aria-hidden="true" /></summary>
-            <div>
-              <p>Geolabs provides geotechnical support during construction, including field observation, special inspections, materials testing, and geotechnical instrumentation.</p>
-              <p>The scope of observation, inspection, testing, and monitoring is defined for each project. Contact us to discuss your project requirements.</p>
-            </div>
-          </details>
-        </div>
-      </section>
-  );
+function ServiceApproach({ slug, level = 4 }: { slug: string; level?: 3 | 4 }) {
+  const Heading = level === 3 ? "h3" : "h4";
+  if (slug === "geotechnical-engineering") return <div className="service-approach-copy">
+    <Heading>Our approach to design</Heading>
+    <p>At Geolabs, Inc., we are committed to delivering efficient, high-quality geotechnical recommendations that meet our clients’ needs and contribute to the long-term resilience of our communities. With over 50 years of experience, we have had the privilege of working on many of Hawaii’s most high-profile projects.</p>
+    <p>While we are confident in our expertise, we remain humble in our approach—always striving to innovate, improve, and earn the trust of those we serve, project by project, year after year. Our dedication to forward-thinking solutions and collaborative partnerships continues to shape the future of geotechnical engineering in Hawaii and beyond.</p>
+  </div>;
+  if (slug === "construction-support") return <div className="service-approach-copy">
+    <Heading>Support during construction</Heading>
+    <p>Geolabs provides geotechnical support during construction, including field observation, special inspections, materials testing, and geotechnical instrumentation.</p>
+    <p>The scope of observation, inspection, testing, and monitoring is defined for each project. Contact us to discuss your project requirements.</p>
+  </div>;
+  return null;
 }
 function Services() {
   return (
@@ -570,7 +368,7 @@ function Services() {
       <nav className="container service-navigation" aria-label="Services on this page">
         {services.map(s => <a href={`#service-${s.slug}`} key={s.slug}>{s.title}<ArrowDown size={17} aria-hidden="true" /></a>)}
       </nav>
-      <div className="container services-source-heading"><h2>Geotechnical engineering<br />& construction support</h2></div>
+      <div className="container services-source-heading"><h2>Geotechnical engineering<br />& services during construction</h2></div>
       <div className="container service-source-panorama">
         <figure><Photo name="service-pali" alt="Pali Highway Emergency Slope Stabilization, Oahu (2019)" /><figcaption>Pali Highway Emergency Slope Stabilization, Oahu (2019)</figcaption></figure>
         <figure><Photo name="hoopili-parcel49" alt="Hoopili Development Phase 11 Parcel 49, Oahu (2024)" /><figcaption>Hoopili Development Phase 11 Parcel 49, Oahu (2024)</figcaption></figure>
@@ -594,6 +392,7 @@ function Services() {
               <h2 id={`service-${s.slug}-heading`}>{s.title}</h2>
               <p>{s.intro}</p>
               {s.overview?.map(text => <p key={text}>{text}</p>)}
+              <ServiceApproach slug={s.slug} level={3} />
               <Link className="arrow-link" to={`/services/${s.slug}`}>
                 Explore service <ArrowUpRight size={20} />
               </Link>
@@ -602,7 +401,6 @@ function Services() {
         ))}
       </div>
       </div>
-      <DesignApproach />
     </>
   );
 }
@@ -685,128 +483,16 @@ function ServiceDetail() {
   );
 }
 function Projects() {
-  const [params, setParams] = useSearchParams();
-  const query = params.get("q") || "";
-  const market = params.get("market") || "All projects";
-  const listView = params.get("view") === "list";
-  const showSpotlights = !listView && !query && market === "All projects";
-  const markets = ["All projects", ...new Set(projectCatalogue.map((p) => p.market))];
-  const normalizedQuery = normalizeProjectSearch(query);
-  const found = projectCatalogue.filter(
-    (p) =>
-      (market === "All projects" || p.market === market) &&
-      normalizeProjectSearch(`${p.title} ${p.location} ${p.summary}`)
-        .includes(normalizedQuery),
-  );
-  const update = (key: string, value: string) => {
-    const next = new URLSearchParams(params);
-    if (value && value !== "All projects") next.set(key, value);
-    else next.delete(key);
-    setParams(next, { replace: true });
-  };
-  return (
-    <>
-      <Meta title="Our projects" />
-      <PageIntro eyebrow="OUR EXPERIENCE" title="Our projects" connected>
-        <p>
-          One of our biggest strengths at Geolabs, Inc. is the experience we have. Explore our projects and engineering awards.
-        </p>
-      </PageIntro>
-      <div className="content-band light-surface">
-      <section className="container portfolio">
-        <div className="portfolio-toolbar">
-          <div className="mobile-market-filter">
-            <label htmlFor="project-category">Project category</label>
-            <select id="project-category" value={market} onChange={(event) => update("market", event.target.value)}>
-              {markets.map((category) => <option key={category} value={category}>{category}</option>)}
-            </select>
-          </div>
-          <div className="filter-tabs" role="group" aria-label="Filter projects by market">
-            {markets.map((m) => (
-              <button
-                key={m}
-                className={market === m ? "selected" : ""}
-                aria-pressed={market === m}
-                onClick={() => update("market", m)}
-              >
-                {m}
-              </button>
-            ))}
-          </div>
-          <div className="search-field">
-            <Search size={18} />
-            <input
-              type="search"
-              name="project-search"
-              autoComplete="off"
-              aria-label="Search projects"
-              placeholder="Find a project"
-              value={query}
-              onChange={(e) => update("q", e.target.value)}
-            />
-            {query && (
-              <button
-                aria-label="Clear project search"
-                onClick={() => {
-                  update("q", "");
-                  document
-                    .querySelector<HTMLInputElement>(".search-field input")
-                    ?.focus();
-                }}
-              >
-                <X size={17} />
-              </button>
-            )}
-          </div>
-        </div>
-        <div className="portfolio-results-bar">
-          <p className="result-count" aria-live="polite">
-            {found.length} {found.length === 1 ? "project" : "projects"}
-          </p>
-          <div className="portfolio-view" role="group" aria-label="Project display">
-            <button aria-pressed={!listView} onClick={() => update("view", "")}>
-              <LayoutGrid size={17} aria-hidden="true" /> Gallery
-            </button>
-            <button aria-pressed={listView} onClick={() => update("view", "list")}>
-              <List size={19} aria-hidden="true" /> List
-            </button>
-          </div>
-        </div>
-        <div className={`project-grid portfolio-grid${listView ? " is-list" : ""}`}>
-          {found.map((p, index) => (
-            <ProjectCard key={p.slug} project={p} showSummary spotlight={showSpotlights && !p.draft && index % 10 === 0} />
-          ))}
-        </div>
-        {!found.length && (
-          <div className="empty-state">
-            <h2>No matching projects</h2>
-            <p>Try another name, island, or market.</p>
-            <button
-              className="button button-navy"
-              onClick={() => {
-                setParams(listView ? { view: "list" } : {});
-                document.querySelector<HTMLInputElement>(".search-field input")?.focus();
-              }}
-            >
-              Clear filters
-            </button>
-          </div>
-        )}
-        <div className="draft-callout">
-          <div>
-            <span className="draft-tag">IN DEVELOPMENT</span>
-            <h3>Draft project stories</h3>
-            <p>
-              Explore our resort concepts and project drafts, clearly marked for
-              review.
-            </p>
-          </div>
-          <ArrowLink to="/drafts">View draft stories</ArrowLink>
-        </div>
-      </section>
-      </div>
-    </>
-  );
+  return <>
+    <Meta title="Our projects" />
+    <PageIntro eyebrow="OUR EXPERIENCE" title="Our projects" connected>
+      <p>One of our biggest strengths at Geolabs, Inc. is the experience we have. Explore our projects and engineering awards.</p>
+    </PageIntro>
+    <div className="content-band light-surface">
+      <ProjectCatalogue projects={projectCatalogue} />
+      <RegionalStories />
+    </div>
+  </>;
 }
 function ProjectDetail() {
   const { slug } = useParams();
@@ -939,44 +625,7 @@ function Awards() {
           that we received for outstanding and innovative design accomplishments.
         </p>
       </PageIntro>
-      <div className="content-band light-surface">
-      <div className="container awards-layout">
-        <div className="awards-photo">
-          <Photo
-            eager
-            name="awards"
-            alt="Geolabs colleagues at an engineering awards ceremony"
-          />
-        </div>
-        <section className="awards-list">
-          {awards.map(([year, project, award, body, location], index) => (
-            <article key={project}>
-              <span className="award-year">
-                {year.includes(" / ")
-                  ? year.split(" / ").map((part, index) => <span key={part}>{index > 0 && <small>/ </small>}{part}</span>)
-                  : year}
-              </span>
-              <div>
-                <h2>{project}</h2>
-                <p className="image-credit">{location}</p>
-                <p>{award}</p>
-                <span>{body}</span>
-                {awardMedia[index] && <details className="award-photo-disclosure">
-                  <summary>Project photo <Plus size={17} aria-hidden="true" /></summary>
-                  <figure>
-                    <Photo name={awardMedia[index].image} alt={project} />
-                    {awardMedia[index].credit && <figcaption>{awardMedia[index].credit}</figcaption>}
-                  </figure>
-                </details>}
-              </div>
-              <span className="award-mark" aria-hidden="true">
-                ✳
-              </span>
-            </article>
-          ))}
-        </section>
-      </div>
-      </div>
+      <AwardsPage />
     </>
   );
 }
@@ -1216,6 +865,7 @@ function DraftDetail() {
           <span className="draft-tag">WORK IN PROGRESS</span>
           <p>The project description is awaiting review.</p>
         </div>
+        {d.slug === "resort-concepts" && <RegionalStories />}
         {d.image && <>
           <Photo eager name={d.image} alt={d.title} />
           {d.credit && <p className="image-credit">{d.credit}</p>}

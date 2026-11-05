@@ -61,9 +61,9 @@ export function usePageMotion(route: string) {
             revealed.current.add(element);
             // Filtering observes whole cards; initial browsing observes their contents.
             // Remember a viewed card in both modes so typing never replays it.
-            const projectCard = element.closest(".project-card");
+            const projectCard = element.closest(".project-card, .catalogue-tile");
             if (projectCard) revealed.current.add(projectCard);
-            const isGallery = element.matches(".project-card, .home-service-card, .leaders article, .benefits-grid article, .awards-list article, .office-list article, .three-columns article");
+            const isGallery = element.matches(".project-card, .catalogue-tile, .home-service-card, .leaders article, .benefits-grid article, .awards-list article, .office-list article, .three-columns article");
             const isPhoto = element.matches("img, .film-viewer, .panorama, .project-cover, .detail-hero");
             const isText = !isPhoto;
             const direction = isPhoto || filtering ? "up" : textDirection(element);
@@ -100,7 +100,7 @@ export function usePageMotion(route: string) {
       footerObserver = new IntersectionObserver(reveal);
       const candidates = Array.from(document.querySelectorAll(
         filtering
-          ? "main .project-card"
+          ? "main .project-card, main .catalogue-tile"
           : "main h1, main h2, main h3, main h4, main p, main li, main span, main strong, main address, main summary, main a, main figcaption, main dt, main dd, main .eyebrow, main img, main .portfolio-toolbar, main .directory-table tbody tr, main .filmstrip, .site-footer h2, .site-footer p, .site-footer a, .footer-facts span, .footer-legal span",
       ));
       // Text owns its entrance independently of tall photo/card containers.
@@ -108,6 +108,7 @@ export function usePageMotion(route: string) {
       const eligible = candidates.filter((element) => {
         if (filtering) return true;
         if (element.closest(".hero, .count-up, .film-screen, .filmstrip, .profile-content, .result-count, .reveal-panel, .portrait-reveal, [aria-live], [aria-hidden='true']")) return element.matches(".filmstrip");
+        if (element.closest(".photo-upright")) return false;
         const details = element.closest("details");
         if (details && !element.matches("summary")) return false;
         if (element.matches("a") && element.querySelector("h1, h2, h3, p, img")) return false;

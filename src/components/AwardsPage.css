@@ -1,0 +1,17 @@
+.award-project-photo {
+  max-width: 380px;
+  margin-top: 20px;
+}
+
+.award-project-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.award-project-photo figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
