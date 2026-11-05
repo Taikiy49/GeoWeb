@@ -103,11 +103,11 @@ export function HeroVideo() {
         </h1>
         <p>Hawaiʻi · Pacific Basin · California</p>
         <div className="hero-actions">
-          <Link className="button button-yellow" to="/services">
-            Explore our services <ArrowUpRight size={19} />
+          <Link className="button button-yellow" to="/#our-roots">
+            Follow our story <ArrowUpRight size={19} />
           </Link>
-          <Link className="button button-outline" to="/contact">
-            Contact us <ArrowUpRight size={19} />
+          <Link className="button button-outline" to="/projects">
+            Explore our projects <ArrowUpRight size={19} />
           </Link>
         </div>
       </div>

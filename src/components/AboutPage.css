@@ -76,3 +76,9 @@
   .about-explorer-navigation { display: none; }
   .about-explorer { display: block; }
 }
+
+.about-story-next { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); }
+.about-story-next a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; font-size: 14px; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: var(--line); }
+.about-story-next a:last-child { margin-left: auto; }
+.about-story-next a:is(:hover, :focus-visible) { text-decoration-color: var(--focus); }
+@media (max-width: 700px) { .about-story-next { display: grid; } .about-story-next a:last-child { margin-left: 0; } }

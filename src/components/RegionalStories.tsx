@@ -31,17 +31,17 @@ function StoryPhoto({ name, alt }: { name: string; alt: string }) {
 }
 
 /** Regional narratives keep source concepts visibly distinct from completed stories. */
-export function RegionalStories() {
+export function RegionalStories({ compact = false }: { compact?: boolean }) {
   const [params, setParams] = useSearchParams();
   const location = useLocation();
-  const waikiki = params.get("region") === "waikiki";
+  const waikiki = params.get("region") !== "ko-olina";
   const projectReturnTo = location.pathname === "/projects"
     ? `${location.pathname}${location.search}#project-regional-stories`
     : undefined;
   const storyState = projectReturnTo ? { projectReturnTo } : undefined;
   const selectRegion = (region: string) => {
     const next = new URLSearchParams(params);
-    if (region === "waikiki") next.set("region", region);
+    if (region === "ko-olina") next.set("region", region);
     else next.delete("region");
     setParams(next, { replace: true });
   };
@@ -86,9 +86,9 @@ export function RegionalStories() {
           <div className="regional-waikiki">
             <div className="regional-story-intro">
               <h3>Waikīkī</h3>
-              <p>International Market Place: an earlier chapter and its 2016 transformation.</p>
+              <p>{compact ? "Explore the proposed milestones for this place." : "International Market Place: an earlier chapter and its 2016 transformation."}</p>
             </div>
-            <div className="waikiki-chapters">
+            {!compact && <div className="waikiki-chapters">
               <ol className="waikiki-history">
                 <li>
                   <span className="regional-year">1960s–1970s</span>
@@ -106,7 +106,7 @@ export function RegionalStories() {
                 <StoryPhoto name="marketplace" alt="The reimagined International Market Place in Waikīkī" />
                 <figcaption>International Market Place · Photo: International Market Place</figcaption>
               </figure>
-            </div>
+            </div>}
             <div className="waikiki-concept">
               <h4>Proposed Waikīkī chronology</h4>
               <p id="waikiki-concept-note"><span className="regional-status">Draft chronology</span> Years reproduce the Wix concept. Dates, photographs and Geolabs’ role are awaiting review.</p>

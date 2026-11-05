@@ -1,0 +1,15 @@
+.story-path { display: flex; flex-wrap: wrap; gap: 4px 30px; align-items: center; padding-block: 20px; border-bottom: 1px solid var(--line); }
+.story-path > span { margin-right: auto; font-size: 14px; font-weight: 600; }
+.story-path a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; color: var(--muted); text-decoration: underline; text-underline-offset: 7px; text-decoration-color: transparent; }
+.story-path a:is(:hover, :focus-visible) { color: var(--ink); text-decoration-color: var(--focus); }
+.story-coda { display: flex; align-items: center; justify-content: space-between; gap: 48px; padding-block: 48px 64px; border-top: 1px solid var(--line); }
+.story-coda h2 { max-width: 23ch; font-size: clamp(28px, 3vw, 42px); }
+.story-coda p { margin-top: 18px; }
+.story-coda .arrow-link { flex-shrink: 0; }
+@media (max-width: 700px) {
+  .story-path { column-gap: 22px; padding-block: 16px; }
+  .story-path > span { width: 100%; }
+  .story-path a { font-size: 13px; }
+  .story-coda { display: block; padding-block: 36px 48px; }
+  .story-coda .arrow-link { margin-top: 24px; }
+}

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import {
   BrowserRouter,
   Link,
@@ -28,6 +28,10 @@ import { AboutPage } from "./components/AboutPage";
 import { AwardsPage } from "./components/AwardsPage";
 import { ProjectCatalogue } from "./components/ProjectCatalogue";
 import { RegionalStories } from "./components/RegionalStories";
+import { PlaceStory } from "./components/PlaceStory";
+import { WorkJourney } from "./components/WorkJourney";
+import { StoryPath, StoryCoda } from "./components/StoryPath";
+import { StoryNavigation, StoryContinuation } from "./components/ProjectStoryGuide";
 import { ContourAccent } from "./components/ContourAccent";
 import {
   applyUrl,
@@ -44,6 +48,7 @@ import unfinishedStories from "./data/unfinished-projects.json";
 import imageSizes from "./data/image-sizes.json";
 
 import { getProjectReturnTo } from "./data/projectNavigation";
+import { storySections } from "./data/storySections";
 import { formatPhone, phoneHref } from "./data/phone";
 import { getLegacyDestination } from "./data/legacyRoutes";
 
@@ -155,7 +160,7 @@ function PageIntro({
   connected = false,
   breadcrumb,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   children?: React.ReactNode;
   connected?: boolean;
@@ -166,7 +171,7 @@ function PageIntro({
       <ContourAccent />
       {breadcrumb}
       <div className="page-intro container">
-        <div className="eyebrow">{eyebrow}</div>
+        {eyebrow && <div className="eyebrow">{eyebrow}</div>}
         <h1>{title}</h1>
         {children && <div className="intro-description">{children}</div>}
       </div>
@@ -209,27 +214,11 @@ function Home() {
     <>
       <Meta title="Geotechnical engineering & drilling services" />
       <HeroVideo />
-      <FeaturedFilm />
-      <div className="stats container">
-        {[
-          ["1975", "Year established"],
-          ["1991", "Employee-owned since"],
-          ["80+", "Geotechnical professionals"],
-          ["16", "Awards won"],
-        ].map(([value, label]) => (
-          <div key={label}>
-            <CountUp value={value} />
-            <span>{label}</span>
-          </div>
-        ))}
-      </div>
+      <StoryPath />
       <section id="introduction" className="section container company-intro">
-        <div>
-          <span className="eyebrow">ABOUT GEOLABS</span>
-          <h2>
-            We strive for quality
-            <br /> & excellence.
-          </h2>
+        <div id="our-roots" tabIndex={-1}>
+          <h2>Rooted in Hawaiʻi since 1975.</h2>
+          <p className="home-origin-note">Employee-owned since 1991.</p>
           <ArrowLink to="/about">About our company</ArrowLink>
         </div>
         <div>
@@ -248,51 +237,23 @@ function Home() {
           <VendorBadge />
         </div>
       </section>
-      <section className="section soft-section">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">OUR EXPERTISE</span>
-              <h2>Our services</h2>
-            </div>
-            <ArrowLink to="/services">Explore all services</ArrowLink>
+      <div className="stats container">
+        {[
+          ["1975", "Year established"],
+          ["1991", "Employee-owned since"],
+          ["80+", "Geotechnical professionals"],
+          ["16", "Awards won"],
+        ].map(([value, label]) => (
+          <div key={label}>
+            <CountUp value={value} />
+            <span>{label}</span>
           </div>
-          <div className="home-services">
-            {services.slice(0, 2).map((service) => (
-              <article className="home-service-card" key={service.slug}>
-                <figure>
-                  <Link className="service-card-photo" to={`/services/${service.slug}`} aria-label={`Explore ${service.title}`}>
-                    <Photo name={service.image} alt={service.imageAlt} />
-                  </Link>
-                  <figcaption>{service.caption}</figcaption>
-                </figure>
-                <div className="service-card-copy">
-                  <h3><Link to={`/services/${service.slug}`}>{service.title}</Link></h3>
-                  <p>{service.intro}</p>
-                  <ServiceApproach slug={service.slug} />
-                  <ArrowLink to={`/services/${service.slug}`}>Explore service</ArrowLink>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="secondary-services">
-            {services.slice(2).map((service) => (
-              <article key={service.slug}>
-                <figure>
-                  <Link className="secondary-service-photo" to={`/services/${service.slug}`} aria-label={`Explore ${service.title}`}>
-                    <Photo name={service.image} alt={service.imageAlt} />
-                  </Link>
-                  <figcaption>{service.caption}</figcaption>
-                </figure>
-                <h3><Link to={`/services/${service.slug}`}>{service.title}</Link></h3>
-                <p>{service.intro}</p>
-                <ArrowLink to={`/services/${service.slug}`}>Explore service</ArrowLink>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="home-careers">
+        ))}
+      </div>
+      <PlaceStory compact id="home-place-story" />
+      <FeaturedFilm />
+      <WorkJourney />
+      <section className="home-careers" id="the-people" tabIndex={-1}>
         <div className="careers-image">
           <Photo
             name="field"
@@ -301,8 +262,7 @@ function Home() {
           <span className="photo-label">THE GEOLABS TEAM</span>
         </div>
         <div className="careers-copy">
-          <span className="eyebrow">EMPLOYMENT</span>
-          <h2>Join the team.</h2>
+          <h2>The people behind the work.</h2>
           <p>
             We are a team of more than 80 geotechnical professionals—including
             licensed engineers, seasoned technical specialists, and dedicated
@@ -310,9 +270,8 @@ function Home() {
             sound, constructible solutions tailored to the demands of Hawaii and the Pacific Basin.
           </p>
           <div className="careers-actions">
-            <a className="button button-yellow" href={careersUrl}>
-              View career opportunities <ArrowUpRight size={19} />
-            </a>
+            <Link className="button button-yellow" to="/people">Meet our people <ArrowUpRight size={19} aria-hidden="true" /></Link>
+            <a className="arrow-link light" href={careersUrl}>View career opportunities <ArrowUpRight size={19} aria-hidden="true" /></a>
             <Link className="arrow-link light" to="/careers">
               Benefits & employee ownership <ArrowUpRight size={19} />
             </Link>
@@ -335,6 +294,7 @@ function Home() {
           alt="Geolabs colleagues at an engineering awards ceremony"
         />
       </section>
+      <StoryCoda />
     </>
   );
 }
@@ -485,12 +445,14 @@ function ServiceDetail() {
 function Projects() {
   return <>
     <Meta title="Our projects" />
-    <PageIntro eyebrow="OUR EXPERIENCE" title="Our projects" connected>
-      <p>One of our biggest strengths at Geolabs, Inc. is the experience we have. Explore our projects and engineering awards.</p>
+    <PageIntro title="Our projects" connected>
+      <p>Start with a place, discover the work beneath it, then follow the stories across Hawaiʻi and the Pacific.</p>
+      <div className="project-story-entry"><a className="arrow-link" href="#project-place-story">Follow a place’s story <ArrowDown size={17} aria-hidden="true" /></a><a className="arrow-link" href="#project-catalogue">Browse all projects <ArrowDown size={17} aria-hidden="true" /></a></div>
     </PageIntro>
     <div className="content-band light-surface">
-      <ProjectCatalogue projects={projectCatalogue} />
-      <RegionalStories />
+      <PlaceStory id="project-place-story" />
+      <RegionalStories compact />
+      <div id="project-catalogue" tabIndex={-1}><ProjectCatalogue projects={projectCatalogue} /></div>
     </div>
   </>;
 }
@@ -506,11 +468,12 @@ function ProjectDetail() {
       <div className="page-masthead">
         <ContourAccent />
         <Breadcrumb to={projectReturnTo || "/projects"} label="Projects" context={p.market} />
-        <div className="container project-title">
+        <div className="container project-title" id="project-context" tabIndex={-1}>
           <span className="eyebrow">{p.location}</span>
           <h1>{p.title}</h1>
           {p.slug === "honolulu-rail" && <span className="project-era">Conceptual & preliminary engineering · Initial plans: 2008</span>}
           <p>{p.summary}</p>
+          <StoryNavigation project={p} />
         </div>
       </div>
       <div className="content-band photo-band light-surface">
@@ -537,16 +500,17 @@ function ProjectDetail() {
             </div>
           ))}
         </aside>
-        <article className="prose">
-          <span className="eyebrow">PROJECT STORY</span>
-          <h2>Project overview</h2>
-          {p.body.map((t) => (
-            <p key={t}>{t}</p>
-          ))}
+        <article className="prose" id="engineering-story" tabIndex={-1}>
+          <h2>The project story</h2>
+          {p.body.map((t, index) => <Fragment key={t}>
+            {storySections[p.slug]?.[index] && <h3 className="story-section-heading">{storySections[p.slug][index]}</h3>}
+            <p>{t}</p>
+          </Fragment>)}
           <ArrowLink to="/contact">Talk about a similar project</ArrowLink>
         </article>
       </section>
       </div>
+      <StoryContinuation project={p} related={projects} />
       <section className="container related">
         <div className="section-heading">
           <h2>Related projects</h2>
@@ -607,6 +571,7 @@ function People() {
               sound, constructible solutions tailored to the demands of Hawaii
               and the Pacific Basin.
             </p>
+            <ArrowLink to="/projects#project-place-story">Follow the team’s work</ArrowLink>
             <ArrowLink to="/careers">Find your place at Geolabs</ArrowLink>
           </div>
         </div>

@@ -26,6 +26,8 @@
 
 GeoWeb brings Geolabs’ company information, engineering portfolio, team, and career opportunities into one responsive website. It preserves the original Geolabs branding, project photography, and videos while making the content easier to explore on desktop and mobile.
 
+Home connects the company’s roots, the International Market Place redevelopment, the work and the people before inviting a project conversation. Projects begins with that place-based story, keeps proposed regional chronology visibly in review, and offers the complete catalogue alongside connected project reading paths.
+
 The website was rebuilt from AJ and Robin’s saved Wix New/Newer pages and project collections. This repository contains the independent React implementation and its captured source evidence. It does not automatically synchronize with Wix.
 
 > **Currently in staging:** [test.geolabs.net](https://test.geolabs.net/) is the review deployment. A primary-domain launch is a separate approval and deployment step. Pushing this repository does not publish changes to Wix.
@@ -34,10 +36,10 @@ The website was rebuilt from AJ and Robin’s saved Wix New/Newer pages and proj
 
 | Page | What you’ll find |
 | --- | --- |
-| **[Home](https://test.geolabs.net/)** | Original drilling footage, seven featured project frames, company milestones, services, and careers. |
+| **[Home](https://test.geolabs.net/)** | Original drilling footage, a guided roots/place/work/people story, seven featured project frames, recognition, and a project invitation. |
 | **[About](https://test.geolabs.net/about)** | Nine selectable company topics with photographs, capabilities, sectors, culture, and regional offices. |
 | **[Services](https://test.geolabs.net/services)** | Geotechnical engineering, construction support, drilling, and materials testing with detailed capability pages. |
-| **[Projects](https://test.geolabs.net/projects)** | 44 catalogue entries, searchable by project and filterable by market, with Gallery/List views. |
+| **[Projects](https://test.geolabs.net/projects)** | A source-based place story, clearly marked regional concepts, and 44 searchable/filterable catalogue entries with Gallery/List views. |
 | **[Our people](https://test.geolabs.net/people)** | Four leadership profiles and a searchable, sortable 32-person team directory. |
 | **[Awards](https://test.geolabs.net/awards)** | Engineering recognition, project imagery, and original photo credits. |
 | **[Contact](https://test.geolabs.net/contact)** | Four offices, individual maps and directions, phone/email links, and an email-draft inquiry form. |
@@ -48,6 +50,7 @@ The website was rebuilt from AJ and Robin’s saved Wix New/Newer pages and proj
 - **Authentic media:** original anniversary artwork, Geolabs emblem, Wix project photographs, drilling footage, and the HDOT walkway film. Supplied credits are retained.
 - **Complete project narratives:** 30 completed stories retain 102 captured source paragraphs. The catalogue also includes 14 clearly marked unfinished entries.
 - **Useful browsing:** URL-backed project filters and display preferences, contextual return links, leadership selection, and directory search/sorting.
+- **Connected reading:** Home story anchors, project context/story/continuation links, and company-topic previous/next links preserve direct access to the full source material.
 - **Responsive interactions:** keyboard navigation, visible focus, reduced-motion support, mobile layouts, and restrained scroll animation.
 - **Traceable content:** source captures, asset manifests, compatibility mappings, and review records remain in the repository.
 
@@ -95,6 +98,7 @@ The source-content guard checks project narratives, service explanations and aut
 
 ## Guides and evidence
 
+- [November storytelling extension](./docs/storytelling-2026-11-05.md) — narrative paths, preserved source content, and verification.
 - [November website-note changes](./docs/website-notes-2026-11-05.md) — note-by-note fixes and review boundaries.
 - [Development and maintenance](./docs/DEVELOPMENT.md) — commands, content ownership, directory refresh, and verification history.
 - [Deployment and rollback](./docs/DEPLOYMENT.md) — staging hosting and domain boundaries.

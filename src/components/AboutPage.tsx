@@ -89,6 +89,9 @@ export function AboutPage() {
   const { hash } = useLocation();
   const navigate = useNavigate();
   const selected = aboutTopics.find(topic => topic.id === hash.slice(1)) ?? aboutTopics[0];
+  const chapter = aboutTopics.indexOf(selected);
+  const previous = aboutTopics[chapter - 1];
+  const next = aboutTopics[chapter + 1];
 
   return <div className="about-page">
     <div className="page-masthead about-masthead">
@@ -128,6 +131,10 @@ export function AboutPage() {
           <AboutPhoto name={selected.image} caption={selected.id === "our-culture" ? "Malakal Port, Republic of Palau (2024)" : selected.caption} />
           <div className="about-explorer-copy">{topicContent[selected.id]}</div>
         </div>
+        <nav className="about-story-next" aria-label="Continue the company story">
+          {previous && <Link to={`/about#${previous.id}`}>Previous: {previous.title}</Link>}
+          <Link to={next ? `/about#${next.id}` : "/projects#project-place-story"}>{next ? `Next: ${next.title}` : "Continue into our project stories"}<ArrowUpRight size={17} aria-hidden="true" /></Link>
+        </nav>
       </article>
     </section>
 

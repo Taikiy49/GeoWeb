@@ -54,8 +54,7 @@ export function FeaturedFilm() {
     >
       <div className="container film-container">
         <div className="film-heading">
-          <span className="eyebrow">HAWAIʻI & THE PACIFIC</span>
-          <h2 id="featured-heading">Featured projects</h2>
+          <h2 id="featured-heading">More places. More stories.</h2>
         </div>
         <div
           className="film-viewer"

@@ -1,0 +1,31 @@
+.work-journey { padding-block: var(--section-space); }
+.work-journey-heading { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: end; margin-bottom: 38px; }
+.work-journey-heading p { max-width: 44ch; }
+.work-journey-chapters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; margin: 0; padding: 0; list-style: none; }
+.work-journey-chapters > li { min-width: 0; }
+.work-journey-chapters figure a { display: block; overflow: hidden; }
+.work-journey-chapters img { width: 100%; aspect-ratio: 1.35; object-fit: cover; transition: transform 460ms var(--ease-out); }
+.work-journey-chapters figure a:is(:hover, :focus-visible) img { transform: scale(1.025); }
+.work-journey-chapters figcaption { min-height: 42px; margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.work-journey-chapters h3 { margin-top: 22px; font-size: 26px; }
+.work-journey-chapters li > p { margin-top: 18px; font-size: 16px; }
+.work-journey-chapters .arrow-link { margin-top: 22px; font-size: 14px; }
+.work-journey-scope { display: flex; justify-content: space-between; align-items: start; gap: 40px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+.work-journey-scope p { max-width: 74ch; font-size: 14px; }
+.work-journey-scope .arrow-link { flex-shrink: 0; font-size: 14px; }
+@media (max-width: 1000px) {
+  .work-journey-chapters { gap: 26px; }
+  .work-journey-chapters h3 { font-size: 23px; }
+  .work-journey-scope { display: block; }
+  .work-journey-scope .arrow-link { margin-top: 18px; }
+}
+@media (max-width: 700px) {
+  .work-journey-heading { grid-template-columns: 1fr; gap: 18px; }
+  .work-journey-chapters { grid-template-columns: 1fr; gap: 42px; }
+  .work-journey-chapters figcaption { min-height: 0; }
+  .work-journey-chapters h3 { margin-top: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-journey-chapters img { transition: none; }
+  .work-journey-chapters figure a:is(:hover, :focus-visible) img { transform: none; }
+}
