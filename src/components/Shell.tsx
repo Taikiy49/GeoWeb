@@ -24,13 +24,13 @@ export function Shell() {
   usePageMotion(location.pathname + location.search);
   const menuButton = useRef<HTMLButtonElement>(null);
   const header = useRef<HTMLElement>(null);
-  const previousLocation = useRef({ pathname: location.pathname, search: location.search });
+  const previousLocation = useRef({ pathname: location.pathname, search: location.search, hash: location.hash });
   useLayoutEffect(() => {
     const previous = previousLocation.current;
-    previousLocation.current = { pathname: location.pathname, search: location.search };
+    previousLocation.current = { pathname: location.pathname, search: location.search, hash: location.hash };
     setOpen(false);
-    // Filtering may remove a return anchor; it is still the same reading surface.
-    if (previous.pathname === location.pathname && previous.search !== location.search && !location.hash) return;
+    // Query-only selection/filter changes retain focus and reading position, even at an anchor.
+    if (previous.pathname === location.pathname && previous.search !== location.search && previous.hash === location.hash) return;
     if (!location.hash) {
       window.scrollTo({ top: 0, behavior: "instant" });
       document.getElementById("main")?.focus({ preventScroll: true });
